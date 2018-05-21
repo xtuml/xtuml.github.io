@@ -26,7 +26,7 @@ systems.
 
 The Shlaer-Mellor Method is applied in varying degrees of integrity in
 organizations around the world.  At xtUML Days people from organizations
-focused aeronautics, distributed network asset management, medical devices
+focused on aeronautics, distributed network asset management, medical devices
 and heavy factory automation among others will discuss:  
 
 - industrial applications  
@@ -64,7 +64,9 @@ Topics of interest to xtUML Days include but are not limited to the following:
 - tooling migration experience reports  
 
 Submit your paper, poster or presentation electronically as PDF via
-[EasyChair](https://easychair.org/conferences/?conf=xtuml2018cop).
+[EasyChair](https://easychair.org/conferences/?conf=xtuml2018cope).
+(If you are unable to submit through EasyChair, please contact the
+[conference chair listed below](#contact).)
 Presentations are expected to be 25-45 minutes in duration including
 time for questions and discussion.
 
@@ -101,7 +103,7 @@ the Method and road map for tooling.  Day 2 attendance is by invitation only.
 ## Organization  
 Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net  
 MN, Program Committee Member, Saab, Sweden  
-TP, Program Committee Member, Consultant, UK  
+Dave Salt, Program Committee Member, UK Government, UK  
 
 ### Contact
 If you have questions about xtUML Days 2018 Copenhagen, contact the chair
