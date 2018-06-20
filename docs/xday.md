@@ -102,7 +102,7 @@ the Method and road map for tooling.  Day 2 attendance is by invitation only.
 
 ## Organization  
 Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net  
-MN, Program Committee Member, Saab, Sweden  
+Martin Nilsson, Program Committee Member, Saab, Sweden  
 Dave Salt, Program Committee Member, UK Government, UK  
 
 ### Contact
