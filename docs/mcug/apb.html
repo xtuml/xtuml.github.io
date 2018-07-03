@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix B. Background</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="apa.html" title="Appendix A. Analysis Guide" /><link rel="next" href="apbs02.html" title="Components" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix B. Background</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apbs02.html">Next</a></td></tr></table><hr /></div><div class="appendix" title="Appendix B. Background"><div class="titlepage"><div><div><h2 class="title"><a id="Background-appendix"></a>Appendix B. Background</h2></div></div></div><div class="highlights"><a id="Background-appendix-high"></a><p>This appendix begins
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix B. Background</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="prev" href="apa.html" title="Appendix A. Analysis Guide" /><link rel="next" href="apbs02.html" title="Components" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix B. Background</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apbs02.html">Next</a></td></tr></table><hr /></div><div class="appendix" title="Appendix B. Background"><div class="titlepage"><div><div><h2 class="title"><a id="Background-appendix"></a>Appendix B. Background</h2></div></div></div><div class="highlights"><a id="Background-appendix-high"></a><p>This appendix begins
 by providing a general overview of model compilers (sometimes
 referred to as the <span class="emphasis"><em>software architecture</em></span>)
 followed by a brief description of the major components of MC-3020.
@@ -8,8 +8,8 @@ in the MC-3020 architecture and how they interact.  Finally, the
 general operational nature of each task type is described. The intent
 is to provide the reader with a complete, high level view of the
 MC-3020 architecture, sufficient to provide a context for the rest
-of this manual.</p></div><div class="section" title="Model Compilers (Software Architectures)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60870655984"></a>Model Compilers (Software Architectures)</h2></div></div></div><div class="highlights"><p>This section provides a general overview of how
-  model compilers fit into the Shlaer-Mellor method.</p></div><div class="section" title="Shlaer-Mellor Development"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870632832"></a>Shlaer-Mellor Development</h3></div></div></div><p>The Shlaer-Mellor approach to software development begins by
+of this manual.</p></div><div class="section" title="Model Compilers (Software Architectures)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269942026384"></a>Model Compilers (Software Architectures)</h2></div></div></div><div class="highlights"><p>This section provides a general overview of how
+  model compilers fit into the Shlaer-Mellor method.</p></div><div class="section" title="Shlaer-Mellor Development"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942003104"></a>Shlaer-Mellor Development</h3></div></div></div><p>The Shlaer-Mellor approach to software development begins by
     partitioning the system into separate subject matters referred to
     as domains.  Each domain is then analyzed using xtUML modeling
     and finally the system is implemented by translating
@@ -22,12 +22,12 @@ of this manual.</p></div><div class="section" title="Model Compilers (Software A
     these design and implementation patterns.  This approach provides a
     uniform set of data, function, and control abstractions that are
     used system wide and forms the basis for translating the xtUML models
-    based on an automation of the mapping rules.</p></div><div class="section" title="Software Architecture Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870629728"></a>Software Architecture Components</h3></div></div></div><p>A software architecture is made up of three main components:
+    based on an automation of the mapping rules.</p></div><div class="section" title="Software Architecture Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942000000"></a>Software Architecture Components</h3></div></div></div><p>A software architecture is made up of three main components:
     mechanisms, rule files (formerly archetypes) and marks.
     In addition, build and
     diagnostic components are provided to facilitate constructing and
     debugging the system.  These components are described in the
-    following subsections.</p><div class="section" title="Mechanisms"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870628704"></a>Mechanisms</h4></div></div></div><p>A mechanism is architecture functionality that is specified,
+    following subsections.</p><div class="section" title="Mechanisms"><div class="titlepage"><div><div><h4 class="title"><a id="idm269941998976"></a>Mechanisms</h4></div></div></div><p>A mechanism is architecture functionality that is specified,
       designed, coded, and compiled to work with all xtUML models.  It is
       not customized on an xtUML element boundary.  Examples of mechanisms
       in an object-oriented ANSI C model compiler include code for 
@@ -52,7 +52,7 @@ of this manual.</p></div><div class="section" title="Model Compilers (Software A
       code is simple, native C.  When integrating realized external
       entities and timer services (TIM), other system libraries will
       be necessary.  However, the core xtUML generated code remains
-      simple ANSI C.</p></div><div class="section" title="Rule Files (a.k.a. archetypes, templates)"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870621104"></a>Rule Files (a.k.a. archetypes, templates)</h4></div></div></div><p>A rule file is a combination of an implementation pattern
+      simple ANSI C.</p></div><div class="section" title="Rule Files (a.k.a. archetypes, templates)"><div class="titlepage"><div><div><h4 class="title"><a id="idm269941991360"></a>Rule Files (a.k.a. archetypes, templates)</h4></div></div></div><p>A rule file is a combination of an implementation pattern
       and translation rules for filling out that pattern based upon
       specifics of the xtUML models.  Thus a rule file is designed to be
       customized on an xtUML element boundary.  An example of a rule file
@@ -60,7 +60,7 @@ of this manual.</p></div><div class="section" title="Model Compilers (Software A
       a struct that will be used to represent xtUML classes along with the
       translation rules for populating that code pattern with such xtUML
       elements as object name, attribute name, and valid events for that
-      object.</p></div><div class="section" title="Marks"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870620016"></a>Marks</h4></div></div></div><p>When there is more than one software architecture element
+      object.</p></div><div class="section" title="Marks"><div class="titlepage"><div><div><h4 class="title"><a id="idm269941990272"></a>Marks</h4></div></div></div><p>When there is more than one software architecture element
       into which an xtUML element can be translated,
       <span class="emphasis"><em>marks</em></span> (formerly "colors") are used to
       indicate which translation
@@ -75,13 +75,13 @@ of this manual.</p></div><div class="section" title="Model Compilers (Software A
       information that does not belong in either the xtUML models or the
       model compiler itself.  Such information is maintained
       outside the model compiler and models in marking tables that are
-      accessed during the translation process.</p></div></div><div class="section" title="Additional Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870615392"></a>Additional Components</h3></div></div></div><p>In addition to the three basic components of a model
+      accessed during the translation process.</p></div></div><div class="section" title="Additional Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm269941985648"></a>Additional Components</h3></div></div></div><p>In addition to the three basic components of a model
     compiler, the mechanisms, rule files, and marks, there are also
     two tools which come with an architecture to facilitate the
     translating and building of the system and provide some diagnostic
     capabilities for debugging the system.  These are:
     </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>build tools</p></li><li class="listitem"><p>diagnostic tools</p></li></ul></div><p>
-    </p></div><div class="section" title="Model Compiler Analogy"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870612112"></a>Model Compiler Analogy</h3></div></div></div><p>Just as assembly language is translated into machine code,
+    </p></div><div class="section" title="Model Compiler Analogy"><div class="titlepage"><div><div><h3 class="title"><a id="idm269941982368"></a>Model Compiler Analogy</h3></div></div></div><p>Just as assembly language is translated into machine code,
     and a high level language is translated into assembly code (which
     is then translated into machine code), the xtUML models and their
     translation into a high level language can be viewed as the next

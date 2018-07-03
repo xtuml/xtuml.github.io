@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>System Level Marks</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04s03.html" title="Specifying Data Types, Precision and Enumerators" /><link rel="next" href="ch04s05.html" title="Component (Domain) Specializations" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">System Level Marks</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a></td></tr></table><hr /></div><div class="section" title="System Level Marks"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269943617136"></a>System Level Marks</h2></div></div></div><p>There are characteristics of the system as a whole that
+    may need to be controlled during translation.  Several
+    constants define resource allocation and generation constraints.
+    Some constants allow for ``tweaking'' the system to obtain
+    optimal performance in terms of size or speed.  These 
+    constants can be marked as the system architect desires.</p><p>
+    <code class="filename">system.mark</code> provides the means for specifying
+    these system constants.</p><p>Within system marking, the flavor of collection
+    containers can be specified.  Different collection flavors
+    provide optimizations for space or speed.</p><div class="section" title="Specifying a System Build Configuration"><div class="titlepage"><div><div><h3 class="title"><a id="Marking-SystemConfigurationPackage-section"></a>Specifying a System Build Configuration</h3></div></div></div><p>MC-3020 allows the user to select a package of components
+        to be used when generating the code for the model.  Such a package
+        is called a "system configuration".</p><p>A model may contain more components than are needed/required
+        for a particular working configuration of a system.  Often a model
+        will include additional components used for testing.  A user may
+        want multiple versions of components.</p><p>To assemble a system
+        configuration in BridgePoint, the user builds a component diagram in a
+        package from component references and wires them together as
+        desired.  Multiple system configurations packages may exist.
+        Each configuration can be different and use only a subset of
+        the components defined in the model.</p><p>When a component package is marked as the system
+        configuration, code will be generated for components contained in
+        this package and referred to from this package.
+        Components <span class="emphasis"><em>not</em></span> contained in this package
+        and <span class="emphasis"><em>not</em></span> referred to from this package will
+        be excluded from code generation.</p><p>To mark a package as containing the system configuration:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkSystemConfigurationPackage</b>(</code></td><td>string <var class="pdparam">system_package</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameter(s) are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">system_package</span></p></td><td><p>is the
+        name of the package containing the components wired together for
+        a system build.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943604576"></a><p class="title"><b>Example 4.7. Marking the System Configuration Package</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkSystemConfigurationPackage( "system1" )
+.invoke MarkSystemConfigurationPackage( "system2" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Enabling Multi-Tasking"><div class="titlepage"><div><div><h3 class="title"><a id="Marking-EnablingTasking-section"></a>Enabling Multi-Tasking</h3></div></div></div><p>MC-3020 provides for tasking/threading using the
+        capabilities of the target operating system (OS) or real-time
+        operating system (RTOS).  An example of an RTOS is the Nucleus
+        PLUS real-time operating system.  </p><p>To cause MC-3020 to generate multi-tasking/threading code,
+        invoke the following marking function.  Pass it arguments that
+        specify the type of multi-tasking environment and whether or not
+        to serialize all action processing (across all tasks).</p><p>To enable tasking in the generated system:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">EnableTasking</b>(</code></td><td>string <var class="pdparam">flavor</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">serialization</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">tasks</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">flavor</span></p></td><td><p>is the
+        type of tasking environment being integrated ("POSIX", "Nucleus",
+        "Windows" or "SystemC").
+        </p></td></tr><tr><td><p><span class="term">serialization</span></p></td><td><p>is set
+        to "serialize" to force all action across all tasks to be run
+        sequentially.  Note that serializing the action processing
+        reduces data access contention, but can severely reduce the 
+        multi-tasking performance of the generated system.
+        </p></td></tr><tr><td><p><span class="term">tasks</span></p></td><td><p>is the
+        number of tasks/threads in the xtUML generated system.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943592352"></a><p class="title"><b>Example 4.8. Enabling Tasking/Threading</b></p><div class="example-contents"><pre class="programlisting">
+.invoke EnableTasking( "Nucleus", "", 4 )
+.invoke EnableTasking( "POSIX", "serialize", 2 )
+.invoke EnableTasking( "Windows", "", 3 )
+.invoke EnableTasking( "SystemC", "", 1 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Establishing Multi-Task Priority"><div class="titlepage"><div><div><h3 class="title"><a id="Marking-TaskPriority-section"></a>Establishing Multi-Task Priority</h3></div></div></div><p>Some flavors of tasking/threading allow for differing
+        execution priorities of tasks or threads.
+        MC-3020 allows the priorities of tasks to be set through
+        marking.
+        In systems that support explicit prioritization of tasks,
+        each task (of the number specified in
+        <code class="function">EnableTasking</code>) can
+        have a priority assigned.  Use the following marking function
+        to set the priority for each task.</p><p>To specify the priorities of tasks/threads:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">SetTaskPriority</b>(</code></td><td>integer <var class="pdparam">task_number</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">priority</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">task_number</span></p></td><td><p>is the
+        number of the task starting with zero and going to one less
+        than the number specified in <code class="function">EnableTasking</code>.
+        </p></td></tr><tr><td><p><span class="term">priority</span></p></td><td><p>is a string
+        representing the priority level of the task.  The string type
+        of this argument allows for symbolic as well as numeric
+        representation of task priority.  This representation will be a
+        function of the tasking environment being integrated.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943582560"></a><p class="title"><b>Example 4.9. Setting Task/Thread Priority</b></p><div class="example-contents"><pre class="programlisting">
+.invoke SetTaskPriority( 0, "100" )
+.invoke SetTaskPriority( 3, "high" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Maximum String Size"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943580096"></a>Maximum String Size</h3></div></div></div><p>MC-3020 tries to use relatively safe methods of
+      manipulating strings.  The ``n'' library functions are used
+      (<code class="function">strncpy, strncpy, strncat</code>) rather than
+      their more dangerous (as regards buffer overruns) counterparts.</p><p>To specify the maximum length of a string in the system:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumStringLength</b>(</code></td><td>integer <var class="pdparam">max_len</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">max_len</span></p></td><td><p>is the
+        longest string that will be manipulated by the system.
+        Truncation will occur beyond this length.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943574304"></a><p class="title"><b>Example 4.10. Defining String Length</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumStringLength( 16 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Controlling Collection Sizes"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943572720"></a>Controlling Collection Sizes</h3></div></div></div><p>Sets of instances are collected for various AL
+      operations.  Relationships with multiplicity MANY require
+      set container mechanisms at the implementation level to
+      manage the collection of related instances.  The maximum
+      number of instances allowed in such collections can be
+      controlled with a mark.</p><p>To specify the maximum ``relationship extent'' size
+      in the system:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumRelationshipExtentSize</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>represents
+        the highest number of instances allowed in a MANY
+        relationship.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943567136"></a><p class="title"><b>Example 4.11. Max Relationship Extent</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumRelationshipExtentSize( 8 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Managing Selection Collections"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943565520"></a>Managing Selection Collections</h3></div></div></div><p>Another operation requiring set manipulation is a
+      selection (SELECT MANY) that may result in a collection of multiple
+      instances.</p><p>To specify the maximum ``selections extent'' size
+      in the system:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumSelectionExtentSize</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>represents
+        number of containers that will be pre-allocated for AL
+        SELECT statements.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943560272"></a><p class="title"><b>Example 4.12. Max Selections Extent</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumSelectionExtentSize( 12 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Changing the Flavor of Collections"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943558688"></a>Changing the Flavor of Collections</h3></div></div></div><p>Collections are maintained with a mechanism of one type
+      or another.  With this mark, the type desired for a particular
+      translation can be specified.  The default is singly linked list
+      container nodes.  Doubly linked list containers can be selected
+      as flavor 20.  Doubly linked lists allow for faster deletion of
+      instances in exchange for an additional pointer size (for ``prev'')
+      per container in the system.</p><p>To specify the flavor of the collection nodes:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagCollectionsFlavor</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>a numerical
+        representation of a specific type and strategy of collections
+        container.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943553056"></a><p class="title"><b>Example 4.13. Collection Node Type Selection</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagCollectionsFlavor( 20 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Limiting/Extending Event Queues"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943551472"></a>Limiting/Extending Event Queues</h3></div></div></div><p>MC-3020 attempts to dynamically calculate reasonable
+      and safe values for queue depths within the event generation
+      and delivery mechanism.  However, for optimization purposes
+      the user may wish to override these values.</p><p>To override the compiler calculated maximum queue
+      depth for the self directed event queue:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumSelfDirectedEvents</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>which
+        is the hard-coded depth of the self-directed event queue.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943546176"></a><p class="title"><b>Example 4.14. Self-Directed Queue Depth</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumSelfDirectedEvents( 3 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Limiting/Extending NonSelf Queue"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943544592"></a>Limiting/Extending NonSelf Queue</h3></div></div></div><p>To override the compiler calculated maximum queue
+      depth for the instance directed event queue:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumNonSelfDirectedEvents</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>which
+        is the hard-coded depth of the non- self-directed event queue.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943539888"></a><p class="title"><b>Example 4.15. Instance Directed Queue Depth</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumNonSelfDirectedEvents( 5 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Timer Queue"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943538304"></a>Timer Queue</h3></div></div></div><p>A mark is provided so the system analyst can direct
+      the model compiler to increase or decrease the timer queue
+      used to manage multiple pending xtUML timers (delayed events).
+      To override the compiler calculated queue
+      depth for pending xtUML timers:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumPendingOoaTimers</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>represents
+        is the hard-coded maximum number of timers that may be pending
+        expiration at any point in time.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943533296"></a><p class="title"><b>Example 4.16. Pending xtUML Timers</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumPendingOoaTimers( 6 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Simulated Time"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943531696"></a>Simulated Time</h3></div></div></div><p>Simulated Time in MC-3020 implements a form of discrete event
+      simulation.  In simulated time mode, no external clock is read.  The
+      application runs as fast as the architecture allows.  The time base is
+      derived from timers used to cause functional delays in the modeled
+      application.</p><p>SystemC and BridgePoint Verifier both support modes where time is "simulated".
+      In these environments, "wall clock" is not used.  The timers in the system
+      advance the system time in sequence of expiration.  This is convenient for
+      very fast (short-running) and for very slow (long-running) applications.
+      </p><p>
+      To switch from the default wall clock time base to simulated time:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkSimulatedTime</b>(</code></td><td><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+      </p><div class="example"><a id="idm269945573440"></a><p class="title"><b>Example 4.17. Establish Simulated Time Base</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkSimulatedTime()
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Interleaved Bridges"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945572032"></a>Interleaved Bridges</h3></div></div></div><p>Use this mark to expand or reduce the depth of the queue used
+      to interleave ``asynchronous'' bridge operations between state
+      actions.  The default will be a system divined value that should
+      be relatively safe in most cases.</p><p>To hard-code the depth of the interleaved bridges queue:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagMaximumInterleavedBridges</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>represents
+        the maximum queue depth for safe bridge operations that
+        are interleaved between state actions (to maintain data access
+        set consistency).</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945567248"></a><p class="title"><b>Example 4.18. Interleaved Bridges Queue Depth</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagMaximumInterleavedBridges( 4 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Interleaved Bridge Data"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945565088"></a>Interleaved Bridge Data</h3></div></div></div><p>Use this mark to define how many bytes of argument data
+      come in across an interleaved bridge operation.  The default is 8.
+      </p><p>To hard-code the width of the interleaved bridge argument path:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagInterleavedBridgeDataSize</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>represents
+        the maximum number of bytes of arguments that an interleaved
+        bridge may receive during an invocation.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945559872"></a><p class="title"><b>Example 4.19. Interleaved Bridge Argument Data</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagInterleavedBridgeDataSize( 2 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Marking Persistence Cache Queue Depth"><div class="titlepage"><div><div><h3 class="title"><a id="PeristenceCacheDepth-section"></a>Marking Persistence Cache Queue Depth</h3></div></div></div><p>This mark is used to specify the maximum number of instances and
+      links that can be queued waiting to be flushed to non-volatile
+      storage (NVS).  As instances and links become "dirty" they get
+      queued to NVS.  When PERSIST::Commit is called these queues are flushed.
+      </p><p>To change the default depth (128) to something different:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkPersistenceCacheDepth</b>(</code></td><td>integer <var class="pdparam">instance_depth</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">link_depth</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+      Where the argument:
+
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">instance_depth</span></p></td><td><p>is
+        the number of instances that can be queued waiting to be flushed
+        to non-volatile storage (NVS).
+        </p></td></tr><tr><td><p><span class="term">link_depth</span></p></td><td><p>is
+        the number of links that can be queued waiting to be flushed
+        to non-volatile storage (NVS).
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945550528"></a><p class="title"><b>Example 4.20. Changing Persistence Cache Queue Depth</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">.invoke MarkPersistenceCacheDepth( 16, 32 )</pre><p>
+        </p><pre class="programlisting">.invoke MarkPersistenceCacheDepth( 1000, 500 )</pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Marking Dynamic Memory Allocation On"><div class="titlepage"><div><div><h3 class="title"><a id="DynamicMemoryAllocation-section"></a>Marking Dynamic Memory Allocation On</h3></div></div></div><p>By default, MC-3020 statically allocates instance data and 
+      all mechanistic collection containers.  This is great for many deeply 
+      embedded applications.  However, some applications require the 
+      flexibility of dynamically allocated storage.  In such an application, 
+      the number of instances of elements from the xtUML model file is not
+      predictable.  Here, the application needs to be able to
+      allocate more memory when the statically allocated memory runs out.
+      </p><p>To turn on and use dynamic memory allocation:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagDynamicMemoryAllocationOn</b>(</code></td><td>integer <var class="pdparam">additional_instances</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+      Where the argument:
+
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">additional_instances</span></p></td><td><p>is
+        the number of additional instances to allocate each time space for
+        new instances runs out.</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945542032"></a><p class="title"><b>Example 4.21. Using Dynamic Memory Allocation</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">.invoke TagDynamicMemoryAllocationOn( 2 );</pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p><p>When dynamic memory allocation is marked off, system 
+      user callout functions are called when a request is made to allocate 
+      resources beyond what is statically available.</p></div><div class="section" title="Marking State Save"><div class="titlepage"><div><div><h3 class="title"><a id="MarkingStateSave-section"></a>Marking State Save</h3></div></div></div><p>State Save is a feature that captures information present in
+      the running system that may be useful for analysis and debugging
+      purposes.  Upon a state save trigger, information is collected into
+      a buffer of a size specified through marking (this mark).</p><p>From the application model, state saves are controlled through
+      bridges on an external entity named 'state save' (with key letters
+      'SS').  A default version of this external entity is supplied with
+      the model compiler.  It is expected that users will modify the state
+      save external entity realized code.
+      </p><p>To enable state save capability and specify the size of the buffer:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkStateSave</b>(</code></td><td>integer <var class="pdparam">buffer_size</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+      Where the argument:
+
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">buffer_size</span></p></td><td><p>is the size
+        expressed in bytes of the buffer where state save information will
+        be stored.</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945532352"></a><p class="title"><b>Example 4.22. Configuring State Save</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">.invoke MarkStateSave( 1024 );</pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="SystemC-specific Markings"><div class="titlepage"><div><div><h3 class="title"><a id="SystemC-section"></a>SystemC-specific Markings</h3></div></div></div><div class="section" title="Mark Port Type"><div class="titlepage"><div><div><h4 class="title"><a id="SystemC-PortType-section"></a>Mark Port Type</h4></div></div></div><p>By default, the SystemC model compiler generates basic 
+          <em class="parameter"><code>sc_interface</code></em> ports.  The tool also supports 
+          generating TLM ports as well as bit level signals.  All ports will be 
+          generated using the given value, so this marking function should 
+          be invoked only once in the marking file.  If the marking is invoked 
+          multiple times, the last one processed is used.
+          </p><p>Specify the SystemC port type to generate:
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkSystemCPortType</b>(</code></td><td>string <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+          Where the argument:
+
+          </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">type</span></p></td><td><p>Can be 
+            "sc_interface", "TLM", or "BitLevelSignals". Using 
+            "sc_interface" causes the code generator to create interface classes
+            that implement the interface using vanilla C++.  "TLM" causes the 
+            code generator to create interface classes that conform to the 
+            SystemC Transaction-Level Modeling paradigm.  TLM interfaces provide
+            a means to perform hardware and software module connection and 
+            coverification. Using "BitLevelSignals" causes the code generator to
+            create interfaces that correspond to hardware wires in an 
+            application model of hardware.  It also causes the generation of 
+            additional wires "clk"  and "rst_X" in components that represent 
+            hardware.</p></td></tr></tbody></table></div><p>
+
+          </p><div class="example"><a id="idm269945522880"></a><p class="title"><b>Example 4.23. Setting the Port Type</b></p><div class="example-contents"><p>
+            </p><pre class="programlisting">.invoke MarkSystemCPortType( "sc_interface" );</pre><p>
+            </p><pre class="programlisting">.invoke MarkSystemCPortType( "TLM" );</pre><p>
+            </p><pre class="programlisting">.invoke MarkSystemCPortType( "BitLevelSignals" );</pre><p>
+            </p></div></div><p><br class="example-break" />
+          </p></div><div class="section" title="Mark All Ports Polymorphic"><div class="titlepage"><div><div><h4 class="title"><a id="SystemC-AllPortsPoly-section"></a>Mark All Ports Polymorphic</h4></div></div></div><p>An interface port is said to be "polymorphic" when a component 
+          exposes (provides or requires) the same interface multiple times.  The
+          model compiler treats polymorphic and non-polymorphic ports 
+          differently.  It generates additional checks to resolve ambiguity when
+          messages are sent through polymorphic ports.
+          </p><p>Specify the SystemC port type to generate:
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkAllPortsPolymorphic</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+          No arguments.
+
+          </p><div class="example"><a id="idm269945516000"></a><p class="title"><b>Example 4.24. Treat All Ports as Polymorphic</b></p><div class="example-contents"><p>
+            </p><pre class="programlisting">.invoke MarkAllPortsPolymorphic();</pre><p>
+            </p></div></div><p><br class="example-break" />
+          </p></div><div class="section" title="Mark Component As Channel"><div class="titlepage"><div><div><h4 class="title"><a id="SystemC-ComponentAsChannel-section"></a>Mark Component As Channel</h4></div></div></div><p>The SystemC model compiler supports marking individual 
+          components as pre-defined SystemC channels.
+          </p><p>Components that are marked as pre-defined channels have no 
+          internal behavior generated for them by the model compiler.  Instead, 
+          the implementation is expected to be provided by the referenced 
+          include file.</p><p>In components that make use of pre-defined channels, the channel
+          declaration is bypassed.  In addition, the binding of ports inside the
+          pre-defined channel is bypassed and components that use the 
+          pre-defined channel are bound to the pre-defined channel's name 
+          instead of the channel generated by the model compiler.</p><p>Specify the component as a SystemC channel:
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkAsChannel</b>(</code></td><td>string <var class="pdparam">package</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">include file</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+          Where the arguments:
+
+          </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">package</span></p></td><td><p>name of the 
+            package being marked</p></td></tr><tr><td><p><span class="term">component</span></p></td><td><p>name of the 
+            component (domain) being marked</p></td></tr><tr><td><p><span class="term">include file</span></p></td><td><p>name of the 
+            include file containing the channel's implementation</p></td></tr></tbody></table></div><p>
+
+          </p><div class="example"><a id="idm269945503200"></a><p class="title"><b>Example 4.25. Marking a Component as a Channel</b></p><div class="example-contents"><p>
+            </p><pre class="programlisting">.invoke MarkAsChannel( "*", "wait_hs", "my_channel.h" );</pre><p>
+            </p></div></div><p><br class="example-break" />
+          </p></div><div class="section" title="Mark Interface Prefix"><div class="titlepage"><div><div><h4 class="title"><a id="SystemC-InterfacePrefix-section"></a>Mark Interface Prefix</h4></div></div></div><p>The SystemC model compiler supports adding a prefix to the 
+          generated names of provided ports, required ports, and channels.  Use 
+          this marking to set these prefixes on all elements of these types.
+          </p><p>Specify the prefixes to use on interface elements:
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkInterfacePrefix</b>(</code></td><td>string <var class="pdparam">provided_port</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">required_port</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">channel</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+          Where the arguments:
+
+          </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">provided_port</span></p></td><td><p>text to add 
+            as a prefix on provided port generated names</p></td></tr><tr><td><p><span class="term">required_port</span></p></td><td><p>text to add 
+            as a prefix on required port generated names</p></td></tr><tr><td><p><span class="term">channel</span></p></td><td><p>text to add as a 
+            prefix on channel generated names </p></td></tr></tbody></table></div><p>
+
+          </p><div class="example"><a id="idm269945492016"></a><p class="title"><b>Example 4.26. Marking Interface Prefixes</b></p><div class="example-contents"><p>
+            </p><pre class="programlisting">.invoke MarkInterfacePrefix( "proPort", "reqPort", "channel" );</pre><p>
+            </p></div></div><p><br class="example-break" />
+          </p></div><div class="section" title="C++ Template Feature"><div class="titlepage"><div><div><h4 class="title"><a id="SystemC-CPPTemplate-section"></a>C++ Template Feature</h4></div></div></div><p>The SystemC model compiler supports marking components and 
+          interfaces as reusable paramterized C++ templates.</p><p>To avoid ambiguity between components and component references, 
+          users must set the <em class="parameter"><code>ClassifierName</code></em> to a unique 
+          value in the element's Properties.  Also, be sure to name ports in a 
+          way that they can all be marked.  Do not reuse the same port name when
+          connecting to different interfaces.</p><p>Interface template parameters must be supplied with a default 
+          value which is used in the channel signal declarations.</p><p>Specify the template parameter information:
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkComponentWithTemplate</b>(</code></td><td>string <var class="pdparam">package_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">component_name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+          </p><div class="funcsynopsis"><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkInterfaceWithTemplate</b>(</code></td><td>string <var class="pdparam">package_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">interface_name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">AddTemplateParameter</b>(</code></td><td>string <var class="pdparam">package_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">component_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">type_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">variable_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">default_value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+          </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">SetTPV</b>(</code></td><td>string <var class="pdparam">package_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">parent_component_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">component_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">classifier_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">port</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">variable_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+
+          Where the arguments:
+
+          </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">package_name</span></p></td><td><p>Name of the 
+            package being marked.</p></td></tr><tr><td><p><span class="term">component_name</span></p></td><td><p>Name of the
+            component (domain) being marked.</p></td></tr><tr><td><p><span class="term">interface_name</span></p></td><td><p>Name of the
+            interface being marked.</p></td></tr><tr><td><p><span class="term">type_name</span></p></td><td><p>Type of the 
+            given parameterized variable.</p></td></tr><tr><td><p><span class="term">variable_name</span></p></td><td><p>Name of the 
+            template variable being set.</p></td></tr><tr><td><p><span class="term">default_value</span></p></td><td><p>Default type
+            to apply to the template variable. Interface template parameters 
+            must be supplied with a default value which is used in the channel 
+            signal declarations.</p></td></tr><tr><td><p><span class="term">parent_component_name</span></p></td><td><p>Name
+            of the component package that is a child of the specified 
+            <em class="parameter"><code>package_name</code></em> and the parent of the specified 
+            <em class="parameter"><code>component_name</code></em>.  If 
+            <em class="parameter"><code>component_name</code></em> is a direct child of 
+            <em class="parameter"><code>package_name</code></em>, leave this field empty.  Only
+            use when an extra layer of nesting information must be supplied.
+            </p></td></tr><tr><td><p><span class="term">classifier_name</span></p></td><td><p>Identifies
+            the unique instance of a component (a component reference) that is 
+            the target of the template parameter value (whether for the instance 
+            itself or for one of its ports).</p></td></tr><tr><td><p><span class="term">port</span></p></td><td><p>Is only used when 
+            marking a template parameter value for the usage of an interface 
+            (port). If this parameter is empty, then the template parameter 
+            value will be applied to the component reference. If this parameter 
+            is not empty, then the template parameter value will be applied to 
+            the interface usage (port) found on the targeted component 
+            reference.</p></td></tr><tr><td><p><span class="term">value</span></p></td><td><p>Type to apply
+            to the named template variable.</p></td></tr></tbody></table></div><p>
+
+          </p><div class="example"><a id="idm269945456256"></a><p class="title"><b>Example 4.27. Marking a template parameter</b></p><div class="example-contents"><p>
+            </p><pre class="programlisting">
+.// for component reference:
+.invoke MarkComponentWithTemplate( "simtop", "wait_hs" )
+.invoke AddTemplateParameter( "simtop", "wait_hs", "class", "T", "rgb_t")
+.invoke SetTPV( "simtop", "", "wait_hs", "din", "", "T", "abc_t" )
+.invoke SetTPV( "simtop", "", "wait_hs", "din", "", "U", "xyz_t" )
+.// for interface reference:
+.invoke MarkInterfaceWithTemplate( "", "wait_out" )
+.invoke AddTemplateParameter( "", "wait_out", "class", "T", "rgb_t")
+.invoke SetTPV( "simtop", "", "filt_top", "i_filt_top", "din", "T", "my_t" )
+.invoke SetTPV( "simtop", "", "filt_top", "i_filt_top", "dout", "T", "int" )
+            </pre><p>
+            </p></div></div><p><br class="example-break" />
+          </p></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Specifying Data Types, Precision and Enumerators </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Component (Domain) Specializations</td></tr></table></div></body></html>

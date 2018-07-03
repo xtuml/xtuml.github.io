@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Event Prioritization</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04s06.html" title="Class Specializations" /><link rel="next" href="ch05.html" title="Chapter 5. Enumerated Types" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Event Prioritization</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s06.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr></table><hr /></div><div class="section" title="Event Prioritization"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269945275088"></a>Event Prioritization</h2></div></div></div><p>MC-3020 provides prioritization through the marking
+    of events.  Events can be tagged to have priorities that
+    accelerate the delivery of past events of lower priority
+    that are currently outstanding.  This provides the user with
+    a degree of control over the sequencing of xtUML threads of
+    control within the system.
+    <code class="filename">event.mark</code> provides the means for specifying
+    these event prioritizations.</p><div class="section" title="Priority Events"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945272832"></a>Priority Events</h3></div></div></div><p>To indicate to the model compiler than an event
+      is to be given a priority, use the following invocation
+      (one for each priority event):
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkPriorityEvent</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"event_label"</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">"component"</span></p></td><td><p>is
+        name of the component (domain) being marked</p></td></tr><tr><td><p><span class="term">"event_label"</span></p></td><td><p>is
+        the name of the event (with number
+        appended)</p></td></tr><tr><td><p><span class="term">value</span></p></td><td><p>is the
+        relative priority of the event.  Legal values are 0 to 255
+        inclusive.  0 is lowest and default.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945264944"></a><p class="title"><b>Example 4.46. Marking a Priority Event</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkPriorityEvent( "autosampler", "CAR1", 4 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="MC-3020 Extent Prediction and Marking"><div class="titlepage"><div><div><h3 class="title"><a id="Containoids-section"></a>MC-3020 Extent Prediction and Marking</h3></div></div></div><p>First pass translation collects statistics used to
+    conservatively estimate the number of container nodes (containoids)
+    required by the system.</p><p>There are three different uses for instance containoids:
+    class extents, association extents and selection extents.
+    Selection extents govern the total size of transient instance
+    reference set variables in the actions.  This represents values
+    in the variable type <span class="type">inst_ref_set</span>.
+    The required number of containoids for each flavor is summed
+    to provide the upper limit to total containers.
+    </p><pre class="programlisting">#define SYS_MAX_CONTAINERS \
+    ( SYS_MAX_OBJECT_EXTENT + SYS_MAX_RELATIONSHIP_EXTENT + SYS_MAX_TRANSIENT_EXTENT )</pre><p>SYS_MAX_OBJECT_EXTENT is a sum of all of the extent counts across
+    all the domains of the system, which are sums of the class extents
+    in each domain.  Each class extent is allocated to be the system
+    default for class extents, a marked value of the system default
+    or the marked value for the specific class.</p><p>Selection extents are calculated by multiplying the largest
+    number of selects that can occur in any action by the largest extent
+    of any class.  Thus allowing for the worst case action to select
+    the largest class extent each time.  This value is set in
+    SYS_MAX_TRANSIENT_EXTENT.
+    </p><pre class="programlisting">transient containers = ( max selects ) * ( largest class extent )</pre><p>Association extents are allowed to be as big as they would
+    need to be if all instances on the MANY side were always
+    participating.  This value is set in SYS_MAX_RELATIONSHIP_EXTENT.
+    </p><pre class="programlisting">association containoids = ( number of MANYs ) * ( largest class extent )</pre><p>The following marks govern these extent sizes:
+
+    </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><pre class="programlisting">MaxObjectExtentSize( "component", "key_letters", value )</pre></li><li class="listitem"><pre class="programlisting">MaxSystemObjectDefaultExtentSize( value )</pre></li><li class="listitem"><pre class="programlisting">TagMaximumRelationshipExtentSize( value )</pre></li><li class="listitem"><pre class="programlisting">TagMaximumSelectionExtentSize( value )</pre></li></ul></div><p>
+    
+    See the proper sections in the MC-3020 Users Guide for details
+    on these marking parameters.</p><p>Association extents refer to the sets of instances
+    participating
+    in a association with multiplicity MANY.  Sets built from
+    linked lists are used to optimize traversal of associations with
+    multiplicity MANY.  For example, in the following model,
+    A 1---R1---* B,
+    class B does not need an extent set; it simply needs a single
+    pointer reference to the A instance.  The A instance however does
+    need a set of instance references.  Such a set uses "containoids"
+    to collect the B instances related to the A instance.
+    MC-3020 calculates the worst case (biggest possible) association
+    extent.</p><p>The extent can be marked to be smaller than the worst case
+    maximum using TagMaximumRelationshipExtentSize.
+    <span class="command"><strong>MarkObjectExtentSize</strong></span> will also have an effect on
+    the calculated total.</p><p>If no extent size marking is supplied, MC-3020 will
+    calculate a worst case for a model of a higher number of
+    containers.  MC-3020 will see R1 and allow for all possible
+    instances of B to participate with instances of A.  (This is the
+    most important point!)</p><p>Another way to understand how MC-3020 calculates this maximum
+    is as follows:
+    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Count the number of MANYs (---*) on a class
+      diagram.</p></li><li class="listitem"><p> For each MANY (---*), add the maximum class
+      extent on the MANY side (B above).</p></li><li class="listitem"><p>There are adjustments to be considered in the
+      case of associative classes.</p></li></ol></div><p>
+    This sum across all domains in the system will be the
+    SYS_MAX_RELATIONSHIP_EXTENT.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s06.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Class Specializations </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Enumerated Types</td></tr></table></div></body></html>

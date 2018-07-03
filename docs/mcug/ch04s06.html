@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Class Specializations</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04s05.html" title="Component (Domain) Specializations" /><link rel="next" href="ch04s07.html" title="Event Prioritization" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Class Specializations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s05.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch04s07.html">Next</a></td></tr></table><hr /></div><div class="section" title="Class Specializations"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269945378624"></a>Class Specializations</h2></div></div></div><p>MC-3020 provides several customizations that can be
+    selected on a class boundary.  The
+    <code class="filename">class.mark</code> provides the means for marking
+    these class specializations.</p><div class="section" title="Mapping Classes to Tasks/Threads"><div class="titlepage"><div><div><h3 class="title"><a id="Marking-MappingClassesToTasks-section"></a>Mapping Classes to Tasks/Threads</h3></div></div></div><p>When running in a multi-tasking/threading environment
+        the user can cause the generated code for xtUML classes to
+        run in different tasks/threads.  This mappings is accomplished
+        using the <code class="function">MarkClassToTask</code> marking function.
+        Note that mapping tightly coupled classes (where some classes
+        frequently access instance data of the other classes) to different
+        tasks can aggravate data synchronization issues.  Map closely
+        coupled classes to the same task.</p><p>To map a class or set of classes to a particular task number:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkClassToTask</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">task_number</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of component (domain) being marked 
+        </p></td></tr><tr><td><p><span class="term">ss_name</span></p></td><td><p>
+        name of subsystem
+        </p></td></tr><tr><td><p><span class="term">class_key_letters</span></p></td><td><p>
+        keyletters of the class being mapped
+        </p></td></tr><tr><td><p><span class="term">task_number</span></p></td><td><p> is
+        the number (starting with 0) of the task to which the indicated
+        class (or classes) is assigned
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945365472"></a><p class="title"><b>Example 4.36. Mapping Classes to Tasks</b></p><div class="example-contents"><pre class="programlisting">
+.// NOTES:
+.// (1) To map a specific class, use "" for "ss_name"
+.//     and provide the class key letters in "class_key_letters".
+.// (2) To map all classes in the subsystem to the given task, provide
+.//     the subsystem name for "ss_name" and "*" for the "class_key_letters".
+.// (3) To mark all classes in the component as mapped to a task, use "*"
+.//     for "ss_name" and "class_key_letters".
+.//
+.invoke MarkClassToTask( "", "", "MP", 1 )
+.invoke MarkClassToTask( "GPS", "TRACKING", "*", 3 )
+.invoke MarkClassToTask( "*", "*", "*", 0 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Extent Sizes"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945364576"></a>Extent Sizes</h3></div></div></div><p>MC-3020 has limited the use of memory allocation.
+      For memory constrained systems it is convenient to limit the
+      number of instances of a class that can exist at any one
+      time.  The following rule file function invocation will define
+      that maximum number of instances that will ever be allocated
+      for the given class.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkObjectExtentSize</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">key_letters</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component (domain) being marked</p></td></tr><tr><td><p><span class="term">key_letters</span></p></td><td><p>key
+        letters of the class</p></td></tr><tr><td><p><span class="term">value</span></p></td><td><p>maximum
+        number of instances</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945354832"></a><p class="title"><b>Example 4.37. Marking Max Instances</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkObjectExtentSize( "myDomain", "FRODO", 20 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Default Extent Size"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945353280"></a>Default Extent Size</h3></div></div></div><p>Early in the development cycle it may not be clear what
+      the maximum number of instances of particular classes may be.
+      MC-3020 provides a way to establish a default extent size to
+      be used for all classes that do not explicitly define the
+      maximum.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkSystemObjectDefaultExtentSize</b>(</code></td><td>integer <var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">value</span></p></td><td><p>default size
+        for non-marked classes
+        extents</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945348480"></a><p class="title"><b>Example 4.38. Marking Default Extent</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkSystemObjectDefaultExtentSize( 24 )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Enabling Preexisting Instances"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945346944"></a>Enabling Preexisting Instances</h3></div></div></div><p>Version 3.1 of MC-3020 supports defining preexisting
+      instances in data.  This saves the time and space overhead of
+      initialization objects.  Mark all classes that have instances
+      pre-defined in data.</p><p>Use this mark to enable the generation of ANSI C structure
+      initializers to pre-populate instance collections from supplied
+      XML data.  There is no harm in marking a class as having preexisting
+      instances in data even if it does not.  Such marking will have the
+      effect of making the class eligible for population by preexisting
+      instances defined in data.  All classes so marked will query for
+      the existence of preexisting instances and will populate with
+      them when defined.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkPEIsDefinedInData</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of component (domain) being marked 
+        </p></td></tr><tr><td><p><span class="term">ss_name</span></p></td><td><p>
+        name of subsystem
+        </p></td></tr><tr><td><p><span class="term">class_key_letters</span></p></td><td><p>
+        keyletters of the class eligible for population by preexisting
+        instances
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945337872"></a><p class="title"><b>Example 4.39. Marking Classes as Having PEIs Defined in Data</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkPEIsDefinedInData( "", "", "DOG" )
+.invoke MarkPEIsDefinedInData( "Lab", "VET", "*" )
+.invoke MarkPEIsDefinedInData( "*", "*", "*" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Identifying Static Instance Populations"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945336256"></a>Identifying Static Instance Populations</h3></div></div></div><p>Static instance populations are those instance populations
+      to which additions or deletions are never made during system
+      execution.  By marking a class as having a static instance
+      population, error messages will be generated if action language
+      tries to create or delete instances of the marked class.</p><p>Use this mark to mark a population as having a fixed
+      and unchanging population of instances.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkStaticInstancePopulation</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of component (domain) being marked 
+        </p></td></tr><tr><td><p><span class="term">ss_name</span></p></td><td><p>
+        name of subsystem
+        </p></td></tr><tr><td><p><span class="term">class_key_letters</span></p></td><td><p>
+        keyletters of the class having fixed extent
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945327344"></a><p class="title"><b>Example 4.40. Marking Classes with Static Instance Populations</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkStaticInstancePopulation( "", "", "EXP" )
+.invoke MarkStaticInstancePopulation( "Imaging", "OCR", "*" )
+.invoke MarkStaticInstancePopulation( "*", "*", "*" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Identifying Read Only Instance Populations"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945325632"></a>Identifying Read Only Instance Populations</h3></div></div></div><p>Read only classes are those classes which cannot be
+      dynamically written or related.
+      By marking a class as read-only,
+      error messages will be generated if action language
+      tries to write or relate instances of the marked class.</p><p>Use this mark to mark a class as having a read-only
+      instances.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkReadOnly</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of component (domain) being marked
+        </p></td></tr><tr><td><p><span class="term">ss_name</span></p></td><td><p>
+        name of subsystem
+        </p></td></tr><tr><td><p><span class="term">class_key_letters</span></p></td><td><p>
+        keyletters of the read-only class
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945316928"></a><p class="title"><b>Example 4.41. Marking Read-Only Classes</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkReadOnly( "", "", "BBALL" )
+.invoke MarkReadOnly( "ODMS", "CAB", "*" )
+.invoke MarkReadOnly( "*", "*", "*" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Marking Persistence"><div class="titlepage"><div><div><h3 class="title"><a id="markingpersistence-section"></a>Marking Persistence</h3></div></div></div><p>Persistent classes retain the values of their attributes
+      across power cycles.  This includes the current state of
+      active state machines.
+      Newly created and updated classes are
+      "backed up" to non-volatile storage.  At system start-up time,
+      any classes stored in non-volatile storage are restored before
+      other application initialization occurs.  Individual classes
+      can be marked to be persistent.</p><p>Use this mark to mark a class as persistent.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"> <b class="fsfunc">MarkPersistentClass</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"> <b class="fsfunc">MarkNonPersistentClass</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">ss_name</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_key_letters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of component (domain) being marked
+        </p></td></tr><tr><td><p><span class="term">ss_name</span></p></td><td><p>
+        name of subsystem
+        </p></td></tr><tr><td><p><span class="term">class_key_letters</span></p></td><td><p>
+        keyletters of the persistent class
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945302672"></a><p class="title"><b>Example 4.42. Marking (Non-) Persistent Classes</b></p><div class="example-contents"><pre class="programlisting">
+.// To mark as persistent a specific class, use "" for "component" and 
+.// "ss_name" and provide the class key letters in "class_key_letters".
+.invoke MarkPersistentClass( "", "", "MP" )
+
+.// To mark all classes in the subsystem as persistent, provide
+.// the component name, the subsystem name for "ss_name" and "*" for
+.// the "class_key_letters".
+.invoke MarkPersistentClass( "GPS", "TRACKING", "*" )
+
+.// To mark all classes in the component as persistent, use "*"
+.// for "component", "ss_name" and "class_key_letters".
+.invoke MarkPersistentClass( "*", "*", "*" )
+
+.// To mark as non-persistent a specific class that had previously
+./  been marked as persistent, use "" for "component" and "ss_name" and
+.// provide the class key letters in "class_key_letters".
+.invoke MarkNonPersistentClass( "", "", "ASN" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Translating Operation and Bridge AL"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945301136"></a>Translating Operation and Bridge AL</h3></div></div></div><p>As of version 4.2 of BridgePoint Builder it is possible to
+      translate the AL contained in bridge and operation
+      descriptions.  This conveniently allows testing generated/compiled
+      code in the same way it is tested on the BridgePoint Verifier.  Operation
+      (transformer) AL
+      is translated unless marked off; Bridge descriptions
+      are always translated and simply added to the skeletons.</p><p>As of version 3.1 of MC-3020, the
+      <code class="function">TagTransformerGeneration</code> is obsolete and
+      does nothing functional other than generate a message.</p><p>This mark formerly (before version MC-3020 3.1)
+      enabled the generation of ANSI C source
+      code from Action Language (AL) embedded in the
+      descriptions of named operation(s).  AL is always translated
+      unless marked off with the command
+      <code class="function">MarkClassOperationTranslationOff</code>.</p><p>To disable the translation of AL in class (or instance)
+      based operations, use the following marking command.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkClassOperationTranslationOff</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_keyletters</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">operation name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of the component (domain) being marked 
+        </p></td></tr><tr><td><p><span class="term">class_keyletters</span></p></td><td><p>
+        keyletters of the class with which operation is associated
+        </p></td></tr><tr><td><p><span class="term">operation name</span></p></td><td><p>
+        operation name for which to disable source generation
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945289504"></a><p class="title"><b>Example 4.43. Not Translating Operations</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkClassOperationTranslationOff( "", "T", "Cooking_Initializing" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Marking Class Tracing"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945287920"></a>Marking Class Tracing</h3></div></div></div><p>MC-3020 has trace capabilities that are controlled primarily
+      at the system and component level.  However, often this granularity
+      of control is not fine enough.  It can be desirable to trace only
+      a few classes or to omit tracing from a few "uninteresting" or
+      "noisy" classes that clog the trace log with too much information.
+      The marks documented in this section allow trace control on a
+      class by class basis.</p><p>To disable or enable tracing of a specific class,
+      use the following marking commands:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkClassTraceOff</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_keyletters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkClassTraceOn</b>(</code></td><td>string <var class="pdparam">component</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">class_keyletters</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        name of the component containing the class being marked
+        </p></td></tr><tr><td><p><span class="term">class_keyletters</span></p></td><td><p>
+        key letters of the class for which tracing is to be
+        controlled</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945278032"></a><p class="title"><b>Example 4.44. Disabling Tracing for a Class</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkClassTraceOff( "Tracking", "TrackPoint" )
+        </pre></div></div><p><br class="example-break" />
+      </p><div class="example"><a id="idm269945276752"></a><p class="title"><b>Example 4.45. Enabling Tracing for a Class</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkClassTraceOn( "Tracking", "TrackLog" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s05.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s07.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Component (Domain) Specializations </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Event Prioritization</td></tr></table></div></body></html>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Component (Domain) Specializations</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04s04.html" title="System Level Marks" /><link rel="next" href="ch04s06.html" title="Class Specializations" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Component (Domain) Specializations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s04.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch04s06.html">Next</a></td></tr></table><hr /></div><div class="section" title="Component (Domain) Specializations"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269945453920"></a>Component (Domain) Specializations</h2></div></div></div><p>Within MC-3020 component level customizations can be
+    applied.  The marking file
+    <code class="filename">domain.mark</code> is the place to tag
+    the customizations.</p><div class="section" title="Identifying Initialization Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945452512"></a>Identifying Initialization Functions</h3></div></div></div><p>Initialization functions provide the analyst a means
+      to specify preexisting instances for production
+      bring-up.  They also serves to set up test scenarios.
+      Domain functions also can be activated/deactivated with marking.
+      Through marking, specific initialization functions can be
+      chosen for system bring-up while others are marked (or erased
+      as the case may be) as not to be translated.</p><p>Marking a function for initialization does not change
+      the function.  The function remains available for invocation
+      by any of the action semantics that could normally call it.
+      If more than one function is tagged as an initialization function,
+      each will be invoked.  The order of invocation is alphabetical
+      by function name.</p><p>Identify a function in the component to be used as the an
+      initialization function by invoking the following rule file
+      function in the <code class="filename">domain.mark</code> marking file.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkInitializationFunction</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"function_name"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component&gt;</span></p></td><td><p>is 
+        the name of the component (domain) containing the initialization
+        function.</p></td></tr><tr><td><p><span class="term">function_name</span></p></td><td><p>is
+        the name of the function (synchronous service) to be
+        invoking during bring-up.
+        </p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945443776"></a><p class="title"><b>Example 4.28. Marking Initialization Functions</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">
+.invoke MarkInitializationFunction( "*", "CreateAndPopulate" )
+.invoke MarkInitializationFunction( "SeatHeater", "test" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Identifying Initialization Objects"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945441728"></a>Identifying Initialization Objects</h3></div></div></div><p>Initialization objects represent an obsolete 
+      means for the analyst to specify preexisting
+      instances for production bring-up.
+      All of the functionality of the obsolete
+      <code class="function">TagInitializationObject</code>
+      is now provided in functions
+      which can be activated/deactivated and marked for initialization.
+      Use functions instead of initialization objects.
+      See <code class="function">MarkInitializationFunction</code>.</p></div><div class="section" title="Excluding Classes"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945439280"></a>Excluding Classes</h3></div></div></div><p>MC-3020 can be directed to skip code generation for
+      classes marked with the
+      <code class="function">MarkExcludeObjectFromCodeGen</code>
+      invocation.  Combined with selective marking of initialization
+      functions, class exclusion allows for a simple method of
+      providing multiple bring-up scenarios.  Exclude a class from
+      code generation by marking it thusly:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkExcludeObjectFromCodeGen</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"key_letters"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name of 
+        component (domain) being marked</p></td></tr><tr><td><p><span class="term">key_letters</span></p></td><td><p>key
+        letters of the excluded class</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945432432"></a><p class="title"><b>Example 4.29. Marking Excluded Classes</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">
+.invoke MarkExcludeObjectFromCodeGen( "*", "TST_OBJ" )
+.invoke MarkExcludeObjectFromCodeGen( "MicrowaveOven", "Test" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Excluding Subsystems"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945430400"></a>Excluding Subsystems</h3></div></div></div><p>To indicate to the model compiler that all classes
+      in a specified subsystem should be excluded from implementation
+      code generation, use the following invocation (one for each
+      excluded subsystem):
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkExcludeSubsystemFromCodeGen</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"subsystem"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component (domain) being marked</p></td></tr><tr><td><p><span class="term">subsystem</span></p></td><td><p>name
+        of the excluded subsystem</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945424176"></a><p class="title"><b>Example 4.30. Tagging Excluded Subsystems</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">
+.invoke MarkExcludeSubsystemFromCodeGen( "*", "MyVerifierUnitTests" )
+.invoke MarkExcludeSubsystemFromCodeGen( "GPS", "UI" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Disabling Function Translation"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945422048"></a>Disabling Function Translation</h3></div></div></div><p>To indicate to the model compiler that the semantic
+      action of a function should not be translated, mark the
+      function with the <code class="function">MarkFunctionTranslationOff</code>
+      marking function.  This is useful for selectively disabling
+      functions used to set up test scenarios.  This is also key
+      for disabling initialization functions after preexisting
+      instances have been created and saved in XML data.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkFunctionTranslationOff</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"function_name"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component being marked</p></td></tr><tr><td><p><span class="term">function_name</span></p></td><td><p>name
+        of the excluded function (synchronous
+        service)</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269945415216"></a><p class="title"><b>Example 4.31. Not Translating a Function</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">
+.invoke MarkFunctionTranslationOff( "*", "CreateRelateInit" )
+.invoke MarkFunctionTranslationOff( "Test", "TestScenarioFive" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="State Transition Trace"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945413168"></a>State Transition Trace</h3></div></div></div><p>To instruct the model compiler to generate
+      state transition tracing information, invoke the
+      following rule file function:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkStateTransitionTracingOn</b>(</code></td><td>string <var class="pdparam">"component"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component being marked</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945408672"></a><p class="title"><b>Example 4.32. Enabling State Transition Tracing</b></p><div class="example-contents"><p>
+        </p><pre class="programlisting">
+.invoke MarkStateTransitionTracingOn( "*" )
+.invoke MarkStateTransitionTracingOn( "Location" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Action Language Trace"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945406688"></a>Action Language Trace</h3></div></div></div><p>To instruct the model compiler to generate
+      tracing information at the action language statement
+      level, invoke the following rule file function:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkActionStatementTracingOn</b>(</code></td><td>string <var class="pdparam">"component"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component being marked</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945402192"></a><p class="title"><b>Example 4.33. Enabling Action Language Tracing</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkActionStatementTracingOn( "*" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Empty Handle Usage"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945400672"></a>Empty Handle Usage</h3></div></div></div><p>It is possible to develop xtUML models that incorrectly attempt
+      to use instance reference variables that are empty (null).  This
+      can occur under several sets of circumstances.  For example,
+      selection across a conditional relationship chain may return
+      an empty instance reference or empty instance reference set.
+      Using such a reference without testing for empty can lead to
+      an invalid operation.  (MC-3020 does not enforce relationship
+      conditionality at model compilation time.)  It is possible
+      to build models that attempt to send events to empty instance
+      references, or relate or unrelate (link/unlink) instance when
+      one or both references are empty.</p><p>MC-3020 provides a markable debug option for detecting
+      and potentially recovering from such empty ``handle'' references.
+      To steer the model compiler into generating debug code that
+      detects the use of empty instance references and instance set
+      references (handles), invoke the following rule file function:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkEmptyHandleDetectionOn</b>(</code></td><td>string <var class="pdparam">"component"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component being marked</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945395216"></a><p class="title"><b>Example 4.34. Enabling Empty Reference Usage Detection</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkEmptyHandleDetectionOn( "*" )
+        </pre></div></div><p><br class="example-break" />
+      </p><p>MC-3020 will generate detection code and invoke a
+      macro when an improper handle usage is detected.  The
+      macro defaults to invocation of a user callout function,
+      <code class="function">UserEmptyHandleDetectedCallout</code>.
+      The body of this callout function can be (re)defined by
+      the user.</p></div><div class="section" title="Disabling First Pass Optimizations"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945392576"></a>Disabling First Pass Optimizations</h3></div></div></div><p>At times it is necessary to carefully study the
+      generated code.  This may be the case when enhancing or extending
+      the default functionality of MC-3020.  Under such circumstances,
+      it may be desirable to see the code in its
+      <span class="emphasis"><em>un</em></span>optimized format.  Note that MC-3020 has
+      several optimizations that eliminate unused code.  During design,
+      sometimes it is desirable to see what this unused code looks
+      like.  Using <code class="function">MarkFirstPassOptimizationsOff()</code>,
+      it is possible to force MC-3020 to generate the code in its
+      unoptimized form.</p><p>
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkFirstPassOptimizationsOff</b>(</code></td><td>string <var class="pdparam">"component"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>name
+        of the component being marked</p></td></tr></tbody></table></div><p>
+
+      </p><div class="example"><a id="idm269945386144"></a><p class="title"><b>Example 4.35. Forcing Generation Non-Optimal Code</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkFirstPassOptimizationsOff( "ship" )
+        </pre></div></div><p><br class="example-break" />
+      </p><p>MC-3020 will generate all code, even if it is
+      not expected to be executed during normal operation.</p></div><div class="section" title="Miscellaneous Domain Marking"><div class="titlepage"><div><div><h3 class="title"><a id="idm269945383952"></a>Miscellaneous Domain Marking</h3></div></div></div><p>Additional marking adjustments are available
+      in the <code class="filename">domain.mark</code> marking file.
+      Marking options that manipulate the style and appearance
+      of the generated code and that control optimizations
+      can be enabled.  See documentation in the marking file
+      for these detailed options.</p><p>Marking commands for these aesthetic purposes
+      include:
+      </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>MarkStateActionCommentBlocksEnabled( component_name )</p></li><li class="listitem"><p>MarkStateActionStatementCommentsDisabled( component_name )</p></li><li class="listitem"><p>TagStateActionVariableNamesEnabled()</p></li><li class="listitem"><p>TagVerboseReflexivePhrasesEnabled()</p></li></ul></div><p>
+      </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s04.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">System Level Marks </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Class Specializations</td></tr></table></div></body></html>
