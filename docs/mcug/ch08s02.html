@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Dynamic Initialization</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch08.html" title="Chapter 8. Initialization and Preexisting Instances" /><link rel="prev" href="ch08.html" title="Chapter 8. Initialization and Preexisting Instances" /><link rel="next" href="ch09.html" title="Chapter 9. MC-3020 Collections" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dynamic Initialization</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08.html">Prev</a> </td><th width="60%" align="center">Chapter 8. Initialization and Preexisting Instances</th><td width="20%" align="right"> <a accesskey="n" href="ch09.html">Next</a></td></tr></table><hr /></div><div class="section" title="Dynamic Initialization"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Initialization-chapter-DynamicInit-section"></a>Dynamic Initialization</h2></div></div></div><div class="highlights"><p>The simples and easiest way to initialize
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Dynamic Initialization</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch08.html" title="Chapter 8. Initialization and Preexisting Instances" /><link rel="prev" href="ch08.html" title="Chapter 8. Initialization and Preexisting Instances" /><link rel="next" href="ch09.html" title="Chapter 9. MC-3020 Collections" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dynamic Initialization</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08.html">Prev</a> </td><th width="60%" align="center">Chapter 8. Initialization and Preexisting Instances</th><td width="20%" align="right"> <a accesskey="n" href="ch09.html">Next</a></td></tr></table><hr /></div><div class="section" title="Dynamic Initialization"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Initialization-chapter-DynamicInit-section"></a>Dynamic Initialization</h2></div></div></div><div class="highlights"><p>The simples and easiest way to initialize
   preexisting instance is using dynamic
-  initialization.</p></div><div class="section" title="Dynamic Init Process"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871309968"></a>Dynamic Init Process</h3></div></div></div><p>Dynamic initialization uses sequences of action language
+  initialization.</p></div><div class="section" title="Dynamic Init Process"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942664224"></a>Dynamic Init Process</h3></div></div></div><p>Dynamic initialization uses sequences of action language
     statements to create, relate and set attributes of preexisting
     instances.  This form of initialization has been supported by MC-3020
     since the first release (1.0).</p><p>Action language statements in initialization functions (or
@@ -14,7 +14,7 @@
     write the attribute values of the preexisting instances.</p><p>When all of the action language statements are complete for all
     init functions (tagged with
     <code class="function">TagInitializationFunction</code>), then all preexisting
-    instances are fully established and initialization is complete.</p></div><div class="section" title="Pros and Cons of Dynamic Init"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871305408"></a>Pros and Cons of Dynamic Init</h3></div></div></div><p>Advantages to dynamic initialization include:
+    instances are fully established and initialization is complete.</p></div><div class="section" title="Pros and Cons of Dynamic Init"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942659664"></a>Pros and Cons of Dynamic Init</h3></div></div></div><p>Advantages to dynamic initialization include:
     </p><div class="informaltable"><table border="0"><colgroup><col /><col /></colgroup><tbody><tr><td>flexibility</td><td>It is easy to add, delete and/or change dynamic initialization.
     This is done by simply adding, deleting and/or changing the action
     language in the init functions.</td></tr><tr><td>simplicity</td><td>Dynamic initialization is simple and easy to understand.</td></tr></tbody></table></div><p>
@@ -24,7 +24,7 @@
     can be substantial.  This space is not availabe for use after the
     init process is complete.</td></tr><tr><td>speed</td><td>It takes time (execution time) during bring-up to create,
     relate and populate the preexisting instances.</td></tr></tbody></table></div><p>
-    </p></div><div class="section" title="Initialization Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871292016"></a>Initialization Functions</h3></div></div></div><p>The basic building block for specifying preexisting instances
+    </p></div><div class="section" title="Initialization Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942646304"></a>Initialization Functions</h3></div></div></div><p>The basic building block for specifying preexisting instances
     is the initialization function.  This approach provides the user with
     the ability to use the same set of preexisting instances for
     simulation with the BridgePoint Verifier as are used during the actual execution
@@ -33,7 +33,7 @@
     preexisting instances for the subsystem or domain.
     Initialization functions are normal functions and can
     be invoked during normal system execution as well as at
-    start-up.</p></div><div class="section" title="Rules for Creating Initialization Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871289008"></a>Rules for Creating Initialization Functions</h3></div></div></div><p>The rules for constructing initialization functions are
+    start-up.</p></div><div class="section" title="Rules for Creating Initialization Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942643296"></a>Rules for Creating Initialization Functions</h3></div></div></div><p>The rules for constructing initialization functions are
     enumerated below.
     </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Each subsystem can have one to many
       initialization functions.  The functions will be invoked
@@ -43,7 +43,7 @@
       file.</p></li><li class="listitem"><p>Initialization functions are tagged with
       the marking function <code class="function">TagInitializationFunction</code>.
       </p></li><li class="listitem"><p>Initialization functions can take no
-      arguments.  Return values will be ignored.</p></li></ol></div></div><div class="section" title="Example of Dynamic Initialization"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871284480"></a>Example of Dynamic Initialization</h3></div></div></div><p><a class="xref" href="ch08s02.html#as2class-figure" title="Figure 8.1. Autosampler Class Diagram">Figure 8.1, “Autosampler Class Diagram”</a> shows the xtUML class diagram
+      arguments.  Return values will be ignored.</p></li></ol></div></div><div class="section" title="Example of Dynamic Initialization"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942638768"></a>Example of Dynamic Initialization</h3></div></div></div><p><a class="xref" href="ch08s02.html#as2class-figure" title="Figure 8.1. Autosampler Class Diagram">Figure 8.1, “Autosampler Class Diagram”</a> shows the xtUML class diagram
     for the autosampler example model.  Note that the autosampler
     example model can be found in the <code class="filename">examples</code>
     directory of your MC-3020 installation.
@@ -81,20 +81,20 @@ probe.available = true;
     </pre><p>
     </p></div></div></div><p><br class="figure-break" />
 
-    </p></div><div class="section" title="Multi-Domain Dynamic Initialization"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871273680"></a>Multi-Domain Dynamic Initialization</h3></div></div></div><p>In systems with more than one domain, dynamic init is only
+    </p></div><div class="section" title="Multi-Domain Dynamic Initialization"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942627920"></a>Multi-Domain Dynamic Initialization</h3></div></div></div><p>In systems with more than one domain, dynamic init is only
     slightly more complex.  Initialization functions are written for
     each domain.  These multiple init functions establish the
     preexisting instances (PEIs) for the multiple domains.  The init
     functions are each marked with
     <code class="function">TagInitializationFunction</code> in each domain's
     corresponding <code class="filename">domain.mark</code> marking
-    file.</p></div><div class="section" title="Multi-Domain Init Sequencing"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871270976"></a>Multi-Domain Init Sequencing</h3></div></div></div><p>In some systems it is important that certain domains be
+    file.</p></div><div class="section" title="Multi-Domain Init Sequencing"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942625232"></a>Multi-Domain Init Sequencing</h3></div></div></div><p>In some systems it is important that certain domains be
     initialized before other domains.  Or, there may be requirements on
     the ordering of the initialization between domains.  In these cases,
     a function in only one domain is tagged as an init function (using
     <code class="function">TagInitializationFunction</code>).  This function
     then invokes functions in the other domains, thus imposing the
-    desired order on the initialization sequence.</p></div><div class="section" title="Initialization in Simulation"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871268512"></a>Initialization in Simulation</h3></div></div></div><p>To simulate the xtUML models with the same set of preexisting
+    desired order on the initialization sequence.</p></div><div class="section" title="Initialization in Simulation"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942622768"></a>Initialization in Simulation</h3></div></div></div><p>To simulate the xtUML models with the same set of preexisting
     instances that are used on the target system, the analyst must
     invoke the initialization functions.  BridgePoint Verifier provides a facility
     to do this very easily.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch08.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch09.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 8. Initialization and Preexisting Instances </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 9. MC-3020 Collections</td></tr></table></div></body></html>

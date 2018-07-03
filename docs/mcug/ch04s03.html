@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Specifying Data Types, Precision and Enumerators</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04s02.html" title="Bridge Marking" /><link rel="next" href="ch04s04.html" title="System Level Marks" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Specifying Data Types, Precision and Enumerators</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch04s04.html">Next</a></td></tr></table><hr /></div><div class="section" title="Specifying Data Types, Precision and Enumerators"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269943685952"></a>Specifying Data Types, Precision and Enumerators</h2></div></div></div><p>BridgePoint allows the user to define special data
+    types.  Marking is used to define the precision of these data
+    types.  This is particularly useful to reduce the storage
+    (say from 16 or 32 bits to 8 bits) of class attributes when
+    the ranges of the attributes are known to be limited.
+    User defined types which are also enumerations are included
+    in the category of types that can be controlled.
+    The <code class="filename">datatype.mark</code> provides the means
+    for specifying these data type specializations.</p><p>Note that core types can be marked with this function as
+    well as user defined types (UDTs).  For example, the core type real
+    can be marked to generate "double" precision.</p><p>The return data type for bridges and operations
+    can be user defined data types.  Empty operations can be
+    used as a sort of variable declaration in conjunction with
+    UDT precision tagging.</p><div class="section" title="Tagging Precision"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943682416"></a>Tagging Precision</h3></div></div></div><p>Mark <code class="function">TagDataTypePrecision</code> may only be
+      used for application analysis data types which are derived from
+      either BridgePoint core data types of <span class="type">integer</span> or
+      <span class="type">real</span>.
+      Also, user defined types that are enumerations
+      can be marked.  Such data will have core data type
+      <span class="type">string</span>, but will serve as integers.
+      Attempting to use this mark with any other
+      core data type will result in a fatal marking error
+      (translation aborted).  This restriction applies equally to
+      both component specific and system wide use of this mark.</p><p>Precision tag  <em class="parameter"><code>tagged_name</code></em> may be
+      any standard C/C++ integer or real variable type.  For
+      example, <span class="type">unsigned char</span>, <span class="type">long long</span>,
+      <span class="type">double</span>, etc.  POSIX types are also accepted, such
+      as <span class="type">uchar_t</span>, <span class="type">ulong_t</span>, etc.</p><p>When an analysis class is instantiated, the default is
+      to initialize attributes of core type <span class="type">integer</span> to
+      0, and attributes of core type <span class="type">real</span> to 0.0
+      (declared as code type <span class="type">float</span>).  Tag
+       <em class="parameter"><code>initial_value</code></em> may be used to re-define
+      the default initialization value.</p><p>Casting may be used in the tag, such as
+       <em class="parameter"><code>"(unsigned)EACCESS"</code></em>, but should be used
+      only with careful system level discretion.</p><p>No translation time error checking is performed on
+       <em class="parameter"><code>initial_value</code></em>.  Bogus tags such as
+       <em class="parameter"><code>"@*#$"</code></em> will only be caught during
+      compilation.</p><p>Invoke <code class="function">TagDataTypePrecision</code> to
+      indicate to the model compiler the precision of a user defined
+      data type.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagDataTypePrecision</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"dt_name"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"tagged_name"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"initial_value"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        component name (Use ``*'' to indicate a system wide data type to
+        be applied to all components containing the user data
+        type.)</p></td></tr><tr><td><p><span class="term">dt_name</span></p></td><td><p>name of the
+        data type as known in the application
+        analysis</p></td></tr><tr><td><p><span class="term">tagged_name</span></p></td><td><p>name of
+        the data type as known in generated implementation code
+        (e.g. the precision of the data
+        type)</p></td></tr><tr><td><p><span class="term">initial_value</span></p></td><td><p>
+        optional specification of the default value for the data
+        type (Use "" for the architectural default (e.g. 0 for
+        integer, 0.0 for real.)</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943661520"></a><p class="title"><b>Example 4.3. Data Type Precision</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagDataTypePrecision( "MyDom", "Octet", "uchar_t", "" )
+.invoke TagDataTypePrecision( "MyDom", "FunkyReal", "double", "666.999" )
+.invoke TagDataTypePrecision( "*", "SysWideLong", "long int", "-1" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Mapping Pointer Types"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943659776"></a>Mapping Pointer Types</h3></div></div></div><p>To allow for pointer reference to arbitrarily shaped
+      masses of data, user-defined data types can be implemented
+      as pointers.  After marking a UDT as a pointer, the pointer
+      typed data can be passed into and returned from operation
+      and bridge operations.
+      Marking is used to tag pointer types.
+      The <code class="filename">datatype.mark</code> provides the means
+      for specifying these pointer data type specializations.</p><p>Invoke <code class="function">MapDataTypeAsPointer</code> to
+      indicate to the model compiler that a user defined
+      data type shall be implemented as a pointer.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MapDataTypeAsPointer</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"dt_name"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"pointer_type"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"include_file"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        component name (Use ``*'' to indicate a system wide data type to
+        be applied to all components containing the user data
+        type.)</p></td></tr><tr><td><p><span class="term">dt_name</span></p></td><td><p>name of the
+        data type as known in the application
+        analysis</p></td></tr><tr><td><p><span class="term">pointer_type</span></p></td><td><p>name of
+        the pointer data type as known in generated implementation code.
+        </p></td></tr><tr><td><p><span class="term">include_file</span></p></td><td><p>
+        optional include file which declares the implementation type
+        of `pointer_type'.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943647728"></a><p class="title"><b>Example 4.4. Mapping Pointer Types</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MapDataTypeAsPointer( "MyDom", "DataPacket", "char", "" )
+.invoke MapDataTypeAsPointer( "DomA", "AcmeType", "SomeStruct_t", "legacy.h" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Specifying Uninitialized Enumerators"><div class="titlepage"><div><div><h3 class="title"><a id="SpecifyingUnitialized-section"></a>Specifying Uninitialized Enumerators</h3></div></div></div><p>In analysis models, enumerated types defined within BridgePoint Builder
+      (using the Data Type editor available in BP5.0+) have no initial
+      (uninitialized) value.  With marking, it is possible to
+      explicity define this value for uninitialized enumeration
+      variables.  The <code class="filename">datatype.mark</code> provides the
+      means for specifying this starting value.</p><p>To indicate to the software architecture that the
+      uninitialized enumerator of an enumeration
+      shall have a value other than the default, use the following
+      invocation:
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagUninitializedEnumerationValue</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"enumeration"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"value"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        component name (Use ``*'' to indicate a system wide data type to
+        be applied to all components containing the enumeration data
+        type.)</p></td></tr><tr><td><p><span class="term">enumeration</span></p></td><td><p>is the
+        name of the enumration data type as known in the application
+        analysis.  Use ``*'' to indicate <span class="emphasis"><em>all</em></span>
+        enumerations in a component or system wide.</p></td></tr><tr><td><p><span class="term">value</span></p></td><td><p>a string
+        containing the value to be assigned to the unitialized
+        enumerator</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943635376"></a><p class="title"><b>Example 4.5. Specifying a Value for the Default Uninitialized Enumerator</b></p><div class="example-contents"><p>
+        Domain specific:
+        </p><pre class="programlisting">
+.invoke TagUninitializedEnumerationValue( "MO", "wattage", "4" )
+        </pre><p>
+        All Enumerations in Domain:
+        </p><pre class="programlisting">
+.invoke TagUninitializedEnumerationValue( "MO", "*", "0x40" )
+        </pre><p>
+        System Wide:
+        </p><pre class="programlisting">
+.invoke TagUninitializedEnumerationValue( "*", "wattage", "0x20" )
+        </pre><p>
+        All Enumerations in All Domains:
+        </p><pre class="programlisting">
+.invoke TagUninitializedEnumerationValue( "*", "*", "100" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Specifying Values for Enumerators"><div class="titlepage"><div><div><h3 class="title"><a id="SpecifyingEnumValues-section"></a>Specifying Values for Enumerators</h3></div></div></div><p>In some target environments, it may be desirable to
+      select the integer values of the individual enumerators in
+      an enumeration.  MC-3020 enables the assigning of discrete
+      values to one or more of the enumerators in an enumeration.
+      </p><p>Invoke <code class="function">TagEnumeratorDiscreteValue</code> to
+      indicate to the model compiler that a user defined enumeration data
+      type enumerator shall have a value other than the
+      default.
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagEnumeratorDiscreteValue</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"enumeration"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"enumerator"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"value"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        component name (Use ``*'' to indicate a system wide data type to
+        be applied to all components containing the enumeration data
+        type.)</p></td></tr><tr><td><p><span class="term">enumeration</span></p></td><td><p>is the
+        name of the enumration data type as known in the application
+        analysis.  Use ``*'' to indicate <span class="emphasis"><em>all</em></span>
+        enumerations in a component or system wide.</p></td></tr><tr><td><p><span class="term">value</span></p></td><td><p>a string
+        containing the value to be assigned to the specified
+        enumerator</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943620144"></a><p class="title"><b>Example 4.6. Specifying Enumerator Values</b></p><div class="example-contents"><p>
+        Domain specific:
+        </p><pre class="programlisting">
+.invoke TagEnumeratorDiscreteValue( "MO", "wattage", "low", "4" )
+.invoke TagEnumeratorDiscreteValue( "MO", "wattage", "med", "0x20" )
+        </pre><p>
+System Wide:
+        </p><pre class="programlisting">
+.invoke TagEnumeratorDiscreteValue( "*", "wattage", "high", "0x40" )
+        </pre><p>
+        </p></div></div><p><br class="example-break" />
+      </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Bridge Marking </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> System Level Marks</td></tr></table></div></body></html>

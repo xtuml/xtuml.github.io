@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Components</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch02.html" title="Chapter 2. Features and Components" /><link rel="prev" href="ch02.html" title="Chapter 2. Features and Components" /><link rel="next" href="ch02s03.html" title="Restrictions and Limitations" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><th width="60%" align="center">Chapter 2. Features and Components</th><td width="20%" align="right"> <a accesskey="n" href="ch02s03.html">Next</a></td></tr></table><hr /></div><div class="section" title="Components"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60872998400"></a>Components</h2></div></div></div><p>MC-3020 is a modular software architecture characterized by a
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Components</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch02.html" title="Chapter 2. Features and Components" /><link rel="prev" href="ch02.html" title="Chapter 2. Features and Components" /><link rel="next" href="ch02s03.html" title="Restrictions and Limitations" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><th width="60%" align="center">Chapter 2. Features and Components</th><td width="20%" align="right"> <a accesskey="n" href="ch02s03.html">Next</a></td></tr></table><hr /></div><div class="section" title="Components"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269943936064"></a>Components</h2></div></div></div><p>MC-3020 is a modular software architecture characterized by a
   distinct effort to maximize component independence.  The coupling
   between the model compiler components has been minimized while
   maximizing component cohesion.  A model of the architecture drives the
@@ -11,68 +11,68 @@
   for collecting instances can be changed by modifying or replacing
   only the localized component.  Names and coding style rules are
   concentrated into a single component allowing architects to dial
-  in a preferred naming convention and generation style.</p><div class="section" title="Classes"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872996080"></a>Classes</h3></div></div></div><p> Each class is translated into an ANSI C structure.  Instances
+  in a preferred naming convention and generation style.</p><div class="section" title="Classes"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943933744"></a>Classes</h3></div></div></div><p> Each class is translated into an ANSI C structure.  Instances
     are maintained in collections of instances of classes (class
     extents).  Space for class instances is
-    pre-allocated at bring-up time.</p><div class="section" title="Creation"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872994016"></a>Creation</h4></div></div></div><p>Creation occurs in constant time.  Creation can occur
+    pre-allocated at bring-up time.</p><div class="section" title="Creation"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943931680"></a>Creation</h4></div></div></div><p>Creation occurs in constant time.  Creation can occur
       synchronously with the create action language statement or
       asynchronously with a creation event.  In synchronous creation,
       no action is executed.  In asynchronous creation, a creation
       state is executed and at minimum initializes the instance
-      identifier.</p></div><div class="section" title="Deletion"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872992000"></a>Deletion</h4></div></div></div><p>Instance deletion moves an class instance from the
+      identifier.</p></div><div class="section" title="Deletion"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943930784"></a>Deletion</h4></div></div></div><p>Instance deletion moves an class instance from the
       active extent and deactivates it onto a list of inactive
       (``inanimate'') class instances.  If no action language
       ever performs deletion of a particular class, no deletion
-      accessor method is generated.</p></div><div class="section" title="Selection"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872990256"></a>Selection</h4></div></div></div><p>Instance selection is optimized for speed when selecting
+      accessor method is generated.</p></div><div class="section" title="Selection"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943928896"></a>Selection</h4></div></div></div><p>Instance selection is optimized for speed when selecting
       based on the instance identifier.  For unoptimized selections O(N)
       (linear) time is required.  (MC-3020 provides
       O(N) for all ``blind selections'', <span class="command"><strong>select any from
       instances of</strong></span> action language commands.)
       Hooks are provided for architect replacement of certain
-      signature selection search functions.</p></div><div class="section" title="Attributes"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872988128"></a>Attributes</h4></div></div></div><p> Attributes are elements of the translated structure.  Most
+      signature selection search functions.</p></div><div class="section" title="Attributes"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943925744"></a>Attributes</h4></div></div></div><p> Attributes are elements of the translated structure.  Most
       attributes are translated with no function interface layer.  No
       call/return overhead is incurred for most attribute read and
       write operations.  Code is generated to directly access attribute
       data.  Speed is optimized.</p><p>In typical models, some attributes are never accessed.
       MC-3020 detects this situation and omits the implementation of
       attribute data elements that are never accessed.  Unused data is
-      optimized away.</p></div></div><div class="section" title="Associations"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872985376"></a>Associations</h3></div></div></div><p> Associations are optimized by storing a copy of the instance
+      optimized away.</p></div></div><div class="section" title="Associations"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943922992"></a>Associations</h3></div></div></div><p> Associations are optimized by storing a copy of the instance
     handle as extended attribute data.  This optimization is
     implemented between sub/super-types as well.</p><p>As with data attribute elements, MC-3020 optimizes away
     unused referential attributes.  Relate, unrelate (link and unlink)
     and association traversal operations are optimized for low
     overhead.  These operations are performed directly on instance data
     when appropriate avoiding the generation and associated run time
-    overhead of function calls.</p></div><div class="section" title="State Models"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872983520"></a>State Models</h3></div></div></div><p> The translated state models are optimized for speed.  State
+    overhead of function calls.</p></div><div class="section" title="State Models"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943921200"></a>State Models</h3></div></div></div><p> The translated state models are optimized for speed.  State
     transitions and action dispatches execute in constant time.
     The state event matrix is implemented as a two dimensional
     array.  Rows represent states; columns are indexed by event
-    to obtain the transition.</p><div class="section" title="Actions"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872981840"></a>Actions</h4></div></div></div><p> Actions are translated into functions associated by
+    to obtain the transition.</p><div class="section" title="Actions"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943919520"></a>Actions</h4></div></div></div><p> Actions are translated into functions associated by
       name and packaging with the class containing the state model
-      containing the state action.</p></div><div class="section" title="Events"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872979744"></a>Events</h4></div></div></div><p>Adherence to Shlaer-Mellor event rules is assured in the generated
+      containing the state action.</p></div><div class="section" title="Events"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943917488"></a>Events</h4></div></div></div><p>Adherence to Shlaer-Mellor event rules is assured in the generated
       code.  Centralized event queues order events for the entire
       system.</p><p>Prioritized events can be marked by the user. 256
-      priority levels are provided.</p></div><div class="section" title="Creation Events"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872977616"></a>Creation Events</h4></div></div></div><p> Creation events are recognized and treated differently
+      priority levels are provided.</p></div><div class="section" title="Creation Events"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943915504"></a>Creation Events</h4></div></div></div><p> Creation events are recognized and treated differently
       from non-creation events.  The model compiler will create an
       instance of the class before the event is delivered.  The event
       will cause a transition into the creation state and execution of
-      the associated action.</p></div><div class="section" title="Final States"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872975824"></a>Final States</h4></div></div></div><p> Final state actions delete self after executing the
-      specified processing.</p></div></div><div class="section" title="Bridges and Operations"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872974368"></a>Bridges and Operations</h3></div></div></div><p> Functions (bridges) and operations are listed together, because
+      the associated action.</p></div><div class="section" title="Final States"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943913712"></a>Final States</h4></div></div></div><p> Final state actions delete self after executing the
+      specified processing.</p></div></div><div class="section" title="Bridges and Operations"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943912256"></a>Bridges and Operations</h3></div></div></div><p> Functions (bridges) and operations are listed together, because
     MC-3020 treats them with a great deal of symmetry.  Functions and
     operations translate into C function invocations.  Any number of
     arguments can be passed.</p><p>MC-3020 generates bridge and operation frameworks.  These
     frameworks provide the entire invocation interface.  A comment is
     provided to guide the user in where to insert implementation code.
     These skeletons will compile with or without inserted user code.
-    </p></div><div class="section" title="Miscellaneous"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872971664"></a>Miscellaneous</h3></div></div></div><p>These are the unclassified features.</p><div class="section" title="Initialization"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872970592"></a>Initialization</h4></div></div></div><p> Marking allows BridgePoint Verifier flavored initialization objects
+    </p></div><div class="section" title="Miscellaneous"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943909632"></a>Miscellaneous</h3></div></div></div><p>These are the unclassified features.</p><div class="section" title="Initialization"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943908608"></a>Initialization</h4></div></div></div><p> Marking allows BridgePoint Verifier flavored initialization objects
       to be used for system initialization.  In addition, several
       initialization objects can be defined in the model and
-      only one marked to generate code.</p></div><div class="section" title="Style Dials"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872969504"></a>Style Dials</h4></div></div></div><p> Various stylistic and implementation conventions are
+      only one marked to generate code.</p></div><div class="section" title="Style Dials"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943907184"></a>Style Dials</h4></div></div></div><p> Various stylistic and implementation conventions are
       centralized and documented to be easily controlled by the software
       architect.  Generated file names, directory structure, coding
       conventions and even coding style can be dialed in by the user.
       (Look for fule files with the word ``name'' in the file name.)
-      </p></div><div class="section" title="Metrics"><div class="titlepage"><div><div><h4 class="title"><a id="idm60872967296"></a>Metrics</h4></div></div></div><p>MC-3020 is tooled to support a measured development
+      </p></div><div class="section" title="Metrics"><div class="titlepage"><div><div><h4 class="title"><a id="idm269943905376"></a>Metrics</h4></div></div></div><p>MC-3020 is tooled to support a measured development
       process.  As with style, metrics can be customized easily.
       MC-3020 gathers and reports many metrics including statistics
       quantifying classes, states models, state actions, event flavors,

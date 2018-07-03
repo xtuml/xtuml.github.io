@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Bridge Marking</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="ch04.html" title="Chapter 4. Marking" /><link rel="prev" href="ch04.html" title="Chapter 4. Marking" /><link rel="next" href="ch04s03.html" title="Specifying Data Types, Precision and Enumerators" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Bridge Marking</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Marking</th><td width="20%" align="right"> <a accesskey="n" href="ch04s03.html">Next</a></td></tr></table><hr /></div><div class="section" title="Bridge Marking"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269943719520"></a>Bridge Marking</h2></div></div></div>
+    The <code class="filename">bridge.mark</code> is used to mark interrupt functions.
+    
+    <div class="section" title="Marking a Bridge Safe for Interrupt Invocation"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943717664"></a>Marking a Bridge Safe for Interrupt Invocation</h3></div></div></div><p>MC-3020 allows functions and messages
+      to be marked as
+      callable from interrupt handlers or other asynchronous
+      sources (such as other tasks, signal handlers, etc).
+      Functions and messages
+      marked here will generate a short stub routine
+      that will defer execution of the function or message to be between
+      dispatched state actions.  When a function or message marked
+      as safe for interrupts is invoked, its action body is
+      posted to a queue for dispatch after any currently running
+      state action completes.  This provides architecture
+      data mechanism integrity while maintaining application data
+      access set consistency.</p><p>Functions and messages marked safe for interrupts
+      cannot return data.  They must be of return type void.
+      However, core data type data
+      can be passed into these functions.
+      Such data is packaged safely at interrupt level and then
+      unpacked during function execution.</p><p>To indicate to the model compiler that a
+      function
+      may be invoked in a manner safe for
+      invocation from an interrupt handler or other asynchronous
+      activation (one for each function):
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">TagSyncServiceSafeForInterrupts</b>(</code></td><td>string <var class="pdparam">"component"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"function"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component</span></p></td><td><p>
+        xtUML component name</p></td></tr><tr><td><p><span class="term">function</span></p></td><td><p>is
+        name of the function being tagged
+        as safe for calling.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943708848"></a><p class="title"><b>Example 4.1. Tagging Interrupt Bridges</b></p><div class="example-contents"><pre class="programlisting">
+.invoke TagSyncServiceSafeForInterrupts( "ILB", "kick_start" )
+        </pre></div></div><p><br class="example-break" />
+      </p><p>To indicate to the model compiler that a
+      message
+      may be invoked in a manner safe for
+      invocation from an interrupt handler or other asynchronous
+      activation (one for each message):
+      </p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef"><b class="fsfunc">MarkMessageSafeForInterrupts</b>(</code></td><td>string <var class="pdparam">"component_name"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"port_name"</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">"message_name"</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      
+      Where the input parameters are:
+      
+      </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">component_name</span></p></td><td><p>
+        xtUML component name</p></td></tr><tr><td><p><span class="term">port_name</span></p></td><td><p>
+        name of port on the component labeled in the first parameter</p></td></tr><tr><td><p><span class="term">message_name</span></p></td><td><p>is
+        the name of the message within the port being tagged
+        as safe for calling.</p></td></tr></tbody></table></div><p>
+      
+      </p><div class="example"><a id="idm269943700192"></a><p class="title"><b>Example 4.2. Tagging Interrupt Bridges</b></p><div class="example-contents"><pre class="programlisting">
+.invoke MarkMessageSafeForInterrupts( "Tracking", "UI", "startStopButtonPressed" )
+        </pre></div></div><p><br class="example-break" />
+      </p></div><div class="section" title="Enabling/Disabling Interrupts"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943698496"></a>Enabling/Disabling Interrupts</h3></div></div></div><p>To protect data structures for Interrupt Safe Bridges,
+      interrupts are disabled for a very few instructions.
+      The method of disabling interrupts varies from target to
+      target and from compiler to compiler.  Therefore, the
+      responsibility of defining the specific flavor of EI/DI
+      instruction is left to the user.  The marking functions
+      <code class="function">UserEnableInterrupts</code> and
+      <code class="function">UserDisableInterrupts</code> are
+      are provided for specifying the specific way interrupts
+      are enabled and disabled with your specific target.</p><p>To define the instruction sequence for enabling
+      and disabling interrupts, edit the system-level user
+      defined rule file <code class="filename">sys_functions.arc</code>.
+      </p></div><div class="section" title="Bit Fields"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943694752"></a>Bit Fields</h3></div></div></div><p>Bit fields provide a means of packing many small
+      value attributes into single words of computer storage.
+      MC-3020 allows attributes to be stored as bit fields
+      in ANSI C structs.</p><p>Attributes are marked with BridgePoint Builder.  The string
+      BIT_WIDTH: n is placed within a comment as the first line
+      of the attribute description.  ``n'' is the width in
+      bits required to store the attribute.</p><p>It should be understood that bit fields are
+      inherently somewhat less portable than most other
+      ANSI C constructs.  Dependence upon ``Endian-ness'',
+      memory models and other compiler/target implementation
+      specifics is not uncommon.  Use bit fields with care.</p><p>The maximum width for a bit field member attribute
+      is 16 bits.  Bit field members are of type unsigned int.</p></div><div class="section" title="Fixing Class Extents"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943690848"></a>Fixing Class Extents</h3></div></div></div><p>MC-3020 provides a means of establishing the base
+      memory address of class instance collections (extents).
+      Within BridgePoint Builder the string
+      BASE_ADDRESS: n is placed within a comment as the first
+      line of the class description.  ``n'' is the memory
+      address anchoring the start of the collection of class
+      instances.</p><p>Two user defined rule file functions at the system-level 
+      define how this number (``n'') will appear in the generated
+      code.  One function (<code class="function">UserFixExtentBaseBegin</code>)
+      is used to insert code before the definition of the class
+      instance collection memory.  Another function
+      (<code class="function">UserFixExtentBaseEnd</code>) is used to 
+      insert code directly after the data definition.  This
+      combination of functions will allow a <span class="command"><strong>pragma</strong></span>
+      around the data definition.</p><p>To define the instruction sequence for fixing the
+      class extent, edit the system-level user
+      defined rule file <code class="filename">sys_functions.arc</code>.
+      </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 4. Marking </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Specifying Data Types, Precision and Enumerators</td></tr></table></div></body></html>

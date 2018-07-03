@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 2. Features and Components</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="ch01s02.html" title="Using the Guide" /><link rel="next" href="ch02s02.html" title="Components" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. Features and Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch02s02.html">Next</a></td></tr></table><hr /></div><div class="chapter" title="Chapter 2. Features and Components"><div class="titlepage"><div><div><h2 class="title"><a id="Features-chapter"></a>Chapter 2. Features and Components</h2></div></div></div><div class="highlights"><a id="Features-chapter-high"></a><p>This chapter
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 2. Features and Components</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="prev" href="ch01s02.html" title="Using the Guide" /><link rel="next" href="ch02s02.html" title="Components" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. Features and Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch02s02.html">Next</a></td></tr></table><hr /></div><div class="chapter" title="Chapter 2. Features and Components"><div class="titlepage"><div><div><h2 class="title"><a id="Features-chapter"></a>Chapter 2. Features and Components</h2></div></div></div><div class="highlights"><a id="Features-chapter-high"></a><p>This chapter
 provides a concise overview of many of the capabilities built
 into MC-3020.  The basic gist of translation strategy for model
-components is given in an outline format.</p></div><div class="section" title="Features"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60873056128"></a>Features</h2></div></div></div><p>MC-3020 delivers translation technology and a set of features
+components is given in an outline format.</p></div><div class="section" title="Features"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm269943992896"></a>Features</h2></div></div></div><p>MC-3020 delivers translation technology and a set of features
   and components found in no other model compiler existing to date.  
   The mix of optimizations, conveniences and simplicity provide a
   solid foundation upon which ``down on the iron'' embedded designs
-  can be based.</p><div class="section" title="MC-3020 Binary and Source Versions"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873055232"></a>MC-3020 Binary and Source Versions</h3></div></div></div><p>The MC-3020 Model Compiler is available in two forms: source and binary.  
+  can be based.</p><div class="section" title="MC-3020 Binary and Source Versions"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943992000"></a>MC-3020 Binary and Source Versions</h3></div></div></div><p>The MC-3020 Model Compiler is available in two forms: source and binary.  
     As its name implies, the source version contains the full source code for 
     the Model Compiler with rights for the user to modify it to suit their 
     needs.  The binary version contains full code generation capability, but 
     does not contain the Model Compiler source code.  This is manifest in the presence,
-    or not, of the <code class="filename">arc</code> folder in the installation.</p></div><div class="section" title="Multi-Pass Corroborative Translation"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873053008"></a>Multi-Pass Corroborative Translation</h3></div></div></div><p>The translation engine embodied in the MC-3020 Model Compiler performs
+    or not, of the <code class="filename">arc</code> folder in the installation.</p></div><div class="section" title="Multi-Pass Corroborative Translation"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943989776"></a>Multi-Pass Corroborative Translation</h3></div></div></div><p>The translation engine embodied in the MC-3020 Model Compiler performs
     two passes across the xtUML model under translation.  The first pass
     analyzes the model structure and action language semantics of each
     component.  The results of this analysis drive the generation in the
@@ -19,28 +19,28 @@ components is given in an outline format.</p></div><div class="section" title="F
     minimized and optimized for speed.  Unaccessed data and unneeded
     code are eliminated.</p><p>This multi-pass intelligence spans components and allows for
     optimizations at the system level based on information collected
-    and collated from all components in the system.</p></div><div class="section" title="Multi-Tasking/Threading"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873049424"></a>Multi-Tasking/Threading</h3></div></div></div><p>Preemptive multi-tasking is supported on the
-    <span class="trademark">Nucleus PLUS</span>® real-time
+    and collated from all components in the system.</p></div><div class="section" title="Multi-Tasking/Threading"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943986336"></a>Multi-Tasking/Threading</h3></div></div></div><p>Preemptive multi-tasking is supported on the
+    Nucleus PLUS real-time
     operation system (RTOS) and on systems supporting POSIX threading.
     Single-task operation (with or without and RTOS) is also supported.
     Tasking supplies a rich means of providing preemptive prioritization
-    among the xtUML classes running in the system.</p></div><div class="section" title="Prioritization"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873047200"></a>Prioritization</h3></div></div></div><p>Preemptive task/thread prioritization is provided in
+    among the xtUML classes running in the system.</p></div><div class="section" title="Prioritization"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943984224"></a>Prioritization</h3></div></div></div><p>Preemptive task/thread prioritization is provided in
     the generated C code.  Groups of xtUML classes are mapped to
     tasks running at differing priorities.</p><p>MC-3020 also provides for prioritization through the
     marking of events.  Higher priority xtUML threads of control
-    can run without being preempted by lower priority activities.</p></div><div class="section" title="Multi-Component Support"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873044976"></a>Multi-Component Support</h3></div></div></div><p>MC-3020 cleanly translates large systems consisting of
+    can run without being preempted by lower priority activities.</p></div><div class="section" title="Multi-Component Support"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943982192"></a>Multi-Component Support</h3></div></div></div><p>MC-3020 cleanly translates large systems consisting of
     multiple xtUML and realized components.  Support is provided to
     integrate and interface to hand-craft, legacy and/or off-the-shelf
-    code.</p></div><div class="section" title="Persistence"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873043568"></a>Persistence</h3></div></div></div><p>MC-3020 supports the marking of persistent classes.
+    code.</p></div><div class="section" title="Persistence"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943980784"></a>Persistence</h3></div></div></div><p>MC-3020 supports the marking of persistent classes.
     The instance data for classes marked as persistent is restored
-    at power-up from a non-volatile storage (NVS) device.</p></div><div class="section" title="Metrics and Reporting"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873042176"></a>Metrics and Reporting</h3></div></div></div><p>A set of metrics can be generated and reported each time the
+    at power-up from a non-volatile storage (NVS) device.</p></div><div class="section" title="Metrics and Reporting"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943979392"></a>Metrics and Reporting</h3></div></div></div><p>A set of metrics can be generated and reported each time the
     model compiler is run.  Statistics on classes, associations,
     events and first pass analysis can be produced.</p><p>Metrics provided can be fed back to the analyst to provide a
     focus on recognized dangerous practices and fully illegal
     operations and accesses.  Some of the metrics relate to sizing
     and complexity.  These metrics could easily be tracked
     over the life of a project to provide quality and effort related
-    measurements.</p></div><div class="section" title="Bridge/Operation Skeleton Generation"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873039760"></a>Bridge/Operation Skeleton Generation</h3></div></div></div><p>Based upon information modeled in BridgePoint Builder MC-3020 automatically
+    measurements.</p></div><div class="section" title="Bridge/Operation Skeleton Generation"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943976976"></a>Bridge/Operation Skeleton Generation</h3></div></div></div><p>Based upon information modeled in BridgePoint Builder MC-3020 automatically
     generates source code frameworks for operations and outbound bridge
     implementation.  These skeleton files will actually compile
     as generated.  The user is saved from delving into generated
@@ -49,7 +49,7 @@ components is given in an outline format.</p></div><div class="section" title="F
     bridge and operation implementation code.</p><p>Support is provided for translation of OAL in operation
     and bridge descriptions.  The same action language used for BridgePoint Verifier
     is translated into the of bodies of the operation C source
-    files and the bridge skeleton files.</p></div><div class="section" title="``Call Outs'' for User Code"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873037440"></a>``Call Outs'' for User Code</h3></div></div></div><p>Several hooks have been supplied to allow easy interfacing
+    files and the bridge skeleton files.</p></div><div class="section" title="``Call Outs'' for User Code"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943974784"></a>``Call Outs'' for User Code</h3></div></div></div><p>Several hooks have been supplied to allow easy interfacing
     of user supplied code to the system level generated code.
     A source module is automatically generated that supplies
     empty functions which are invoked at various points during
@@ -57,7 +57,7 @@ components is given in an outline format.</p></div><div class="section" title="F
     empty functions can be populated with user code for ``can't
     happen'' events,
     hardware bring-up, ``background'' processing, legacy
-    clean-up and more.</p></div><div class="section" title="UDT Precision and Pointer Types"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873034848"></a>UDT Precision and Pointer Types</h3></div></div></div><p>To allow optimization for space and control over
+    clean-up and more.</p></div><div class="section" title="UDT Precision and Pointer Types"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943972256"></a>UDT Precision and Pointer Types</h3></div></div></div><p>To allow optimization for space and control over
     precision, the storage classes of integer and real based
     user-defined
     data types (UDTs) can be supplied by the user.
@@ -65,11 +65,11 @@ components is given in an outline format.</p></div><div class="section" title="F
     implemented as pointers.  The pointer types are very
     convenient for passing across bridges (in both directions).
     Precision and pointer information is provided to the
-    model compiler through marking.</p></div><div class="section" title="Attribute Bit Fields"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873032768"></a>Attribute Bit Fields</h3></div></div></div><p>Further optimization of space is provided through
+    model compiler through marking.</p></div><div class="section" title="Attribute Bit Fields"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943970176"></a>Attribute Bit Fields</h3></div></div></div><p>Further optimization of space is provided through
     ANSI C bit field support.  Multiple attributes can be packed
     into a single word of storage.  This feature may also be
     used (with caution) in conjunction with memory mapped classes
-    to model hardware with xtUML constructs.</p></div><div class="section" title="Selection Optimization"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873031024"></a>Selection Optimization</h3></div></div></div><p>MC-3020 attempts to optimize <span class="command"><strong>select
+    to model hardware with xtUML constructs.</p></div><div class="section" title="Selection Optimization"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943968432"></a>Selection Optimization</h3></div></div></div><p>MC-3020 attempts to optimize <span class="command"><strong>select
     any [inst_ref] from instances of [key_letters] where
     [where clause]</strong></span> when the where clause
     is checking for equality of the identifier.  MC-3020
@@ -78,27 +78,27 @@ components is given in an outline format.</p></div><div class="section" title="F
     customizations to the selection search algorithms.
     Applications dealing with large collections of class
     instance data (hundreds or thousands) may use these hooks
-    to further speed the selection process.</p></div><div class="section" title="Interrupt Handler Bridging"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873029456"></a>Interrupt Handler Bridging</h3></div></div></div><p>MC-3020 provides a safe way to bridge into the application
+    to further speed the selection process.</p></div><div class="section" title="Interrupt Handler Bridging"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943966864"></a>Interrupt Handler Bridging</h3></div></div></div><p>MC-3020 provides a safe way to bridge into the application
     from interrupt handlers (or other external tasks).  Consistency is
     maintained in software architecture data structures and
-    application data access sets.</p></div><div class="section" title="User Defined Archetypes"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873027088"></a>User Defined Archetypes</h3></div></div></div><p>A means is provided for the user to supply application
+    application data access sets.</p></div><div class="section" title="User Defined Archetypes"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943964496"></a>User Defined Archetypes</h3></div></div></div><p>A means is provided for the user to supply application
     specific fule file functions.  This capability serves to
     extend the marking capabilities of MC-3020.  It is possible
     to steer code generation in such a way as to provide customizations
     characteristic of particular target platforms, compilers and
-    tool sets.</p></div><div class="section" title="ANSI C Purity and Simplicity"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873025184"></a>ANSI C Purity and Simplicity</h3></div></div></div><p>MC-3020 is purely ANSI C and generates code that can be compiled
+    tool sets.</p></div><div class="section" title="ANSI C Purity and Simplicity"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943962592"></a>ANSI C Purity and Simplicity</h3></div></div></div><p>MC-3020 is purely ANSI C and generates code that can be compiled
     by any compiler compliant with the ANSI standard.  The core
     model compiler uses no libraries or system functions.
     <code class="filename">stdio.h</code> is included simply for convenience
     during debug (for <span class="command"><strong>printf</strong></span>, etc).  All generated
-    code is simple, native C.</p></div><div class="section" title="Preexisting Instances Defined in Data"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873022992"></a>Preexisting Instances Defined in Data</h3></div></div></div><p>As of version 3.1, MC-3020 supports initialization of
+    code is simple, native C.</p></div><div class="section" title="Preexisting Instances Defined in Data"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943960400"></a>Preexisting Instances Defined in Data</h3></div></div></div><p>As of version 3.1, MC-3020 supports initialization of
     preexisting instances in data.  This provides a substantial
     optimization in both bring-up execution speed and overall code
     footprint.  Instead of creating, relating and initializing all
     of the classes at start-up, pre-existing class instances can be
     pre-populated with static initializers.  Support is maintained for
     dynamic initialization using an initialization function (or an
-    initialization object).</p></div><div class="section" title="Target Code Inside Action Language"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873020992"></a>Target Code Inside Action Language</h3></div></div></div><p>MC-3020 allows the user to intermix target source code
+    initialization object).</p></div><div class="section" title="Target Code Inside Action Language"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943958400"></a>Target Code Inside Action Language</h3></div></div></div><p>MC-3020 allows the user to intermix target source code
     with action language.  These pieces, nicknamed
     snippets, are delimited by special strings.  Snippets are allowed 
     anywhere action language is supported: bridge operations, functions, 
@@ -135,14 +135,14 @@ components is given in an outline format.</p></div><div class="section" title="F
     unmodelled external code modules, and use target assembler code in an 
     action.</p><p>In nearly all cases, properly constructed models and action language 
     can completely describe an application.  Take care when adding code to 
-    models.  Understand the benefits and do not underestimate the costs.</p></div><div class="section" title="Dynamic Memory Allocation (Or Not)"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873010912"></a>Dynamic Memory Allocation (Or Not)</h3></div></div></div><p>By default MC-3020 creates applications that are very
+    models.  Understand the benefits and do not underestimate the costs.</p></div><div class="section" title="Dynamic Memory Allocation (Or Not)"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943948320"></a>Dynamic Memory Allocation (Or Not)</h3></div></div></div><p>By default MC-3020 creates applications that are very
     restrictive in their memory usage.  This is done by statically 
     allocating all memory that will be needed when the application 
     starts. Some applications, however, need the flexibility of being 
     looser in their memory consumption.  See
-    <a class="xref" href="ch04.html#DynamicMemoryAllocation-section" title="Marking Dynamic Memory Allocation On">the section called “Marking Dynamic Memory Allocation On”</a> for information on 
+    <a class="xref" href="ch04s04.html#DynamicMemoryAllocation-section" title="Marking Dynamic Memory Allocation On">the section called “Marking Dynamic Memory Allocation On”</a> for information on 
     how to allow your application to dynamically allocate additional 
-    memory as needed.</p></div><div class="section" title="XMI Export"><div class="titlepage"><div><div><h3 class="title"><a id="idm60873008544"></a>XMI Export</h3></div></div></div><p>XMI is an acronym for XML Metadata Interchange.  BridgePoint MC-3020 
+    memory as needed.</p></div><div class="section" title="XMI Export"><div class="titlepage"><div><div><h3 class="title"><a id="idm269943945952"></a>XMI Export</h3></div></div></div><p>XMI is an acronym for XML Metadata Interchange.  BridgePoint MC-3020 
     supports the ability to export your models in XML format using XMI 2.1.  
     XMI is an Object Management Group (<a class="ulink" href="http://www.omg.org" target="_top">OMG
     </a>) specification for the use of XML in serializing models so 

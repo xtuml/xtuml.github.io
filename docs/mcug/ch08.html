@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 8. Initialization and Preexisting Instances</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="ch07s02.html" title="Sample/Example Timer (TIM)" /><link rel="next" href="ch08s02.html" title="Dynamic Initialization" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 8. Initialization and Preexisting Instances</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch08s02.html">Next</a></td></tr></table><hr /></div><div class="chapter" title="Chapter 8. Initialization and Preexisting Instances"><div class="titlepage"><div><div><h2 class="title"><a id="Initialization-chapter"></a>Chapter 8. Initialization and Preexisting Instances</h2></div></div></div><div class="highlights"><a id="Initialization-chapter-high"></a><p>This chapter
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 8. Initialization and Preexisting Instances</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User Guide" /><link rel="prev" href="ch07s02.html" title="Sample/Example Timer (TIM)" /><link rel="next" href="ch08s02.html" title="Dynamic Initialization" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 8. Initialization and Preexisting Instances</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07s02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch08s02.html">Next</a></td></tr></table><hr /></div><div class="chapter" title="Chapter 8. Initialization and Preexisting Instances"><div class="titlepage"><div><div><h2 class="title"><a id="Initialization-chapter"></a>Chapter 8. Initialization and Preexisting Instances</h2></div></div></div><div class="highlights"><a id="Initialization-chapter-high"></a><p>This chapter
 explains how to initialize and start the system.  Initialization
 must deal with bringing up the architecture system code as well
 as initialization for preexisting instances.
@@ -19,7 +19,7 @@ reduction in code space and increase in initializationspeed.
   their attributes.  Each method of initialization has advantages and
   disadvantages.  Each method is useful in design situations that
   leverage the advantages.  The following sections will describe each
-  method of performing system initialization.</p><div class="section" title="Preexisting Instances"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871337440"></a>Preexisting Instances</h3></div></div></div><p>When specifying a system with xtUML models, the analyst is
+  method of performing system initialization.</p><div class="section" title="Preexisting Instances"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942691696"></a>Preexisting Instances</h3></div></div></div><p>When specifying a system with xtUML models, the analyst is
     allowed to assume that there are preexisting instances of classes
     within the models.  MC-3020 provides two methods for specifying
     these preexisting instances, the values of their attributes, and
@@ -33,7 +33,7 @@ reduction in code space and increase in initializationspeed.
     proceed.  Thus, the xtUML models can assume that all the preexisting
     instances exist before any events are accepted.</p><p>Note that MC-3020 automatically creates a single instance
     for every assigner in the system.  The analyst does not need to
-    model or mark anything to make this happen.</p></div><div class="section" title="Terminology"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871333744"></a>Terminology</h3></div></div></div><p>In order to avoid confusion resulting from the following
+    model or mark anything to make this happen.</p></div><div class="section" title="Terminology"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942688000"></a>Terminology</h3></div></div></div><p>In order to avoid confusion resulting from the following
     paragraphs as well as in future documentation,
     the following definitions will be used with respect to
     instance populations and preexisting instances:
@@ -73,7 +73,7 @@ reduction in code space and increase in initializationspeed.
     instance population that cannot be written</p></li></ul></div><p>
     </p><p>It is easy to see that many combinations of static/dynamic,
     read-only, implicit/explicit and preexisting can occur in normal
-    system analysis.</p></div><div class="section" title="Constructs Supported"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871319104"></a>Constructs Supported</h3></div></div></div><p>In MC-3020 3.1 and beyond, preexisting instances can be
+    system analysis.</p></div><div class="section" title="Constructs Supported"><div class="titlepage"><div><div><h3 class="title"><a id="idm269942673360"></a>Constructs Supported</h3></div></div></div><p>In MC-3020 3.1 and beyond, preexisting instances can be
     defined in data for any normal modeling construct supported by
     MC-3020  For example, dynamic or constant initialization can be
     defined for:
