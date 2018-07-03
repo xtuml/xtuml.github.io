@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>High-Level Requirements</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch10.html" title="Chapter 10. Persistence" /><link rel="prev" href="ch10.html" title="Chapter 10. Persistence" /><link rel="next" href="ch10s03.html" title="Operational Overview" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">High-Level Requirements</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10.html">Prev</a> </td><th width="60%" align="center">Chapter 10. Persistence</th><td width="20%" align="right"> <a accesskey="n" href="ch10s03.html">Next</a></td></tr></table><hr /></div><div class="section" title="High-Level Requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60871076128"></a>High-Level Requirements</h2></div></div></div><div class="section" title="Non-volatile Storage Technology"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871075488"></a>Non-volatile Storage Technology</h3></div></div></div><p>There are a great number of options for non-volatile storage
+    (NVS) technologies in the embedded control world.  Applications
+    exist which use more than one non-volatile storage technology
+    within the same system.  It is required that modularity exist
+    at the
+    interface between general persistence services and the driver
+    level code storing and retrieving data from non-volatile storage.
+    A bridge is defined to allow MC-3020 users to build or
+    replace this driver layer.</p><p>An option must be supplied to allow for the persisting of the
+    current state of a persistent class instance or to use the default
+    initial state.  By default MC-3020 must restore the current state
+    of instances.  But the user must have a way of causing the current
+    state to be the default current state that would normally be
+    established for non-persistent class instances.</p></div><div class="section" title="Granularity"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871074208"></a>Granularity</h3></div></div></div><p>Different applications need to persist different amounts of
+    data.  The ability to persist at the class and domain levels
+    allows for both large and small amounts of persistent data.
+    MC-3020 supports persistence at class, subsystem and domain levels.
+    </p></div><div class="section" title="Balance"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871071328"></a>Balance</h3></div></div></div><p>Some approaches to persistence can add tremendous complexity
+    to the model compiler.  Overly simplistic approaches to
+    persistence support can pollute the application analysis.  MC-3020
+    strikes a balance that makes sense for the embedded
+    applications to which MC-3020 is best suited.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch10s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 10. Persistence </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Operational Overview</td></tr></table></div></body></html>

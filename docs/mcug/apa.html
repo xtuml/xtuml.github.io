@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix A. Analysis Guide</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="ch12.html" title="Chapter 12. Modeling Guide" /><link rel="next" href="apb.html" title="Appendix B. Background" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Analysis Guide</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apb.html">Next</a></td></tr></table><hr /></div><div class="appendix" title="Appendix A. Analysis Guide"><div class="titlepage"><div><div><h2 class="title"><a id="AnalysisGuide-appendix"></a>Appendix A. Analysis Guide</h2></div></div></div><div class="highlights"><a id="AnalysisGuide-appendix-high"></a><p>MC-3020
+levies certain restrictions upon the analyst.  These restrictions
+and advice for capitalizing upon MC-3020 features are
+provided.</p></div><div class="sect1" title="Restrictions and Limitations"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60870655568"></a>Restrictions and Limitations</h2></div></div></div><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Cannot number an event with 0.</p></li><li class="listitem"><p>Prioritization of polymorphic events is not
+    supported.</p></li><li class="listitem"><p>Some platforms have no real time clock.  Therefore
+    date and time are not available in standard Gregorian or Caesarian
+    form.</p></li><li class="listitem"><p>State machines are optimized for speed rather than
+    space.</p></li><li class="listitem"><p>Relationship conditionality is not enforced by
+    the model compiler.</p></li><li class="listitem"><p>Actions may not leave identifying attributes
+    inconsistent beyond the end of any action.</p></li><li class="listitem"><p>Blind selections (select ... from instances of ...)
+    following a create and in the same
+    scope as the create may not see the newly created instance in the
+    extent.</p></li><li class="listitem"><p><span class="command"><strong>create object instance of</strong></span>
+     <span class="emphasis"><em>keyletters</em></span> (create with no return
+    value) is allowed only when the identifier of
+    object <span class="emphasis"><em>keyletters</em></span> is of type
+    unique_ID.</p></li></ul></div><p>
+  </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="apb.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 12. Modeling Guide  </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix B. Background</td></tr></table></div></body></html>

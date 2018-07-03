@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Analysis</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch10.html" title="Chapter 10. Persistence" /><link rel="prev" href="ch10s06.html" title="Persistence Marking Options" /><link rel="next" href="ch10s08.html" title="Persistence Design" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Analysis</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s06.html">Prev</a> </td><th width="60%" align="center">Chapter 10. Persistence</th><td width="20%" align="right"> <a accesskey="n" href="ch10s08.html">Next</a></td></tr></table><hr /></div><div class="section" title="Analysis"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60871044192"></a>Analysis</h2></div></div></div><div class="figure"><a id="persistdomain-figure"></a><p class="title"><b>Figure 10.1. Persistence Analysis Domain
+  Chart</b></p><div class="figure-contents"><div class="mediaobject"><img src="persistdomain.png" alt="Persistence Analysis Domain Chart" /></div></div></div><br class="figure-break" /><div class="section" title="Persist Domain Data Analysis"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871040288"></a>Persist Domain Data Analysis</h3></div></div></div><p>
+    </p><div class="figure"><a id="persistim-figure"></a><p class="title"><b>Figure 10.2. Persistence Class Diagram</b></p><div class="figure-contents"><div class="mediaobject"><img src="persistim.png" alt="Persistence Class Diagram" /></div></div></div><p><br class="figure-break" />
+    </p></div><div class="section" title="PERSIST Domain Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871036064"></a>PERSIST Domain Functions</h3></div></div></div><p>The <code class="function">commit</code> function is called to
+    indicate to the domain that the application wants to commit
+    instances of classes and associations to non-volatile storage.
+    This in turn causes <code class="function">NVS::insert</code> to be called
+    flushing to NVS elements from a list of instances and links that
+    were queued when modified.</p><p>A return value of 0 indicates success.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">commit</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">restore</code> function is called by the
+    architecture during bring-up after a power cycle.  The
+    <code class="function">restore</code> function causes the classes contained
+    in non-volatile storage to be read from store and written to the
+    instance collection list.</p><p>A return value of 0 indicates success.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">restore</b>(</code></td><td>integer <var class="pdparam">class</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="section" title="Non-volatile Storage Domain Data Analysis"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871027456"></a>Non-volatile Storage Domain Data Analysis</h3></div></div></div><p>
+    </p><div class="figure"><a id="nvsim-figure"></a><p class="title"><b>Figure 10.3. Non-Volatile Storage Class Diagram</b></p><div class="figure-contents"><div class="mediaobject"><img src="nvsim.png" alt="Non-Volatile Storage Class Diagram" /></div></div></div><p><br class="figure-break" />
+    </p></div><div class="section" title="Non-volatile Storage Domain Functions"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871023008"></a>Non-volatile Storage Domain Functions</h3></div></div></div><p>Many NVS domain functions return an integer return code.  The
+    values that the return code can take are outlined in the following
+    listing:
+    </p><pre class="programlisting">
+#define NVS_RETURN_SUCCESS    0 /* All is well.                    */
+#define NVS_ERROR_BAD_OPEN   -1 /* Could not open file.            */
+#define NVS_ERROR_ITEM_LONG  -2 /* Data item is too long.          */
+#define NVS_ERROR_BAD_SEEK   -3 /* Could not seek correctly.       */
+#define NVS_ERROR_BAD_WRITE  -4 /* File did not write correctly.   */
+#define NVS_ERROR_NOT_FOUND  -5 /* Did not find searched record.   */
+#define NVS_ERROR_BAD_READ   -6 /* Read incorrect length of data.  */
+#define NVS_ERROR_NO_ROOM    -7 /* Not enough room for insert.     */
+#define NVS_ERROR_LENGTH     -8 /* Length not correct.             */
+    </pre><p>
+    This can be found in the generated
+    <code class="filename">NVS_bridge.h</code> file.  A positive value is used
+    to indicate the length of a buffer.</p><p>Function <code class="function">checksum</code> provides a
+    mathematical redundancy check on the integrity of the contents of
+    the non-volatile store (NVS).  This mathematical algorithm and the
+    capabilities of the function are supplied by the implementor of the
+    internals of the NVS module.</p><p><code class="function">checksum</code> provides an integer return code
+    representing an integrity check on the contents of the NVS.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">checksum</b>(</code></td><td>integer <var class="pdparam">first</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">second</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">defrag</code> function coalesces deleted
+    records together and written records together.  This allows for
+    small fragments of free storage to be collected into a single
+    contiguous free piece of storage.  This function will typically
+    take significant time to run.  This time is a function of the
+    specific non-volatile storage technology.</p><p><code class="function">defrag</code> provides an integer return
+    code as listed above.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">defrag</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p><code class="function">delete</code> searches the store for an item
+    matching the input and deletes it.  Deleted items cannot be
+    retrieved from NVS in future invocations of <code class="function">select</code>
+    or <code class="function">search</code>.  <code class="function">delete</code>
+    chooses the item to erase based on two combinations of input
+    arguments.  If the <code class="function">delete</code> is called with a key
+    and a type, then the item in the NVS matching these key and type
+    arguments is erased.  Otherwise, if non-null data is given, the data
+    and type arguments are used to identify the item to delete.  When
+    found, the item is marked as deleted and will not be readable from
+    the store.</p><p><code class="function">delete</code> provides an integer return code
+    as listed above.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">delete</b>(</code></td><td>integer <var class="pdparam">key</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">length</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">pointer</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">format</code> function erases the
+    non-volatile store (NVS).  It is only to be called when it is
+    desired that a new NVS be cleared and prepared for writing for the
+    first time.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">format</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">initialize</code> function resets the
+    internal counters of the non-volatile store.  (Note that these
+    internal counters are the responsibility of the implementor of the
+    internal of NVS and can contain information about the amount of
+    data being used, etc.)  No application/user data is written or
+    changed in the store.  This function is called automatically at
+    power-up to prepare the store for access.</p><p><code class="function">initialize</code> provides an integer return
+    code as listed above.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">initialize</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">insert</code> function adds items to the
+    store.  There are four input arguments.  The first,
+    <span class="emphasis"><em>key</em></span> is the lookup key to the item.  In the
+    case of instance data, this key is a unique identifier for the item
+    being inserted (added to the store).  <span class="emphasis"><em>length</em></span>
+    is an integer representation of the length of the data byte
+    sequence pointed to by pointer.  <span class="emphasis"><em>type</em></span> is the
+    class type (instance or link) in integer form.  The data pointed to
+    by <span class="emphasis"><em>pointer</em></span> is not modified.  If the record
+    being inserted already exists in the non-volatile store, the
+    existing record will be updated.  A return code provides status on
+    the insert.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">insert</b>(</code></td><td>integer <var class="pdparam">key</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">length</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">pointer</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p><code class="function">next</code> provides a way to cycle through
+    reading each item from the store one at a time.  This
+    function returns the item currently being pointed to by the cursor
+    (maintained inside the store).  The buffer space available on the
+    calling side is passed in as the length argument.  If sufficient
+    space is available in the buffer, the next item data will be copied
+    into the given buffer pointed to by pointer.  The length of the
+    written data is returned as the return value.  Also returned are
+    the values of the key and type.  The initialize function resets the
+    internal cursor to the first item in the store.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">next</b>(</code></td><td>integer * <var class="pdparam">key</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">length</var>, </td></tr><tr><td> </td><td>integer * <var class="pdparam">pointer</var>, </td></tr><tr><td> </td><td>integer * <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">select</code> function searches the store
+    for a specific item with a key and type matching those given as
+    input arguments.  If a record is found that matches, it is copied
+    into the data buffer pointed to by pointer.  The length argument
+    provides the amount of buffer space available on the calling side.
+    The actual length of the returned record (if one is returned) is
+    provided in the return value.  The data behind the pointer argument
+    is modified with the data found in the non-volatile store.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">select</b>(</code></td><td>integer <var class="pdparam">key</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">length</var>, </td></tr><tr><td> </td><td>string * <var class="pdparam">pointer</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">space_available</code> function returns an
+    integer representing the number of bytes not being used in the
+    store.  This number of bytes will actually hold fewer bytes due to
+    the overhead of item meta-data (key, type, etc).</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">space_available</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">space_total</code> function returns the
+    overall size in bytes of the non-volatile store.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">space_total</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">space_used</code> function returns the
+    number of bytes currently written in the store.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">space_used</b>(</code></td><td><code>void)</code>;</td><td> </td></tr></table><div class="funcprototype-spacer"> </div></div><p>The <code class="function">update</code> function searches for a
+    record in the store the same way that <code class="function">select</code>
+    does.  When (and if) a record is found, the new data of length
+    length pointed to by pointer is written into the store over the
+    existing item.  Since <code class="function">insert</code> will perform an
+    update when a record exists, it is more often used than
+    <code class="function">update</code>.  No arguments are modified calling
+    this function.</p><p><code class="function">update</code> provides an integer return code
+    as listed above.</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">update</b>(</code></td><td>integer <var class="pdparam">key</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">length</var>, </td></tr><tr><td> </td><td>string <var class="pdparam">pointer</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>Function <code class="function">version</code> provides an integer
+    return value indicating the version of the data and/or format
+    of the non-volatile store (NVS).
+    This versioning algorithm and the
+    capabilities of the function are supplied by the implementor of the
+    internals of the NVS module.  Two input arguments are used to
+    provide flexible utility.</p><p><code class="function">version</code> provides an integer return code
+    representing the version of the NVS (contents).</p><div class="funcsynopsis"><table border="0" summary="Function synopsis" cellspacing="0" cellpadding="0" class="funcprototype-table"><tr><td><code class="funcdef">integer <b class="fsfunc">version</b>(</code></td><td>integer <var class="pdparam">first</var>, </td></tr><tr><td> </td><td>integer <var class="pdparam">second</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s06.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch10s08.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Persistence Marking Options </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Persistence Design</td></tr></table></div></body></html>

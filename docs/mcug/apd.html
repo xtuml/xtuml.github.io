@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix D. Revision Controlling the Model</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="apc.html" title="Appendix C. PEI Test Case Setup" /><link rel="next" href="ape.html" title="Appendix E. Legal Notice" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix D. Revision Controlling the Model</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apc.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ape.html">Next</a></td></tr></table><hr /></div><div class="appendix" title="Appendix D. Revision Controlling the Model"><div class="titlepage"><div><div><h2 class="title"><a id="RevisionControl-appendix"></a>Appendix D. Revision Controlling the Model</h2></div></div></div><div class="highlights"><a id="RevisionControl-appendix-high"></a><p>Using revision control
+is a prudent part of any development process.  Here we present information about
+using a configuration managment system with model-based development.</p></div><div class="sect1" title="Key Files and Directories"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60870527296"></a>Key Files and Directories</h2></div></div></div><p>When using BridgePoint to do model-based development, the key components that
+  should be placed under revision control are the markings, the model, and the
+  eclipse support files.</p><p>The generated source code does not need to be controlled, as it is
+  always available by compiling the model.</p><p>Here is a sample of the files and directories that should be placed in
+  revision control.
+
+  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><code class="filename">&lt;project name&gt;</code>
+      </p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><code class="filename">.externalToolBuilders/</code></li><li class="listitem"><code class="filename">gen/</code></li><li class="listitem"><code class="filename">models/</code></li><li class="listitem"><code class="filename">.project</code></li></ul></div><p>
+    </p></li></ul></div><p>
+  </p><p>Nearly all files (<code class="filename">*.mark, *.c, *.h</code>) under
+  the <code class="filename">gen/</code> folder should be revision controlled.  There
+  is one exception: the subdirectory <code class="filename">code_generation/</code> and its
+  contents should <span class="emphasis"><em>not</em></span>.  Therefore, be sure to delete the
+  <code class="filename">code_generation/</code> directory before checking the project
+  into revision control.
+  </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apc.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ape.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix C. PEI Test Case Setup </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix E. Legal Notice</td></tr></table></div></body></html>

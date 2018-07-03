@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Operational Overview</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch10.html" title="Chapter 10. Persistence" /><link rel="prev" href="ch10s02.html" title="High-Level Requirements" /><link rel="next" href="ch10s04.html" title="Assumptions" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Operational Overview</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s02.html">Prev</a> </td><th width="60%" align="center">Chapter 10. Persistence</th><td width="20%" align="right"> <a accesskey="n" href="ch10s04.html">Next</a></td></tr></table><hr /></div><div class="section" title="Operational Overview"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60871068736"></a>Operational Overview</h2></div></div></div><div class="section" title="General Scenario"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871068096"></a>General Scenario</h3></div></div></div><p>Persistence services for MC-3020 are light weight and
+    flexible in terms of non-volatile storage technology.  The
+    persistence services are broken between two domains, PERSIST
+    and NVS.</p><p>The PERSIST domain performs the commit and restore
+    operations which commit instances to non-volatile storage
+    and restore instances from non-volatile storage respectively.
+    The PERSIST domain keeps track of which instances have been
+    persisted, which links have been persisted and manages keeping
+    the links synchronized with the instances during the power-up
+    system initialization.</p><p>The NVS domain supplies a rudimentary but functionally
+    complete persistent data storage and retrieval interface.
+    The interface has characteristics of both a database
+    and of a file system.  The interface is rich enough to
+    provide flexibility in the application of different non-volatile
+    storage technologies.</p><p>MC-3020 persistence does not specify or depend upon
+    a specific persistent storage technology.  Therefore, only
+    a standard interface (bridge) is defined.  The user may deploy
+    whatever available technology desired behind the bridge to
+    the NVS domain.  A sample implementation is supplied (in a file
+    called <code class="filename">sys_nvs.c/h</code>) for use
+    as the developer desires.</p><p>The domain chart below shows the bridge operations made
+    visible to the application.  <code class="function">commit</code>
+    is the primary function used by the application.</p><p>The architecture domain (MC-3020) automatically
+    performs the <code class="function">insert</code>s, <code class="function">update</code>s
+    and <code class="function">delete</code>s to shuffle instance data between the
+    RAM based collections of the application and the non-volatile
+    persistent storage.  Additionally, MC-3020 automatically performs the
+    <code class="function">restore</code> operation at power-up time.</p><p>Other domain interfaces are exposed and may be
+    used at the discretion of the analyst.</p></div><div class="section" title="Manual and Automatic Commit"><div class="titlepage"><div><div><h3 class="title"><a id="idm60871058992"></a>Manual and Automatic Commit</h3></div></div></div><p>A <span class="emphasis"><em>manual commit</em></span> occurs when the user
+    forces a commit of instance and link data to non-volatile store
+    by synchronously invoking a PERSIST domain function (e.g.
+    <code class="function">PERSIST::commit()</code>).  An <span class="emphasis"><em>automatic
+    commit</em></span> occurs when a commit is initiated by the software
+    architecture "behind the scenes" based on pre-defined policy.</p><p>MC-3020 supports manual commit operations and performs
+    automatic commits when necessary.  Such automatic commits occur
+    when instance and link delete operations are required.</p><p>When persistence and tasking are both enabled in the generated
+    system, MC-3020 performs all commits automatically.  It is not advised
+    to manually commit in a multi-tasking system.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch10s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">High-Level Requirements </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Assumptions</td></tr></table></div></body></html>

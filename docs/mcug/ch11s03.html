@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Prioritization</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch11.html" title="Chapter 11. Tasking/Threading" /><link rel="prev" href="ch11s02.html" title="Marking for Tasking" /><link rel="next" href="ch11s04.html" title="Tasking/Threading in the Generated Code" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Prioritization</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11s02.html">Prev</a> </td><th width="60%" align="center">Chapter 11. Tasking/Threading</th><td width="20%" align="right"> <a accesskey="n" href="ch11s04.html">Next</a></td></tr></table><hr /></div><div class="section" title="Prioritization"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Tasking-Prioritization-section"></a>Prioritization</h2></div></div></div><p>The primary reason for tasking in an xtUML modeled system
+  involves the deployment of prioritization in the generated code.</p><div class="section" title="Priority in the Generated Code"><div class="titlepage"><div><div><h3 class="title"><a id="Tasking-PriorityGeneration-section"></a>Priority in the
+    Generated Code</h3></div></div></div><p>An xtUML model may be inherently concurrent, but it is not
+    inherently prioritized.</p><p>Simple prioritization of execution of a
+    translated xtUML model can be achieved without multi-tasking.
+    Events can be prioritized to modify the sequencing of state
+    actions.  MC-3020 provides event prioritization.</p><p>In a single tasking environment, a state action cannot be
+    preempted.  Therefore, a single task deployment environment is
+    limited by the duration of the longest state action.  Without
+    preemption, a higher priority action may need to wait the entire
+    duration of a state action of lower priority processing.  Sometimes
+    this is not an issue.</p><p>However, in many embedded applications the limits of a single
+    task cannot be tolerated.  We must map the xtUML application onto a
+    multi-tasking/multi-threading architecture.  By doing so, it is
+    possible to map processing to various tasks based upon the required
+    priorities.  Higher priority action processing can be designed to
+    preempt lower priority actions.  We can take control away from the
+    lower priority action and context switch into the higher priority
+    action running in a higher priority task.</p></div><div class="section" title="Mapping to Tasks"><div class="titlepage"><div><div><h3 class="title"><a id="Tasking-Mapping-section"></a>Mapping to Tasks</h3></div></div></div><p>There are many possible strategies for mapping the components
+    of an xtUML application to tasks.  Event-based strategies and
+    strategies based upon sequences of actions have been implemented
+    successfully.  MC-3020 has supported event based prioritization
+    since version 2.  As of MC-3020 version 4, prioritization using
+    tasks/threads is supported.  The mapping of xtUML artifacts to
+    these tasks/threads is by class.  Groups of classes are mapped to
+    the tasks/threads running in the generated system.</p><p>xtUML model marking is used to identify which classes are
+    translated to run in which tasks in the deployment target.  Each
+    class is marked identifying the task in which its generated code
+    runs.  The priority of the action processing of the class is used
+    to determine an appropriate task.  Higher priority classes get
+    mapped to higher priority tasks.  This separation allows for the
+    processing of higher priority classes to preempt the processesing
+    of lower priority classes.</p><p>Classes with state charts requiring low latency response to
+    application events are mapped to high priority.  Classes with
+    little or no requirement for quick response are mapped to lower
+    priority RTOS tasks.</p></div><div class="section" title="How Many Tasks?"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870730688"></a>How Many Tasks?</h3></div></div></div><p>The number of tasks required by the application is largely
+    driven by prioritization.  Concurrency plays a part in
+    determining the number of tasks needed.  The mapping to
+    tasks must be accomplished with a clear understanding of both the
+    xtUML application and of the deployment target hardware and
+    RTOS.</p><p>A simple starting point is to have one task for each
+    required level of priority.  Map all classes having the same
+    priority to the same task.  For example map classes with tight
+    coupling to time sensitive hardware to high priority task(s).
+    Map classes that do non-critical "background" types of processing
+    to a low priority task.  Map everything else to a normal priority
+    task.</p></div><div class="section" title="Data Access Issues"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870727680"></a>Data Access Issues</h3></div></div></div><p>In an xtUML application concurrency is assumed unless
+    purposefully sequenced.  Access to data that is shared between
+    various classes/actions/functions must be synchronized.  A
+    simple, single-tasking deployment target may hide synchronization
+    issues.  A multi-tasking environment will not hide these modeling
+    defects and indeed may aggravate them.  If an xtUML application
+    has not been properly synchronized, a truly preemptive
+    multi-tasking kernel can uncover the modeling deficiencies.</p><p>Note that it is wise to map classes with strong processing
+    and data interaction (coupling) into the same task.  An improper
+    mapping of classes to tasks can increase the overhead of
+    processing by introducing undue task switching.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch11.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch11s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Marking for Tasking </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Tasking/Threading in the Generated Code</td></tr></table></div></body></html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Project Files and Folders</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch03.html" title="Chapter 3. Eclipse Integration" /><link rel="prev" href="ch03.html" title="Chapter 3. Eclipse Integration" /><link rel="next" href="ch03s03.html" title="Replacing Generated Source Code" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Project Files and Folders</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Eclipse Integration</th><td width="20%" align="right"> <a accesskey="n" href="ch03s03.html">Next</a></td></tr></table><hr /></div><div class="section" title="Project Files and Folders"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MCGUI-FilesFolders-section"></a>Project Files and Folders</h2></div></div></div><p>The files for a project reside within the project folder.  All
+  of the files having to do with the project exist within this folder
+  (or are linked into this folder using Eclipse links).  Some of the 
+  files and folders in the project are part of the model compilation
+  and code generation process.  The <code class="filename">gen</code> and
+  <code class="filename">src</code> folders in the project are used by the model
+  compiler.</p><div class="section" title="Marking Files"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872853088"></a>Marking Files</h3></div></div></div><p>All of the marking files for a project will be found in the
+    <code class="filename">gen</code> folder.  These files can be edited by
+    double-clicking on the file or by right clicking and opening the
+    file for editing.  Note that the marking files end with the file
+    extension <code class="filename">.mark</code>.  The marking files
+    include <code class="filename">bridge.mark</code>, 
+    <code class="filename">class.mark</code>, <code class="filename">datatype.mark</code>,
+    <code class="filename">domain.mark</code>, 
+    <code class="filename">event.mark</code> and
+    <code class="filename">system.mark</code>.</p><p>To supply marking to the code generation process, edit the
+    marking files.  <a class="xref" href="ch04.html" title="Chapter 4. Marking">Chapter 4, <i>Marking</i></a> explains the
+    markings available to control the code generation of
+    MC-3020</p></div><div class="section" title="Source Files and Output"><div class="titlepage"><div><div><h3 class="title"><a id="idm60872847056"></a>Source Files and Output</h3></div></div></div><p>The code generation process creates a folder called
+    <code class="filename">code_generation</code> in the
+    <code class="filename">gen</code> folder.  The is the generation workspace
+    and is largely a temporary ("scratch") work area for the model
+    compiler.  It will be deleted before new code generation begins.
+    The <code class="filename">code_generation</code> folder contains the files
+    and folders that users of MC-3020 versions 3.3 and before are
+    accustomed to seeing.</p><p>After code generation runs to completion, the generated
+    source code will be copied into the <code class="filename">src</code> folder
+    of the project.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch03s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Eclipse Integration </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Replacing Generated Source Code</td></tr></table></div></body></html>

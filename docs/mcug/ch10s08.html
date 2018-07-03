@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Persistence Design</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch10.html" title="Chapter 10. Persistence" /><link rel="prev" href="ch10s07.html" title="Analysis" /><link rel="next" href="ch11.html" title="Chapter 11. Tasking/Threading" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Persistence Design</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s07.html">Prev</a> </td><th width="60%" align="center">Chapter 10. Persistence</th><td width="20%" align="right"> <a accesskey="n" href="ch11.html">Next</a></td></tr></table><hr /></div><div class="section" title="Persistence Design"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="persistimplementation-section"></a>Persistence Design</h2></div></div></div><div class="section" title="Class-Based Create/Delete/Init"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870956976"></a>Class-Based Create/Delete/Init</h3></div></div></div><p>Primary infrastructure changes involve the centralization
+    of the create, delete and initialization of class instances.  The
+    following paragraphs explain this change and its
+    design.  A description of the implementation of the generated code
+    follows with an explanation of the effects on speed, space and
+    execution.</p><p>MC-3020 3.3 and before has a class-based create, delete, init
+    design.  The generated code contains a create accessor, delete
+    accessor and factory initializer for each class in the modeled
+    system.  When an instance needs to be created, a routine specific
+    to the class is invoked to allocate the implementation memory for
+    the class instance.  The attributes for the class instance are
+    given reasonable default initial values.  Identifying attributes of
+    type unique_id are initialized to values certain to be unique with
+    the generated system.  The initial state of the new instance state
+    machine is set.</p><p>In MC-3020 3.3 and before, when an instance needs to be
+    deleted, a routine specific to the class is called to deallocate
+    the implementation memory for the instance and perform needed
+    clean-up.</p><p>MC-3020 3.3 generates "object factory initialization"
+    routines.  There is one of these methods for each class in the
+    modeled domains.  These methods are called exactly once at bring-up
+    time to initialize the instance memory data pool for the collection
+    of instances for the class.  This routine took into consideration
+    the fact that some of the instances in a collection may be
+    allocated and initialized statically as preexisting instances.
+    </p><p>The class-based create/delete/init approach is very flexible.
+    It allows the model compiler designer the liberty of considering
+    only the class in hand when generating the code.  Different
+    profiles of deployment code can be generated based upon the type of
+    class (passive, active, associative, having preexisting instances,
+    etc).  However, having the create, delete and init accessor
+    dispersed to every class is troublesome when considering a
+    persistent restore operation from centralized non-volatile storage
+    (NVS).</p></div><div class="section" title="Centralized Create/Delete/Init"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870951136"></a>Centralized Create/Delete/Init</h3></div></div></div><p>MC-3020 3.4 and beyond centralizes the create, delete and
+    initialize operations.  This is accomplished by moving the
+    intelligence of the class-based create/delete/init procedures into
+    a class-based data structure.  This class_info array contains
+    information about each class such that centralized operations can
+    intelligently create, delete and initialize classes and
+    instances.</p><p>The information contained in the class_info structure includes:
+    </p><div class="variablelist"><table border="0"><col align="left" valign="top" /><tbody><tr><td><p><span class="term">active</span></p></td><td><p>The head of the
+      list of active instances is used to collect the active instances
+      together.</p></td></tr><tr><td><p><span class="term">inactive</span></p></td><td><p>The head of
+      the list of inactive instances is also maintained and used during
+      create and delete operations.</p></td></tr><tr><td><p><span class="term">container</span></p></td><td><p>Container
+      refers to the head of the list of container elements used to
+      maintain collections.  The base of this list is used to calculate
+      indexes into the array of
+      instances.</p></td></tr><tr><td><p><span class="term">pool</span></p></td><td><p>The base of the
+      array representing the pool of instance data is accessible from
+      the class_info array.  The base of this list also is used to
+      calculate indexes into the array of
+      instances.</p></td></tr><tr><td><p><span class="term">size</span></p></td><td><p>The size of the
+      class (in bytes) is necessary for initialization and for
+      persistence support.</p></td></tr><tr><td><p><span class="term">initial_state</span></p></td><td><p>For
+      active classes, the starting state of state machines must be kept
+      for initialization of newly created active
+      instances.</p></td></tr><tr><td><p><span class="term">population</span></p></td><td><p>Population
+      is the number of instances in the instance
+      collection.</p></td></tr><tr><td><p><span class="term">[preexisting
+      instances]</span></p></td><td><p>Is used when there are
+      preexisting instances defined in data.  This element will inform
+      the global initialization routine how many active instances to
+      expect at power up so that initialization of collections may
+      proceed accordingly.</p></td></tr></tbody></table></div><p>
+
+    With the above information, it is possible to have centrally
+    defined create, delete and initialization routines.  These central
+    routines rely on class-specific information from the class_info
+    array rather than on class-specific generated procedures.</p></div><div class="section" title="Implications to Persistence Support"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870938528"></a>Implications to Persistence Support</h3></div></div></div><p>The persistence restore operation relies heavily upon the
+    centralized create and initialization routines.  Assuming for a
+    moment a system that has no preexisting instances defined in data,
+    a system having persistent classes must restore the class instance
+    data from a central non-volatile storage unit (NVS).</p><p>When a system powers up, it performs the standard system
+    level initialization to bring up event queues and timer support and
+    other system level infrastructure.  The system then initializes the
+    collection mechanisms for all of the classes in the generated
+    system.  This involves linking the instance storage into lists
+    (singly or doubly linked).</p><p>At this point in a non-persistence supporting system the
+    initialization functions would be invoked to allow application
+    level user initialization to occur.  In a persistence supporting
+    system, persistent class instances are restored from
+    non-volatile storage before the user initialization functions are
+    run.</p><p>The process of restoring class instances involves invoking
+    the central create routine and populating the newly created
+    instance with data from NVS.  The data in the NVS needs to be rich
+    enough such that the create routine knows which type of class to
+    create.  Once the type is communicated, the class_info array
+    provides the necessary details to enable the correct instantiation
+    of the new instance.</p></div><div class="section" title="Implementation"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870933680"></a>Implementation</h3></div></div></div><p>In MC-3020 3.3 the files <code class="filename">*_object.c</code>
+    contain methods to create, delete and perform factory
+    initialization of class instances.  To compare implementations,
+    view one of these files in 3.3 generated code.</p><p>In MC-3020 3.4 and beyond, these routines are centralized.
+    The class_info structure is
+    simply an array of pointers to elements of the structure which
+    reside in the individual <code class="filename">*_class.c</code>
+    files.</p><p>Each domain is assigned a unique number, and each class
+    within a domain is assigned a unique number.  An array of
+    class_info arrays exists for the system containing information for
+    all classes in all domains.  During translation a domain-unique number
+    is assigned to each class.  This number serves as an index into the
+    class_info array thus allowing centralized create, delete, init and
+    other routines to look up statistics on any class in the
+    modeled system.</p></div><div class="section" title="Effects"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870929200"></a>Effects</h3></div></div></div><p>Centralizing the create, delete and init functions has the
+    intended effect of enabling a persistent restore operation that can
+    rely on these class-independent routines (namely create).  There
+    are positive side-effects of this centralization.</p><p>Code space savings is the primary positive side effect.
+    Instead of three routines for each class, there are now three
+    routines for the entire system.  This saves substantially on code
+    size in the generated system.  This effect will be greatest on
+    systems with a large number of classes.</p><p>Other positive side effects include greater flexibility in
+    features such as persistence.</p></div><div class="section" title="Cost Modeling"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870926448"></a>Cost Modeling</h3></div></div></div><p>Persistence services have cost in terms of execution speed,
+    instruction store space, data memory and non-volatile storage
+    space.  This section enumerates those costs in as detailed a manner
+    as practical.</p><div class="section" title="Data Memory Cost"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870925152"></a>Data Memory Cost</h4></div></div></div><p>To manage the bookkeeping of persistent instances,
+      additional data is maintained.  The following additional
+      storage is used for each instance of each class.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The <span class="emphasis"><em>instance index</em></span> is kept
+        for each instance (all instances in the system).  This value
+        represents the index into the array of instances.  The value is
+        the index of the class instance when it was stored into NVS.
+        This is required during the restore operation.
+        </p></li><li class="listitem"><p>The <span class="emphasis"><em>class number</em></span> is required
+        inside the non-volatile store.</p></li><li class="listitem"><p>list of pointers to link functions
+        </p></li><li class="listitem"><p>list of class numbers
+        </p></li></ol></div></div><div class="section" title="Instruction Store (Code Space) Cost"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870919664"></a>Instruction Store (Code Space) Cost</h4></div></div></div><p>NVS domain:  approximated 3000 bytes (on 32 bit Intel)</p><p>PERSIST domain:  approximated 4000 bytes (on 32 bit Intel)</p><p>There is significant cost in queueing the modified instances
+      to the NVS cache queue.</p></div><div class="section" title="Cost in Speed"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870917360"></a>Cost in Speed</h4></div></div></div><p>The cost in speed is largely driven by the speed of
+      the non-volatile store technology.</p></div><div class="section" title="Non-volatile Memory Cost"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870916016"></a>Non-volatile Memory Cost</h4></div></div></div><p>An instance in NVS is identical in size to an instance in RAM.</p></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s07.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch11.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Analysis </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 11. Tasking/Threading</td></tr></table></div></body></html>
