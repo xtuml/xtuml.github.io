@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix B. Background</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="apa.html" title="Appendix A. Analysis Guide" /><link rel="next" href="apbs02.html" title="Components" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix B. Background</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apbs02.html">Next</a></td></tr></table><hr /></div><div class="appendix" title="Appendix B. Background"><div class="titlepage"><div><div><h2 class="title"><a id="Background-appendix"></a>Appendix B. Background</h2></div></div></div><div class="highlights"><a id="Background-appendix-high"></a><p>This appendix begins
+by providing a general overview of model compilers (sometimes
+referred to as the <span class="emphasis"><em>software architecture</em></span>)
+followed by a brief description of the major components of MC-3020.
+Next, a more detailed look is taken at the two types of tasks found
+in the MC-3020 architecture and how they interact.  Finally, the
+general operational nature of each task type is described. The intent
+is to provide the reader with a complete, high level view of the
+MC-3020 architecture, sufficient to provide a context for the rest
+of this manual.</p></div><div class="section" title="Model Compilers (Software Architectures)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60870655984"></a>Model Compilers (Software Architectures)</h2></div></div></div><div class="highlights"><p>This section provides a general overview of how
+  model compilers fit into the Shlaer-Mellor method.</p></div><div class="section" title="Shlaer-Mellor Development"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870632832"></a>Shlaer-Mellor Development</h3></div></div></div><p>The Shlaer-Mellor approach to software development begins by
+    partitioning the system into separate subject matters referred to
+    as domains.  Each domain is then analyzed using xtUML modeling
+    and finally the system is implemented by translating
+    the xtUML models into the chosen implementation technology (e.g.
+    language, operating system, custom hardware) using the model
+    compiler.</p><p>The software architecture is that domain which deals with the
+    subject matter of designing and implementing the system.  It
+    abstracts the design and implementation patterns appropriate for
+    the system and defines mapping rules between the xtUML models and
+    these design and implementation patterns.  This approach provides a
+    uniform set of data, function, and control abstractions that are
+    used system wide and forms the basis for translating the xtUML models
+    based on an automation of the mapping rules.</p></div><div class="section" title="Software Architecture Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870629728"></a>Software Architecture Components</h3></div></div></div><p>A software architecture is made up of three main components:
+    mechanisms, rule files (formerly archetypes) and marks.
+    In addition, build and
+    diagnostic components are provided to facilitate constructing and
+    debugging the system.  These components are described in the
+    following subsections.</p><div class="section" title="Mechanisms"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870628704"></a>Mechanisms</h4></div></div></div><p>A mechanism is architecture functionality that is specified,
+      designed, coded, and compiled to work with all xtUML models.  It is
+      not customized on an xtUML element boundary.  Examples of mechanisms
+      in an object-oriented ANSI C model compiler include code for 
+      managing circular queues and modules written to perform set
+      manipulation in a generic fashion.</p><p>In some architectures, pre-compiled mechanisms are not
+      necessary.  All code is generated from rule files or included
+      in uncompiled source form.  This is true of MC-3020.</p><p>MC-3020 is purely ANSI C and generates code that can be
+      compiled by any compiler compliant with the ANSI standard.  The
+      core model compiler now uses no libraries or system functions at
+      all.  Generated code is pure native C.  All string manipulation
+      library functions (memcpy, strcpy, strcat and related) used in
+      previous versions have been eliminated.  Native C functions have
+      replaced these system calls.  This has been accomplished in such
+      a way that a user can redefine the functions with a small
+      rule file change or macro definition.</p><p>This change makes it simpler and easier to integrate with
+      compilers of various makes and models and manufacturers.  In
+      addition, some simpler compilers will link in an entire library
+      of system functions when any single function is accessed from
+      the library.  Only <code class="filename">stdio.h</code> remains as
+      exposure on this front.</p><p><code class="filename">stdio.h</code> is included simply for convenience
+      during debug (for <span class="command"><strong>printf</strong></span>, etc).  All generated
+      code is simple, native C.  When integrating realized external
+      entities and timer services (TIM), other system libraries will
+      be necessary.  However, the core xtUML generated code remains
+      simple ANSI C.</p></div><div class="section" title="Rule Files (a.k.a. archetypes, templates)"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870621104"></a>Rule Files (a.k.a. archetypes, templates)</h4></div></div></div><p>A rule file is a combination of an implementation pattern
+      and translation rules for filling out that pattern based upon
+      specifics of the xtUML models.  Thus a rule file is designed to be
+      customized on an xtUML element boundary.  An example of a rule file
+      in an object-oriented ANSI C model compiler is the code pattern for
+      a struct that will be used to represent xtUML classes along with the
+      translation rules for populating that code pattern with such xtUML
+      elements as object name, attribute name, and valid events for that
+      object.</p></div><div class="section" title="Marks"><div class="titlepage"><div><div><h4 class="title"><a id="idm60870620016"></a>Marks</h4></div></div></div><p>When there is more than one software architecture element
+      into which an xtUML element can be translated,
+      <span class="emphasis"><em>marks</em></span> (formerly "colors") are used to
+      indicate which translation
+      to make.  The name ``mark'' comes from the visualization of using
+      a highlighter pen to mark each element that has a particular
+      property. Marks are used to direct the translation to select one
+      of two or more branches in the translation rules.  It is through
+      marking that design decisions are injected during the translation
+      process.</p><p>An example of the type of design information that is
+      specified through marking is the mapping of analysis data types
+      into implementation (e.g., C) data types.  Clearly, this is
+      information that does not belong in either the xtUML models or the
+      model compiler itself.  Such information is maintained
+      outside the model compiler and models in marking tables that are
+      accessed during the translation process.</p></div></div><div class="section" title="Additional Components"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870615392"></a>Additional Components</h3></div></div></div><p>In addition to the three basic components of a model
+    compiler, the mechanisms, rule files, and marks, there are also
+    two tools which come with an architecture to facilitate the
+    translating and building of the system and provide some diagnostic
+    capabilities for debugging the system.  These are:
+    </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>build tools</p></li><li class="listitem"><p>diagnostic tools</p></li></ul></div><p>
+    </p></div><div class="section" title="Model Compiler Analogy"><div class="titlepage"><div><div><h3 class="title"><a id="idm60870612112"></a>Model Compiler Analogy</h3></div></div></div><p>Just as assembly language is translated into machine code,
+    and a high level language is translated into assembly code (which
+    is then translated into machine code), the xtUML models and their
+    translation into a high level language can be viewed as the next
+    evolutionary step in language development.  The xtUML models now
+    become the new ``programming language'' and the software architecture
+    the new ``compiler''. This approach is referred to as model based
+    translative development (MBTD).</p><p>Applying this analogy to the model compiler components,
+    the mechanisms represent the run-time library that comes with a
+    conventional compiler to provide the functions necessary to
+    successfully execute the compiled code in the chosen
+    implementation environment.  Likewise, the rule files represent the
+    translation program or compiler that actually translates the high
+    level source code input to assembly code output.</p><p>
+    <a class="xref" href="apb.html#model-compiler-figure" title="Figure B.1.  Model Compiler Analogy with BridgePoint Tool Set">Figure B.1, “
+    Model Compiler Analogy with BridgePoint Tool Set”</a>
+    shows an overview of how the model compilation process works in the
+    context of the BridgePoint tool set.  The xtUML models are read from the
+    repository of the BridgePoint Builder and the translation rule files are
+    fed into the BridgePoint Generator.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="model-compiler-figure"></a><p class="title"><b>Figure B.1. 
+    Model Compiler Analogy with BridgePoint Tool Set</b></p><div class="figure-contents"><div class="mediaobject"><img src="mcanalog.png" alt="Model Compiler Analogy with BridgePoint Tool Set" /></div></div></div><br class="figure-break" /></div></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="apbs02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix A. Analysis Guide </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Components</td></tr></table></div></body></html>

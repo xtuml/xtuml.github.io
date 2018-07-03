@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Sample/Example Timer (TIM)</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="ch07.html" title="Chapter 7. Command Line Translation and Build" /><link rel="prev" href="ch07.html" title="Chapter 7. Command Line Translation and Build" /><link rel="next" href="ch08.html" title="Chapter 8. Initialization and Preexisting Instances" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Sample/Example Timer (TIM)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07.html">Prev</a> </td><th width="60%" align="center">Chapter 7. Command Line Translation and Build</th><td width="20%" align="right"> <a accesskey="n" href="ch08.html">Next</a></td></tr></table><hr /></div><div class="section" title="Sample/Example Timer (TIM)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60871413376"></a>Sample/Example Timer (TIM)</h2></div></div></div><p>xtUML provides a model of time.  Time can be read, time can
+  be measured and delayed events can be generated.  BridgePoint Builder provides a
+  "standard" interface to time through an external entity (EE) called
+  Time (TIM).  A set of bridge operations on the TIM external entity
+  have become somewhat standardized.  Among these are
+  <span class="command"><strong>TIM::timer_start</strong></span>,
+  <span class="command"><strong>TIM::get_date</strong></span>,
+  <span class="command"><strong>TIM::timer_cancel</strong></span>. etc.</p><p>Since measuring time is often dependendent upon the target
+  platform, MC-3020 provides no formal support for time in the
+  generated code.  However, a sample Time EE is generated and can
+  easily be modified by the user.  This sample provides an excellent
+  head start when building a timer on a particular target.</p><p>In order to use these timers:
+  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> <code class="filename">TIM_bridge.c</code> and
+    <code class="filename">TIM_bridge.h</code> are automatically generated
+    into the <code class="filename">system/skel</code> folder.
+    </p></li><li class="listitem"><p>The generated <code class="filename">TIM_bridge.c</code>
+    will have a <code class="function">pause</code> and
+    <code class="function">resume</code> that will be used to suspend time)
+    when generated with Model Debugging enabled.</p></li><li class="listitem"><p>To use the sample TIM, references to the TIM
+    routines in <code class="filename">sys_user_co.c</code> must be
+    uncommented.  These calls initialize and periodically "tick" the
+    timer subsystem.  These references are are found in
+    <code class="function">UserInitializationCalloutf</code> and
+    <code class="function">UserBackgroundProcessingCalloutf</code>.</p></li><li class="listitem"><p>Modifications made to define timer routines must
+    be made in <code class="filename">sys_user_co.h</code>
+    (<code class="function">UserInitializationCallout</code>
+    <code class="function">UserBackgroundProcessingCallout</code>). The
+    initial macros defining these routines as empty must be commented
+    out or deleted.</p></li><li class="listitem"><p><code class="function">TIM_init</code> must be invoked at
+    start-up (this is normally done by uncommenting the line found in
+    <code class="function">UserInitializationCalloutf</code>.</p></li><li class="listitem"><p><code class="function">TIM_tick</code> must be invoked
+    periodically and as often as practical (normally done by
+    uncommenting the line found in
+    <code class="function">UserBackgroundProcessingCalloutf</code>.</p></li></ul></div><p>
+  </p><p>Many users have enhanced the given sample to be asynchronous.
+  Instead of calling <code class="function">TIM_tick</code> periodically from
+  the background loop, it can be asynchronously invoked with a
+  signal.  It can also be spawned into its own thread.  The TIM as
+  generated for the Nucleus PLUS environment does this.  The user may
+  augument and enhance this sample as desired.</p></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch07.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch08.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 7. Command Line Translation and Build </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 8. Initialization and Preexisting Instances</td></tr></table></div></body></html>

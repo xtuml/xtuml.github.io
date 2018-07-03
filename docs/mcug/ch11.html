@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 11. Tasking/Threading</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.75.1" /><link rel="home" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="up" href="index.html" title="BridgePoint Model Compiler - User's Guide" /><link rel="prev" href="ch10s08.html" title="Persistence Design" /><link rel="next" href="ch11s02.html" title="Marking for Tasking" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 11. Tasking/Threading</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s08.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch11s02.html">Next</a></td></tr></table><hr /></div><div class="chapter" title="Chapter 11. Tasking/Threading"><div class="titlepage"><div><div><h2 class="title"><a id="Tasking-chapter"></a>Chapter 11. Tasking/Threading</h2></div></div></div><div class="highlights"><a id="Tasking-chapter-high"></a><p>MC-3020 supports running
+the xtUML application within multiple tasks or threads.  The tasking
+uses the underlying OS/RTOS when one exists.  MC-3020 can still run
+without an OS/RTOS, but if preemptive multi-tasking is desired in
+the application, it is available.  The tasking/threading
+capabilities for MC-3020 are outlined here.</p></div><div class="section" title="Introduction"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm60870752864"></a>Introduction</h2></div></div></div><p>A well-modeled xtUML application is inherently concurrent.
+  Actions from any two or more instances are considered to run
+  simultaneously.  This concurrency at the specification level
+  simplifies the task of the developer.  Smaller bits of system can be
+  modeled to run somewhat independently.  The life-cycles of classes in
+  a system can be modeled mostly independently considering only their
+  synchronization with other classes in the system.  For example, the
+  microwave door and the turntable run concurrently and mostly without
+  recognizing or caring that the other exists or is running.  If
+  Developer A is modeling the door, and Developer B is modeling the
+  turntable, they can do their state modeling with loose
+  coupling.</p><p>To begin using the tasking/threading capability right away,
+  jump to <a class="xref" href="ch11s02.html" title="Marking for Tasking">the section called “Marking for Tasking”</a>.</p><p>A form of the inherent concurrency of the xtUML model can
+  easily be translated and realized in a single-tasking microcontroller
+  target.  In single-tasking mode, MC-3020 interleaves the state
+  actions of multiple concurrent instances of executing classes.</p><p>A single-tasking deployment architecture achieves a level of
+  concurrency in which state actions from actively running class
+  instances are interleaved.  Such a deployment design serves well
+  for applications requiring concurrency at the granularity of a
+  state action.  It is light weight and fast.</p><p>However, if a finer grained concurrency is desired, it will be
+  necessary to use a multi-tasking deployment system.  In a
+  multi-tasking deployment environment, state actions can run in
+  concurrently executing tasks or threads.  The number of currently
+  executing actions can be equal to the number of executing tasks
+  (instead of just one).</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s08.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch11s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Persistence Design </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Marking for Tasking</td></tr></table></div></body></html>
