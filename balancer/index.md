@@ -85,3 +85,7 @@ and two blue pins.
 ## Congratulations
 
 You have completed your EV3 balancer robot.
+
+A printable template for a paper wrapper for this robot can be found
+[here](wrapper/wrapper.pdf). When printed on colored card stock, this wrapper
+can be used to enable color based visual location tracking of the robot.
