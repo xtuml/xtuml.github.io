@@ -15,24 +15,24 @@ xtUML training class.
 
 ### <a id="1.1."></a> 1.1. Log in
 * Launch __Remote Desktop Connection__   
-![Launching Remote Desktop](img/Launching_Remote_Desktop.png){:height="60%" width="60%"}
-* Enter one of the available IP Addresses: __13.115.34.116__   
-![IP entry](img/rdc_ip_entry.png){:height="100%" width="100%"}
+![Launching Remote Desktop](img/Launching_Remote_Desktop.png){:height="703" width="401"}  
+* Enter one of the available IP Addresses: __13.115.34.116__, __18.179.35.212__      
+![IP entry](img/rdc_IP_entry.png){:height="524" width="834"}  
 * Enter login info (user, password): student, Robots1   
-![User login](img/rdc_user_login.png){:height="100%" width="100%"}
+![User login](img/rdc_user_login.png){:height="644" width="934"}  
 * Click "Yes" to the Certificate Warning dialog   
 * Windows desktop is shown   
 ![Desktop](img/desktop.png)
 
 ### <a id="1.2."></a> 1.2. Start BridgePoint
 * Start BridgePoint using the desktop shortcut   
-![Desktop](img/vm_desktop_tools.png){:height="100%" width="100%"}
+![Desktop](img/vm_desktop_tools.png){:height="804" width="152"}
 * Test usability, play with the Welcome > Quick Start > Microwave Oven example  
 * Exit BridgePoint  
 
 ### <a id="1.3."></a> 1.3. Test Japanese language
 * Change the language to Japanese   
-![Language Selection](img/vm_language_selection.png){:height="100%" width="100%"}
+![Language Selection](img/vm_language_selection.png){:height="480" width="646"}
 * Start BridgePoint again.  Test usability.   
 
 ### <a id="1.4."></a> 1.4. Git setup
@@ -46,7 +46,7 @@ __Note:__ from inside git-bash and cygwin, the C: drive is at /c
 
 ### <a id="1.5."></a> 1.5. Disconnect
 * To exit the session, use Start > Power > Disconnect   
-![Disconnecting](img/vm_disconnect.png){:height="100%" width="100%"}
+![Disconnecting](img/vm_disconnect.png){:height="492" width="696"}
 
 ## <a id="2."></a> 2. Build Sumo Robot
 * Follow the instructions to [construct the Sumo robot](https://xtuml.github.io/sumo/) using the EV3 kit
