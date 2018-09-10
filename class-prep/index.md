@@ -14,6 +14,9 @@ xtUML training class.
 ## <a id="1."></a> 1. Virtual Machine 
 
 ### <a id="1.1."></a> 1.1. Log in
+The instructions to connect and log in here are the basic steps.  To set up
+a shared folder from the local machine while logging in, [follow these instructions](connect_shared_folders.html).  
+
 * Launch __Remote Desktop Connection__   
 ![Launching Remote Desktop](img/Launching_Remote_Desktop.png){:height="703" width="401"}  
 * Enter one of the available IP Addresses: __13.115.34.116__, __18.179.35.212__      
