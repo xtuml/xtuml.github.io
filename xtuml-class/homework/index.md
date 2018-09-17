@@ -8,7 +8,9 @@
 
 * [Homework 1.3 - github setup](https://xtuml.github.io/xtuml-class/homework/1.3.html) due 26 Sep 2018
 
-* [Homework 1.4 - Build the Robot](https://xtuml.github.io/xtuml-class/homework/1.4.html) due 26 Sep 2018
+* [Homework 1.4 - Build the Robot](https://xtuml.github.io/xtuml-class/homework/1.4.html) due 28 Sep 2018
+
+* [Homework 1.5 - Remote Desktop](https://xtuml.github.io/xtuml-class/homework/1.5.html) due 1 Oct 2018
 
 
 
