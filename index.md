@@ -8,7 +8,8 @@
 
 * Instructions to [construct the Balancer robot](https://xtuml.github.io/balancer/) using the EV3 kit  
 
-* [xtUML Class Preparations - Shinshu University](https://xtuml.github.io/class-prep)  
+* [xtUML Modeling Class](https://xtuml.github.io/xtuml-class)  
+  * [xtUML Class Preparations - Shinshu University](https://xtuml.github.io/class-prep)  
 
 * [Model Compiler User Guide](https://xtuml.github.io/docs/mcug/)  
 
