@@ -16,12 +16,12 @@
 ### Pre-Grade Policy
 
 Students may submit homework before the due date to receive a _pre-grade_.
-The pre-grade is not recorded in the grade book.  The instructor will
-review the homework assignment and provide feedback to the student.
-If the homework is perfect, the instructor will say so.  If there is a
-problem, the instructor will inform the student of the _first_ problem
-discovered in the homework.  Students may then correct the homework and
-submit at the normal due date.
+The pre-grade is not recorded in the grade book.  If time is available,
+the instructor will review the homework assignment and provide feedback
+to the student.  If the homework is perfect, the instructor will say so.
+If there is a problem, the instructor will inform the student of the
+_first_ problem discovered in the homework.  Students may then correct
+the homework and submit at the normal due date.
 
 To be eligible for pre-grade, homework must be submitted more than one
 full day before the due date.
