@@ -29,8 +29,11 @@ visible.
 * Take a screenshot of your BridgePoint with Model Explorer view expanded to show all the 
 elements you have just created and edited.  
 * Open the BridgePoint support issue you created in [homework 1.1](1.1.html). 
-* Edit the issue, scroll down and add a Note that this homework is completed and use the
-Choose Files button to attach your screenshot.  
+* Edit the issue, scroll down to the Edit field:  
+  * Change the Status to "Feedback"  
+  * Change the Assignee to "cstarrett"  
+  * Add a Note that this homework is completed 
+  * Use the Choose Files button to attach your screenshot  
 * Click the Submit button  
 
 <br/>
