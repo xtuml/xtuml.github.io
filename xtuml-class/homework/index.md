@@ -12,7 +12,6 @@
 
 * [Homework 1.5 - Remote Desktop](https://xtuml.github.io/xtuml-class/homework/1.5.html) due 1 Oct 2018
 
-
 ### Pre-Grade Policy
 
 Students may submit homework before the due date to receive a _pre-grade_.
