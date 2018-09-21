@@ -25,7 +25,8 @@
   * Expand Class As Simple Participant for *navigate*  
   * Set the Text Phrase field to *steers for*  
   * You can drag the phrases around on the canvas to reposition them and use the bendpoints
-  on the association line to add turned segments to the line
+  on the association line to add turned segments to the line  
+
 ![screen](../img/sumo_hw_3.2.png)   
 
 9) Select the association *R2* and then open the Properties view  
