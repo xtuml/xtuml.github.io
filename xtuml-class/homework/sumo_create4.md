@@ -13,7 +13,9 @@ state machine canvas:
   * resting
   * attacking
   * retreating
-  * targeting
+  * targeting   
+
+![screen](../img/sumo_hw_4.2.png)  
 
 5) Next we will create events.  To create an event, right-click on a blank
 area of the canvas and select **New > Event**.  Create the following events:
