@@ -87,19 +87,29 @@ wizard to select the *Orientation* type.
 26) Right-click on the *name* parameter and select **Set Type...**.  Use the wizard 
 to select the *string* type.  
 
-
 <br/>
+
 ### Submitting your homework
 
 * Take a screenshot of your BridgePoint with Model Explorer view expanded to show 
 all the elements you have created.  
 * Open the BridgePoint support issue **you** created in [homework 1.1](1.1.html). Issue 
 10472 is just used here as an example.  
-* Edit the issue, scroll down and add a Note that this homework is completed and use the
-Choose Files button to attach your screenshot.  
+* Edit the issue, scroll down to the Edit field:  
+  * Change the Status to "Feedback"  
+  * Change the Assignee to "cstarrett"  
+  * Add a Note that this homework is completed 
+  * Use the Choose Files button to attach your screenshot  
 * Click the Submit button  
 
 ![screen](../img/sumo_hw_1.13.png)   
+<hr/>  
+
+![screen](../img/sumo_hw_1.13a.png)   
+<hr/>  
+
+![screen](../img/sumo_hw_1.13b.png)   
+<hr/>  
 
 ![screen](../img/sumo_hw_1.14.png)  
 
