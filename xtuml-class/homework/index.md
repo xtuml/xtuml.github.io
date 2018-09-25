@@ -1,5 +1,7 @@
 # Welcome to xtUML Class Homework!
 
+### Homeworks
+
 * [Homework 1.0 - Introductions](1.0.html) due 19 Sep 2018
 
 * [Homework 1.1 - Support Accounts](1.1.html) due 21 Sep 2018
@@ -12,9 +14,10 @@
 
 * [Homework 1.5 - Remote Desktop](1.5.html) due 1 Oct 2018
 
-<br/>
-
 * [Extra credit - Build the Balancer Robot](build_balancer.html)   
+
+* [Set up EV3RT Dev Environment](ev3_setup.html)   
+
 
 ### Pre-Grade Policy
 
@@ -29,4 +32,4 @@ the homework and submit at the normal due date.
 To be eligible for pre-grade, homework must be submitted more than one
 full day before the due date.
 
-[Back to class home](../xtuml-class)  
+[Back to class home](../)  
