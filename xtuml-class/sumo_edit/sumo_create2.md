@@ -42,4 +42,4 @@ You are now ready to proceed to the [next step](./sumo_create3.html)
 
 <br/>
 <br/>
-[Back to assignment list](../sumo_edit)  
+[Back to assignment list](.)  
