@@ -62,6 +62,11 @@ Final submission guidelines will be outlined by your instructor.
 
 ## 4. Milestones
 
+There are ten (10) milestones in this section:  4.1 - 4.10.  The milestones
+are ordered from simple to complex.  It is the goal of the project to complete
+each milestone in sequence and ultimately having knowlege to make a superior
+sumo robot application that wins!
+
 ### 4.1 Change the name of the sumo
 
 * Navigate to and open "Library > sumo > IO > platform > init"
@@ -86,7 +91,7 @@ Final submission guidelines will be outlined by your instructor.
   you get a value you are happy with.
 ![02.png](02.png)
 
-### 4.3 Change the turning duration
+### 4.3 Change the turning (targeting) duration
 
 * Turning is controlled by a period of time. If the time period is shorter,
   the robot will not turn as far.

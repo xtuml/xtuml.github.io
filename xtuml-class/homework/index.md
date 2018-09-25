@@ -14,9 +14,9 @@
 
 * [Homework 1.5 - Remote Desktop](1.5.html) due 1 Oct 2018
 
-* [Build the Balancer Robot (extra credit)](build_balancer.html)  
+* [Build the Balancer Robot (extra credit)](build_balancer.html) due 1 Oct 2018  
 
-* [Set up EV3RT Dev Environment](ev3_setup.html)  
+* [Set up EV3RT Dev Environment](ev3_setup.html) due 2 Oct 2018  
 
 
 ### Pre-Grade Policy
