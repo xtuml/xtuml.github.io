@@ -2,6 +2,7 @@
 
 * [Homework](homework)  
 * [Getting started with sumo](sumo_start.md)  
-* [Sumo project](sumo_project)  
+* [Build-A-Sumo Editing Project](sumo_edit)  
+* [Sumo Enhancement Project](sumo_project)  
 
 

@@ -1,4 +1,4 @@
-# Sumo Robot Class Project
+# Build-A-Sumo Model Editing
 
 ## 1. Overview
 
@@ -9,8 +9,8 @@ progresses. A successful sumo robot application is one which obeys the rules of
 the game and wins more than 50% of the time.
 
 The sumo robot game consists of a sumo ring and two identical LEGO robots. The
-ring is made up of a white background with a black ring printed on it (about 1
-meter in diameter). Both robots are placed in the center of the ring side by
+ring is made up of a white background with a black ring printed on it (about 48
+inches in diameter). Both robots are placed in the center of the ring side by
 side facing opposite directions. The robots are activated at the same time. The
 robots must delay exactly 2 seconds (to allow humans to clear the ring) and then
 they may begin moving. The robots must stay within the black ring and attempt to
@@ -20,18 +20,18 @@ the winner.
 ## 2. Prerequisites
 
 2.1 Build the sumo robot using [these
-instructions](../../sumo/).
+instructions](https://xtuml.github.io/sumo/).
 
 2.2 Set up your EV3RT development workspace following the guide
 [here](http://ev3rt-git.github.io/get_started/). Run the sample application.
 
 2.3 Clone your fork of the "models" repository. Import the "Sumo", "Sumo
 Simulator", and "MCLMShared" projects. If you do not know how to do this, see
-the guide [here](../homework/1.3.html).
+the guide [here](https://xtuml.github.io/xtuml-class/homework/1.3.html).
 
 2.4 Run the application in Verifier. Follow the instructions here to get started
 with Verifier and code gen
-[here](../sumo_start.html).
+[here](https://xtuml.github.io/xtuml-class/sumo_start.html).
 
 2.5 Generate code for the Sumo application.  Assure that you are using the MCLM
 version of BridgePoint found
@@ -51,9 +51,9 @@ instructions.
 ## 3. Grading
 
 Projects will be graded on completeness and effectiveness. To enable grading
-_**Each milestone in section 4 must have a git commit and the commit
+_**Each milestone in section 4 must have it's own git commit and the commit
 message must contain the milestone number. These commits must be pushed to your
-fork on Github.com. Failure to include each milestone for each git commit will
+fork on Github.com. Failure to include each milestone in its own commit will
 result in loss of credit.**_ Projects will also be graded on how well the
 application works -- does it obey the rules and does it win more than half of
 the time.

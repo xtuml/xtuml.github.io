@@ -1,6 +1,6 @@
 # Welcome to xtUML Class Homework!
 
-### Homeworks
+### Homework Assignments
 
 * [Homework 1.0 - Introductions](1.0.html) due 19 Sep 2018
 
@@ -14,9 +14,9 @@
 
 * [Homework 1.5 - Remote Desktop](1.5.html) due 1 Oct 2018
 
-* [Extra credit - Build the Balancer Robot](build_balancer.html)   
+* [Build the Balancer Robot (extra credit)](build_balancer.html)  
 
-* [Set up EV3RT Dev Environment](ev3_setup.html)   
+* [Set up EV3RT Dev Environment](ev3_setup.html)  
 
 
 ### Pre-Grade Policy
