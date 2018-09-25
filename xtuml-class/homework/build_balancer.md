@@ -1,5 +1,9 @@
 # Build the Balancer Robot Homework ![balancer robot](../img/balancer_robot.png)
 
+[For the Shinshu class, this is extra credit.  We need 2 balancing robots
+to be used for demonstrations during class.  Please speak to Professor
+Kayama-sensei to determine who shall build these robots.]
+
 1) Build the EV3 LEGO balancer robot following [these instructions](../../balancer/).
 
 <br/>

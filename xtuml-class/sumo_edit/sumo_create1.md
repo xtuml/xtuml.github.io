@@ -1,6 +1,6 @@
-# Build a Sumo Model - Homework 1  ![robot](../img/sumo_robot.jpg)  
+# Build a Sumo Model - Assignment 1  ![robot](../img/sumo_robot.jpg)  
 
-In this series of homeworks you will learn how to create a model using
+In this series of assignments you will learn how to create a model using
 BridgePoint.  We will walk though the model creation process step-by-step. These
 instructions assume you have already installed BridgePoint and launched it.  
 
@@ -89,7 +89,7 @@ to select the *string* type.
 
 <br/>
 
-### Submitting your homework
+### Submitting your assignment
 
 * Take a screenshot of your BridgePoint with Model Explorer view expanded to show 
 all the elements you have created.  
@@ -98,7 +98,7 @@ all the elements you have created.
 * Edit the issue, scroll down to the Edit field:  
   * Change the Status to "Feedback"  
   * Change the Assignee to "cstarrett"  
-  * Add a Note that this homework is completed 
+  * Add a Note that this assignment is completed 
   * Use the Choose Files button to attach your screenshot  
 * Click the Submit button  
 
@@ -119,4 +119,4 @@ You are now ready to proceed to the [next step](./sumo_create2.html)
 
 <br/>
 <br/>
-[Back to homework list](../homework)  
+[Back to assignment list](../sumo_edit)  

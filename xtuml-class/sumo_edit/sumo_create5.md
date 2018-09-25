@@ -1,4 +1,4 @@
-# Build a Sumo Model - Homework 5  ![robot](../img/sumo_robot.jpg)  
+# Build a Sumo Model - Assignment 5  ![robot](../img/sumo_robot.jpg)  
 
 1) Double-click on *navigate* class to open its state machine canvas. 
 
@@ -64,13 +64,13 @@ send IO::turn(orientation: Orientation::right);
 
 <br/>
 
-### Submitting your homework
+### Submitting your assignment
 * Take a screenshot of your *navigate* and *steering* state machines.   
 * Open the BridgePoint support issue you created in [homework 1.1](1.1.html). 
 * Edit the issue, scroll down to the Edit field:  
   * Change the Status to "Feedback"  
   * Change the Assignee to "cstarrett"  
-  * Add a Note that this homework is completed 
+  * Add a Note that this assignment is completed 
   * Use the Choose Files button to attach your screenshots    
 * Click the Submit button  
 
@@ -80,4 +80,4 @@ send IO::turn(orientation: Orientation::right);
 
 <br/>
 <br/>
-[Back to homework list](../homework)  
+[Back to assignment list](.)  
