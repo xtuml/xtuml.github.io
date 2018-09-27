@@ -16,7 +16,7 @@ a shared folder from the local machine while logging in, [follow these instructi
 
 * Launch __Remote Desktop Connection__   
 ![Launching Remote Desktop](img/Launching_Remote_Desktop.png){:height="703" width="401"}  
-* Enter one of the available IP Addresses: __54.92.46.225__   
+* Enter one of the available IP Addresses: __13.231.101.27__   
 ![IP entry](img/rdc_IP_entry.png){:height="524" width="834"}  
 * Enter login info (user, password): student, Robots1   
 ![User login](img/rdc_user_login.png){:height="644" width="934"}  

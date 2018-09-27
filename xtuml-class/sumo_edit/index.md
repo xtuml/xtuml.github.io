@@ -2,15 +2,27 @@
 
 ### Editing Assignments
 
-* [1 - Introductions](sumo_create1.html) due 7 Oct 2018
+This sequence of assignments involves learning how to edit xtUML models
+in BridgePoint.  It goes step-by-step with only a little bit of explanation.
+You will learn by _doing_.  When you have completed the project, you will be
+more familiar with the tool and how to edit packages, class diagrams and
+state machines.
 
-* [2 - Support Accounts](sumo_create2.html) due 7 Oct 2018
+Note that these are _exercises_ only.  Even after the last step the model
+is incomplete.  To run the xtUML model, you will need to start with the
+complete model as imported from the xtuml/models repository.
 
-* [3 - BridgePoint](sumo_create3.html) due 7 Oct 2018
+That is the next project!
 
-* [4 - github setup](sumo_create3.html) due 7 Oct 2018
+* [1](sumo_create1.html) due 7 Oct 2018
 
-* [5 - Build the Robot](sumo_create3.html) due 7 Oct 2018
+* [2](sumo_create2.html) due 7 Oct 2018
+
+* [3](sumo_create3.html) due 7 Oct 2018
+
+* [4](sumo_create3.html) due 7 Oct 2018
+
+* [5](sumo_create3.html) due 7 Oct 2018
 
 
 [Back to class home](../)  

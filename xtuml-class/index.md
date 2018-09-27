@@ -3,6 +3,6 @@
 * [Homework](homework)  
 * [Getting started with sumo](sumo_start.md)  
 * [Build-A-Sumo Editing Project](sumo_edit)  
-* [Sumo Enhancement Project](sumo_project)  
+* [Sumo Robot Enhancement Project](sumo_project)  
 
 
