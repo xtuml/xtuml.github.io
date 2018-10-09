@@ -20,9 +20,9 @@ That is the next project!
 
 * [3](sumo_create3.html) due 7 Oct 2018
 
-* [4](sumo_create3.html) due 7 Oct 2018
+* [4](sumo_create4.html) due 7 Oct 2018
 
-* [5](sumo_create3.html) due 7 Oct 2018
+* [5](sumo_create5.html) due 7 Oct 2018
 
 
 [Back to class home](../)  
