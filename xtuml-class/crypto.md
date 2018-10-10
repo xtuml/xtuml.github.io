@@ -13,7 +13,7 @@
 * [Symmetric/Asymmetric Key Cryptography](https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences) 2 types of cryptography
 
 ## Passwords
- * [password entropy](http://rumkin.com/tools/password/passchk.php) measuring the strength of your password
- * 2FA
- * password hash - Does the server store your actual password?
+* [password entropy](http://rumkin.com/tools/password/passchk.php) measuring the strength of your password
+* 2FA
+* password hash - Does the server store your actual password?
 
