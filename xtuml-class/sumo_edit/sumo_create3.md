@@ -59,7 +59,7 @@ operation *stop*
 ### Submitting your assignment
 * Take a screenshot of your BridgePoint with Model Explorer view expanded to show all the 
 elements you have just created.  
-* Open the BridgePoint support issue you created in [homework 1.1](1.1.html). 
+* Open the BridgePoint support issue you created in [homework 1.1](../homework/1.1.html). 
 * Edit the issue, scroll down to the Edit field:  
   * Change the Status to "Feedback"  
   * Change the Assignee to "cstarrett"  

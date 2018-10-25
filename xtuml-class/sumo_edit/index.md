@@ -10,19 +10,19 @@ state machines.
 
 Note that these are _exercises_ only.  Even after the last step the model
 is incomplete.  To run the xtUML model, you will need to start with the
-complete model as imported from the xtuml/models repository.
+complete Sumo model as imported from the xtuml/models repository.
 
 That is the next project!
 
-* [1](sumo_create1.html) due 7 Oct 2018
+* [Assignment 1](sumo_create1.html)   
 
-* [2](sumo_create2.html) due 7 Oct 2018
+* [Assignment 2](sumo_create2.html)  
 
-* [3](sumo_create3.html) due 7 Oct 2018
+* [Assignment 3](sumo_create3.html)  
 
-* [4](sumo_create4.html) due 7 Oct 2018
+* [Assignment 4](sumo_create4.html)   
 
-* [5](sumo_create5.html) due 7 Oct 2018
+* [Assignment 5](sumo_create5.html)   
 
 
 [Back to class home](../)  

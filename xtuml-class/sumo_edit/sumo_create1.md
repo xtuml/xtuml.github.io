@@ -93,7 +93,7 @@ to select the *string* type.
 
 * Take a screenshot of your BridgePoint with Model Explorer view expanded to show 
 all the elements you have created.  
-* Open the BridgePoint support issue in Redmine that **you** created in [homework 1.1](1.1.html). Issue 
+* Open the BridgePoint support issue in Redmine that **you** created in [homework 1.1](../homework/1.1.html). Issue 
 10472 is just used here as an example.  
 * Edit the issue, scroll down to the Edit field:  
   * Change the Status to "Feedback"  
