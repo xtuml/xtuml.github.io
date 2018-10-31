@@ -17,6 +17,10 @@ hesitate to use these resources!  Someone from our friendly community will help 
 * Create a folder `xtuml` in your home directory (hereafter referred to as `<home>`)  
 * Extract the zipfile contents into the `<home>/xtuml` folder 
 
+> __OS Compatibility Note:__  
+> On Linux and MacOS directory paths are separated with `/`, while on 
+> Windows you will use `\`
+
 ## Simplified User Interface
 
 BridgePoint supports many UML diagrams. To simplify the user interface and focus

@@ -18,7 +18,14 @@ instructions assume you have already installed BridgePoint and launched it.
 
 4) Double-click package *IO DTs* to open it   
 
-5) Create Enumeration DataType *Direction* inside *IO DTs* package   
+5) Create Enumeration Data Type *Direction* inside *IO DTs* package  
+> Creation can be performed in any of three ways:
+> 1. Click the name of the element (here Enumeration Data Type) in the Palette to select the tool, then
+> click on the canvas diagram to place the element.
+> 2. Right-click on the canvas diagram and use the context menu ***New > ...***
+> 3. Right-click on the element in Model Explorer that you want to contain your new element and use the 
+> context menu ***New > ...***  
+  
 ![screen](../img/sumo_hw_1.5.png)  
 
 6) Right-click on the *Direction* enumeration and select **New > Enumerator**. Name the enumerator *backward*   
