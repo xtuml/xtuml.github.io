@@ -1,32 +1,37 @@
-# BridgePoint Tool Jumpstart
+= BridgePoint Tool Jump Start
 
-## Background
+== Background
 
 These instructions aim to give new users a basic introduction to the 
 BridgePoint tool utilizing content from various sources.  The goal is 
-to minimize blank paper shock and tool struggles.   
+to minimize "blank page syndrome" (not knowing how to get started)
+and struggles with the tool.   
 
-Help is available in the [xtUML Forum](https://xtuml.org/forums/) and 
-[xtUML Community Chat](https://hangouts.google.com/group/vMohZ9oW08xR7wSd2). Don't
-hesitate to use these resources!  Someone from our friendly community will help you.  
+Help is available in the https://xtuml.org/forums/[xtUML forum] and 
+https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community Chat].
+Do not hesitate to use these resources!  Someone from our friendly community
+will help you.  
 
-# Installation
+= Installation
 
-## Download
-[Download BridgePoint (xtUML Modeler version)](https://s3.amazonaws.com/xtuml-releases/nightly-build/buildfiles.html). 
+== Download
+https://s3.amazonaws.com/xtuml-releases/nightly-build/buildfiles.html[Download BridgePoint (xtUML Modeler version)]. 
+
 * Create a folder `xtuml` in your home directory (hereafter referred to as `<home>`)  
 * Extract the zipfile contents into the `<home>/xtuml` folder 
 
-> __OS Compatibility Note:__  
-> On Linux and MacOS directory paths are separated with `/`, while on 
-> Windows you will use `\`
+ __OS Compatibility Note:__  
+ On Linux and MacOS directory paths are separated with /, while on 
+ Windows you will use \.
 
-## Simplified User Interface
+== Simplified User Interface
 
 BridgePoint supports many UML diagrams. To simplify the user interface and focus
 on only the executable diagrams:
+
 * Using a text editor, open `bridgepoint.ini` in your installation under `<home>/xtuml` (will be under a subdirectory depending on your OS)  
 * Append the following to the end of `bridgepoint.ini`  
+
 ```
 -Dbridgepoint.AcceptEventAction=disabled
 -Dbridgepoint.AcceptTimeEventAction=disabled
@@ -61,6 +66,7 @@ on only the executable diagrams:
 -Dbridgepoint.UseCase=disabled
 -Dbridgepoint.UseCaseAssociation=disabled
 ```
+
 * Save and exit the text editing of `bridgepoint.ini`  
 * Create a folder named `workspaces` in your home directory
 * Start BridgePoint by running the executable file named `bridgepoint` 
@@ -69,26 +75,26 @@ information about one or more projects.  Let's specify a workspace named
 `sandbox1` by entering `<home>/workspaces/sandbox1`   
 * Once BridgePoint starts, Click the "x" on the Welcome tab to close the Welcome page
 
-# Project Creation and Editing Example
+= Project Creation and Editing Example
 
-Now let's go step by step to create an example model.  This phase is intended
+Now let us go step by step to create an example model.  This phase is intended
 to teach you how to perform model edits.  Getting started from a blank canvas is
-often challenging, so let's jump right in.  
+often challenging, so let us begin.
 
-[Build a Sumo model](../xtuml-class/sumo_edit/)  
+link:../xtuml-class/sumo_edit/[Build a Sumo Model]
 
-# Additional Learning
+= Additional Learning
 
 Now that you have learned a little about the tool, many other resources are available
-on [xtuml.org](https://xtuml.org) under the "Learn" section.  
+on https://xtuml.org[xtuml.org] under the "Learn" section.  
 
-## Online Course
+== Online Course
 
-Of specific note is the online [Modeling with xtUML](https://xtuml.org/learn/on-line-courses/)
+Of specific note is the online https://xtuml.org/learn/on-line-courses/[Modeling with xtUML]
 course.  This course uses short-form videos to teach users about various 
 parts and features of BridgePoint.  
 
-## Example Models
+== Example Models
 
 BridgePoint has several sample models built into the tool.  Re-open the Welcome
 page by choosing `Help > Welcome` in the application menu.  Then choose `Quick Start`.
