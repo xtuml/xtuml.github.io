@@ -1,0 +1,49 @@
+= BridgePoint Homework  image:../img/xtuml_chip.png[xtUML chip]
+
+== BridgePoint Installation
+Install BridgePoint (https://s3.amazonaws.com/xtuml-releases/lego-build/buildfiles.html[LEGO Mindstorms build]).  
+
+Note:  If you already have BridgePoint installed, you need to install
+this version into a different directory than the existing BridgePoint.
+Rename the previous folder before installing the new one.)  
+
+* https://s3.amazonaws.com/xtuml-releases/lego-build/org.xtuml.bp.product-win32.win32.x86_64.zip[Windows]
+* https://s3.amazonaws.com/xtuml-releases/lego-build/org.xtuml.bp.product-linux.gtk.x86_64.zip[Linux]
+* https://s3.amazonaws.com/xtuml-releases/lego-build/org.xtuml.bp.product-macosx.cocoa.x86_64.zip[macOS]
+
+== Quick Start
+Run the BridgePoint _Quick Start_.
+* Run BridgePoint.
+* On the Welcome page, select “Quick Start > Example Application - Microwave Oven”
+  ** Use the Model Explorer tree view to navigate the model.
+  ** Use the Palette and context menu to add new packages, types, classes, and associations.  Experiment! 
+
+== Attaching a File to an Issue
+Take a screen shot of your computer running BridgePoint and submit
+as an attachment to your Redmine issue.  Change the Status to 'Feedback'
+and Assignee to your instructor.  See instructions below.
+
+== Submitting your homework
+
+* Take a screenshot on your PC with BridgePoint running.
+* Open the BridgePoint support issue in Redmine that **you** created in link:1.1.adoc[homework 1.1].
+(Issue 10472 is used here only as an example.)
+* Edit the issue; scroll down to the Edit field:
+  ** Change the Status to "Feedback"
+  ** Change the Assignee to "cstarrett"
+  ** Add a Note that this homework is completed
+  ** Use the Choose Files button to attach your screenshot
+* Click the Submit button
+
+image::../img/sumo_hw_1.13.png[screen]
+
+image::../img/sumo_hw_1.13a.png[screen]
+
+image::../img/sumo_hw_1.13b.png[screen]
+
+Write an appropriate message in the Note.  (This one is example text only.)
+
+image::../img/sumo_hw_1.14.png[screen]
+
+
+link:./[back to homework list]

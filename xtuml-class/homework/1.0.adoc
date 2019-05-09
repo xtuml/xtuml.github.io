@@ -1,0 +1,15 @@
+= Introductions Homework  image:../img/handshake.png[handshake]
+
+== Email
+Send an email to your instructor, Mr. Starrett, at __cortland.starrett@onefact.net__.
+Put the following information into the email:
+
+* your name
+* photo of yourself (selfie)
+* your graduate focus of study
+* Answer the question, "What do you want to learn in this class?"
+
+Your instructor will respond to your email.  You may email the instructor
+at any time.  Please ask questions.
+
+link:./[back to homework list]
