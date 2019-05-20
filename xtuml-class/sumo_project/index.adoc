@@ -1,4 +1,5 @@
 = Sumo Robot Class Project
+include::../../include.adoc[]
 
 == 1. Overview
 

@@ -1,4 +1,5 @@
 = xtUML Build-A-Sumo Editing Project
+include::../../include.adoc[]
 
 == Editing Assignments
 

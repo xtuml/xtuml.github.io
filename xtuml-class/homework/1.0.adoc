@@ -1,4 +1,5 @@
 = Introductions Homework  image:../img/handshake.png[handshake]
+include::../../include.adoc[]
 
 == Email
 Send an email to your instructor, Mr. Starrett, at __cortland.starrett@onefact.net__.

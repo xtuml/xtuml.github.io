@@ -1,4 +1,5 @@
 = Support Accounts Homework  image:../img/helpdesk.png[helpdesk]
+include::../../include.adoc[]
 
 == Issue Tracker Account
 Create an account on https://support.onefact.net[support.onefact.net].  

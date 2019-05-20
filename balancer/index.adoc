@@ -1,4 +1,5 @@
 = EV3 Balancer Building Instructions
+include::../include.adoc[]
 
 == Background
 

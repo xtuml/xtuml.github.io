@@ -1,4 +1,5 @@
 = Welcome to xtUML Class Homework!
+include::../../include.adoc[]
 
 == Home Assignments
 

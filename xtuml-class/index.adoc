@@ -1,5 +1,5 @@
 = xtUML Training Class
-ifdef::env-github[:outfilesuffix: .adoc]
+include::../include.adoc[]
 
 * link:class-prep/[Class Preparations]
 * link:homework/[Homework]

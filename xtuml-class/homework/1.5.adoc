@@ -1,4 +1,5 @@
 = Virtual Machine Homework image:../img/remote_desktop.png[VM]
+include::../../include.adoc[]
 
 == Log In
 Log into the VM following link:../class-prep/[these instructions].

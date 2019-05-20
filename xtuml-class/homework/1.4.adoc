@@ -1,4 +1,5 @@
 = Build the Robot Homework image:../img/sumo_robot.jpg[sumo robot]
+include::../../include.adoc[]
 
 == Sumo Robot Construction
 Build the EV3 LEGO sumo robot following link:../../sumo/[these instructions].

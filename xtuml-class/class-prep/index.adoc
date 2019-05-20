@@ -1,4 +1,5 @@
 = Class Preparation Instructions
+include::../../include.adoc[]
 
 These instructions describe the steps to prepare for the 
 xtUML training class.   
