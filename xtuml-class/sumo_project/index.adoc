@@ -27,10 +27,10 @@ http://ev3rt-git.github.io/get_started/[here]. Run the sample application.
 
 2.3 Clone your fork of the "models" repository. Import the "Sumo", "Sumo
 Simulator", and "MCLMShared" projects. If you do not know how to do this, see
-the guide link:../homework/1.3.adoc[here].
+the guide link:../homework/1.3{outfilesuffix}[here].
 
 2.4 Run the application in Verifier. Follow the instructions here to get started
-with Verifier and code gen link:../sumo_start.adoc[here].
+with Verifier and code gen link:../sumo_start{outfilesuffix}[here].
 
 2.5 Generate code for the Sumo application.  Assure that you are using the MCLM
 version of BridgePoint found
@@ -75,7 +75,7 @@ image::01.png[]
 
 * Run the model in the simulator and see that your name is shown on the sumo
   ring in the simulator. If you need help running the Verifier and the
-  simulator, see https://xtuml.github.io/xtuml-class/sumo_start.adoc[this guide]
+  simulator, see https://xtuml.github.io/xtuml-class/sumo_start{outfilesuffix}[this guide]
 
 image::12.png[]
 

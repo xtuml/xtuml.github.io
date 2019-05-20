@@ -13,7 +13,7 @@ xtUML training class.
 
 === Log In
 The instructions to connect and log in here are the basic steps.  To set up
-a shared folder from the local machine while logging in, link:connect_shared_folders.adoc[follow these instructions].  
+a shared folder from the local machine while logging in, link:connect_shared_folders{outfilesuffix}[follow these instructions].  
 
 * Launch __Remote Desktop Connection__   
 

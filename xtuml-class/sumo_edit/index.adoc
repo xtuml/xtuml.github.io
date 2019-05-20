@@ -15,11 +15,11 @@ complete Sumo model as imported from the xtuml/models repository.
 
 That is the next project!
 
-* link:sumo_create1.adoc[Assignment 1]
-* link:sumo_create2.adoc[Assignment 2]
-* link:sumo_create3.adoc[Assignment 3]
-* link:sumo_create4.adoc[Assignment 4]
-* link:sumo_create5.adoc[Assignment 5]
+* link:sumo_create1{outfilesuffix}[Assignment 1]
+* link:sumo_create2{outfilesuffix}[Assignment 2]
+* link:sumo_create3{outfilesuffix}[Assignment 3]
+* link:sumo_create4{outfilesuffix}[Assignment 4]
+* link:sumo_create5{outfilesuffix}[Assignment 5]
 
 
 link:../[back to homework list]

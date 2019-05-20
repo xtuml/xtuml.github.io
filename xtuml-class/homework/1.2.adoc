@@ -27,7 +27,7 @@ and Assignee to your instructor.  See instructions below.
 == Submitting your homework
 
 * Take a screenshot on your PC with BridgePoint running.
-* Open the BridgePoint support issue in Redmine that **you** created in link:1.1.adoc[homework 1.1].
+* Open the BridgePoint support issue in Redmine that **you** created in link:1.1{outfilesuffix}[homework 1.1].
 (Issue 10472 is used here only as an example.)
 * Edit the issue; scroll down to the Edit field:
   ** Change the Status to "Feedback"
