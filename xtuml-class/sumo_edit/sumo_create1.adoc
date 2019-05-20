@@ -7,16 +7,14 @@ BridgePoint.  We will walk though the model creation process step-by-step. These
 instructions assume you have already installed BridgePoint and launched it.
 
 1. Create a new xtUML Project named *Sumo_mine*
-
++
 image::../img/sumo_hw_1.1.png[]
-
 image::../img/sumo_hw_1.2.png[]
-
 image::../img/sumo_hw_1.3.png[]
 
 2. Right-click on *Sumo_mine* in Model Explorer view and select **New > Package**.
 Name the package *IO DTs*
-
++
 image::../img/sumo_hw_1.4.png[]
 
 3. Create package *RobotInterface* under *Sumo_mine*
@@ -25,17 +23,16 @@ image::../img/sumo_hw_1.4.png[]
 
 5. Create Enumeration Data Type *Direction* inside *IO DTs* package.
 Creation can be performed in any of three ways:
-
   a. Click the name of the element (here Enumeration Data Type) in the Palette to select the tool, then
      click on the canvas diagram to place the element.
-  b. Right-click on the canvas diagram and use the context menu ***New > ...***
+  b. Right-click on the canvas diagram and use the context menu **New > ...**
   c. Right-click on the element in Model Explorer that you want to contain your new element and use the
-     context menu ***New > ...***
-
+     context menu **New > ...**
++
 image::../img/sumo_hw_1.5.png[]
 
 6. Right-click on the *Direction* enumeration and select **New > Enumerator**. Name the enumerator *backward*
-
++
 image::../img/sumo_hw_1.6.png[]
 
 7. Create Enumerator *stop* inside *Direction*
@@ -53,11 +50,12 @@ image::../img/sumo_hw_1.6.png[]
 13. Double-click package *RobotInterface* in the Model Explorer view to open it
 
 14. Create interface *platform* inside *RobotInterface*
-
++
 image::../img/sumo_hw_1.7.png[]
 
 15. Use the right-click context menu to Add the following operations and
 signals to *platform*
++
 * operation: *init*
 * operation: *lineDetected*
 * operation: *touchLeft*
@@ -67,7 +65,7 @@ signals to *platform*
 * signal: *go*
 * signal: *turn*
 * signal: *setName*
-
++
 image::../img/sumo_hw_1.8.png[]
 
 16. In Model Explorer view, expand *Sumo_mine > RobotInterface > platform*.  All
@@ -76,17 +74,17 @@ the interface messages are shown.
 17. Select *init*, then use the Properties view to modify the "Message Direction"
 property to be "From Provider". Repeat this process for each operation (do not change
 the signals).
-
++
 image::../img/sumo_hw_1.9.png[]
 
 18. Right-click on *go* and select **New > Parameter**. Name the parameter *direction*.
-
++
 image::../img/sumo_hw_1.10.png[]
 
 19. Expand the *go* interface message.  The *direction* parameter is shown.
 
 20. Right-click on the *direction* parameter and select **Set Type...**.  Use the wizard to select the *Direction* type.
-
++
 image::../img/sumo_hw_1.11.png[]
 image::../img/sumo_hw_1.12.png[]
 
