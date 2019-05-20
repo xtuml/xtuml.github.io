@@ -1,4 +1,5 @@
 = Build the Balancer Robot Homework image:../img/balancer_robot.png[balancer robot]
+include::../../include.adoc[]
 
 (For the Shinshu class, this is extra credit.  We need 2 balancing robots
 to be used for demonstrations during class.  Please speak to Professor

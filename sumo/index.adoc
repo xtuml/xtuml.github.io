@@ -1,4 +1,5 @@
 = EV3 Sumo Building Instructions
+include::../include.adoc[]
 
 == Background
 

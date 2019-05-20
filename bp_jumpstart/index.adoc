@@ -1,4 +1,5 @@
 = BridgePoint Tool Jump Start
+include::../include.adoc[]
 
 == Background
 

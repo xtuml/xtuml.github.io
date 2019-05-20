@@ -1,4 +1,5 @@
 = Welcome to xtUML!
+include::include.adoc[]
 
 == The main website is https://xtuml.org/[xtUML.org].
 

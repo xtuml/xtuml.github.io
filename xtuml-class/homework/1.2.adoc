@@ -1,4 +1,5 @@
 = BridgePoint Homework  image:../img/xtuml_chip.png[xtUML chip]
+include::../../include.adoc[]
 
 == BridgePoint Installation
 Install BridgePoint (https://s3.amazonaws.com/xtuml-releases/lego-build/buildfiles.html[LEGO Mindstorms build]).  

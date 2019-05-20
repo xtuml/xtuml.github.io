@@ -1,4 +1,5 @@
 = GitHub Homework  image:../img/Octocat.png[Octocat]
+include::../../include.adoc[]
 
 == Account Creation
 Create an account on [github.com](https://github.com)  

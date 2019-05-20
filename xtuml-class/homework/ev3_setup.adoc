@@ -1,4 +1,5 @@
 = Set up EV3RT Dev Environment Homework image:../img/sumo_robot.jpg[sumo robot]
+include::../../include.adoc[]
 
 == EV3 Robot Construction
 (pre-requisite) Build the EV3 LEGO sumo robot following link:../../sumo/[these instructions].
