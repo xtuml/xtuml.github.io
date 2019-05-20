@@ -6,11 +6,11 @@ These instructions describe how to build a sumo robot with a color sensor for
 detecting the line and two bumpers with individual touch sensors. These
 instructions require only parts found in the standard EV3 education core set.
 
-= Building Instructions
+== Building Instructions
 
-== Motor Module
+=== Motor Module
 
-=== First Motor Assembly
+==== First Motor Assembly
 
 image::img/01.jpg[]
 image::img/02.jpg[]
@@ -25,7 +25,7 @@ image::img/10.jpg[]
 image::img/11.jpg[]
 image::img/12.jpg[]
 
-=== Second Motor Assembly
+==== Second Motor Assembly
 
 Build a second motor assembly as a mirror image of the first.
 
@@ -37,7 +37,7 @@ image::img/17.jpg[]
 image::img/18.jpg[]
 image::img/19.jpg[]
 
-== Rear Skid Assembly
+=== Rear Skid Assembly
 
 image::img/20.jpg[]
 image::img/21.jpg[]
@@ -48,9 +48,9 @@ image::img/25.jpg[]
 image::img/26.jpg[]
 image::img/27.jpg[]
 
-== Bumper Assembly
+=== Bumper Assembly
 
-=== First Bumper Assembly
+==== First Bumper Assembly
 
 image::img/28.jpg[]
 image::img/29.jpg[]
@@ -58,7 +58,7 @@ image::img/30.jpg[]
 image::img/31.jpg[]
 image::img/32.jpg[]
 
-=== Second Bumper Assembly
+==== Second Bumper Assembly
 
 Build a second front bumper as a mirror image of the first.
 
@@ -72,25 +72,25 @@ image::img/39.jpg[]
 image::img/40.jpg[]
 image::img/41.jpg[]
 
-== Touch Sensor Module
+=== Touch Sensor Module
 
 image::img/42.jpg[]
 image::img/43.jpg[]
 image::img/44.jpg[]
 image::img/45.jpg[]
 
-=== Second Touch Sensor
+==== Second Touch Sensor
 
 Build a second touch sensor module as a mirror image of the first.
 
-== Light Sensor Module
+=== Light Sensor Module
 
 image::img/46.jpg[]
 image::img/47.jpg[]
 image::img/48.jpg[]
 image::img/49.jpg[]
 
-== Complete Assembly
+=== Complete Assembly
 
 image::img/50.jpg[]
 image::img/51.jpg[]
@@ -115,6 +115,6 @@ Connect the left motor to port C and the right motor to port B.
 
 image::img/64.jpg[]
 
-== Congratulations
+=== Congratulations
 
 You have completed your EV3 sumo robot.

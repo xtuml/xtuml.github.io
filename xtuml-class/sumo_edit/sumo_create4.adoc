@@ -3,7 +3,7 @@
 == Build a Sumo Model image:../img/sumo_robot.jpg[robot]
 
 1. Right-click on *navigate* and select **New > Instance State Machine**.
-
++
 image::../img/sumo_hw_4.1.png[]
 
 2. Right-click on *steering* and select **New > Instance State Machine**.
@@ -13,12 +13,12 @@ image::../img/sumo_hw_4.1.png[]
 
 4. Use the **State** tool in the Palette to add the following states to the
 state machine canvas:
-
++
 * resting
 * attacking
 * retreating
 * targeting
-
++
 image::../img/sumo_hw_4.2.png[]
 
 5. Next we will create events.  To create an event, right-click on a blank

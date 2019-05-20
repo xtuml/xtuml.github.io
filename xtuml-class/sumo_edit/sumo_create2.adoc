@@ -5,14 +5,14 @@
 1. Create package *Library* under *Sumo_mine*
 
 2. Create component *sumo* under *Library*
-
++
 image::../img/sumo_hw_2.1.png[]
 
 3. Double-click package *Library* to open it on the canvas
 
 4. Open the Components drawer in the Palette.  Select Required Interface. Draw
 the required interface extending out of the *sumo* component.
-
++
 image::../img/sumo_hw_2.2.png[]
 
 5. Right-click on the newly created required interface and select **Formalize...**
@@ -25,7 +25,7 @@ visible.
 8. Expand *Port1*, *platform* is visible.
 
 9. Right-click on *Port1* and select **Rename**.  Enter the new name *IO*
-
++
 image::../img/sumo_hw_2.3.png[]
 
 
