@@ -3,9 +3,9 @@ include::../include.adoc[]
 
 * link:class-prep/[Class Preparations]
 * link:homework/[Homework]
-* link:sumo_start.adoc[Getting started with sumo]
+* link:sumo_start{outfilesuffix}[Getting started with sumo]
 * link:sumo_edit/[Build-A-Sumo Editing Project]
 * link:sumo_project/[Sumo Robot Enhancement Project]
-* link:crypto.adoc[Security and Cryptography]
+* link:crypto{outfilesuffix}[Security and Cryptography]
 
 
