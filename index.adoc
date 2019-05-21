@@ -3,7 +3,7 @@ include::include.adoc[]
 
 == The main website is https://xtuml.org/[xtUML.org].
 
-== Material Here in the Repository
+== Material Here in this Repository
 
 * link:bp_jumpstart[BridgePoint Tool Jumpstart]
 * link:docs/xday2019{outfilesuffix}[xtUML Days 2019 - UK]
