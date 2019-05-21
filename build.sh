@@ -1,5 +1,6 @@
 asciidoctor ./bp_jumpstart/index.adoc -o ./bp_jumpstart/index.html
 #asciidoctor ./docs/xday.adoc -o ./docs/xday.html
+asciidoctor ./docs/xday2019.adoc -o ./docs/xday2019.html
 asciidoctor ./xtuml-class/class-prep/connect_shared_folders.adoc -o ./xtuml-class/class-prep/connect_shared_folders.html
 asciidoctor ./xtuml-class/class-prep/index.adoc -o ./xtuml-class/class-prep/index.html
 asciidoctor ./xtuml-class/crypto.adoc -o ./xtuml-class/crypto.html

@@ -18,8 +18,8 @@ will help you.
 === Download
 https://s3.amazonaws.com/xtuml-releases/nightly-build/buildfiles.html[Download BridgePoint (xtUML Modeler version)].
 
-* Create a folder `xtuml` in your home directory (hereafter referred to as `<home>`)
-* Extract the zipfile contents into the `<home>/xtuml` folder
+* In your home directory (hereafter referred to as `<home>`) create a folder `xtuml`.
+* Extract the zipfile contents into the `<home>/xtuml` folder.
 
 NOTE:  On Linux and MacOS directory paths are separated with /, while on
        Windows you will use \.
@@ -68,34 +68,39 @@ on only the executable diagrams:
 ....
 
 * Save and exit the text editing of `bridgepoint.ini`
-* Create a folder named `workspaces` in your home directory
-* Start BridgePoint by running the executable file named `bridgepoint`
+
+=== Running BridgePoint
+
+* Create a folder named `workspaces` in your home directory.
+* Start BridgePoint by running the executable file named `bridgepoint`.
 * You are prompted for a "workspace".  Eclipse uses workspaces to contain
-information about one or more projects.  Let's specify a workspace named
-`sandbox1` by entering `<home>/workspaces/sandbox1`
-* Once BridgePoint starts, Click the "x" on the Welcome tab to close the Welcome page
+  information about one or more projects.  Let us specify a workspace named
+`sandbox1` by entering `<home>/workspaces/sandbox1`.
+* Once BridgePoint starts, Click the "x" on the Welcome tab to close the
+  Welcome page.
 
 == Project Creation and Editing Example
 
 Now let us go step by step to create an example model.  This phase is intended
-to teach you how to perform model edits.  Getting started from a blank canvas is
-often challenging, so let us begin.
+to teach you how to perform model edits.  Getting started from a blank canvas
+is often challenging, so let us begin.
 
 link:../xtuml-class/sumo_edit/[Build a Sumo Model]
 
 == Additional Learning
 
-Now that you have learned a little about the tool, many other resources are available
-on https://xtuml.org[xtuml.org] under the "Learn" section.
+Now that you have learned a little about the tool, many other resources are
+available on https://xtuml.org[xtuml.org] under the "Learn" section.
 
 === Online Course
 
-Of specific note is the online https://xtuml.org/learn/on-line-courses/[Modeling with xtUML]
-course.  This course uses short-form videos to teach users about various
+Of specific note is the online course https://xtuml.org/learn/on-line-courses/[Modeling with xtUML].
+This course uses short-form videos to teach users about various
 parts and features of BridgePoint.
 
 === Example Models
 
-BridgePoint has several sample models built into the tool.  Re-open the Welcome
-page by choosing `Help > Welcome` in the application menu.  Then choose `Quick Start`.
+BridgePoint has several sample models built into the tool.  Re-open the
+Welcome page by choosing `Help > Welcome` in the application menu.  Then
+choose `Quick Start`.  See models of a microwave oven, GPS Watch and more.
 
