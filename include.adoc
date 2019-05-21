@@ -1,1 +1,15 @@
 :nofooter:
+
+:duedatehw1_0:  1 October 2019
+:duedatehw1_1:  2 October 2019
+:duedatehw1_2:  3 October 2019
+:duedatehw1_3:  4 October 2019
+:duedatehw1_4:  5 October 2019
+:duedatehw1_5:  6 October 2019
+:duedatebalancer:  7 October 2019
+:duedateev3rt:  8 October 2019
+
+:hwtrackingissue:  10466
+
+:instructor:  Mr. Starrett
+:instructoremail:  cortland.starrett at onefact.net
