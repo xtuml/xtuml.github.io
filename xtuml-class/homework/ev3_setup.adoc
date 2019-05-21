@@ -1,0 +1,26 @@
+= Set up EV3RT Dev Environment Homework image:../img/sumo_robot.jpg[sumo robot]
+include::../../include.adoc[]
+
+== EV3 Robot Construction
+(pre-requisite) Build the EV3 LEGO sumo robot following link:../../sumo/[these instructions].
+
+== EV3RT Development
+Set up your EV3RT development workspace following 
+http://ev3rt-git.github.io/get_started/[this guide]. Run the sample program.   
+
+NOTE:  In "Step 0: Check your environment" you will need to follow the 
+instructions to install Cygwin on Windows.  In step 10 of those instructions, 
+do not download gcc-arm version 2014q3. Instead navigate to the GCC ARM page 
+and download the version containing string "2016q3".  It is newer and better.  
+
+image::../img/ev3_gcc_help.png[gcc]
+
+NOTE:  In "Step 2: Prepare the configurator", simply download the pre-built
+binaries rather than compiling from the sources.  
+
+== Homework Submission
+Attach your compiled sample program to your issue in Redmine.
+In the Notes section, explain any difficulty you had completing the assignment.
+Change the Status to 'Feedback' and Assignee to your instructor.
+ 
+link:./[back to homework list]
