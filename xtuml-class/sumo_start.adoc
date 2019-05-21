@@ -1,23 +1,26 @@
 = Getting started with sumo
+include::../include.adoc[]
 
 == 1. Import the required projects
 
 . Import `Sumo`, `Sumo Simulator`, and `MCLMShared` from the `models` repository.
-. See https://youtu.be/a0AD57W-jOk[this guide] to see how to import projects.
+. See https://youtu.be/a0AD57W-jOk[this guide] to learn how to import projects.
 
 image::img/sumo_start2.png[]
 
 == 2. Build the Java simulator
 
 . Open the Java perspective
+
 image::img/sumo_start3.png[]
 
 . Select "Project > Build All"
+
 image::img/sumo_start11.png[]
 
 == 3. Launch the simulator
 
-. Open run configurations (triangle next to the play button > Run Configurations[]
+. Open run configurations (triangle next to the play button > Run Configurations)
 . Open the Java Applications group and select "Sumo Simulator" and click "Run"
 
 image::img/sumo_start4.png[]
@@ -28,7 +31,7 @@ image::img/sumo_start4.png[]
 
 image::img/sumo_start5.png[]
 
-. Open debug configurations (triangle next to the beetle > Debug Configurations[]
+. Open debug configurations (triangle next to the beetle > Debug Configurations)
 . Open the xtUML eXecute Applications group and select "sumo" and click "Debug"
 
 image::img/sumo_start6.png[]

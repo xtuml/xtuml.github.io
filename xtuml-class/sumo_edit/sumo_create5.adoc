@@ -15,6 +15,7 @@ select one d related by self->drive[R2];
 d.forward();
 ----
 Save and close this activity editor
++
 image:../img/sumo_hw_5.1.png[]
 
 3. Double-click the *retreating* state to open its activity editor. Paste in
