@@ -6,7 +6,7 @@ include::include.adoc[]
 == Material Here in the Repository
 
 * link:bp_jumpstart[BridgePoint Tool Jumpstart]
-* link:docs/xday{outfilesuffix}[xtUML Days 2018 - Copenhagen]
+* link:docs/xday2019{outfilesuffix}[xtUML Days 2019 - UK]
 * Instructions to link:sumo[construct the Sumo robot] using the EV3 kit
 * Instructions to link:balancer[construct the Balancer robot] using the EV3 kit
 * link:xtuml-class[xtUML Modeling Class]

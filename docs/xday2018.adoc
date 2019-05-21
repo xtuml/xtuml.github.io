@@ -1,5 +1,7 @@
 = xtUML Days 2018 Copenhagen
-=== Monday and Tuesday 15, 16 October
+include::../include.adoc[]
+
+**Monday and Tuesday 15, 16 October 2018**
 
 The event is co-located with link:http://www.modelsconference.org/[MODELS 2018].
 

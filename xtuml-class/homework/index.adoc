@@ -1,7 +1,7 @@
 = Welcome to xtUML Class Homework!
 include::../../include.adoc[]
 
-== Home Assignments
+== Homework Assignments
 
 === Links to Assignements
 
