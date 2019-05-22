@@ -35,4 +35,5 @@ the homework and submit at the normal due date.
 To be eligible for pre-grade, homework must be submitted more than one
 full day before the due date.
 
-link:../[Back to class home]
+// Navigate upwards to the default index file.
+link:../[Back to xtUML Training Class]

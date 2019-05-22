@@ -124,4 +124,4 @@ image::../img/sumo_hw_1.14.png[]
 
 You are now ready to proceed to the link:sumo_create2{outfilesuffix}[next step]
 
-link:./[back to assignment list]
+link:sumo_edit{outfilesuffix}[back to assignment list]

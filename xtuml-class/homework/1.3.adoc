@@ -33,4 +33,4 @@ Attach both screenshots to your issue in Redmine.
 In the Notes section, explain any difficulty you had completing the assignment.
 Change the Status to 'Feedback' and Assignee to your instructor.
 
-link:./[back to homework list]
+link:homework{outfilesuffix}[back to homework list]

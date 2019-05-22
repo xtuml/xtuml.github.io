@@ -47,4 +47,4 @@ Write an appropriate message in the Note.  (This one is example text only.)
 image::../img/sumo_hw_1.14.png[screen]
 
 
-link:./[back to homework list]
+link:homework{outfilesuffix}[back to homework list]

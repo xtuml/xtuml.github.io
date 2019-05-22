@@ -21,5 +21,3 @@ That is the next project!
 * link:sumo_create4{outfilesuffix}[Assignment 4]
 * link:sumo_create5{outfilesuffix}[Assignment 5]
 
-
-link:../[back to homework list]

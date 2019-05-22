@@ -72,4 +72,4 @@ elements you have just created.
 
 You are now ready to proceed to the link:sumo_create4{outfilesuffix}[next step]
 
-link:./[back to assignment list]
+link:sumo_edit{outfilesuffix}[back to assignment list]

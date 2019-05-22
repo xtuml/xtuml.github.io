@@ -20,7 +20,7 @@ the winner.
 
 == 2. Prerequisites
 
-2.1 Build the sumo robot using link:../../sumo/[these instructions].
+2.1 Build the sumo robot using link:../../sumo/sumo{outfilesuffix}[these instructions].
 
 2.2 Set up your EV3RT development workspace following the guide
 http://ev3rt-git.github.io/get_started/[here]. Run the sample application.

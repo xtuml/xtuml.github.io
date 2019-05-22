@@ -42,6 +42,6 @@ to show all the elements you have just created and edited.
   ** Use the Choose Files button to attach your screenshot
 * Click the Submit button
 
-You are now ready to proceed to the link:./sumo_create3{outfilesuffix}[next step]
+You are now ready to proceed to the link:sumo_create3{outfilesuffix}[next step]
 
-link:./[back to assignment list]
+link:sumo_edit{outfilesuffix}[back to assignment list]

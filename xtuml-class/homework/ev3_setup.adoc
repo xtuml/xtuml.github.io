@@ -2,7 +2,7 @@
 include::../../include.adoc[]
 
 == EV3 Robot Construction
-(pre-requisite) Build the EV3 LEGO sumo robot following link:../../sumo/[these instructions].
+(pre-requisite) Build the EV3 LEGO sumo robot following link:../../sumo/sumo{outfilesuffix}[these instructions].
 
 == EV3RT Development
 Set up your EV3RT development workspace following 
@@ -23,4 +23,4 @@ Attach your compiled sample program to your issue in Redmine.
 In the Notes section, explain any difficulty you had completing the assignment.
 Change the Status to 'Feedback' and Assignee to your instructor.
  
-link:./[back to homework list]
+link:homework{outfilesuffix}[back to homework list]

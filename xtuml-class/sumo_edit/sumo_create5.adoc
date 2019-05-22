@@ -82,4 +82,4 @@ send IO::turn(orientation: Orientation::right);
   ** Use the Choose Files button to attach your screenshots
 * Click the Submit button
 
-link:./[back to assigment list]
+link:sumo_edit{outfilesuffix}[back to assignment list]

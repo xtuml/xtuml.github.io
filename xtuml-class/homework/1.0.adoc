@@ -13,4 +13,4 @@ Put the following information into the email:
 Your instructor will respond to your email.  You may email the instructor
 at any time.  Please ask questions.
 
-link:./[back to homework list]
+link:homework{outfilesuffix}[back to homework list]

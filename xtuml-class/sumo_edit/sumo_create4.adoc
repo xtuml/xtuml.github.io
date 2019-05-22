@@ -80,6 +80,6 @@ the wizard to select *steering1: left*.
   ** Use the Choose Files button to attach your screenshots
 * Click the Submit button
 
-You are now ready to proceed to the link:sumo_create5.html[next step].
+You are now ready to proceed to the link:sumo_create5{outfilesuffix}[next step].
 
-link:./[back to assignment list]
+link:sumo_edit{outfilesuffix}[back to assignment list]

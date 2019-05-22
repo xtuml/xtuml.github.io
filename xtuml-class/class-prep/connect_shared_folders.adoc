@@ -42,4 +42,4 @@ image::img/desktop.png[Desktop]
 image::img/connect5.png[Shared Drive,height="930",width="552"]
 
 
-link:../[Return to Class Preparation Instructions]
+link:../class_prep{outfilesuffix}[Return to Class Preparation Instructions]

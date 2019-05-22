@@ -36,4 +36,4 @@ Email your instructor with the following information:
 * email address used for the Hangout
 * Please explain any difficulty you may have.
 
-link:./[back to homework list]
+link:homework{outfilesuffix}[back to homework list]
