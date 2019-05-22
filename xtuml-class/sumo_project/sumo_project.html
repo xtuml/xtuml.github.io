@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.7.1">
+<title>Sumo Robot Class Project</title>
+<style>
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.go-top {
+position: fixed;
+bottom: 2em;
+right: 2em;
+text-decoration: none;
+background-color: #E0E0E0;
+font-size: 12px;
+padding: 1em;
+display: inline;
+}
+
+/* Github css */
+/* The setting "60em" on max-width determines the padding around the whole page.
+   It was originally set to 44 to match the whitespace on github.com, but SKB 
+   modified it to have less whitespace */
+html,body{        margin: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+    max-width: 60em; color:black;}*:not('#mkdbuttons'){margin:0;padding:0}body{font:13.34px helvetica,arial,freesans,clean,sans-serif;-webkit-font-smoothing:subpixel-antialiased;line-height:1.4;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}p{margin:1em 0}a{color:#4183c4;text-decoration:none}body{background-color:#fff;padding:30px;margin:15px;font-size:14px;line-height:1.6}body>*:first-child{margin-top:0!important}body>*:last-child{margin-bottom:0!important}@media screen{body{box-shadow:0 0 0 1px #cacaca,0 0 0 4px #eee}}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:subpixel-antialiased;cursor:text}h1{font-size:28px;color:#000}h2{font-size:24px;border-bottom:1px solid #ccc;color:#000}h3{font-size:18px;color:#333}h4{font-size:16px;color:#333}h5{font-size:14px;color:#333}h6{color:#777;font-size:14px}p,blockquote,table,pre{margin:15px 0}ul{padding-left:30px}ol{padding-left:30px}ol li ul:first-of-type{margin-top:0}hr{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;border:0 none;color:#ccc;height:4px;padding:0}body>h2:first-child{margin-top:0;padding-top:0}body>h1:first-child{margin-top:0;padding-top:0}body>h1:first-child+h2{margin-top:0;padding-top:0}body>h3:first-child,body>h4:first-child,body>h5:first-child,body>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ul li>:first-child,ol li>:first-child{margin-top:0}dl{padding:0}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table th{font-weight:bold;border:1px solid #ccc;padding:6px 13px}table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px;font-family:Consolas,'Liberation Mono',Courier,monospace;font-size:12px;color:#333}pre>code{margin:0;padding:0;white-space:pre;border:0;background:transparent}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:0}.poetry pre{font-family:Georgia,Garamond,serif!important;font-style:italic;font-size:110%!important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia,Garamond,serif!important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,pre,blockquote,table,figure{page-break-inside:avoid}body{background:#fff;border:0}code{background-color:#fff;color:#333!important;padding:0 .2em;border:1px solid #dedede}pre{background:#fff}pre code{background-color:white!important;overflow:visible}}@media screen{body.inverted{color:#eee!important;border-color:#555;box-shadow:none}.inverted body,.inverted hr .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee!important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted h2{border-color:#555}.inverted hr{border-color:#777;border-width:1px!important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eee}code span::selection{background-color:rgba(0,0,0,0.7)!important;color:#eee!important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted body{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#eaf2f5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}
+
+
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>Sumo Robot Class Project</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_1_overview">1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goal of this project is to build a sumo robot application based on the
+example application in the "models" repository. The use of BridgePoint,
+Verifier, model compilers and other tools will be learned as the project
+progresses. A successful sumo robot application is one which obeys the rules of
+the game and wins more than 50% of the time.</p>
+</div>
+<div class="paragraph">
+<p>The sumo robot game consists of a sumo ring and two identical LEGO robots. The
+ring is made up of a white background with a black ring printed on it (about 1
+meter in diameter). Both robots are placed in the center of the ring side by
+side facing opposite directions. The robots are activated at the same time. The
+robots must delay exactly 2 seconds (to allow humans to clear the ring) and then
+they may begin moving. The robots must stay within the black ring and attempt to
+push one another out of the ring. The last robot remaining within the ring is
+the winner.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_prerequisites">2. Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>2.1 Build the sumo robot using <a href="../../sumo/sumo.html">these instructions</a>.</p>
+</div>
+<div class="paragraph">
+<p>2.2 Set up your EV3RT development workspace following the guide
+<a href="http://ev3rt-git.github.io/get_started/">here</a>. Run the sample application.</p>
+</div>
+<div class="paragraph">
+<p>2.3 Clone your fork of the "models" repository. Import the "Sumo", "Sumo
+Simulator", and "MCLMShared" projects. If you do not know how to do this, see
+the guide <a href="../homework/1.3.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>2.4 Run the application in Verifier. Follow the instructions here to get started
+with Verifier and code gen <a href="../sumo_start.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>2.5 Generate code for the Sumo application.  Assure that you are using the MCLM
+version of BridgePoint found
+<a href="https://s3.amazonaws.com/xtuml-releases/lego-build/buildfiles.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>2.6. Make a new directory inside the EV3 repo: <code>mkdir -p &lt;ev3_repo&gt;/sdk/workspace/sumo</code>
+Copy the contents of the "src" folder of your Sumo project into this new "sumo"
+folder. Copy "Makefile.inc" and "app.cfg" from the "gen" folder into this
+directory as well.</p>
+</div>
+<div class="paragraph">
+<p>2.7 Build the app and copy it onto the SD card. You should have done this
+already in step 2 with the example app, so you shouldn&#8217;t need any further
+instructions.</p>
+</div>
+<div class="paragraph">
+<p>2.8 Test the robot on a sumo ring.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_grading">3. Grading</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Projects will be graded on completeness and effectiveness. To enable grading,
+<strong>each milestone in section 4 must have a git commit, and the commit
+message must contain the milestone number. These commits must be pushed to your
+fork on GitHub.com. Failure to include each milestone for each git commit will
+result in loss of credit.</strong>  Projects will also be graded on how well the
+application works&#8201;&#8212;&#8201;does it obey the rules and does it win more than half of
+the time.</p>
+</div>
+<div class="paragraph">
+<p>Final submission guidelines will be outlined by your instructor.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_milestones">4. Milestones</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are ten (10) milestones in this section:  4.1 - 4.10.  The milestones
+are ordered from simple to complex.  It is the goal of the project to complete
+each milestone in sequence and ultimately having knowlege to make a superior
+sumo robot application that wins!</p>
+</div>
+<div class="sect2">
+<h3 id="_4_1_change_the_name_of_the_sumo">4.1 Change the name of the sumo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to and open "Library &gt; sumo &gt; IO &gt; platform &gt; init"</p>
+</li>
+<li>
+<p>On line 16, change "Teacher" to your name.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="01.png" alt="01">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run the model in the simulator and see that your name is shown on the sumo
+ring in the simulator. If you need help running the Verifier and the
+simulator, see <a href="https://xtuml.github.io/xtuml-class/sumo_start.html">this guide</a></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="12.png" alt="12">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your name will appear on the sumo ring (as marked by the arrow).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_2_change_the_reversing_duration">4.2 Change the reversing duration</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Reversing is controlled by a period of time. If the time period is shorter,
+the robot will not reverse as far.</p>
+</li>
+<li>
+<p>Again, navigate to and open "Library &gt; sumo &gt; IO &gt; platform &gt; init"</p>
+</li>
+<li>
+<p>On line 11, see that "retreat_duration" is set to 1.</p>
+</li>
+<li>
+<p>Navigate to "Library &gt; sumo &gt; sumo &gt; navigate &gt; retreat_duration". Note in the
+"Properties" pane that the type of this class attribute is "integer".</p>
+</li>
+<li>
+<p>Back in "IO::init" on line 11, change the value of "retreat_duration". Run the
+simulator and observe the difference in behavior. Experiment with this until
+you get a value you are happy with.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="02.png" alt="02">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_3_change_the_turning_targeting_duration">4.3 Change the turning (targeting) duration</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Turning is controlled by a period of time. If the time period is shorter,
+the robot will not turn as far.</p>
+</li>
+<li>
+<p>Again, navigate to and open "Library &gt; sumo &gt; IO &gt; platform &gt; init"</p>
+</li>
+<li>
+<p>On line 12, see that "target_duration" is set to 1.</p>
+</li>
+<li>
+<p>Navigate to "Library &gt; sumo &gt; sumo &gt; navigate &gt; target_duration". Note in the
+"Properties" pane that the type of this class attribute is "integer".</p>
+</li>
+<li>
+<p>Back in "IO::init" on line 12, change the value of "target_duration". Run the
+simulator and observe the difference in behavior. Experiment with this until
+you get a value you are happy with.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="03.png" alt="03">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Time spent turning and reversing is time where the robot is vulnerable to
+attack. Times should be kept as short as practical in order to have a winning
+strategy.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_4_change_the_turning_duration_so_that_the_robot_goes_directly_back_and_forth_across_the_same_path">4.4 Change the turning duration so that the robot goes directly back and forth across the same path</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In order to make the robot travel back and forth in a straight line across the
+ring, we will need to be a little more precise&#8201;&#8212;&#8201;1 second turn is too short
+and 2 second turn is too long.</p>
+</li>
+<li>
+<p>Navigate to "Library &gt; sumo &gt; sumo &gt; navigate &gt; target_duration". Let&#8217;s change
+this attribute from "integer" to "real" so we can achieve finer granularity in
+turning times.</p>
+</li>
+<li>
+<p>Before changing the type of a model element, it is good to see where it is
+referenced to assure that changing the type will not cause unexpected changes
+in behavior.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Select "Search &gt; Search" (or click the flashlight icon in the tool bar).</p>
+</li>
+<li>
+<p>Make sure the "xtuml Search" tab is selected.</p>
+</li>
+<li>
+<p>Type "target_duration" in the "Search text" box.</p>
+</li>
+<li>
+<p>In the "Limit to" section, check "Element Names" and "Action Language".</p>
+</li>
+<li>
+<p>Click "Search".</p>
+</li>
+<li>
+<p>In the serach results you will see three matches:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The first is the "IO::init" body we have already been working in where the
+value is set.</p>
+</li>
+<li>
+<p>The second is in the "targeting" state in the the "navigate" instance
+state machine where it is multiplied by a conversion factor and passed to
+the timing bridge to create a timed event.</p>
+</li>
+<li>
+<p>The last is in the navigate class itself where the attribute is defined.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="04.png" alt="04">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now that we&#8217;ve checked all the occurences of "target_duration" we can assure
+ourselves that changing the type from "integer" to "real" will not
+negatively affect the application behavior.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Right click "target_duration" then select "Set Type&#8230;&#8203;". Select "real" from
+the type picker and click "Ok".</p>
+</li>
+<li>
+<p>Now, go back to the "IO::init" body and experiment with decimal values of
+"target_duration" to get the most straight line path. Note that because the
+simulation is based on a physics engine and the timing is decoupled from the
+simulator, the best value <em>may be different on different machines</em>. There is
+no right answer.</p>
+</li>
+<li>
+<p><em>Question: if you get the timing perfect so the simulator runs in a straight
+line and then load the application onto the physical robot, would it also run
+in a straight line? Why or why not?</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_5_start_by_turning_instead_of_going_straight">4.5 Start by turning instead of going straight</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to "Library &gt; sumo &gt; sumo &gt; navigate" and double-click to view the
+instance state machine. Note the 4 states:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>resting</p>
+</li>
+<li>
+<p>attacking</p>
+</li>
+<li>
+<p>retreating</p>
+</li>
+<li>
+<p>targeting</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="05.png" alt="05">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Notice that the initial state (state with the lowest number) is resting. When
+the "pop" event is received, the instance enters the "attacking" state. From
+here the instance is in an endless loop where it attacks, retreats, and
+targets endlessly. The transitions between these states are dictated by timer
+and line detection events.</p>
+</li>
+<li>
+<p>We can change the initial behavior of the robot by changing the transition
+from the "resting" state to any of the states in the loop. At the moment, it
+transitions directly to the "attacking" state.</p>
+</li>
+<li>
+<p>Select the transtion from "resting" to "attacking", right click and delete the
+transition.</p>
+</li>
+<li>
+<p>Use the palette to select the transtion tool. Click and drag to draw a new
+transtion between the "resting" state and the "targeting" state.</p>
+</li>
+<li>
+<p>Right click the newly created transition and select "Assign Event&#8230;&#8203;". Select
+"pop" from the following dropdown menu and click "Finish".</p>
+</li>
+<li>
+<p>Now when the robot is in the resting state and the timer pops, he will
+immediately start targeting before attacking. The new state machine should
+look something like this:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="06.png" alt="06">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run the simulator again and observe the change in behavior. Go back to
+"IO::init" and manipulate the timings to try to gain an advantage over the
+simulator.</p>
+</li>
+<li>
+<p><em>Optional: try changing the model so that the robot reverses first!</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_6_count_each_occurrence_of_detecting_the_line_stop_the_robot_after_3_detections">4.6 Count each occurrence of detecting the line. Stop the robot after 3 detections.</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In order to count the number of times the line has been detected, we must add
+a new attribute to the "navigate" class.</p>
+</li>
+<li>
+<p>Right click the "navigate" class and select "New &gt; Attribute". Give the
+attribute the name "line_detections". The default type for new attributes is
+"integer". We will not change the type as integer is good for counting.</p>
+</li>
+<li>
+<p>With the new attribute selected, in the "Properties" pane, find the "Default
+Value" field and enter "0". This value will be assigned to the attribute
+whenever a new instance is created</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="07.png" alt="07">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Let us look at the state machine for the "navigate" class again. The instance
+transitions into the "retreating" state any time the "line" event is received
+in the "attacking" state. Here is a good place to insert our logic to count
+line detections.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a statement at the beginning of the "retreating" state to increment the
+"line_detections" attribute. The current instance of the class can be
+accessed by the "self" keyword.</p>
+</li>
+<li>
+<p>Add a conditional statement ("if") to check if the "line_detections" value
+has reached the limit (3). Put a comment (//TODO) in the then block. In the
+else block, put the existing contents of the state action.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="08.png" alt="08">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now we must add a way in the state machine to transition to a stopped state.
+We could create a new state for this purpose, or we could reuse the "resting"
+state. "resting" makes sense for what we will be doing so we will reuse that
+state. Additionally, this allows us to start the robot again if we wish by
+generating the "pop" event again.</p>
+</li>
+<li>
+<p>Add a new transition from the "retreating" state to the "resting" state. Use
+the palette to select the transition tool, then click and drag.</p>
+</li>
+<li>
+<p>Next, create a new event by right clicking, the blue canvas and selecting "New &gt;
+Event". Name the event "halt". It is good to use a different event for each
+logically unique real world event. In this state machine, "pop" is always used
+with timers and "line" means the sensor has detected the line. The "touch" and
+"untouch" events are generated by the touch sensors. Now we have a "halt"
+event which signals an exceptional case.</p>
+</li>
+<li>
+<p>Right click the new transition and assign the "halt" event.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="09.png" alt="09">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the "retreating" state action in the place of our "TODO" comment, generate
+the new halt event to self.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="10.png" alt="10">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Finally open the "resting" state. Select the singleton instance of "drive"
+through R2 and stop the robot. In xtUML, the action in the starting state is
+not executed initially&#8201;&#8212;&#8201;it is only executed when transitioning into the
+state. Whenever we transition into the "resting" state, it makes sense to stop
+the wheels.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="11.png" alt="11">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_7_instead_of_always_turning_the_same_direction_turn_one_direction_this_time_and_another_direction_next_time">4.7 Instead of always turning the same direction, turn one direction this time and another direction next time.</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In order to alternate between turning left and right, we must add another new
+attribute to the "navigate" class.</p>
+</li>
+<li>
+<p>Right click the "navigate" class and select "New &gt; Attribute". Give the
+attribute the name "last_turn". The default type for new attributes is
+"integer". We will need to change this to be something more expressive.</p>
+</li>
+<li>
+<p>Right click the new attribute and select "Set Type&#8230;&#8203;". Select "Orientation"
+from the type picker window.</p>
+</li>
+<li>
+<p>Due to a limitation in the code generator, we cannot use default values for
+enumerated data types&#8201;&#8212;&#8201;we must initialize them manually. Navigate to
+"IO::init" and add this statement on line 13 under the statement which assigns
+"target_duration": <code>n.last_turn = Orientation::left;</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="13.png" alt="13">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now we must make use of this attribute in the state machine. First, nagivage
+to and open the "retreating" state action in the navigate state machine. We no
+longer want the robot to stop after 3 line detections, so let&#8217;s increase the
+number to 300. Now the robot should go for a long time.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="14.png" alt="14">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the "targeting" state action and notice on line 4 that the "left" event
+is always generated to the steering instance. We want to generate "left" if
+the last turn was right, but we want to generate "right" if the last turn was
+"left".</p>
+</li>
+<li>
+<p>Add a conditional statement here which reads the new "last_turn" attribute to
+introduce this new behavior. Remember that you must also update the value of
+"last_turn" to accurately represent the last turn that has occurred.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="15.png" alt="15">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_8_add_a_response_to_touch_sensor_input_demonstrate_by_injecting_a_touch_signal_while_running_the_verifier">4.8 Add a response to touch sensor input. Demonstrate by "injecting" a touch signal while running the Verifier.</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Now we will add some behavior based on the touch sensor input. For this demo
+we will simply cause the touch sensors to behave like sensing the line&#8201;&#8212;&#8201;the
+sumo will retreat, turn, and continue attacking.</p>
+</li>
+<li>
+<p>In the "navigate" state machine, use the transition tool to draw two new
+transitions from the "attacking" to the "retreating" state. Assign
+"leftBumperPress" to one of the transitions and "rightBumperPress" to the
+other transition.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="16.png" alt="16">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can demonstrate the behavior by executing the interface signals
+"touchLeft" and "touchRight" in the "IO" port while the Verifier simulation is
+running. Injecting signals in this way is a good way to black box test
+applications without the need for hardware or a simulator. <em>Important note:
+you must execute the signal on the "sumo" component and not the "Simulator"
+component.</em></p>
+</li>
+<li>
+<p>Notice in the following animation how the navigate instance state machine
+changes when the signal is executed.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="17.gif" alt="17">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This particular behavior is not very strategic, but it helps you to understand
+how to use and test the bumpers. Explore with this to see if you can come up
+with behavior that does increase the odds of winning.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_9_implement_a_winning_strategy">4.9 Implement a winning strategy</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Now that you are familiar with xtUML modeling, Verifier, the Sumo Simulator,
+and the sumo application itself, it is your task to use what you&#8217;ve learned to
+create a strategy that wins. Be creative!</p>
+</li>
+<li>
+<p>Here are a few tips:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Simple is usually better. Adding complexity to the application or trying to
+be "too smart" usually results in a robot which is prone to fail. Think of a
+simple strategy and do it well instead of trying to implement a highly
+complex strategy poorly.</p>
+</li>
+<li>
+<p>Sumo is a game of odds. The nature of the game depends a lot on luck.
+Because of this, a winning strategy is not a robot that is able to win every
+time, but a robot that does a few things to tip the odds in its favor.</p>
+</li>
+<li>
+<p>Limit the time your robot is vulnerable. Reversing and turning are times
+when your robot is vulnerable to attack. Try to minimize these times.</p>
+</li>
+<li>
+<p>Have fun! This exercise is all about creativity. Don&#8217;t be afraid to make
+changes to the model&#8201;&#8212;&#8201;add new classes, states, transitions, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In your commit message, describe your strategy.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_10_make_a_victory_dance">4.10 Make a victory dance</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement a sequence of moves (a "dance") that your robot goes through when he
+has won. This is meant to be a fun exercise so be creative!</p>
+</li>
+<li>
+<p>Hint: detecting when you have won may be difficult. Consider the case when the
+bumpers are depressed and the line is detected. If an object is pressing on
+the bumpers <em>and</em> the line is detected, you can be relatively certain you just
+pushed the other robot out of the ring. This is a good way to detect a win.</p>
+</li>
+<li>
+<p>In your commit message, describe your victory dance.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

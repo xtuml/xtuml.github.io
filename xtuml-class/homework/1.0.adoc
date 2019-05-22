@@ -1,0 +1,16 @@
+= Introductions Homework  image:../img/handshake.png[handshake]
+include::../../include.adoc[]
+
+== Email
+Send an email to your instructor, {instructor}, at __{instructoremail}__.
+Put the following information into the email:
+
+* your name
+* photo of yourself (selfie)
+* your graduate focus of study
+* Answer the question, "What do you want to learn in this class?"
+
+Your instructor will respond to your email.  You may email the instructor
+at any time.  Please ask questions.
+
+link:homework{outfilesuffix}[back to homework list]
