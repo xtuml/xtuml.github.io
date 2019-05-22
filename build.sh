@@ -1,7 +1,7 @@
 pwd=`pwd`
 asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/bp_jumpstart/index.adoc -o ./english/bp_jumpstart/index.html
-#asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/xday/xday.adoc -o ./english/xday/xday.html
-asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/xday/xday2019.adoc -o ./english/xday/xday2019.html
+#asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/docs/xday.adoc -o ./english/docs/xday.html
+asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/docs/xday2019.adoc -o ./english/docs/xday2019.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/xtuml-class/class-prep/connect_shared_folders.adoc -o ./english/xtuml-class/class-prep/connect_shared_folders.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/xtuml-class/class-prep/index.adoc -o ./english/xtuml-class/class-prep/index.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css  ./english/xtuml-class/crypto.adoc -o ./english/xtuml-class/crypto.html
