@@ -85,7 +85,7 @@ Now let us go step by step to create an example model.  This phase is intended
 to teach you how to perform model edits.  Getting started from a blank canvas
 is often challenging, so let us begin.
 
-link:../xtuml-class/sumo_edit/sumo_edit{outfilesuffix}[Build a Sumo Model]
+link:../xtuml_class/sumo_edit/sumo_edit{outfilesuffix}[Build a Sumo Model]
 
 == Additional Learning
 

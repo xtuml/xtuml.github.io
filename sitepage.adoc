@@ -9,6 +9,6 @@ include::include.adoc[]
 * link:xday/xday2019{outfilesuffix}[xtUML Days 2019 - UK]
 * Instructions to link:sumo/sumo{outfilesuffix}[construct the Sumo robot] using the EV3 kit
 * Instructions to link:balancer/balancer{outfilesuffix}[construct the Balancer robot] using the EV3 kit
-* link:xtuml-class/xtuml_class{outfilesuffix}[xtUML Modeling Class]
+* link:xtuml_class/xtuml_class{outfilesuffix}[xtUML Modeling Class]
 * link:docs/mcug/index.html[Model Compiler User Guide]
 
