@@ -113,7 +113,7 @@ via email at:  cortland.starrett [at] onefact.net.
 
 === Previous xtUML Days
 
-* https://xtuml.org/xtuml-day-2018-copenhagen/[xtUML Days 2018 Copenhagen, 15, 16 October 2018, Copenhagen, Denmark]
+* https://xtuml.org/xtuml-days-2018-copenhagen/[xtUML Days 2018 Copenhagen, 15, 16 October 2018, Copenhagen, Denmark]
 * https://xtuml.org/xtuml-day-2017-linkoping/[xtUML Days 2017 Linköping, 2 October 2017, Linköping, Sweden]
 * https://xtuml.org/presos-from-xtuml-day-cheltenham/[xtUML Days 2017 Cheltenham, 14 March 2017, Cheltenham, UK]
 * https://xtuml.org/xtumldayemd/[xtUML Days 2016, 14 May 2016, Linköping, Sweden]

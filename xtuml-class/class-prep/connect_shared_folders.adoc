@@ -1,4 +1,5 @@
 = Setting up Shared Folder During Login 
+include::../../include.adoc[]
 
 These instructions describe the steps to set up a shared folder 
 while connecting to the VM and logging in.   
