@@ -1,8 +1,9 @@
 = Virtual Machine Homework image:../img/remote_desktop.png[VM]
+esciidoctor -a stylesheet=$pwd/github-pandoc.css  ./xtuml-class/homework/1.1.adoc -o ./xtuml-class/homework/1.1.html
 include::../../include.adoc[]
 
 == Log In
-Log into the VM following link:../class-prep/class_prep{outfilesuffix}[these instructions].
+Log into the VM following link:../class_prep/class_prep{outfilesuffix}[these instructions].
 
 NOTE:  This machine is shared among students and only supports one connection at a 
 time. If you are connected, you will be suddenly disconnected if another user logs in.

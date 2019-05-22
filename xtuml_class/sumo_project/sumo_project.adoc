@@ -75,7 +75,7 @@ image::01.png[]
 
 * Run the model in the simulator and see that your name is shown on the sumo
   ring in the simulator. If you need help running the Verifier and the
-  simulator, see https://xtuml.github.io/xtuml-class/sumo_start{outfilesuffix}[this guide]
+  simulator, see https://xtuml.github.io/xtuml_class/sumo_start{outfilesuffix}[this guide]
 
 image::12.png[]
 

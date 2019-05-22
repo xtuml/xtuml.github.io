@@ -1,7 +1,7 @@
 = xtUML Training Class
 include::../include.adoc[]
 
-* link:class-prep/class_prep{outfilesuffix}[Class Preparations]
+* link:class_prep/class_prep{outfilesuffix}[Class Preparations]
 * link:homework/homework{outfilesuffix}[Homework]
 * link:sumo_start{outfilesuffix}[Getting Started with Sumo]
 * link:sumo_edit/sumo_edit{outfilesuffix}[Build-A-Sumo Editing Project]
