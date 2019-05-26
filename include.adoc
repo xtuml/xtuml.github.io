@@ -13,3 +13,7 @@
 
 :instructor:  Mr. Starrett
 :instructoremail:  cortland.starrett at onefact.net
+
+// The following links to the Japanese translation of the file.
+// To enable this, turn on attribute 'jp' when building the HTML.
+ifdef::jp[(link:{docname}.jp{outfilesuffix}[日本人])]
