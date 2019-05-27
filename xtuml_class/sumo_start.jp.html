@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>Set up EV3RT Dev Environment Homework</title>
+<title>Getting started with sumo</title>
 <style>
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
@@ -439,76 +439,170 @@ html,body{        margin: auto;
 </head>
 <body class="article">
 <div id="header">
-<h1>Set up EV3RT Dev Environment Homework <span class="image"><img src="../img/sumo_robot.jpg" alt="sumo robot"></span></h1>
+<h1>Getting started with sumo</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>(<a href="ev3_setup.jp.html">日本人</a>)</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_ev3_robot_construction">EV3 Robot Construction</h2>
+<h2 id="_1_import_the_required_projects">1. Import the required projects</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>(pre-requisite) Build the EV3 LEGO sumo robot following <a href="../../sumo/sumo.html">these instructions</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ev3rt_development">EV3RT Development</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your EV3RT development workspace following
-<a href="http://ev3rt-git.github.io/get_started/">this guide</a>. Run the sample program.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 0: Check your environment" you will need to follow the
-instructions to install Cygwin on Windows.  In step 10 of those instructions,
-do not download gcc-arm version 2014q3. Instead navigate to the GCC ARM page
-and download the version containing string "2016q3".  It is newer and better.
-</td>
-</tr>
-</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import <code>Sumo</code>, <code>Sumo Simulator</code>, and <code>MCLMShared</code> from the <code>models</code> repository.</p>
+</li>
+<li>
+<p>See <a href="https://youtu.be/a0AD57W-jOk">this guide</a> to learn how to import projects.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../img/ev3_gcc_help.png" alt="gcc">
+<img src="img/sumo_start2.png" alt="sumo start2">
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 2: Prepare the configurator", simply download the pre-built
-binaries rather than compiling from the sources.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_homework_submission">Homework Submission</h2>
+<h2 id="_2_build_the_java_simulator">2. Build the Java simulator</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Attach your compiled sample program to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Java perspective</p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p><a href="homework.html">back to homework list</a></p>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start3.png" alt="sumo start3">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select "Project &gt; Build All"</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start11.png" alt="sumo start11">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_launch_the_simulator">3. Launch the simulator</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open run configurations (triangle next to the play button &gt; Run Configurations)</p>
+</li>
+<li>
+<p>Open the Java Applications group and select "Sumo Simulator" and click "Run"</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start4.png" alt="sumo start4">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_launch_verifier">4. Launch Verifier</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the xtUML Debugging perspective</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start5.png" alt="sumo start5">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open debug configurations (triangle next to the beetle &gt; Debug Configurations)</p>
+</li>
+<li>
+<p>Open the xtUML eXecute Applications group and select "sumo" and click "Debug"</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start6.png" alt="sumo start6">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Naviage to "Sumo &gt; SumoRobotSimulator &gt; Sumo::Library::Simulator &gt; Sumo::Library::Simulator &gt; Simulator &gt; SumoSimulatorProxy &gt; connect". Right click and select "Execute".</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start7.png" alt="sumo start7">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Watch the simulation run.</p>
+</li>
+<li>
+<p>When you are done, click the red square to terminate the simulation.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_generate_code">5. Generate code</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the C/C++ perspective</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start8.png" alt="sumo start8">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the "Sumo" project, right click, and select "Build Project".</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start9.png" alt="sumo start9">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Expand the project, navigate to the "src" directory and browse the generated code.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sumo_start10.png" alt="sumo start10">
+</div>
 </div>
 </div>
 </div>

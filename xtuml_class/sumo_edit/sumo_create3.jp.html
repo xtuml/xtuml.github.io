@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>Set up EV3RT Dev Environment Homework</title>
+<title>Assignment 3</title>
 <style>
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
@@ -439,76 +439,165 @@ html,body{        margin: auto;
 </head>
 <body class="article">
 <div id="header">
-<h1>Set up EV3RT Dev Environment Homework <span class="image"><img src="../img/sumo_robot.jpg" alt="sumo robot"></span></h1>
+<h1>Assignment 3</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>(<a href="ev3_setup.jp.html">日本人</a>)</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_ev3_robot_construction">EV3 Robot Construction</h2>
+<h2 id="_build_a_sumo_model">Build a Sumo Model <span class="image"><img src="../img/sumo_robot.jpg" alt="robot"></span></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>(pre-requisite) Build the EV3 LEGO sumo robot following <a href="../../sumo/sumo.html">these instructions</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ev3rt_development">EV3RT Development</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your EV3RT development workspace following
-<a href="http://ev3rt-git.github.io/get_started/">this guide</a>. Run the sample program.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 0: Check your environment" you will need to follow the
-instructions to install Cygwin on Windows.  In step 10 of those instructions,
-do not download gcc-arm version 2014q3. Instead navigate to the GCC ARM page
-and download the version containing string "2016q3".  It is newer and better.
-</td>
-</tr>
-</table>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create package <strong>sumo</strong> under component <strong>sumo</strong></p>
+</li>
+<li>
+<p>Double-click package <strong>sumo</strong> to open it on the canvas</p>
+</li>
+<li>
+<p>Use the <strong>Palette &gt; Classes &gt; Class</strong> tool to create a class on the canvas.  Name it
+<strong>navigate</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="../img/ev3_gcc_help.png" alt="gcc">
+<img src="../img/sumo_hw_3.1.png" alt="sumo hw 3.1">
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 2: Prepare the configurator", simply download the pre-built
-binaries rather than compiling from the sources.
-</td>
-</tr>
-</table>
+</li>
+<li>
+<p>Create class <strong>drive</strong></p>
+</li>
+<li>
+<p>Create class <strong>steering</strong></p>
+</li>
+<li>
+<p>Click the <strong>Association</strong> tool in the Palette and drag between <strong>navigate</strong> and
+<strong>steering</strong> on the canvas to draw an association</p>
+</li>
+<li>
+<p>Click the <strong>Association</strong> tool in the Palette and drag between <strong>navigate</strong> and
+<strong>drive</strong> on the canvas to draw an association</p>
+</li>
+<li>
+<p>Select the association <strong>R1</strong> and then open the Properties view</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Expand Association Participant End</p>
+</li>
+<li>
+<p>Expand Class As Simple Participant for <strong>steering</strong></p>
+</li>
+<li>
+<p>Set the Text Phrase field to <strong>navigates</strong></p>
+</li>
+<li>
+<p>Expand Class As Simple Participant for <strong>navigate</strong></p>
+</li>
+<li>
+<p>Set the Text Phrase field to <strong>steers for</strong></p>
+</li>
+<li>
+<p>You can drag the phrases around on the canvas to reposition them and use the bendpoints
+on the association line to add turned segments to the line</p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_3.2.png" alt="sumo hw 3.2">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the association <strong>R2</strong> and then open the Properties view</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Expand Association Participant End</p>
+</li>
+<li>
+<p>Expand Class As Simple Participant for <strong>drive</strong></p>
+</li>
+<li>
+<p>Set the Text Phrase field to <strong>directs</strong></p>
+</li>
+<li>
+<p>Expand Class As Simple Participant for <strong>navigate</strong></p>
+</li>
+<li>
+<p>Set the Text Phrase field to <strong>motivates</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Right-click on <strong>navigate</strong> and select <strong>New &gt; Attribute</strong>. Name the
+attribute <strong>retreat_duration</strong></p>
+</li>
+<li>
+<p>Right-click on <strong>navigate</strong> and select <strong>New &gt; Attribute</strong>. Name the
+attribute <strong>target_duration</strong></p>
+</li>
+<li>
+<p>Right-click on <strong>drive</strong> and select <strong>New &gt; Attribute</strong>. Name the
+attribute <strong>speed</strong></p>
+</li>
+<li>
+<p>Right-click on <strong>drive</strong> and select <strong>New &gt; Operation</strong>. Name the
+operation <strong>forward</strong></p>
+</li>
+<li>
+<p>Right-click on <strong>drive</strong> and select <strong>New &gt; Operation</strong>. Name the
+operation <strong>reverse</strong></p>
+</li>
+<li>
+<p>Right-click on <strong>drive</strong> and select <strong>New &gt; Operation</strong>. Name the
+operation <strong>stop</strong></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_homework_submission">Homework Submission</h2>
+<h2 id="_submitting_your_assignment">Submitting Your Assignment</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Attach your compiled sample program to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Take a screenshot of your BridgePoint with Model Explorer view expanded to show all the
+elements you have just created.</p>
+</li>
+<li>
+<p>Open the BridgePoint support issue you created in <a href="../homework/1.1.html">homework 1.1</a>.</p>
+</li>
+<li>
+<p>Edit the issue, scroll down to the Edit field:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the Status to "Feedback"</p>
+</li>
+<li>
+<p>Change the Assignee to "cstarrett"</p>
+</li>
+<li>
+<p>Add a Note that this assignment is completed</p>
+</li>
+<li>
+<p>Use the Choose Files button to attach your screenshot</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click the Submit button</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><a href="homework.html">back to homework list</a></p>
+<p>You are now ready to proceed to the <a href="sumo_create4.html">next step</a></p>
+</div>
+<div class="paragraph">
+<p><a href="sumo_edit.html">back to assignment list</a></p>
 </div>
 </div>
 </div>
