@@ -1,5 +1,5 @@
 = Translation
-include::include.adoc[]
+include::../include.adoc[]
 
 == How To Translate Documents
 
