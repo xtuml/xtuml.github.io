@@ -1,13 +1,13 @@
 :nofooter:
 
-:duedatehw1_0:  1 October 2019
-:duedatehw1_1:  2 October 2019
-:duedatehw1_2:  3 October 2019
-:duedatehw1_3:  4 October 2019
-:duedatehw1_4:  5 October 2019
-:duedatehw1_5:  6 October 2019
-:duedatebalancer:  7 October 2019
-:duedateev3rt:  8 October 2019
+:duedatehw1_0:  2 August 2019
+:duedatehw1_1:  9 August 2019
+:duedatehw1_2:  16 August 2019
+:duedatehw1_3:  23 August 2019
+:duedatehw1_4:  6 September 2019
+:duedatehw1_5:  13 September 2019
+:duedatebalancer:  20 September 2019
+:duedateev3rt:  27 September 2019
 
 :hwtrackingissue:  10466
 

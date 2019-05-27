@@ -44,4 +44,5 @@ asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/xtuml_cla
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/xtuml_class.jp.adoc -o ./xtuml_class/xtuml_class.jp.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./balancer/balancer.adoc -o ./balancer/balancer.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./sumo/sumo.adoc -o ./sumo/sumo.html
+asciidoctor -a stylesheet=$pwd/github-pandoc.css ./translation/translation.adoc -o ./translation/translation.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./sitepage.adoc -o ./sitepage.html

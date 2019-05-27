@@ -1,0 +1,25 @@
+= Translation
+include::../include.adoc[]
+
+== How To Translate Documents
+
+. Visit https://github.com/cortlandstarrett/xtuml.github.io[fork of class materials repository].
+
+. Be sure you are on the `<> Code` tab.
++
+image::repo.png[]
+
+. In the 'Branch' selection list, choose the '11654_japanese' branch.
+
+. Navigate to the '???.jp.adoc' file that you wish to translate, for example
+  `homework/1.0.jp.adoc`.
++
+image::hw.png[]
+
+. Click on the "pencil" icon to 'Edit this file'.
++
+image::edit.png[]
+
+. Edit the English that you wish to be translated into Japanese.  When done
+  editing, 'Commit' (green button at bottom) the change.  It will be merged
+  by the administrator of the repository.
