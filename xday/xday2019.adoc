@@ -44,6 +44,10 @@ hereby solicits compelling papers and presentations that exhibit method
 advances, tooling improvements and application experience in Shlaer-Mellor
 modeling and related Executable/Translatable modeling.
 
+=== Venue
+
+xtUML Days 2019 UK will be hosted at https://www.queenshotelcheltenham.co.uk/[Queens Cheltenham].
+
 == Call for Papers
 
 A program committee will review and select from submitted papers, posters
