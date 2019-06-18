@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>Set up EV3RT Dev Environment Homework</title>
+<title>Assignment 1</title>
 <style>
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
@@ -439,76 +439,278 @@ html,body{        margin: auto;
 </head>
 <body class="article">
 <div id="header">
-<h1>Set up EV3RT Dev Environment Homework <span class="image"><img src="../img/sumo_robot.jpg" alt="sumo robot"></span></h1>
+<h1>Assignment 1</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>(<a href="ev3_setup.jp.html">日本人</a>)</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_ev3_robot_construction">EV3 Robot Construction</h2>
+<h2 id="_build_a_sumo_model">Build a Sumo Model <span class="image"><img src="../img/sumo_robot.jpg" alt="robot"></span></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(pre-requisite) Build the EV3 LEGO sumo robot following <a href="../../sumo/sumo.html">these instructions</a>.</p>
+<p>In this series of assignments you will learn how to create a model using
+BridgePoint.  We will walk though the model creation process step-by-step. These
+instructions assume you have already installed BridgePoint and launched it.</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new xtUML Project named <strong>Sumo_mine</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.1.png" alt="sumo hw 1.1">
 </div>
-</div>
-<div class="sect1">
-<h2 id="_ev3rt_development">EV3RT Development</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your EV3RT development workspace following
-<a href="http://ev3rt-git.github.io/get_started/">this guide</a>. Run the sample program.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 0: Check your environment" you will need to follow the
-instructions to install Cygwin on Windows.  In step 10 of those instructions,
-do not download gcc-arm version 2014q3. Instead navigate to the GCC ARM page
-and download the version containing string "2016q3".  It is newer and better.
-</td>
-</tr>
-</table>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../img/ev3_gcc_help.png" alt="gcc">
+<img src="../img/sumo_hw_1.2.png" alt="sumo hw 1.2">
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In "Step 2: Prepare the configurator", simply download the pre-built
-binaries rather than compiling from the sources.
-</td>
-</tr>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.3.png" alt="sumo hw 1.3">
+</div>
+</div>
+</li>
+<li>
+<p>Right-click on <strong>Sumo_mine</strong> in Model Explorer view and select <strong>New &gt; Package</strong>.
+Name the package <strong>IO DTs</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.4.png" alt="sumo hw 1.4">
+</div>
+</div>
+</li>
+<li>
+<p>Create package <strong>RobotInterface</strong> under <strong>Sumo_mine</strong></p>
+</li>
+<li>
+<p>Double-click package <strong>IO DTs</strong> to open it</p>
+</li>
+<li>
+<p>Create Enumeration Data Type <strong>Direction</strong> inside <strong>IO DTs</strong> package.
+Creation can be performed in any of three ways:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the name of the element (here Enumeration Data Type) in the Palette to select the tool, then
+click on the canvas diagram to place the element.</p>
+</li>
+<li>
+<p>Right-click on the canvas diagram and use the context menu <strong>New &gt; &#8230;&#8203;</strong></p>
+</li>
+<li>
+<p>Right-click on the element in Model Explorer that you want to contain your new element and use the
+context menu <strong>New &gt; &#8230;&#8203;</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.5.png" alt="sumo hw 1.5">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Right-click on the <strong>Direction</strong> enumeration and select <strong>New &gt; Enumerator</strong>. Name the enumerator <strong>backward</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.6.png" alt="sumo hw 1.6">
+</div>
+</div>
+</li>
+<li>
+<p>Create Enumerator <strong>stop</strong> inside <strong>Direction</strong></p>
+</li>
+<li>
+<p>Create Enumerator <strong>forward</strong> inside <strong>Direction</strong></p>
+</li>
+<li>
+<p>Create Enumeration DataType <strong>Orientation</strong> inside <strong>IO DTs</strong> package</p>
+</li>
+<li>
+<p>Create Enumerator <strong>left</strong> inside <strong>Orientation</strong></p>
+</li>
+<li>
+<p>Create Enumerator <strong>straight</strong> inside <strong>Orientation</strong></p>
+</li>
+<li>
+<p>Create Enumerator <strong>right</strong> inside <strong>Orientation</strong></p>
+</li>
+<li>
+<p>Double-click package <strong>RobotInterface</strong> in the Model Explorer view to open it</p>
+</li>
+<li>
+<p>Create interface <strong>platform</strong> inside <strong>RobotInterface</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.7.png" alt="sumo hw 1.7">
+</div>
+</div>
+</li>
+<li>
+<p>Use the right-click context menu to Add the following operations and
+signals to <strong>platform</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>operation: <strong>init</strong></p>
+</li>
+<li>
+<p>operation: <strong>lineDetected</strong></p>
+</li>
+<li>
+<p>operation: <strong>touchLeft</strong></p>
+</li>
+<li>
+<p>operation: <strong>touchRight</strong></p>
+</li>
+<li>
+<p>operation: <strong>untouchLeft</strong></p>
+</li>
+<li>
+<p>operation: <strong>untouchRight</strong></p>
+</li>
+<li>
+<p>signal: <strong>go</strong></p>
+</li>
+<li>
+<p>signal: <strong>turn</strong></p>
+</li>
+<li>
+<p>signal: <strong>setName</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.8.png" alt="sumo hw 1.8">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In Model Explorer view, expand <strong>Sumo_mine &gt; RobotInterface &gt; platform</strong>.  All
+the interface messages are shown.</p>
+</li>
+<li>
+<p>Select <strong>init</strong>, then use the Properties view to modify the "Message Direction"
+property to be "From Provider". Repeat this process for each operation (do not change
+the signals).</p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.9.png" alt="sumo hw 1.9">
+</div>
+</div>
+</li>
+<li>
+<p>Right-click on <strong>go</strong> and select <strong>New &gt; Parameter</strong>. Name the parameter <strong>direction</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.10.png" alt="sumo hw 1.10">
+</div>
+</div>
+</li>
+<li>
+<p>Expand the <strong>go</strong> interface message.  The <strong>direction</strong> parameter is shown.</p>
+</li>
+<li>
+<p>Right-click on the <strong>direction</strong> parameter and select <strong>Set Type&#8230;&#8203;</strong>.  Use the wizard to select the <strong>Direction</strong> type.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.11.png" alt="sumo hw 1.11">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.12.png" alt="sumo hw 1.12">
+</div>
+</div>
+</li>
+<li>
+<p>Right-click on <strong>turn</strong> and select <strong>New &gt; Parameter</strong>. Name the parameter
+<strong>orientation</strong>.</p>
+</li>
+<li>
+<p>Expand the <strong>turn</strong> interface message.  The <strong>orientation</strong> parameter is shown.</p>
+</li>
+<li>
+<p>Right-click on the <strong>orientation</strong> parameter and select <strong>Set Type&#8230;&#8203;</strong>.  Use the
+wizard to select the <strong>Orientation</strong> type.</p>
+</li>
+<li>
+<p>Right-click on <strong>setName</strong> and select <strong>New &gt; Parameter</strong>. Name the parameter <strong>name</strong>.</p>
+</li>
+<li>
+<p>Expand the <strong>setName</strong> interface message.  The <strong>name</strong> parameter is shown.</p>
+</li>
+<li>
+<p>Right-click on the <strong>name</strong> parameter and select <strong>Set Type&#8230;&#8203;</strong>.  Use the wizard
+to select the <strong>string</strong> type.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_homework_submission">Homework Submission</h2>
+<h2 id="_submitting_your_assignment">Submitting Your Assignment</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Attach your compiled sample program to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Take a screenshot of your BridgePoint with Model Explorer view expanded to show
+all the elements you have created.</p>
+</li>
+<li>
+<p>Open the BridgePoint support issue in Redmine that <strong>you</strong> created in
+<a href="../homework/1.1.html">homework 1.1</a>.  Issue 10472 is just used here as an example.</p>
+</li>
+<li>
+<p>Edit the issue, scroll down to the Edit field:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the Status to "Feedback"</p>
+</li>
+<li>
+<p>Change the Assignee to "cstarrett"</p>
+</li>
+<li>
+<p>Add a Note that this assignment is completed</p>
+</li>
+<li>
+<p>Use the Choose Files button to attach your screenshot</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click the <code>Submit</code> button.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.13.png" alt="sumo hw 1.13">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.13a.png" alt="sumo hw 1.13a">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.13b.png" alt="sumo hw 1.13b">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/sumo_hw_1.14.png" alt="sumo hw 1.14">
+</div>
 </div>
 <div class="paragraph">
-<p><a href="homework.html">back to homework list</a></p>
+<p>You are now ready to proceed to the <a href="sumo_create2.html">next step</a></p>
+</div>
+<div class="paragraph">
+<p><a href="sumo_edit.html">back to assignment list</a></p>
 </div>
 </div>
 </div>

@@ -21,7 +21,7 @@ industrial application modeling within production installations.
 Attendees will network with engineers, scientists and educators who
 understand executable and translatable modeling as applied in active
 systems.  In 2019, a special focus will be applied to extending and
-clarifying the Shlaer-Mellor Method in light of undocumebnted developments
+clarifying the Shlaer-Mellor Method in light of undocumented developments
 over the last several years.
 
 The Shlaer-Mellor Method is applied in varying degrees of integrity in
@@ -29,9 +29,13 @@ organizations around the world.  At xtUML Days people from organizations
 focused on aeronautics, distributed network asset management, medical devices
 and heavy factory automation among others will discuss:  
 
-* industrial applications  
 * Method advances (specifically convergence of PT and K-C dialects)  
-* tooling refinements  
+* Standardized Architecture environments such as ECOA, FACE, AUTOSAR and
+  safety standards such as ISO 26262 and IEC 60601
+* Model of Communication
+* Constraint Modeling
+* Cryptographic Architecture
+* Tooling Refinements  
 
 The xtUML Community is keen to exchange expertise and learn from one
 another.  xtUML Days provides a forum for developers to share best
@@ -105,7 +109,7 @@ the Method and road map for tooling.  Day 2 attendance is by invitation only.
 
 * Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net
 * Dave Salt, Program Committee Member, UK Government, UK
-* Dave Skinner, Program Committee Member, BAE, UK
+* Dave Skinner, Program Committee Member, BAE Systems, UK
 
 === Conference Contact
 If you have questions about xtUML Days 2019 UK, contact the chair

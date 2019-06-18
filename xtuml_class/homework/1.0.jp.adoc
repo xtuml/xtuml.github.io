@@ -5,10 +5,10 @@ include::../../include.adoc[]
 Send an email to your instructor, {instructor}, at __{instructoremail}__.
 Put the following information into the email:
 
-* your name
-* photo of yourself (selfie)
-* your graduate focus of study
-* Answer the question, "What do you want to learn in this class?"
+* あなたの名前
+* 自分の写真 (selfie)
+* 研究課題
+* この質問に答えなさい "What do you want to learn in this class?"
 
 Your instructor will respond to your email.  You may email the instructor
 at any time.  Please ask questions.

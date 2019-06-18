@@ -1,0 +1,23 @@
+= xtUML Build-A-Sumo Editing Project
+include::../../include.adoc[]
+
+== Editing Assignments
+
+This sequence of assignments involves learning how to edit xtUML models
+in BridgePoint.  It goes step-by-step with only a little bit of explanation.
+You will learn by _doing_.  When you have completed the project, you will be
+more familiar with the tool and how to edit packages, class diagrams and
+state machines.
+
+Note that these are _exercises_ only.  Even after the last step the model
+is incomplete.  To run the xtUML model, you will need to start with the
+complete Sumo model as imported from the xtuml/models repository.
+
+That is the next project!
+
+* link:sumo_create1{outfilesuffix}[Assignment 1]
+* link:sumo_create2{outfilesuffix}[Assignment 2]
+* link:sumo_create3{outfilesuffix}[Assignment 3]
+* link:sumo_create4{outfilesuffix}[Assignment 4]
+* link:sumo_create5{outfilesuffix}[Assignment 5]
+
