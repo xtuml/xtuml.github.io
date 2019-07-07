@@ -1,39 +1,39 @@
-= GitHub Homework  image:../img/Octocat.png[Octocat]
+= GitHub 宿題  image:../img/Octocat.png[Octocat]
 include::../../include.adoc[]
 
-== Account Creation
-Create an account on [github.com](https://github.com)
+== アカウント作成
+ここにアカウントを作成する [github.com](https://github.com)
 
-(If you already have an account on github.com, you may use it.)
+(もし、すでに　github.com　にアカウントを持っているならば、それを使いなさい。)
 
-* Fork https://github.com/xtuml/models[xtuml/models] repository.
-  ** Click the button highlighted in red below:
+* 左記を自分用にフォークする https://github.com/xtuml/models[xtuml/models] repository.
+  **下記にある赤くハイライトされたものをクリック
      image:../img/fork_button.png[fork button]
 
-== Logging In to GitHub
-Open https://github.com/&lt;your_username&gt;/models
+== GitHubにログイン
+左記を開く https://github.com/&lt;your_username&gt;/models
 
-* Replace "&lt;your_username&gt;" in the above URL with your GitHub.com username
-* Take a screenshot of this web page
+* 自分のユーザ名のURLに書き換え "&lt;your_username&gt;"
+* このWebページの画面をコピー
 
-== Development Workspace
-Prepare your development workspace.
+== 開発ワークスペース
+自分用のワークスペースを確保する
 
-* Clone your fork of the `models` repositories to your local machine.
+* 自分のフォークのモデルを複製してローカルディスクに置く。
 
 ([video tutorial](https://youtu.be/jkMbvtbbCLA)).
 
-== Importing Projects
-Import Sumo projects from your local models repository.
+== プロジェクトのインポート
+相撲(sumo)プロジェクトを自分のローカル・リポジトリにインポートする。
 
 (https://youtu.be/a0AD57W-jOk[video tutorial])
 
-* Import the `Sumo`, `Sumo Simulator`, and `MCLMShared` projects from the models repository.
-* Take a screenshot of your BridgePoint application with the Sumo project imported.
+* モデル・リポジトリから、左記をインポートする。`Sumo`, `Sumo Simulator`, `MCLMShared`
+* BridgePoint 画面で Sumo プロジェクトがインポートされたようすを画面コピー
 
-== Screenshots
-Attach both screenshots to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.
+== 画面コピー
+Redmine のイシューにスクリーンショットを添付
+この宿題を行ってみて難しかったことを記しなさい。
+ステータスを 'Feedback' に変更して教師へフィードバック
 
 link:homework{outfilesuffix}[back to homework list]
