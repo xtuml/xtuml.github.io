@@ -1,4 +1,4 @@
-= GitHub Homework  image:../img/Octocat.png[Octocat]
+= GitHub 宿題  image:../img/Octocat.png[Octocat]
 include::../../include.adoc[]
 
 == Account Creation
