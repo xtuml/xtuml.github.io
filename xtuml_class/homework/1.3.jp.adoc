@@ -1,39 +1,39 @@
-= GitHub Homework  image:../img/Octocat.png[Octocat]
+= GitHub 宿題  image:../img/Octocat.png[Octocat]
 include::../../include.adoc[]
 
 == Account Creation
-Create an account on [github.com](https://github.com)
+左記にアカウントを作りなさい [github.com](https://github.com)
 
-(If you already have an account on github.com, you may use it.)
+(github.com にすでにアカウントを持っているならばそれを使ってもよいです。)
 
-* Fork https://github.com/xtuml/models[xtuml/models] repository.
-  ** Click the button highlighted in red below:
+* 左記のリポジトリをフォークします https://github.com/xtuml/models[xtuml/models]
+  ** 下記にてハイライトされたボタンをクリック:
      image:../img/fork_button.png[fork button]
 
-== Logging In to GitHub
+== GitHub にログイン
 Open https://github.com/&lt;your_username&gt;/models
 
-* Replace "&lt;your_username&gt;" in the above URL with your GitHub.com username
-* Take a screenshot of this web page
+* 上記のURLにある "&lt;your_username&gt;" をあなたのGitHub.com ユーザ名に置き換えなさい。
+* このWebページのスクリーンショットを取りなさい。
 
 == Development Workspace
-Prepare your development workspace.
+自分用の開発ワークスペースを作る
 
-* Clone your fork of the `models` repositories to your local machine.
+* あなたのフォークにある `models` リポジトリをローカルにクローンしなさい。
 
 ([video tutorial](https://youtu.be/jkMbvtbbCLA)).
 
-== Importing Projects
-Import Sumo projects from your local models repository.
+== プロジェクトのインポート
+あなたのローカル モデル リポジトリから相撲モデルをインポートしなさい。
 
 (https://youtu.be/a0AD57W-jOk[video tutorial])
 
-* Import the `Sumo`, `Sumo Simulator`, and `MCLMShared` projects from the models repository.
-* Take a screenshot of your BridgePoint application with the Sumo project imported.
+* モデル リポジトリから`Sumo`, `Sumo Simulator`, `MCLMShared` をインポート
+* インポートしたBridgePoint アプリケーションと共に写真を撮る。
 
-== Screenshots
-Attach both screenshots to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.
+== スクリーンショット
+２枚のスクリーンショットをレッドマインのイシューに入れます。
+ノートセクションには、この作業で難しかったとこをを期すこと。
+ステータスを 'Feedback' に変更して教師に渡す。わけない。
 
 link:homework{outfilesuffix}[back to homework list]
