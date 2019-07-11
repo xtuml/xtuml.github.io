@@ -72,7 +72,7 @@ Topics of interest to xtUML Days include but are not limited to the following:
 * tooling migration experience reports  
 
 Submit your paper, poster or presentation electronically as PDF via
-https://easychair.org/conferences/?conf=xtuml2019uk[EasyChair].
+https://easychair.org/conference?conf=xtumldays2019uk[EasyChair].
 (If you are unable to submit through EasyChair, please contact the
 <<Conference Contact>>.
 Presentations are expected to be 25-45 minutes in duration including
