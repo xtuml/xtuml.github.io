@@ -54,12 +54,12 @@ Register by emailing the chair (cortland.starrett at onefact.net).  Provide
 name and company information.
 
 Registration is $500 (USD) for participants not under contract with the
-Community Engagment option.  Payment can be made by check or credit card
-(through PayPal below).  Other methods of payment can be arranged through
-the conference chair.  Discounts are offered to companies sending more
-than 3 participants; contact the chair.
+Community Engagement option.  Payment can be made by check.  Payment can
+be made with a credit card (through PayPal below).  Other methods of payment
+can be arranged through the conference organizers.  Discounts are offered
+to companies sending more than 3 participants; contact the chair.
 
-https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[Pay here.]
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[Pay for xtUML Days 2019 UK here.]
 
 === Travel
 
