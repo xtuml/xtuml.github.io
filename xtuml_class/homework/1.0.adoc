@@ -2,15 +2,15 @@
 include::../../include.adoc[]
 
 == Email
-Send an email to your instructor, {instructor}, at __{instructoremail}__.
-Put the following information into the email:
+講師の先生にメールを入れてください。 {instructor}先生, メールアドレス： __{instructoremail}__.
+メールには、下記の項目を英語で記入して送ってくださいね。
 
-* your name
-* photo of yourself (selfie)
-* your graduate focus of study
-* Answer the question, "What do you want to learn in this class?"
+* あなたの氏名
+* あなたの写真 (自撮りでよい)
+* 卒研の課題
+* 左記の質問に答えなさい, "What do you want to learn in this class?"
 
-Your instructor will respond to your email.  You may email the instructor
-at any time.  Please ask questions.
+この項目をメールすれば、講師から返信がきます。　この講師にはいつでも
+メールをしてください。返信がきます。
 
 link:homework{outfilesuffix}[back to homework list]
