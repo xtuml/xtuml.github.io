@@ -1,19 +1,18 @@
-= Virtual Machine Homework image:../img/remote_desktop.png[VM]
+= VM仮想マシンの宿題 image:../img/remote_desktop.png[VM]
 esciidoctor -a stylesheet=$pwd/github-pandoc.css  ./xtuml-class/homework/1.1.adoc -o ./xtuml-class/homework/1.1.html
 include::../../include.adoc[]
 
-== Log In
-Log into the VM following link:../class_prep/class_prep{outfilesuffix}[these instructions].
+== ログイン
+左記からVMにログインしなさい:../class_prep/class_prep{outfilesuffix}[these instructions].
 
-NOTE:  This machine is shared among students and only supports one connection at a
-time. If you are connected, you will be suddenly disconnected if another user logs in.
-We recommend students coordinate with one another to avoid conflicts.
+NOTE:  このマシンは、学生共有で一度には一人しか使えません。
+あなたが使っているときに他の学生がログインすると、あなたはいきなり切断されます。
+学生の諸君で協力して上手に練習してください。
 
+== 宿題の提出
+リモートデスクトップ上でBridgePointを動作させているスクリーンショットをとりなさい。
+Redmine　のイシューに添付しなさい。
+ノートのセッションで作業で難しかったところを書きなさい。
+ステータスを 'Feedback' として教師にアサインしなさい。
 
-== Homework Submission
-Take a screenshot of your computer running BridgePoint on the remote desktop.
-Attach the screenshot to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.
-
-link:homework{outfilesuffix}[back to homework list]
+link:homework{outfilesuffix}[宿題リストに戻る]
