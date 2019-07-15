@@ -1,40 +1,41 @@
 = Support Accounts Homework  image:../img/helpdesk.png[helpdesk]
 include::../../include.adoc[]
 
-== トラッカ アカウントの発行
-左記にトラッカのアカウントを作成する https://support.onefact.net[support.onefact.net].  
+== Issue Tracker Account
+Create an account on https://support.onefact.net[support.onefact.net].  
 
 image::../img/register1f.png[Register]
 
-このサイトを訪れたら 'Register' をクリックし、
-表示される欄に記入して次の`Submit` をクリック。
+To do this, click on 'Register' when you visit the site page.  Fill out the
+following form and `Submit` it.
 
-NOTE:  あなたのアカウント請求にブリッジポイント エンジニアリングチームが
-アカウントの用意をしたうえで返信を出すまでには1両日必要です。
-あなたのアカウントが利用可能になったらｅメールでお知らせします。
+NOTE:  Your new account request requires action from an engineer on the
+BridgePoint engineering team.  It may take up to 1 full day for the work
+to be completed to set up your account.  You will receive a notice by email
+when your account is ready to use.
 
-下記のＵＲＬをたどり、指示に従ってください。
-https://support.onefact.net/issues/{hwtrackingissue}[issue {hwtrackingissue}]
+Navigate to https://support.onefact.net/issues/{hwtrackingissue}[issue {hwtrackingissue}]
+and follow the instructions.
 
-== xtUML.org のアカウント発行
-左記にxtUMLアカウントを作成する https://xtuml.org[xtuml.org].  
+== xtUML.org Account
+Create an account on https://xtuml.org[xtuml.org].  
 
 image::../img/registerxtumlorg.png[Register]
 
-このサイトを訪れたら 'Register' をクリックし、
-表示される欄に記入して次の`Register` をクリック。
+To do this, click on 'Register' when visit this site.  Fill out the form
+you see and click the next `Register` button.
 
 == Community Chat
-左記へ行く。 https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community chat Hangout]
+Visit the https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community chat Hangout]
 
-チャットページにて 'hello' または、”こんにちは”　と入力する。
+Say 'hello' (or konichiwa) in this chat page.
 
 == Submit Assignment
-あなたの教師に下記の項目をｅメールしてください。 
+Email your instructor with the following information:  
 
-* ユーザＩＤ for support.onefact.net
-*ユーザＩＤ for xtuml.org
-* ハングアウト用のｅメールアドレス
-* 何か難しいことがあればここに記載
+* user ID for support.onefact.net
+* user ID for xtuml.org
+* email address used for the Hangout
+* Please explain any difficulty you may have.
 
 link:homework{outfilesuffix}[back to homework list]
