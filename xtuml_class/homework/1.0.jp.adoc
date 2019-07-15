@@ -1,16 +1,16 @@
-= Introductions Homework  image:../img/handshake.png[handshake]
+= 自習の準備  image:../img/handshake.png[handshake]
 include::../../include.adoc[]
 
 == Email
-Send an email to your instructor, {instructor}, at __{instructoremail}__.
-Put the following information into the email:
+担当の{instructor}先生にｅメールを送りなさい。 メールアドレス： __{instructoremail}__.
+メール本文には、以下を書いて送ってください：
 
-* あなたの名前
-* 自分の写真 (selfie)
-* 研究課題
-* この質問に答えなさい "What do you want to learn in this class?"
+* 名前
+* 写真 (自撮り可)
+* 自分の研究課題
+* 授業で学びたいこと
 
-Your instructor will respond to your email.  You may email the instructor
-at any time.  Please ask questions.
+担当の先生から返信が来ます。
+先生には、いつでもメールしてかまいません。英語の苦手な人は日本語でもよいです。
 
 link:homework{outfilesuffix}[back to homework list]
