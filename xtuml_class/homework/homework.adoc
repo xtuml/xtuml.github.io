@@ -24,16 +24,16 @@ include::../../include.adoc[]
 
 === Pre-Grade Policy
 
-Students may submit homework before the due date to receive a _pre-grade_.
-The pre-grade is not recorded in the grade book.  If time is available,
-the instructor will review the homework assignment and provide feedback
-to the student.  If the homework is perfect, the instructor will say so.
-If there is a problem, the instructor will inform the student of the
-_first_ problem discovered in the homework.  Students may then correct
-the homework and submit at the normal due date.
+受講者は、予備単位を取るために宿題を期日前に提出してください。Students may submit homework before the due date to receive a _pre-grade_.
+予備単位は、単位張には記録されません。講師は時間が許せば　The pre-grade is not recorded in the grade book.  If time is available,
+みなさんの宿題をみて返事をします。　the instructor will review the homework assignment and provide feedback
+宿題が完璧なら、そう言いますし、問題があるならto the student.  If the homework is perfect, the instructor will say so.
+最初に見つけた問題について指摘をします。If there is a problem, the instructor will inform the student of the
+受講者は、それについて訂正を行って _first_ problem discovered in the homework.  Students may then correct
+当初に指示された期日に投稿してください。the homework and submit at the normal due date.
 
-To be eligible for pre-grade, homework must be submitted more than one
-full day before the due date.
+予備単位として受け付けられるためには、宿題提出をTo be eligible for pre-grade, homework must be submitted more than one
+期日の丸一日前までに行ってください。full day before the due date.
 
 // Navigate upwards to the default index file.
-link:../[Back to xtUML Training Class]
+link:../[XTUMLトレーニングクラスへ戻る]
