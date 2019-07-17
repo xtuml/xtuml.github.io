@@ -64,7 +64,18 @@ https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN3
 === Travel
 
 Plan to arrive Wednesday evening before the conference to attend a reception.
-Details forthcoming.
+
+=== Hotel
+
+Cheltenham offers many hotels and Airbnb options.  The xtUML Days
+organizers have arranged a conference rate at the Queens Hotel.
+E-mail or request to speak to Vanessa Hunter during business hours
+to arrange a room at the conference rate.  Indicate your stay is for
+xtUML Days.
+
+ Vanessa Hunter
+ +44 (0)1242 514754
+ h6632-rm@accor.com
 
 == Call for Papers
 
