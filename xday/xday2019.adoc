@@ -44,6 +44,20 @@ hereby solicits compelling papers and presentations that exhibit method
 advances, tooling improvements and application experience in Shlaer-Mellor
 modeling and related Executable/Translatable modeling.
 
+=== Keynote Speaker
+
+image::takao.jpg[float="left", Takao Futagami]
+
+The xtUML Days 2019 UK keynote speaker is Takao Futagami.  He is a chief
+consultant at Toyo Corporation.  His research interests focus on embedded
+systems engineering.  Futagami-sensei holds a degree in physics from Tsukuba
+University and is a professor at Tokai University.
+
+Mr. Futagami was instrumental to the introduction of the Shlaer-Mellor Method,
+xtUML and associated tooling into Japan in the 1990s and continues to promote
+modeling in industry and education.  Futagami has translated much of the
+Shlaer-Mellor literature into Japanese.
+
 === Venue
 
 xtUML Days 2019 UK will be hosted at https://www.queenshotelcheltenham.co.uk/[Queens Cheltenham].
