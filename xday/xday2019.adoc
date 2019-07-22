@@ -46,7 +46,7 @@ modeling and related Executable/Translatable modeling.
 
 === Keynote Speaker
 
-image::takao.jpg[float="left", Takao Futagami]
+image:takao.jpg[Takao Futagami,float="right",align="center"]
 
 The xtUML Days 2019 UK keynote speaker is Takao Futagami.  He is a chief
 consultant at Toyo Corporation.  His research interests focus on embedded
