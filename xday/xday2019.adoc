@@ -55,8 +55,21 @@ University and is a professor at Tokai University.
 
 Mr. Futagami was instrumental to the introduction of the Shlaer-Mellor Method,
 xtUML and associated tooling into Japan in the 1990s and continues to promote
-modeling in industry and education.  Futagami has translated much of the
+modeling in industry and education.  Futagami has helped translate much of the
 Shlaer-Mellor literature into Japanese.
+
+Shlaer-Mellor Material:
+
+* _Executable UML: A Foundation for Model-Driven Architecture_, Stephen Mellor and Marc Balcer
+* _MDA Distilled_, Stephen Mellor and Kendall Scott
+* _How to Build Shlaer-Mellor Object Models_, Leon Starr
+* _Executable UML How to Build Class Models_, Leon Starr
+
+Programming and C:
+
+* _Programing LEGO Mindstorms_, Brian Bagnall
+* _MISRA-C Coding Guideline 1997_
+* _MISRA-C Coding Guideline 2004_
 
 === Venue
 
