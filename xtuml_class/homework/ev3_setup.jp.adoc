@@ -1,8 +1,8 @@
 = EV3RT 開発環境を設定する宿題 image:../img/sumo_robot.jpg[sumo robot]
-../../include.adoc[]
+include::../../include.adoc[]
 
 == EV3 ロボットの組み立て
-(事前準備) ../../sumo/sumo{outfilesuffix}[この指示書]を参照してEV3ロボットを組み立てなさい。
+(事前準備) link:../../sumo/sumo{outfilesuffix}[この指示書]を参照してEV3ロボットを組み立てなさい。
 
 == EV3RT 開発
 
