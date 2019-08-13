@@ -1,26 +1,27 @@
-= Set up EV3RT Dev Environment Homework image:../img/sumo_robot.jpg[sumo robot]
-include::../../include.adoc[]
+= EV3RT 開発環境を設定する宿題 image:../img/sumo_robot.jpg[sumo robot]
+../../include.adoc[]
 
-== EV3 Robot Construction
-(pre-requisite) Build the EV3 LEGO sumo robot following link:../../sumo/sumo{outfilesuffix}[these instructions].
+== EV3 ロボットの組み立て
+(事前準備) ../../sumo/sumo{outfilesuffix}[この指示書]を参照してEV3ロボットを組み立てなさい。
 
-== EV3RT Development
-Set up your EV3RT development workspace following
-http://ev3rt-git.github.io/get_started/[this guide]. Run the sample program.
+== EV3RT 開発
 
-NOTE:  In "Step 0: Check your environment" you will need to follow the
-instructions to install Cygwin on Windows.  In step 10 of those instructions,
-do not download gcc-arm version 2014q3. Instead navigate to the GCC ARM page
-and download the version containing string "2016q3".  It is newer and better.
+http://ev3rt-git.github.io/get_started/[このガイド]URLを参考にしてEV3RT開発ワークスペースを用意しなさい。
+サンプルプログラムを実行しなさい。
+
+NOTE:  "Step 0: Check your environment" においては、指示に従ってCygwinをWindowsにインストールする
+必要があります。その１０のステップでは、 gcc-arm version 2014q3をインストールしてはいけません。
+そのかわりに、GCC ARM page　へ移動して
+"2016q3"　と書かれたバージョンをインストールしなさい。  こちらの方が新しく良いです。
 
 image::../img/ev3_gcc_help.png[gcc]
 
-NOTE:  In "Step 2: Prepare the configurator", simply download the pre-built
-binaries rather than compiling from the sources.
+NOTE:  In "Step 2: Prepare the configurator"　においては、ビルド済みのバイナリを
+ダウンロードしなさい。ソースからコンパイルはしないこと。
 
-== Homework Submission
-Attach your compiled sample program to your issue in Redmine.
-In the Notes section, explain any difficulty you had completing the assignment.
-Change the Status to 'Feedback' and Assignee to your instructor.
+== 宿題の提出
+Redmineのイシューにコンパイルしたコードを添付しなさい。.
+ノートに作業で難しかった点を書きなさい。
+ステータスを 'Feedback' としてインストラクタをアサインしなさい。
 
-link:homework{outfilesuffix}[back to homework list]
+link:homework{outfilesuffix}[宿題リストへ戻る]
