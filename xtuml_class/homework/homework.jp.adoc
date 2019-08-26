@@ -1,39 +1,37 @@
-= Welcome to xtUML Class Homework!
+= xtUML 事前自習へようこそ！
 include::../../include.adoc[]
 
-== Homework Assignments
+== 自習課題
 
-=== Links to Assignements
+=== 課題へのリンク
 
-* link:1.0{outfilesuffix}[Homework 1.0 - Introductions] due {duedatehw1_0}
+* link:1.0{outfilesuffix}[自習 1.0 - 自分を先生に紹介しよう] due {duedatehw1_0}
 
-* link:1.1{outfilesuffix}[Homework 1.1 - Support Accounts] due {duedatehw1_1}
+* link:1.1{outfilesuffix}[自習 1.1 - サポートを受けるためのアカウント] due {duedatehw1_1}
 
-* link:1.2{outfilesuffix}[Homework 1.2 - BridgePoint] due {duedatehw1_2}
+* link:1.2{outfilesuffix}[自習 1.2 - BridgePoint のセットアップ] due {duedatehw1_2}
 
-* link:1.3{outfilesuffix}[Homework 1.3 - github setup] due {duedatehw1_3}
+* link:1.3{outfilesuffix}[自習 1.3 - github のセットアップ] due {duedatehw1_3}
 
-* link:1.4{outfilesuffix}[Homework 1.4 - Build the Robot] due {duedatehw1_4}
+* link:1.4{outfilesuffix}[自習 1.4 - ロボットの組み立て] due {duedatehw1_4}
 
-* link:1.5{outfilesuffix}[Homework 1.5 - Remote Desktop] due {duedatehw1_5}
+* link:1.5{outfilesuffix}[自習 1.5 - リモートデスクトップ] due {duedatehw1_5}
 
-* link:build_balancer{outfilesuffix}[Build the Balancer Robot (extra credit)] due {duedatebalancer}
+* link:build_balancer{outfilesuffix}[バランサ・ロボットを組み立てる (特別加点課題)] due {duedatebalancer}
 
-* link:ev3_setup{outfilesuffix}[Set up EV3RT Dev Environment] due {duedateev3rt}
+* link:ev3_setup{outfilesuffix}[EV3RT 開発環境をセットアップ] due {duedateev3rt}
 
 
-=== Pre-Grade Policy
+=== 事前成績
 
-Students may submit homework before the due date to receive a _pre-grade_.
-The pre-grade is not recorded in the grade book.  If time is available,
-the instructor will review the homework assignment and provide feedback
-to the student.  If the homework is perfect, the instructor will say so.
-If there is a problem, the instructor will inform the student of the
-_first_ problem discovered in the homework.  Students may then correct
-the homework and submit at the normal due date.
+学生は、事前成績を取るために定められた日時までにそれぞれの宿題を提出すること。
+事前成績は成績簿には記録しません。　講師は、時間の許す限り提出された宿題を見て
+学生諸君にフィードバックを行います。
+宿題が完璧であれば、講師はそれが完璧であると伝えます。もしも早めに提出された宿題に
+何か問題があるばあい、講師は手始めに最初の問題を学生に伝えるでしょう。
+学生は、それを改訂して通常の提出日に出してください。
 
-To be eligible for pre-grade, homework must be submitted more than one
-full day before the due date.
+事前成績をとるために、提出期限よりまる一日は早く提出をしてください。
 
 // Navigate upwards to the default index file.
 link:../[Back to xtUML Training Class]
