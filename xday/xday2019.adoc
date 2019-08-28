@@ -43,6 +43,10 @@ practices and influence the direction of the technology.  xtUML Days
 hereby solicits compelling papers and presentations that exhibit method
 advances, tooling improvements and application experience in Shlaer-Mellor
 modeling and related Executable/Translatable modeling.
+This year attendees represent One Fact, UK Crown, BAE Systems, ROGO,
+Northrop Grumman, Aurora Consulting, Software Improvements, L3, Thales,
+Toyo Corporation, ICS, FrogOOA, Kyushu University, University of Southampton
+and Jönköping University.
 
 === Keynote Speaker
 
@@ -86,11 +90,33 @@ be made with a credit card (through PayPal below).  Other methods of payment
 can be arranged through the conference organizers.  Discounts are offered
 to companies sending more than 3 participants; contact the chair.
 
-https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[Pay for xtUML Days 2019 UK here.]
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[**Pay for xtUML Days 2019 UK here.**]
 
-=== Travel
+=== Agenda of Presentations (**_Draft_**)
 
-Plan to arrive Wednesday evening before the conference to attend a reception.
+Thursday 12 Sep (Conference Day)
+
+* 08:00 room open, coffee, meet and greet
+* 09:00 (sharp) Welcome, Introductions and Logistics (Cort) (0.25)
+* 09:15 keynote _Shlaer-Mellor in Japan_ (Toyo Corporation, Takao Futagami) (0.75)
+* 10:00 _xtUML in the Field:  Robotic Soil Sampling_ (ROGO, Levi Starrett) (0.75)
+* 10:45-11:15 <break>
+* 11:15 _Formal Modeling and UML-B_ (U of Southampton, Colin Snook) (0.75)
+* 12:00 Architectures - Panel Discussion (ColinC, Tristan, Ashley) (Rob) (0.5)
+* 12:30-13:30 lunch (catered)
+* 13:30 _Modeling Communications_ (Tower - Tristan) (0.75)
+* 14:15 _Waterloo Ada Code Architecture_ (BAE - Ashley Field) (0.75)
+* 14:45 OOA '20 Overview and Method Debate (One Fact - Levi) (0.5)
+* 15:30-16:00 <break>
+* 16:00 _Modeling Education in Japan_ (Kyushu U - Kenji Hisazumi) (0.75)
+* 16:45 _Shlaer-Mellor Arch w/ Cryptographic Extensions_ (One Fact - Cort) (0.75)
+* 17:30 closing discussion
+
+=== Travel and Reception Dinner
+
+Plan to arrive Wednesday evening before the conference to attend a reception
+dinner (included in the conference registration).  Dinner will be hosted at
+_Bill's Cheltenham Restaurant_ (upstairs) at 7:00pm.
 
 === Hotel
 
@@ -131,7 +157,7 @@ Submit your paper, poster or presentation electronically as PDF via
 https://easychair.org/conference?conf=xtumldays2019uk[EasyChair].
 (If you are unable to submit through EasyChair, please contact the
 <<Conference Contact>>.
-Presentations are expected to be 25-45 minutes in duration including
+Presentations are expected to be 35-45 minutes in duration including
 time for questions and discussion.
 
 All submissions will be evaluated by the program committee.  
