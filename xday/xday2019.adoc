@@ -7,6 +7,35 @@ image::cheltenham.jpeg[Cheltenham, UK]
 
 <<What is this?>> | <<Call for Papers>> | <<Important Dates>> | <<Conference Organization>>
 
+== timely information for those attending the conference...
+
+=== notice as of 3 September 2019
+
+xtUML Days is next week!  The conference promises to be everything hoped.
+The line-up of presentations is compelling.  However, the most exciting
+aspect of the conference is the rich list of attendees from 15 different
+companies and universities represented from 4 continents with the
+strongest contingent coming from the UK.
+
+This note contains critical information for your planning.  All of it can
+be found on the information page (linked below) which is being kept
+updated.
+
+1. If you have not paid your registration fee, please do so.  Alert me to
+any difficulties.  The PayPal portal accepts general credit cards.
+2. Dinner on Wednesday 11 September begins at 7:00pm at Bill's Cheltenham
+Restaurant (included in registration).  The restaurant has an online
+ordering system.  You will receive notification; please order ahead of
+time.  Coordinate through me if you prefer to avoid the online portal.
+3. The doors open to the conference 12 September at 8:00am at The Queens
+Hotel.  The presentations will begin sharply at 9:00am.  Plan to arrive by
+at least 8:30 to receive a name badge and folder of materials.
+4. Speakers please provide PDF or PowerPoint to me ahead of time.  If
+using your own PC, please arrive by 8:15 to test it with the projector.
+5. Morning snacks, lunch and an afternoon break on conference day are
+catered at the venue.  The lunch menu will include salad and 2 choices of
+main dish: salmon or vegetarian curry.
+
 == What is this?
 
 *xtUML Days 2019 UK* is a modeling conference and represents the 6th
