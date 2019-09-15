@@ -2,7 +2,7 @@
 include::../../include.adoc[]
 
 == 相撲ロボットの組立て
-左記を見てEV3 LEGO 相撲ロボットを組立てなさい:../../sumo/sumo{outfilesuffix}[these instructions].
+左記を見てEV3 LEGO 相撲ロボットを組立てなさい link:../../sumo/sumo{outfilesuffix}[these instructions].
 
 == 自習課題
 自分が組み立てたロボットを持って自撮りしなさい

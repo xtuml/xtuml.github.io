@@ -121,7 +121,7 @@ to companies sending more than 3 participants; contact the chair.
 
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[**Pay for xtUML Days 2019 UK here.**]
 
-=== Agenda of Presentations (**_Draft_**)
+=== Agenda of Presentations
 
 Thursday 12 Sep (Conference Day)
 
@@ -131,15 +131,16 @@ Thursday 12 Sep (Conference Day)
 * 10:00 _xtUML in the Field:  Robotic Soil Sampling_ (ROGO, Levi Starrett) (0.75)
 * 10:45-11:15 <break>
 * 11:15 _Formal Modeling and UML-B_ (U of Southampton, Colin Snook) (0.75)
-* 12:00 Architectures - Panel Discussion (ColinC, Tristan, Ashley) (Rob) (0.5)
+* 12:00 OOA '20 Overview and Method Debate (One Fact - Levi) (0.5)
 * 12:30-13:30 lunch (catered)
 * 13:30 _Modeling Communications_ (Tower - Tristan) (0.75)
-* 14:15 _Waterloo Ada Code Architecture_ (BAE - Ashley Field) (0.75)
-* 14:45 OOA '20 Overview and Method Debate (One Fact - Levi) (0.5)
-* 15:30-16:00 <break>
-* 16:00 _Modeling Education in Japan_ (Kyushu U - Kenji Hisazumi) (0.75)
-* 16:45 _Shlaer-Mellor Arch w/ Cryptographic Extensions_ (One Fact - Cort) (0.75)
-* 17:30 closing discussion
+* 14:15 _Waterloo AutoCoder Architecture_ (BAE - Ashley Field) (0.75)
+* 14:45 Architectures - Panel Discussion (ColinC, Tristan, Ashley) (Rob) (0.5)
+* 15:30-15:45 <break>
+* 15:45 _Modeling Education in Japan_ (Kyushu U - Kenji Hisazumi) (0.75)
+* 16:30 _Shlaer-Mellor Runtime w/ Cryptographic Extensions_ (One Fact - Cort) (0.75)
+* 17:15 closing discussion
+* 17:30 evacuate room and retire to adhoc recreation
 
 === Travel and Reception Dinner
 
@@ -155,11 +156,7 @@ E-mail or request to speak to Vanessa Hunter during business hours
 to arrange a room at the conference rate.  Indicate your stay is for
 xtUML Days.
 
- Vanessa Hunter
- +44 (0)1242 514754
- h6632-rm@accor.com
-
-== Call for Papers
+== Call for Papers (Closed)
 
 A program committee will review and select from submitted papers, posters
 and presentations.  Selection is based upon perceived value to the xtUML
