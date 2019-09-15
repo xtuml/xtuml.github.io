@@ -1,15 +1,15 @@
 :nofooter:
 
-:duedatehw1_0:  2 August 2019
-:duedatehw1_1:  9 August 2019
-:duedatehw1_2:  16 August 2019
-:duedatehw1_3:  23 August 2019
-:duedatehw1_4:  6 September 2019
-:duedatehw1_5:  13 September 2019
-:duedatebalancer:  20 September 2019
-:duedateev3rt:  27 September 2019
+:duedatehw1_0:  18 September 2019
+:duedatehw1_1:  21 September 2019
+:duedatehw1_2:  24 September 2019
+:duedatehw1_3:  27 September 2019
+:duedatehw1_4:  29 September 2019
+:duedatehw1_5:  1 October 2019
+:duedatebalancer:  4 October 2019
+:duedateev3rt:  7 October 2019
 
-:hwtrackingissue:  10466
+:hwtrackingissue:  11746
 
 :instructor:  Mr. Starrett
 :instructoremail:  cortland.starrett at onefact.net
