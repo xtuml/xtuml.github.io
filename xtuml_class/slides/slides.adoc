@@ -1,0 +1,32 @@
+= Training Slides
+include::../../include.adoc[]
+
+== 1. Overview
+
+Presentation materials are available to support the training.  Some or
+all of the below linked presentations may be used or referenced during
+as part of the class.
+
+== 2. Slideware
+
+=== 2.1 Basic xtUML Modeling
+
+* link:Basic-xtUML-Modeling-CourseSlides.pdf[Basic xtUML Modeling (PDF file)]
+
+=== 2.2 xtUML Modeling Heritage Materials
+
+. link:Module_1_Introduction.pdf[Introduction]
+. link:Module_2_Tools.pdf[Tools]
+. link:Module_3_User_Interface.pdf[User Interface]
+. link:Module_4_AnalysisModeling.pdf[Analysis Modeling]
+. link:Module_5_Components.pdf[Components]
+. link:Module_6_ClassModeling.pdf[Class Modeling]
+. link:Module_7_Actions_Part_1.pdf[Actions (part 1)]
+. link:Module_8_State_Modeling.pdf[State Modeling]
+. link:Module_9_Actions_Part_2.pdf[Actions (part 2)]
+. link:Module_10_Model_Based_Test.pdf[Model-Based Testing]
+. link:Module_11_Verifier.pdf[Verifier (Interpretive Model Execution)]
+. link:Module_12_Execution_Rules.pdf[Execution Rules]
+. link:Module_13_Code_Generation.pdf[Code Generation]
+. link:Module_14_Workspace_and_Configuration_Management.pdf[Workspace and Configuration Management]
+. link:./Module_15_System_Level_Modeling.pdf[System-Level Modeling]
