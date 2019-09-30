@@ -4,8 +4,8 @@ include::../../include.adoc[]
 == 1. Overview
 
 Presentation materials are available to support the training.  Some or
-all of the below linked presentations may be used or referenced during
-as part of the class.
+all of the below linked presentations may be used or referenced as part
+of the class.
 
 == 2. Slideware
 
