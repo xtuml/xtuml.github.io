@@ -47,3 +47,4 @@ asciidoctor -a stylesheet=$pwd/github-pandoc.css ./balancer/balancer.adoc -o ./b
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./sumo/sumo.adoc -o ./sumo/sumo.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./translation/translation.adoc -o ./translation/translation.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./sitepage.adoc -o ./sitepage.html
+asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/DiffieHellman/DH.adoc -o ./xtuml_class/DiffieHellman/DH.html
