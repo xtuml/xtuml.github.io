@@ -28,7 +28,9 @@ image::network.png[]
 Let us practice some of the mathematics that are used in the D-H protocol.
 
 The 'mod' operator performs division and then gives the remainder.
-The 'mod' operator often is expressed with the '%' symbol.
+The 'mod' operator often is expressed with the '%' symbol.  The use of a
+calculator with these problems is permitted, however, they are simple
+enough to be done by hand with paper and pencil.
 
  44 mod 6 =
  27 % 7 =
@@ -41,28 +43,121 @@ The 'mod' operator often is expressed with the '%' symbol.
  3 mod 2 =
  1234567890123456789 % 2 =
 
-Solve each of the below equations for N or declare the solution "hard".
+Here we have _base_ ^ _exponent_ % _prime_.
+
+Raising a base to an exponential power is a calculation that is easy for
+a computer.  Finding the modulus of a number is simple for a computer.
+Even when the numbers involved are very large, computers can perform the
+calculations directly.  However, finding the exponent given the base and
+the modulus is difficult.  Mathematicians call it _hard_.  This means that
+brute force is required, and when the numbers are large, the solution
+cannot be found in any reasonable amount of time.
+
+Solve each of the below equations for N or declare the solution _hard_.
 
  2 ^ 3 mod 5 = N
- 5 ^ 2 mod 13 = N
+ 5 ^ 2 % 13 = N
  2 ^ 17 mod 37 = N
- 5 ^ 8 mod 97 = N
+ 5 ^ 8 % 97 = N
  5 ^ N mod 87 = 16
- 3 ^ N mod 53 = 30
+ 3 ^ N % 53 = 30
  7 ^ 8 mod 3891 = N
+ 5 ^ 123456 % 3891 = 2959
+ 5 ^ 1234567 % 3891 = 3674
 
-Perform a full Diffie-Hellman key exchange for the following two sets of starting points. Assume a base of g and modulus of p. Alice's private key is a; Bob's private key is b. Solve for Alice's public key, Bob's public key and the shared secret A, B and K respectively. (Show your work if you desire any partial credit.)
 
- g = 5, p = 19, a = 2, b = 5
+== Conceptual Idea
+
+Below is a conceptual image of what D-H will do.  Two people start with
+a common paint.  We will call the common color 'g_P'.
+
+Alice has a secret color called 'a'.  Bob has a secret color called 'b'.
+
+Alice mixes the shared color with her secret color to get 'A'.
+Bob mixes the shared color with his secret color to get 'B'.
+
+Alice sends her 'A' mixture to Bob; Bob sends his 'B' mixture to Alice.
+
+Alice mixes her secret color 'a' with Bob's mixture color 'B' and gets 'K'.
+Bob mixes his secret color 'b' with Alics's mixture color 'A' and gets 'K'.
+
+'K' and 'K' are the same!
+
+image::DHexample5.png[]
+
+== Examples and Exercises
+
+Perform a full Diffie-Hellman key exchange for the following sets of
+starting points.  Assume a base of g and modulus of p. Alice's private
+key is a; Bob's private key is b.  Solve for Alice's public key, Bob's
+public key and the shared secret A, B and K respectively.  (Show your
+work if you desire any partial credit.)
+
+=== Work Matrix
+
+The following is the work matrix.
+
+.Work Matrix:  g and P are given
+[options="header"]
+|===
+| Alice                | Bob
+| g ^ a mod P = *A*    | g ^ b mod P = *B*
+| B ^ a mod P = *K_Ba* | A ^ b mod P = *K_Ab*
+|===
+
+=== Diffie-Hellman Procedure
+
+1. (Alice) Fill in g, a, P to calculate A.
+2. (Bob) Fill in g, b, P to calculate B.
+3. Exchange A and B.  (Alice sends A to Bob; Bob sends B to Alice.)
+4. (Alice) Fill in B, a, P to calculate K_Ba.
+5. (Bob) Fill in A, b, P to calculate K_Ab.
+6. Ensure that K_Ba and K_Ab match.
+
+== Walk Through with Alice and SpongeBob
+
+image::DHexample1.png[]
+
+=== Example 1
+
+The following is an example worked out for you.
+
+.g = 5, p = 19, a = 2, b = 5
+[options="header"]
+|===
+| Alice                   | Bob
+| 5 ^ 2 % 19 = *A* = 6    | 5 ^ 5 % 19 = *B* = 9
+| 9 ^ 2 % 19 = *K_Ba* = 5 | 6 ^ 5 % 19 = *K_Ab* = 5
+| 5 ==                    | == 5
+|===
+
+=== Example 2
+
  g = 2, p = 11, a = 7, b = 3
 
 // (A=8, B=10, K=10)
 
+=== Example 3
+
+ g = 7, p = 3081, a = 47, b = 31
+
+// (A=145, B=1033, K=2689)
+
+=== Example 4
+
  g = 2, p = 11, a = 3, b = 5
 
 
-image::DHexample5.png[]
-image::DHexample1.png[]
+== Another D-H Diagram
+
 image::DHexample2.png[]
+
+== D-H with Eve the Eavesdropper
+
+In this example, Eve is illustrated listening to the in-between exchanges.
+
 image::DHexample3.png[]
+
+== Another D-H Diagram
+
 image::DHexample4.png[]

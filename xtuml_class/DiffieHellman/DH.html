@@ -482,7 +482,9 @@ same location.</p>
 </div>
 <div class="paragraph">
 <p>The 'mod' operator performs division and then gives the remainder.
-The 'mod' operator often is expressed with the '%' symbol.</p>
+The 'mod' operator often is expressed with the '%' symbol.  The use of a
+calculator with these problems is permitted, however, they are simple
+enough to be done by hand with paper and pencil.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -499,53 +501,225 @@ The 'mod' operator often is expressed with the '%' symbol.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Solve each of the below equations for N or declare the solution "hard".</p>
+<p>Here we have <em>base</em> ^ <em>exponent</em> % <em>prime</em>.</p>
+</div>
+<div class="paragraph">
+<p>Raising a base to an exponential power is a calculation that is easy for
+a computer.  Finding the modulus of a number is simple for a computer.
+Even when the numbers involved are very large, computers can perform the
+calculations directly.  However, finding the exponent given the base and
+the modulus is difficult.  Mathematicians call it <em>hard</em>.  This means that
+brute force is required, and when the numbers are large, the solution
+cannot be found in any reasonable amount of time.</p>
+</div>
+<div class="paragraph">
+<p>Solve each of the below equations for N or declare the solution <em>hard</em>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>2 ^ 3 mod 5 = N
-5 ^ 2 mod 13 = N
+5 ^ 2 % 13 = N
 2 ^ 17 mod 37 = N
-5 ^ 8 mod 97 = N
+5 ^ 8 % 97 = N
 5 ^ N mod 87 = 16
-3 ^ N mod 53 = 30
-7 ^ 8 mod 3891 = N</pre>
+3 ^ N % 53 = 30
+7 ^ 8 mod 3891 = N
+5 ^ 123456 % 3891 = 2959
+5 ^ 1234567 % 3891 = 3674</pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conceptual_idea">Conceptual Idea</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below is a conceptual image of what D-H will do.  Two people start with
+a common paint.  We will call the common color 'g_P'.</p>
 </div>
 <div class="paragraph">
-<p>Perform a full Diffie-Hellman key exchange for the following two sets of starting points. Assume a base of g and modulus of p. Alice&#8217;s private key is a; Bob&#8217;s private key is b. Solve for Alice&#8217;s public key, Bob&#8217;s public key and the shared secret A, B and K respectively. (Show your work if you desire any partial credit.)</p>
+<p>Alice has a secret color called 'a'.  Bob has a secret color called 'b'.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>g = 5, p = 19, a = 2, b = 5
-g = 2, p = 11, a = 7, b = 3</pre>
+<div class="paragraph">
+<p>Alice mixes the shared color with her secret color to get 'A'.
+Bob mixes the shared color with his secret color to get 'B'.</p>
 </div>
+<div class="paragraph">
+<p>Alice sends her 'A' mixture to Bob; Bob sends his 'B' mixture to Alice.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>g = 2, p = 11, a = 3, b = 5</pre>
+<div class="paragraph">
+<p>Alice mixes her secret color 'a' with Bob&#8217;s mixture color 'B' and gets 'K'.
+Bob mixes his secret color 'b' with Alics&#8217;s mixture color 'A' and gets 'K'.</p>
 </div>
+<div class="paragraph">
+<p>'K' and 'K' are the same!</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="DHexample5.png" alt="DHexample5">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples_and_exercises">Examples and Exercises</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Perform a full Diffie-Hellman key exchange for the following sets of
+starting points.  Assume a base of g and modulus of p. Alice&#8217;s private
+key is a; Bob&#8217;s private key is b.  Solve for Alice&#8217;s public key, Bob&#8217;s
+public key and the shared secret A, B and K respectively.  (Show your
+work if you desire any partial credit.)</p>
+</div>
+<div class="sect2">
+<h3 id="_work_matrix">Work Matrix</h3>
+<div class="paragraph">
+<p>The following is the work matrix.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Work Matrix:  g and P are given</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Alice</th>
+<th class="tableblock halign-left valign-top">Bob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">g ^ a mod P = <strong>A</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">g ^ b mod P = <strong>B</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B ^ a mod P = <strong>K_Ba</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A ^ b mod P = <strong>K_Ab</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_diffie_hellman_procedure">Diffie-Hellman Procedure</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>(Alice) Fill in g, a, P to calculate A.</p>
+</li>
+<li>
+<p>(Bob) Fill in g, b, P to calculate B.</p>
+</li>
+<li>
+<p>Exchange A and B.  (Alice sends A to Bob; Bob sends B to Alice.)</p>
+</li>
+<li>
+<p>(Alice) Fill in B, a, P to calculate K_Ba.</p>
+</li>
+<li>
+<p>(Bob) Fill in A, b, P to calculate K_Ab.</p>
+</li>
+<li>
+<p>Ensure that K_Ba and K_Ab match.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_walk_through_with_alice_and_spongebob">Walk Through with Alice and SpongeBob</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="DHexample1.png" alt="DHexample1">
 </div>
 </div>
+<div class="sect2">
+<h3 id="_example_1">Example 1</h3>
+<div class="paragraph">
+<p>The following is an example worked out for you.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. g = 5, p = 19, a = 2, b = 5</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Alice</th>
+<th class="tableblock halign-left valign-top">Bob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 ^ 2 % 19 = <strong>A</strong> = 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 ^ 5 % 19 = <strong>B</strong> = 9</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9 ^ 2 % 19 = <strong>K_Ba</strong> = 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 ^ 5 % 19 = <strong>K_Ab</strong> = 5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 ==</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">== 5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_2">Example 2</h3>
+<div class="literalblock">
+<div class="content">
+<pre>g = 2, p = 11, a = 7, b = 3</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_3">Example 3</h3>
+<div class="literalblock">
+<div class="content">
+<pre>g = 7, p = 3081, a = 47, b = 31</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_4">Example 4</h3>
+<div class="literalblock">
+<div class="content">
+<pre>g = 2, p = 11, a = 3, b = 5</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_another_d_h_diagram">Another D-H Diagram</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="DHexample2.png" alt="DHexample2">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_d_h_with_eve_the_eavesdropper">D-H with Eve the Eavesdropper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this example, Eve is illustrated listening to the in-between exchanges.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="DHexample3.png" alt="DHexample3">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_another_d_h_diagram_2">Another D-H Diagram</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="DHexample4.png" alt="DHexample4">
