@@ -21,7 +21,7 @@ Prepare your development workspace.
 
 * Clone your fork of the `models` repositories to your local machine.
 
-([video tutorial](https://youtu.be/jkMbvtbbCLA)).
+([video tutorial](https://youtu.be/jkMbvtbbCLA).
 
 == Importing Projects
 Import Sumo projects from your local models repository.
