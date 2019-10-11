@@ -21,4 +21,4 @@ include::../include.adoc[]
 
 == Diffie-Hellman
 
-* link:DiffieHellman/DH.adoc[Diffie-Hellman Key Exchange]
+* link:DiffieHellman/DH{outfilesuffix}[Diffie-Hellman Key Exchange]
