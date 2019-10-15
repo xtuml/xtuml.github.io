@@ -6,6 +6,7 @@ include::../include.adoc[]
 * link:sumo_start{outfilesuffix}[Getting Started with Sumo]
 * link:sumo_edit/sumo_edit{outfilesuffix}[Build-A-Sumo Editing Project]
 * link:sumo_project/sumo_project{outfilesuffix}[Sumo Robot Enhancement Project]
+* link:mdd_project/mdd_project{outfilesuffix}[MDD Research Projects]
 * link:slides/slides{outfilesuffix}[Presentation Slides]
 * link:crypto{outfilesuffix}[Security and Cryptography]
 

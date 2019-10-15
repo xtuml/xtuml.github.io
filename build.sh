@@ -22,6 +22,7 @@ asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/sumo_star
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/sumo_start.jp.adoc -o ./xtuml_class/sumo_start.jp.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/sumo_project/sumo_project.adoc -o ./xtuml_class/sumo_project/sumo_project.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/sumo_project/sumo_project.jp.adoc -o ./xtuml_class/sumo_project/sumo_project.jp.html
+asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/mdd_project/mdd_project.adoc -o ./xtuml_class/mdd_project/mdd_project.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/slides/slides.adoc -o ./xtuml_class/slides/slides.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/homework/1.5.adoc -o ./xtuml_class/homework/1.5.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/homework/1.5.jp.adoc -o ./xtuml_class/homework/1.5.jp.html

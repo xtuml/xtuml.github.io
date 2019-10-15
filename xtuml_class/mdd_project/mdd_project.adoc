@@ -1,0 +1,11 @@
+= MDD Research Projects
+include::../../include.adoc[]
+
+== Links to Project Requirements Specifications
+
+* link:MDDIoTGardeningProject.pdf[MDD IoT Gardening ("Radish") Project]
+
+* link:MDDSlacklineProject.pdf[MDD Slackline Project]
+
+// Navigate upwards to the default index file.
+link:../[Back to xtUML Training Class]
