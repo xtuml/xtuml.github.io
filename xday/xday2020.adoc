@@ -9,9 +9,9 @@ image::cheltenham.jpeg[Cheltenham, UK]
 
 == timely information for those attending the conference...
 
-=== notice as of 3 September 2019
+=== notice as of 20 February 2020
 
-xtUML Days is next week!  The conference promises to be everything hoped.
+xtUML Days is coming!  The conference promises to be everything hoped.
 The line-up of presentations is compelling.  However, the most exciting
 aspect of the conference is the rich list of attendees from 15 different
 companies and universities represented from 4 continents with the
@@ -38,7 +38,7 @@ main dish: salmon or vegetarian curry.
 
 == What is this?
 
-*xtUML Days 2019 UK* is a modeling conference and represents the 6th
+*xtUML Days 2020 UK* is a modeling conference and represents the 6th
 edition of xtUML Days.  (See <<Previous xtUML Days>>.)
 xtUML Days is the most dense gathering of Shlaer-Mellor modelers of the year.
 The xtUML Community meets to collaborate on Modeling, Method and Tooling.
