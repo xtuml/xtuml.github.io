@@ -1,7 +1,7 @@
 = xtUML Days 2020 UK
 include::../include.adoc[]
 
-**5 November 2020**
+**4, 5 November 2020**
 
 image::portsmouth.jpg[Portsmouth, UK]
 
@@ -44,7 +44,7 @@ and Jönköping University.
 
 === Keynote Speaker
 
-image:stephenmellor.jpg[Stephen Mellor,float="right",align="center",width="180"]
+image:stephenmellor.jpg[Stephen Mellor,role="right",width="180"]
 
 We are pleased to announce that the xtUML Days 2020 Portsmouth keynote speaker
 is http://stephenmellor.com/[**Stephen J. Mellor**], co-author of the
@@ -60,10 +60,7 @@ embedded systems model-driven development, in both presentations and
 text.  He is the author of several books:
 
 * __Structured Development for Real-Time Systems (Vols 1-3)__
-* Object-Oriented Analysis: Modeling the World in
-+
-https://www.amazon.com/Object-Oriented-Systems-Analysis-Modeling/dp/013629023X[Data], and in
-https://www.amazon.com/Object-Life-Cycles-Modeling-States/dp/0136299407[States].
+* Object-Oriented Analysis: Modeling the World in https://www.amazon.com/Object-Oriented-Systems-Analysis-Modeling/dp/013629023X[Data], and in https://www.amazon.com/Object-Life-Cycles-Modeling-States/dp/0136299407[States].
 * https://www.amazon.com/Executable-UML-Foundation-Model-Driven-Architecture/dp/0201748045[
 __Executable UML: A Foundation for Model-Driven Architecture__]
 * https://www.amazon.com/MDA-Distilled-Stephen-J-MELLOR/dp/0201788918[
@@ -74,8 +71,10 @@ https://www.iiconsortium.org/[industrial internet CONSORTIUM (IIC)].
 
 === Venue
 
-xtUML Days 2020 UK will be hosted at a venue in Portsmouth, UK.
-Please check back for details!
+xtUML Days 2020 UK will be hosted at https://queenshotelportsmouth.com/[
+The Queens Hotel Portsmouth] in Southsea, Portsmouth, UK.  The hotel combines
+luxury and history with an ideal location situated with walking access to the
+shoreline, parks, restaurants and to Old Portsmouth.
 
 === Registration
 
@@ -84,30 +83,50 @@ name and company information.  Do this even if you pay through the electronic
 portal below.
 
 Registration is $500 (USD) for participants not under contract with the
-Community Engagement option.  Payment can be made by check.  Payment can
-be made with a credit card (through PayPal below).  Other methods of payment
-can be arranged through the conference organizers.  Discounts are offered
-to companies sending more than 3 participants; contact the chair.
+Community Engagement option.  Payment can be made with a credit card
+(through PayPal below).  Payment can be made by check.  Other methods
+of payment can be arranged through the conference organizers.  Discounts
+are offered to companies sending more than 3 participants; contact the chair.
 
-//https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4DSSVJ5GWN324[**Pay for xtUML Days 2020 UK here.**]
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2RDY[**Pay for xtUML Days 2020 UK here.**]
 
 === Agenda of Presentations
 
 Thursday 5 November (Conference Day)
 
-TBD
+* 08:00 room open, coffee, meet and greet
+* 09:00 (sharp) Welcome, Introductions and Logistics
+* 09:15 keynote presentation by Stephen Mellor
+* 10:00
+* 10:45-11:15 <break>
+* 11:15
+* 12:00
+* 12:30-13:30 lunch (catered)
+* 13:30
+* 14:15
+* 14:45
+* 15:30-15:45 <break>
+* 15:45
+* 16:30
+* 17:15 closing discussion
+* 17:30 evacuate room and retire to adhoc recreation
 
 === Travel and Reception Dinner
 
 Plan to arrive Wednesday evening before the conference to attend a reception
-dinner (included in the conference registration).  Dinner will be hosted at
-TBD.
+dinner (included in the conference registration while space permits).
+Dinner will be hosted at https://www.stillandwest.co.uk/[The Still and West].
+A private upstairs space is reserved for xtUML Days guests.  Drinks and
+meeting and mixing will precede (and succeed) dinner.  This is a lovely
+pub with a view of the Harbour.  (The photo at the top of the page was
+taken from inside __The Still and West__.)
 
 === Hotel
 
 Portsmouth has many hotels and Airbnb options. The xtUML Days organizers
-will arrange for a block of hotel rooms with a conference rate at a hotel
-TBD. Please check back for details!
+will arrange for a block of hotel rooms with a group rate at the conference
+venue (https://queenshotelportsmouth.com/[The Queens Hotel Portsmouth]).
+Please check back for details!
 
 == Call for Papers
 
@@ -135,7 +154,7 @@ Topics of interest to xtUML Days include but are not limited to the following:
 Submit your paper, poster or presentation electronically as PDF via
 https://easychair.org/conferences/?conf=xtumldays2020uk[EasyChair].
 (If you are unable to submit through EasyChair, please contact the
-<<Conference Contact>>.
+<<Conference Contact>>.)
 Presentations are expected to be 35-45 minutes in duration including
 time for questions and discussion.
 
@@ -188,7 +207,7 @@ Coordinator via email at:  emily.carter [at] onefact.net.
 * https://xtuml.org/xtuml-day-2017-linkoping/[xtUML Days 2017 Linköping, 2 October 2017, Linköping, Sweden]
 * https://xtuml.org/presos-from-xtuml-day-cheltenham/[xtUML Days 2017 Cheltenham, 14 March 2017, Cheltenham, UK]
 * https://xtuml.org/xtumldayemd/[xtUML Days 2016, 14 May 2016, Linköping, Sweden]
-* https://xtuml.org/announcing-xtuml-2015/[xtUML Days 2015, 14 December 2015, Lafayette, Indiana, USA](
+* https://xtuml.org/announcing-xtuml-2015/[xtUML Days 2015, 14 December 2015, Lafayette, Indiana, USA]
 
 
 image::http://onefact.net/wp-content/uploads/2018/04/einstein_classes.png[xtUML Class Diagram]
