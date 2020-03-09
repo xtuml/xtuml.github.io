@@ -72,9 +72,9 @@ https://www.iiconsortium.org/[industrial internet CONSORTIUM (IIC)].
 === Venue
 
 xtUML Days 2020 UK will be hosted at https://queenshotelportsmouth.com/[
-The Queens Hotel Portsmouth] in Southsea, Portsmouth, UK.  The hotel is
-ideally situated with walking access to the shoreline, parks, restaurants
-and to Old Portsmouth.
+The Queens Hotel Portsmouth] in Southsea, Portsmouth, UK.  The hotel combines
+luxury and history with an ideal location situated with walking access to the
+shoreline, parks, restaurants and to Old Portsmouth.
 
 === Registration
 
@@ -117,13 +117,16 @@ Plan to arrive Wednesday evening before the conference to attend a reception
 dinner (included in the conference registration while space permits).
 Dinner will be hosted at https://www.stillandwest.co.uk/[The Still and West].
 A private upstairs space is reserved for xtUML Days guests.  Drinks and
-meeting and mixing will precede (and succeed) dinner.
+meeting and mixing will precede (and succeed) dinner.  This is a lovely
+pub with a view of the Harbour.  (The photo at the top of the page was
+taken from inside __The Still and West__.)
 
 === Hotel
 
 Portsmouth has many hotels and Airbnb options. The xtUML Days organizers
-will arrange for a block of hotel rooms with a conference rate at a hotel
-TBD. Please check back for details!
+will arrange for a block of hotel rooms with a group rate at the conference
+venue (https://queenshotelportsmouth.com/[The Queens Hotel Portsmouth]).
+Please check back for details!
 
 == Call for Papers
 
