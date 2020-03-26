@@ -1,11 +1,11 @@
 = xtUML Days 2020 UK
 include::../include.adoc[]
 
-**4, 5 November 2020**
+**4, 5, 6 November 2020**
 
-image::portsmouth.jpg[Portsmouth, UK]
+image::xday2020banner.png[xtUML Days UK 2020]
 
-<<What is this?>> | <<Keynote Speaker>> | <<Call for Papers>> | <<Important Dates>> | <<Conference Organization>>
+<<What is this?>> | <<Keynote Speaker>> | <<Registration>> | <<Call for Papers>> | <<Important Dates>>
 
 == What is this?
 
@@ -42,6 +42,22 @@ Northrop Grumman, Aurora Consulting, Software Improvements, L3, Thales,
 Toyo Corporation, ICS, FrogOOA, Kyushu University, University of Southampton
 and Jönköping University.
 
+=== COVID-19 (Novel Coronavirus) Considerations
+
+__This conference may look totally different from previous years.  Know your
+conference committee response will be marked by flexibility and
+creativity.  We are hoping that the world will be normal enough in
+November to meet in the traditional fashion.__
+
+__However, we are planning in case it cannot.  There is the potential of
+slipping the date into 2021, but there is also the possibility of a
+virtual gathering.  Your planning committee is super creative and has access
+to super techy people who know how to make virtual reality a reality.  Do
+not think long, boring, online slideshows.  We already have ideas for
+virtual happy hours and virtual tours and virtual panel discussions.  Such
+approaches take a great deal of preparation which we are willing and even
+now proceeding to explore.__
+
 === Keynote Speaker
 
 image:stephenmellor.jpg[Stephen Mellor,role="right",width="180"]
@@ -52,8 +68,7 @@ https://en.wikipedia.org/wiki/Shlaer%E2%80%93Mellor_method[__Shlaer–Mellor Met
 https://en.wikipedia.org/wiki/Executable_UML[__Executable UML__], and signatory to the
 https://en.wikipedia.org/wiki/Agile_software_development#The_Agile_Manifesto[Agile Manifesto].
 Mellor has been working with methods, particularly executable methods, for
-real-time and embedded systems for four decades.  The author of
-structured, object-oriented and agile approaches to software development.
+real-time and embedded systems for four decades.
 
 He explains, with clarity and humor, the intricacies of real-time and
 embedded systems model-driven development, in both presentations and
@@ -69,6 +84,8 @@ __MDA Distilled: Principles of Model-Driven Architecture__].
 Stephen presently serves as Chief Technology Officer of the
 https://www.iiconsortium.org/[industrial internet CONSORTIUM (IIC)].
 
+image::portsmouth.jpg[Portsmouth, UK]
+
 === Venue
 
 xtUML Days 2020 UK will be hosted at https://queenshotelportsmouth.com/[
@@ -83,8 +100,8 @@ name and company information.  Do this even if you pay through the electronic
 portal below.
 
 Registration is $500 (USD) for participants not under contract with the
-Community Engagement option.  Payment can be made with a credit card
-(through PayPal below).  Payment can be made by check.  Other methods
+Community Engagement option.  Payment can be made with a **credit card**
+(through a PayPal portal below).  Payment can be made by check.  Other methods
 of payment can be arranged through the conference organizers.  Discounts
 are offered to companies sending more than 3 participants; contact the chair.
 
@@ -94,22 +111,7 @@ https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2R
 
 Thursday 5 November (Conference Day)
 
-* 08:00 room open, coffee, meet and greet
-* 09:00 (sharp) Welcome, Introductions and Logistics
-* 09:15 keynote presentation by Stephen Mellor
-* 10:00
-* 10:45-11:15 <break>
-* 11:15
-* 12:00
-* 12:30-13:30 lunch (catered)
-* 13:30
-* 14:15
-* 14:45
-* 15:30-15:45 <break>
-* 15:45
-* 16:30
-* 17:15 closing discussion
-* 17:30 evacuate room and retire to adhoc recreation
+TBD
 
 === Travel and Reception Dinner
 
