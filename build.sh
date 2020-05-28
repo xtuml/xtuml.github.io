@@ -3,6 +3,7 @@ asciidoctor -a stylesheet=$pwd/github-pandoc.css ./bp_jumpstart/bp_jumpstart.ado
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xday/xday2018.adoc -o ./xday/xday2018.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xday/xday2019.adoc -o ./xday/xday2019.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xday/xday2020.adoc -o ./xday/xday2020.html
+asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xday/xday2020agenda.adoc -o ./xday/xday2020agenda.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/class_prep/connect_shared_folders.adoc -o ./xtuml_class/class_prep/connect_shared_folders.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css -a jp=1 ./xtuml_class/class_prep/class_prep.adoc -o ./xtuml_class/class_prep/class_prep.html
 asciidoctor -a stylesheet=$pwd/github-pandoc.css ./xtuml_class/class_prep/class_prep.jp.adoc -o ./xtuml_class/class_prep/class_prep.jp.html
