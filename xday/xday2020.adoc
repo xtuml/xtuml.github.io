@@ -44,19 +44,25 @@ and Jönköping University.
 
 === COVID-19 (Novel Coronavirus) Considerations
 
-__This conference may look totally different from previous years.  Know your
+__The conference will look much different from previous years.  Know your
 conference committee response will be marked by flexibility and
 creativity.  We are hoping that the world will be normal enough in
-November to meet in the traditional fashion.__
+November to meet face-to-face.__
 
-__However, we are planning in case it cannot.  There is the potential of
-slipping the date into 2021, but there is also the possibility of a
-virtual gathering.  Your planning committee is super creative and has access
+__However, we are planning in case it cannot.  A virtual option will be
+offered in addition to the physical gathering.  The recent months of
+quarantine have taught us all new and various communications techniques.
+We will be employing these in ways that allow bridging of the virtual
+and physical worlds.  xtUML Days 2020 UK will be the best xtUML Days
+yet due to our growth during lockdown.__
+
+__Your planning committee is creative and has access
 to super techy people who know how to make virtual reality a reality.  Do
 not think long, boring, online slideshows.  We already have ideas for
-virtual happy hours and virtual tours and virtual panel discussions.  Such
-approaches take a great deal of preparation which we are willing and even
-now proceeding to explore.__
+virtual happy hours and virtual tours and virtual panel discussions.
+See <<Session Types>> below for insight into the variety of presentations.
+Such approaches take a great deal of preparation which we are willing and
+even now proceeding to develop!__
 
 === Keynote Speaker
 
@@ -190,10 +196,72 @@ A day 2 of xtUML Days is a planning day for active members of the xtUML
 Community.  Planning Day is focused on short and long term requirements of
 the Method and road map for tooling.  Day 2 attendance is by invitation only.
 
+
+== Session Types
+
+For virtual, mixed physical/virtual and even physical-only conferences,
+variety is a key to engagement.  Various flavors of session are
+defined here.
+
+All session types are eligible to be pre-recorded.  For pre-recorded
+sessions, the presenter will be available live (locally or remotely)
+to respond to questions and comments.
+
+.Session Types
+[%autowidth,options="header"]
+|===
+| Session Type           | Abbrev   |  #  |  time | Description
+| keynote presentation   | keynote  |  1  | 30-60 | classic featured presentation from featured
+                                                    expert
+| technical presentation | tech     | 3-6 | 20-45 | These are traditional full length
+                                                    presentations from recognized experts
+                                                    in the field.  Together with the experience
+                                                    reports, these represent the primary
+                                                    content of the conference.
+| experience report      | exprpt   | 0-4 | 10-30 | Experience reports are medium length
+                                                    presentations focused on the application
+                                                    of modeling in industry or education.
+| panel discusion        | panel    | 0-2 | 10-30 | The panel discussion typically involves a
+                                                    moderator and a panel of experts.  Questions
+                                                    have been prepared and shared with panel
+                                                    members.  Audience participation is included.
+| debate                 | debate   | 0-1 | 10-30 | A debate doubles as a networking activity.
+                                                    Participants are assigned to groups.  Each
+                                                    group is given a position statement to debate.
+                                                    After the debate time, summary statements
+                                                    are presented by a moderator.
+| networking activity    | network  | 2-4 |  5-30 | These activities are pre-arranged, potentially
+                                                    moderated, topical and focused on connecting
+                                                    participants.  Techniques to bridge local
+                                                    and remote are to be prepared.
+| interview              | iview    | 2-4 |  1-5  | interactive interview of person of interest
+                                                    focusing on the role that makes the person
+                                                    special to the xtUML community
+| tool/app demonstration | demo     | 0-4 |  1-5  | demonstration of a new feature or procedure
+                                                    in the tooling (ASL editor, Ciera,
+                                                    OOA of MASL, canvas features, Carpark)
+| company expo           | expo     | 0-4 |  1-5  | To showcase participant companies and
+                                                    organizations, these will work best as
+                                                    pre-recorded production videos.
+| introduction           | intro    | <20 |  1-2  | personal introduction answering
+                                                    a few key questions (name, profession,
+                                                    organization, key connection with xtUML)
+                                                    in a pre-recorded format
+| video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
+                                                    of interest to the xtUML community
+                                                    (Queens venue, Portsmouth, HMS Victory,
+                                                    MatchBOX)
+| happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
+                                                    sharing of a beverage together.  It is
+                                                    fun to have a brewmeister or distiller
+                                                    present to explain and teach and connect
+                                                    those participating online.
+|===
+
 == Conference Organization  
 
 * Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net
-* Dave Skinner, Program Committee Member, BAE Systems, UK
+* Dave Skinner, Host Committee Member, BAE Systems, UK
 * Dave Salt, Program Committee Member, UK Government, UK
 * Emily Carter, Conference Coordinator, Change Agent Studio LLC, USA
 

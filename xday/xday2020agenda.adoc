@@ -52,18 +52,18 @@ to respond to questions and comments.
                                                     in a pre-recorded format
 | video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
                                                     of interest to the xtUML community
-                                                    (Queens venue, Portmouth, HMS Victory,
+                                                    (Queens venue, Portsmouth, HMS Victory,
                                                     MatchBOX)
 | happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
                                                     sharing of a beverage together.  It is
-                                                    fun to have a brewmiester or distiller
+                                                    fun to have a brewmeister or distiller
                                                     present to explain and teach and connect
                                                     those participating online.
 |===
 
 == Agenda
 
-.People
+.Agenda
 [%autowidth,options="header"]
 |===
 |  T | Clock | Presenter           | Type    | Title
@@ -102,6 +102,7 @@ to respond to questions and comments.
 | 20 | 16:30 | Michael Butler      | tech    | Shlaer-Mellor Solving
 |  5 | 16:50 | Lee Riemenschneider | iview   | OOA Book Report
 |  5 | 16:55 | Cortland Starrett   | live    | closing remarks
+| 60 | 17:00 | Happy Hour          | hpyhour | Local beer or gin tasting.
 |    |       |                     |         |
 |    |       | **ALTERNATES**      |         |
 |    |       |                     |         |
