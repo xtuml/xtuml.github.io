@@ -1,0 +1,117 @@
+= xtUML Days 2020 UK Session Planning
+
+== Session Types
+
+For virtual, mixed physical/virtual and even physical-only conferences,
+variety is a key to engagement.  Various flavors of session are
+defined here.
+
+All session types are eligible to be pre-recorded.  For pre-recorded
+sessions, the presenter will be available live (locally or remotely)
+to respond to questions and comments.
+
+.Session Types
+[%autowidth,options="header"]
+|===
+| Session Type           | Abbrev   |  #  |  time | Description
+| keynote presentation   | keynote  |  1  | 30-60 | classic featured presentation from featured
+                                                    expert
+| technical presentation | tech     | 3-6 | 20-45 | These are traditional full length
+                                                    presentations from recognized experts
+                                                    in the field.  Together with the experience
+                                                    reports, these represent the primary
+                                                    content of the conference.
+| experience report      | exprpt   | 0-4 | 10-30 | Experience reports are medium length
+                                                    presentations focused on the application
+                                                    of modeling in industry or education.
+| panel discusion        | panel    | 0-2 | 10-30 | The panel discussion typically involves a
+                                                    moderator and a panel of experts.  Questions
+                                                    have been prepared and shared with panel
+                                                    members.  Audience participation is included.
+| debate                 | debate   | 0-1 | 10-30 | A debate doubles as a networking activity.
+                                                    Participants are assigned to groups.  Each
+                                                    group is given a position statement to debate.
+                                                    After the debate time, summary statements
+                                                    are presented by a moderator.
+| networking activity    | network  | 2-4 |  5-30 | These activities are pre-arranged, potentially
+                                                    moderated, topical and focused on connecting
+                                                    participants.  Techniques to bridge local
+                                                    and remote are to be prepared.
+| interview              | iview    | 2-4 |  1-5  | interactive interview of person of interest
+                                                    focusing on the role that makes the person
+                                                    special to the xtUML community
+| tool/app demonstration | demo     | 0-4 |  1-5  | demonstration of a new feature or procedure
+                                                    in the tooling (ASL editor, Ciera,
+                                                    OOA of MASL, canvas features, Carpark)
+| company expo           | expo     | 0-4 |  1-5  | To showcase participant companies and
+                                                    organizations, these will work best as
+                                                    pre-recorded production videos.
+| introduction           | intro    | <20 |  1-2  | personal introduction answering
+                                                    a few key questions (name, profession,
+                                                    organization, key connection with xtUML)
+                                                    in a pre-recorded format
+| video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
+                                                    of interest to the xtUML community
+                                                    (Queens venue, Portmouth, HMS Victory,
+                                                    MatchBOX)
+| happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
+                                                    sharing of a beverage together.  It is
+                                                    fun to have a brewmiester or distiller
+                                                    present to explain and teach and connect
+                                                    those participating online.
+|===
+
+== Agenda
+
+.People
+[%autowidth,options="header"]
+|===
+|  T | Clock | Presenter           | Type    | Title
+| 10 | 09:00 | Cortland Starrett   | live    | Welcome and Opening
+|  5 | 09:10 | Emily Carter        | vtour   | xtUML Day at the Queens
+|  5 | 09:15 | Cortland Starrett   | live    | Introducing the Father of the Method
+| 40 | 09:20 | Stephen Mellor      | keynote | xtUML in an IoT World
+|  5 | 10:00 | Simon Cherry        | expo    | BAE Systems
+|  5 | 10:05 | Dave Salt           | iview   | Champion of UK Shlaer-Mellor xtUML
+| 30 | 10:10 | Colin Carter        | tech    | Rules of Inter-Domain Communication
+| 20 | 10:40 | Emily Carter        | network | HOWTO mix physically and virtually
+| 30 | 11:00 | Levi Starrett       | tech    | Heterogenous xtUML Modeling
+|  2 |       | Anders Eriksson     | intro   | 
+|  3 |       | David Pilfold       | iview   | Modeling in the Security Industry
+| 25 | 11:35 | Leon Starr          | tech    | Tightly Constrained Class Modeling
+| 60 | 12:00 | Emily Carter        | lunch   | virtually connected lunch
+|  5 | 13:00 | David Skinner       | vtour   | Portsmouth
+| 30 | 13:05 | Jordi Cabot         | panel   | Stephen, Ian, Colin, Greg, Levi
+|  2 | 13:35 | Michael Lee         | intro   | 
+|  2 |       | Mizue Kayama        | intro   | 
+|  2 |       | Chris Raistrick     | intro   | 
+| 30 | 13:40 | Ian Wilkie          | tech    | Time Rules
+|  5 | 14:10 | Takashi Nagai       | expo    | IOT University and Slackline Analysis
+| 10 | 14:15 | Erik Wedin          | expo    | Vricon
+| 20 | 14:35 | Clive Boughton      | exprpt  | Australian Voting Systems
+| 20 | 14:55 | Emily Carter        | network | coffee and chat rooms
+|  5 | 15:00 | Keith Brown         | demo    | Syntax Highlighting Editors
+|  2 |       | Marc Balcer         | intro   | 
+|  2 |       | Paul Francis        | intro   | 
+| 20 | 15:05 | Yuki Tsuchitoi      | tech    | xtUML Office Machine Automation
+|  2 |       | Dennis Tubbs        | expo    | Beyond Air
+| 20 | 15:30 | Allan Kennedy       | tech    | Modeling COVID-19
+|  2 | 15:50 | John Wolfe          | intro   | 
+|  2 |       | Amanda, Jason, Bob  | vtour   | MatchBOX Coworking Studio 1F HQ
+| 30 | 16:00 | Emily Carter        | debate  | 4 groups, 4 questions
+| 20 | 16:30 | Michael Butler      | tech    | Shlaer-Mellor Solving
+|  5 | 16:50 | Lee Riemenschneider | iview   | OOA Book Report
+|  5 | 16:55 | Cortland Starrett   | live    | closing remarks
+|    |       |                     |         |
+|    |       | **ALTERNATES**      |         |
+|    |       |                     |         |
+|    |       | Alistair Blair      | exprpt  | Thales Communication Modeling
+|    |       | Colin Snook         | tech    | University of Portsmouth Constrain Modeling
+|    |       | Lee Riemenschneider | demo    | Simulated Time
+|    |       | Robert Mulvey       | tech    | Models and Databases
+|    |       | Greg Arnot          | tech    | Practical Domain Modeling
+|    |       | Tristan Pye         | tech    | xtUML and AsyncAPI
+|    |       | Erik Wedin          | exprpt  | BridgePoint, MC-3020 and Modern Cartography
+|    |       | John Tornblom       | demo    | xtUML and Python Transformations
+|===
+
