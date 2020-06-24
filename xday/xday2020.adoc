@@ -49,7 +49,7 @@ conference committee response will be marked by flexibility and
 creativity.  We are hoping that the world will be normal enough in
 November to meet face-to-face.__
 
-__However, we are planning in case it cannot.  A virtual option will be
+__However, we are planning in case it cannot.  A virtual option is being
 offered in addition to the physical gathering.  The recent months of
 quarantine have taught us all new and various communications techniques.
 We will be employing these in ways that allow bridging of the virtual
@@ -119,6 +119,8 @@ Thursday 5 November (Conference Day)
 
 TBD
 
+https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June targeted at presenters but useful for attendees (rather longish).]
+
 === Travel and Reception Dinner
 
 Plan to arrive Wednesday evening before the conference to attend a reception
@@ -176,6 +178,7 @@ present the material and participate in the conference.
 
 == Important Dates  
 
+* Title, session type and duration submission:  31 July 2020
 * Abstract submission deadline:  15 August 2020
 * Author notification:  30 September 2020 (but likely shortly after abstract is submitted)
 * Submission deadline for presentation-ready version:  22 October 2020
