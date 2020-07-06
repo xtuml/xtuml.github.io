@@ -5,7 +5,8 @@ include::../include.adoc[]
 
 image::xday2020banner.png[xtUML Days UK 2020]
 
-<<What is this?>> | <<Keynote Speaker>> | <<Registration>> | <<Call for Papers>> | <<Important Dates>>
+<<What is this?>> | <<Keynote Speaker>> | <<Registration>> | <<Important Dates>> | https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[Pay for xtUML Days]
+
 
 == What is this?
 
@@ -26,10 +27,13 @@ In 2020, a special focus will be continued to extend and
 clarify the __Shlaer-Mellor Method__ in light of undocumented developments
 over the last several years.
 
+
 Also in focus:
 
 * Method advances (specifically convergence of PT and K-C dialects)  
 * Tooling Refinements  
+* Incremental Adoption
+* Model Compilation
 
 The xtUML Community is keen to exchange expertise and learn from one
 another.  xtUML Days provides a forum for developers to share best
@@ -44,25 +48,26 @@ and Jönköping University.
 
 === COVID-19 (Novel Coronavirus) Considerations
 
-__The conference will look much different from previous years.  Know your
-conference committee response will be marked by flexibility and
-creativity.  We are hoping that the world will be normal enough in
-November to meet face-to-face.__
+__The conference will look much different from previous years.  Your
+conference committee efforts will be marked by flexibility and
+creativity.  We all hope that the world will be normal enough in
+November to meet face-to-face.  Anticipating this, measures are being
+taken to apply *safe* meeting practices.__
 
-__However, we are planning in case it cannot.  A virtual option is being
-offered in addition to the physical gathering.  The recent months of
-quarantine have taught us all new and various communications techniques.
-We will be employing these in ways that allow bridging of the virtual
-and physical worlds.  xtUML Days 2020 UK will be the best xtUML Days
-yet due to our growth during lockdown.__
+__However, all must plan in case it travel and gathering are restricted.
+A virtual option is being offered in addition to the hope for physical
+gathering.  Months of quarantine have taught us a variety of communication
+techniques.  These will be employed in ways that allow bridging of the
+virtual and physical worlds.  xtUML Days 2020 UK will be the best xtUML
+Days yet due to our growth during lockdown.__
 
-__Your planning committee is creative and has access
+__The xtUML Days planning committee is creative and has access
 to super techy people who know how to make virtual reality a reality.  Do
-not think long, boring, online slideshows.  We already have ideas for
-virtual happy hours and virtual tours and virtual panel discussions.
+not think long, boring, online slideshows.  Already there are plans for
+virtual tours, virtual panel discussions and a virtual happy hour.
 See <<Session Types>> below for insight into the variety of presentations.
-Such approaches take a great deal of preparation which we are willing and
-even now proceeding to develop!__
+Such approaches do take some amount of preparation which we are proceeding
+to develop!__
 
 === Keynote Speaker
 
@@ -90,14 +95,25 @@ __MDA Distilled: Principles of Model-Driven Architecture__].
 Stephen presently serves as Chief Technology Officer of the
 https://www.iiconsortium.org/[industrial internet CONSORTIUM (IIC)].
 
+==== Other Presenters
+
+In addition to Stephen Mellor other key Shlaer-Mellor community members
+plan to participate including Colin Carter, Ian Wilkie, Leon Starr, Marc
+Balcer and others.
+
 image::portsmouth.jpg[Portsmouth, UK]
 
 === Venue
 
-xtUML Days 2020 UK will be hosted at https://queenshotelportsmouth.com/[
+xtUML Days 2020 UK will be physically hosted at https://queenshotelportsmouth.com/[
 The Queens Hotel Portsmouth] in Southsea, Portsmouth, UK.  The hotel combines
 luxury and history with an ideal location situated with walking access to the
 shoreline, parks, restaurants and to Old Portsmouth.
+
+xtUML Days 2020 will be virtually hosted on a platform called
+https://hopin.to/[Hopin].  Hopin is better than Zoom alone and better than
+YouTube alone.  It emulates physical conference logistics and facilitates
+larger scale participation, intimate sessions and 1-on-1 meetings.
 
 === Registration
 
@@ -105,13 +121,26 @@ Register by emailing the chair (cortland.starrett at onefact.net).  Provide
 name and company information.  Do this even if you pay through the electronic
 portal below.
 
-Registration is $500 (USD) for participants not under contract with the
-Community Engagement option.  Payment can be made with a **credit card**
+The registration cost is identical for both the physical and virtual event.
+Our virtual event platform (_Hopin_) will be making the virtual experience
+as close to a physical experience as is feasible.  Interestingly, the virtual
+experience brings significant additional cost:  camera crew, audio/visual
+equipment, streaming, etc.
+
+Early registration (July/August) is $400 (USD).  Early registration assures
+the highest likelihood of receiving the SWAG that is being prepared for
+all participants both physical and virtual.  Virtual attendees who register
+early enough will receive a SWAG box shipped to their home or business address.
+
+After August, registration is $500 (USD).  Participants under contract with the
+Community Engagement support option attend at no cost.
+
+Registration payment can be made with a **credit card**
 (through a PayPal portal below).  Payment can be made by check.  Other methods
 of payment can be arranged through the conference organizers.  Discounts
-are offered to companies sending more than 3 participants; contact the chair.
+may be available to companies sending more than 3 participants; contact the chair.
 
-https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2RDY[**Pay for xtUML Days 2020 UK here.**]
+==== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
 
 === Agenda of Presentations
 
