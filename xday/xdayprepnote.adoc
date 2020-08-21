@@ -1,0 +1,23 @@
+= xtUML Days Presenter Preparation
+
+Dear Shlaer-Mellor xtUML Community,
+
+Wow, less than 3 months until xtUML Days November 4, 5, 6!  We have a long
+list of excellent speakers presenting this year.  Stephen Mellor, Colin
+Carter, Leon Starr, Ian Wilkie, Marc Balcer, Allan Kennedy and Yuki Tsuchitoi
+are some of the big names you may recognize.  Newer names and faces and active
+xtUML practitioners are also preparing their materials for the big day.
+
+Linked below is a YouTube video intended to guide our speakers in making
+their material suitable for our combined physical-virtual event.  All
+presenters are asked to review it carefully.  In the current state of widely
+distributed communication, others may find the tips helpful, too.
+
+Reminder!  Early registration ends on the last day of August.  Registration
+goes up by $100 on September 1.
+
+Cheers,
+
+xtUML Days 2020 Conference Committee
+
+https://www.youtube.com/watch?v=2_OAuDWMyHc[YouTube:  xtUML Days Speaker Preparation]

@@ -1,0 +1,71 @@
+= xtUML Days 2020 Presenter Preparation Video
+
+This is the xtUML Days 2020 Presenter Preparation Video.
+Here you find instructions and tips for preparing your recorded presentation.
+
+Thank you so much for your involvement in xtUML Days 2020 UK!
+
+Your presentation should be a few minutes shorter than your prescribed 
+time to allow for Q&A at the end.  Record your presentation even if you
+plan to present live at the event (for backup and technical difficulties).
+
+== Presentation Sequence
+
+Your face will be visible during the entire presentation.
+
+1. Introduce yourself with "full face".
+2. Switch to share screen with "small face" (quickly and smoothly).
+3. At the end come back to "full face" to invite questions and say goodbye.
+
+== Prepare Presentation
+
+1. Prepare slides in wide screen (16:9) aspect ratio.
+2. Reserve room in one corner of your slides for your "talking face".
+3. Include questions in your presentation to be answered by remote 
+   audience members in the livestream chat.  (e.g. "What was the first
+   programming language you learned?" "How many of you attended a
+   Shlaer-Mellor class taught by one of our presenters?")
+4. Be sure to include links and references to more material.
+
+== Preparing to Record
+
+1. perfect sound
+   a. Good sound is of utmost importance (above all else)!
+   b. Record in a perfectly quiet location.
+   c. Test out different microphones to get good sound quality.
+   d. Choose a "soft" room.  Have blankets and pillows covering hard surfaces.
+2. pleasant video
+   a. height:  camera at eye level
+   b. Face is close to the camera.
+   c. Try to look into the camera as much as possible.
+   d. Shine (uncomfortably) lots of light on your face.
+   e. background
+      * nothing moving
+      * not distracting
+      * Consider hanging a plain colored blanket.
+
+pic of desk, PC on box, pillows, window, light, hanging blanket
+
+== Recording
+
+1. Start with your presentation already done.
+2. Using something like QuickTime, obtain a screen recording of your
+   slides.  Practice what you are going to say but do not record audio.
+   * show recording with QuickTime
+3. Similarly, record demonstrations.
+4. Stitch the videos together.
+   * show stitching 2 videos together (or link)
+5. Fire up Zoom and start recording.
+6. Record your opening comments in "full face" mode.
+7. Switch to sharing your slide presentation recording.
+8. Consider adjusting your face to be bigger.
+9. Play your slides video while you narrate colorfully!
+10. At the end stop sharing your slides and invite Q&A in full face mode.
+   * record video of above sequence
+
+== Closing Notes
+
+* Complete your recording by the end of September.
+* The xtUML Days conference committee team is here to help you.
+* Feel free to employ techniques that are more advanced than these.
+* Thank you so much for your involvement in xtUML Days 2020 UK!

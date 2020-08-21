@@ -1,0 +1,204 @@
+= Speaker Recruiting
+
+== Notes
+
+* Hello, Cortland Starrett here, chair of xtUML Days 2020...
+* wishing you health and productivity
+* unsettling and challenging times
+  ** grown and learned to adapt
+  ** skills with communication tools has increased
+  ** Many of us have been learning to use online communication tools for lockdown conference calls.
+* Explain briefly how it is easy to make a recording like this.
+  ** I am using Zoom, PM Boris Johnson's favorite communication platform.
+* [fire up presentation, title slide]
+* [outline slide]
+  ** xtUML Days Preview
+  ** Venue
+  ** Session Types
+  ** Schedule
+  ** Outline of Conference Day
+  ** Your Next Step
+* [xtUML Days preview slide]
+* xtUML Days 2020 is happening!
+  ** hosts
+  ** format
+  ** professional support
+* [xtUML Days hosts slide]
+  ** hosted by BAE Systems, the UK gov't, Change Agent Studio and One Fact Inc. who form the conference committee
+  ** xtUML Days 2020 will be a combined physical and virtual event.
+  ** The format is flexible and resilient to changing travel and physical gathering scenarios
+  ** An event coordinator, Emily Carter of Change Agent Studio, has been retained to assist.
+  ** A professional audio/visual technical crew will be on site and behind the scenes directing the livestream
+  ** Stephen Mellor is our keynote speaker.  Others have already committed to participate.
+* [venue slide]
+* Conference electronic platform (Hopin)
+  ** Better than youtube alone, better than Zoom alone, Hopin runs like a conference.
+  ** Hopin web link:  https://hopin.to/
+  ** Reception Area, Stage, Session Rooms, Expo Hall and 1-on1 Meeting rooms.
+  ** Instructions for the participants to know where to be and when.
+  ** Virtual attendees can interact with one another at will.
+  ** Workstations at the physical venue will bridge between the physical and virtual participants allowing people to speak with Stephen and others.
+* [schedule slide]
+* Schedule Wed, Thu, Fri.
+  ** physical and/or virtual tour of HMS Victory
+  ** dinner at Still and West
+  ** conference day
+  ** stakeholders half-day
+* [session types slide]
+* 12 different session types
+  ** varying from a couple of minutes to 40 minutes long
+  ** presenters may choose the type of session they wish to prepare
+  ** help is available
+  ** Much of the material will be pre-recorded (like I have done here) to reduce technical risk and ease the burden on presenters.
+  ** (again) a production team will be directing and mixing the live and recorded materials and livestreaming them
+  ** Presenters will be available live to answer questions (even during the presentation) online in a chat channel.
+* [conference day agenda slides]
+* [next steps slide]
+* Your Next Steps (Presenters)
+  ** Review and choose a session type.
+  ** Prepare your content.
+  ** Co
+* Your Next Steps (Attendees)
+  ** register
+* [bring down presentation]
+  ** Thank you for considering involvement in xtUML Days.
+  ** The conference committee is here to help you prepare.
+  ** Let us anticipate the best xtUML Days conference yet!
+
+. photo of Stephen
+. Still and West
+. Queens
+. HMS Victory
+
+.Session Types
+[%autowidth,options="header"]
+|===
+| Session Type           | Abbrev   |  #  |  time | Description
+| keynote presentation   | keynote  |  1  | 30-60 | classic featured presentation from featured
+                                                    expert
+| technical presentation | tech     | 3-6 | 20-45 | These are traditional full length
+                                                    presentations from recognized experts
+                                                    in the field.  Together with the experience
+                                                    reports, these represent the primary
+                                                    content of the conference.
+| experience report      | exprpt   | 0-4 | 10-30 | Experience reports are medium length
+                                                    presentations focused on the application
+                                                    of modeling in industry or education.
+| panel discusion        | panel    | 0-2 | 10-30 | The panel discussion typically involves a
+                                                    moderator and a panel of experts.  Questions
+                                                    have been prepared and shared with panel
+                                                    members.  Audience participation is included.
+| debate                 | debate   | 0-1 | 10-30 | A debate doubles as a networking activity.
+                                                    Participants are assigned to groups.  Each
+                                                    group is given a position statement to debate.
+                                                    After the debate time, summary statements
+                                                    are presented by a moderator.
+| networking activity    | network  | 2-4 |  5-30 | These activities are pre-arranged, potentially
+                                                    moderated, topical and focused on connecting
+                                                    participants.  Techniques to bridge local
+                                                    and remote are to be prepared.
+| interview              | iview    | 2-4 |  1-5  | interactive interview of person of interest
+                                                    focusing on the role that makes the person
+                                                    special to the xtUML community
+| tool/app demonstration | demo     | 0-4 |  1-5  | demonstration of a new feature or procedure
+                                                    in the tooling (ASL editor, Ciera,
+                                                    OOA of MASL, canvas features, Carpark)
+| company expo           | expo     | 0-4 |  1-5  | To showcase participant companies and
+                                                    organizations, these will work best as
+                                                    pre-recorded production videos.
+| introduction           | intro    | <20 |  1-2  | personal introduction answering
+                                                    a few key questions (name, profession,
+                                                    organization, key connection with xtUML)
+                                                    in a pre-recorded format
+| video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
+                                                    of interest to the xtUML community
+                                                    (Queens venue, Portsmouth, HMS Victory,
+                                                    MatchBOX)
+| happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
+                                                    sharing of a beverage together.  It is
+                                                    fun to have a brewmeister or distiller
+                                                    present to explain and teach and connect
+                                                    those participating online.
+|===
+
+== Agenda (DRAFT STRAWMAN)
+
+The columns in the table below are as follows:
+
+* The first column labeled *T* is the minute count for the session.
+* The second column labeled *Clock* is the target time of day for the session.
+* Column three names to *Presenter*.
+* The fourth column labeld *C* indicates the presented has committed.
+* The fifth column contains an abbreviation for the *Type* of session as
+  defined above.
+* Column six gives a hypothetical *Title* to the session if applicable.
+
+Some may need an example line-up to envision the flow of xtUML Days 2020 UK.
+The below agenda is an idealized sequence of speakers and presentations
+formatted within the above defined session types.  Some sessions are very short.
+None of the sessions are long.
+
+Note that this line-up is _draft strawman vision_.  Only a few of the
+presenters have committed.  However, it is a feasible vision.
+
+.Agenda
+[%autowidth,options="header"]
+|===
+|  T | Clock | Presenter           | C | Type    | Title
+| 10 | 09:00 | Cortland Starrett   | * | live    | Welcome and Opening
+|  5 | 09:10 | Emily Carter        | * | vtour   | xtUML Day at the Queens
+|  5 | 09:15 | Cortland Starrett   | * | live    | Introducing the Father of the Method
+| 40 | 09:20 | Stephen Mellor      | * | keynote | xtUML in an IoT World
+|  5 | 10:00 | Simon Cherry        |   | expo    | BAE Systems
+|  5 | 10:05 | Dave Salt           |   | iview   | Champion of UK Shlaer-Mellor xtUML
+| 30 | 10:10 | Colin Carter        |   | tech    | Rules of Inter-Domain Communication
+| 20 | 10:40 | Emily Carter        |   | network | HOWTO mix physically and virtually
+| 30 | 11:00 | Levi Starrett       | * | tech    | Heterogenous xtUML Modeling
+|  2 |       | Anders Eriksson     |   | intro   | 
+|  3 |       | David Pilfold       |   | iview   | Modeling in the Security Industry
+| 25 | 11:35 | Leon Starr          |   | tech    | Tightly Constrained Class Modeling
+| 60 | 12:00 | Emily Carter        | * | lunch   | virtually connected lunch
+|  5 | 13:00 | David Skinner       | * | vtour   | Portsmouth
+| 20 | 13:05 | Jordi Cabot         |   | panel   | Stephen, Ian, Colin, Greg, Levi
+| 10 | 13:25 | Greg Arnot          |   | tech    | Practical Domain Modeling
+|  2 | 13:35 | Michael Lee         |   | intro   | 
+|  2 |       | Mizue Kayama        |   | intro   | 
+|  2 |       | Chris Raistrick     |   | intro   | 
+| 30 | 13:40 | Ian Wilkie          |   | tech    | Time Rules
+|  5 | 14:10 | Takashi Nagai       |   | expo    | IOT University and Slackline Analysis
+| 10 | 14:15 | Erik Wedin          |   | expo    | Vricon
+| 20 | 14:35 | Clive Boughton      |   | exprpt  | Australian Voting Systems
+| 20 | 14:55 | Emily Carter        | * | network | coffee and chat rooms
+|  5 | 15:00 | Keith Brown         |   | demo    | Syntax Highlighting Editors
+|  4 |       | Marc Balcer         |   | intro   | 
+| 20 | 15:05 | Tristan Pye         |   | tech    | Code Generation for AsyncAPI
+|  2 |       | Dennis Tubbs        |   | expo    | Beyond Air
+| 20 | 15:30 | Allan Kennedy       |   | tech    | Modeling COVID-19
+|  2 | 15:50 | John Wolfe          |   | intro   | 
+|  2 |       | Amanda, Jason, Bob  |   | vtour   | MatchBOX Coworking Studio 1F HQ
+| 30 | 16:00 | Emily Carter        |   | debate  | 4 groups, 4 questions
+| 20 | 16:30 | Michael Butler      |   | tech    | Shlaer-Mellor Solving
+|  5 | 16:50 | Lee Riemenschneider |   | iview   | OOA Book Report
+|  5 | 16:55 | Cortland Starrett   | * | live    | closing remarks
+| 60 | 17:00 | Happy Hour          |   | hpyhour | Local beer or gin tasting.
+|    |       |                     |   |         |
+|    |       | **ALTERNATES**      |   |         |
+|    |       |                     |   |         |
+|    |       | Paul Francis        |   | tech    | modeling, training, model compilation
+|    |       | Yuki Tsuchitoi      |   | tech    | xtUML Office Machine Automation
+|    |       | Alistair Blair      |   | exprpt  | Thales Communication Modeling
+|    |       | Colin Snook         |   | tech    | University of Portsmouth Constrain Modeling
+|    |       | Lee Riemenschneider |   | demo    | Utility of Simulated Time
+|    |       | John Wolfe          |   | demo    | Utility of Simulated Time
+|    |       | Robert Mulvey       |   | tech    | Models and Databases
+|    |       | Greg Arnot          |   | tech    | Practical Domain Modeling
+|    |       | Erik Wedin          |   | exprpt  | BridgePoint, MC-3020 and Modern Cartography
+|    |       | John Tornblom       |   | demo    | xtUML and Python Transformations
+|    |       |                     |   |         |
+|    |       |                     |   |         | **ADDITIONAL TOPICS**
+|    |       |                     |   |         |
+|    |       | ?                   |   | exprpt  | Not Eating the Whole Elephant
+|    |       | ?                   |   | tech    | Model-Based Model Compilers and Self-Hosting
+|    |       | ?                   |   | tech    | Model-Based Model Compilers and Self-Hosting
+|===
+
