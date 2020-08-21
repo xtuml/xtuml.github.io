@@ -92,48 +92,46 @@ Note that this line-up is _draft_.
 |  5 | 09:05 | Emily Carter        | * | vtour   | xtUML Day at the Queens
 |  5 | 09:10 | Cortland Starrett   | * | live    | Introducing the Father of the Method
 | 40 | 09:15 | **Stephen Mellor**  | * | keynote | Shlaer-Mellor in an IoT World
-|  5 |  9:55 | BAE Marketing       |   | expo    | BAE Systems:  Hometown Host of xtUML Days
-|  5 | 10:00 | D--- S---           | * | iview   | Not Eating the Whole Elephant
+| 10 | 10:00 | Dave S              | * | iview   | Not Eating the Whole Elephant
 | 30 | 10:05 | **Colin Carter**    | * | tech    | Rules of Inter-Domain Communication
 | 20 | 10:35 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
 | 30 | 10:55 | **Levi Starrett**   | * | tech    | Model-Based Model Compilers
-|  2 |       | A----- E-------     |   | intro   | World's Greatest Model Compiler Builder
-|  3 |       | D---- P------       |   | iview   | Modeling in the Security Industry
 | 30 | 11:30 | **Leon Starr**      | * | tech    | Tightly Constrained Class Modeling
 |  5 | 12:00 | Marc Balcer         | * | demo    | TAME
 |  5 | 12:05 | Marc Balcer         | * | intro   | Shlaer-Mellor xtUML and Test Automation
-| 20 | 12:10 | **John Tornblom**   | * | demo    | Swedish Horse Racing, xtUML and Python
-| 60 | 12:30 |                     | * | *lunch* | virtually connected lunch
-|  5 | 13:30 | David Skinner       | * | vtour   | Welcome to Portsmouth!
-| 15 | 13:35 | **Jordi Cabot**     | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
-| 10 | 13:50 | G--- A----          |   | tech    | Practical Domain Modeling
+| 45 | 12:30 |                     | * | *lunch* | virtually connected lunch
+|  5 | 13:15 | David Skinner       | * | vtour   | Welcome to Portsmouth!
+| 15 | 13:20 | **Jordi Cabot**     | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
 |  2 |       | M------ L--         |   | intro   | xtUML, Architecture and Test Beds
 |  2 |       | C---- R--------     |   | intro   | Early Authorship and Later Consultation
-| 30 | 14:05 | **Ian Wilkie**      | * | tech    | Time Rules
-|  2 |       | M---- K-----        |   | intro   | xtUML and University Engineering
-| 30 | 14:35 | **Yuki Tsuchitoi**  |   | tech    | xtUML ETRobocon, IOT U Slackline,
-| 20 | 15:05 | Emily Carter        | * | *network/break* | coffee and chat rooms
-| 20 | 15:25 | T------ P--         |   | tech    | Code Generation for AsyncAPI
+| 30 | 13:50 | **Ian Wilkie**      | * | tech    | Time Rules
+| 30 | 14:20 | **Yuki Tsuchitoi**  | * | tech    | xtUML ETRobocon, emPit / APRIS
+| 20 | 14:50 | Emily Carter        | * | *network/break* | coffee and chat rooms
+| 30 | 15:10 | **Tower Team**      | * | tech    | Code Generation for AsyncAPI
+| 10 |       | **David Skinner**   |   | exprpt  | BAE Caledonia:  iUML/ASL in BridgePoint
 |  2 |       | D----- T----        |   | expo    | Beyond Air
-| 20 | 15:45 | **Allan Kennedy**   | * | tech    | Python as Action Language
-| 25 | 16:05 | Emily Carter        |   | debate  | 4 groups, 4 questions
-| 20 | 16:30 | **Colin Snook**     | * | tech    | Shlaer-Mellor Solving
-|  5 | 16:50 | Lee Riemenschneider | * | iview   | OOA Book Report
-|  5 | 16:55 | Cortland Starrett   | * | live    | closing remarks
-| 60 | 17:00 | Happy Hour          |   | hpyhour | Local beer or gin tasting.
+| 20 | 15:30 | **Allan Kennedy**   | * | tech    | Python as Action Language
+| 20 | 12:10 | **John Tornblom**   | * | demo    | Swedish Horse Racing, xtUML and Python
+| 25 | 15:50 | Emily Carter        |   | debate  | 4 groups, 4 questions
+| 20 | 16:15 | **Colin Snook**     | * | tech    | Shlaer-Mellor Solving
+| 20 |       | **Clive Boughton**  |   | exprpt  | Learning BridgePoint and Ciera
+|  5 | 17:20 | Lee Riemenschneider | * | iview   | OOA Book Report
+|  5 | 17:25 | Cortland Starrett   | * | live    | closing remarks
+| 60 | 17:30 | Happy Hour          |   | hpyhour | Local beer or gin tasting.
 |    |       |                     |   |         |
 |    |       | **ALTERNATES**      |   |         |
 |    |       |                     |   |         |
+|  5 |       | Cortland Starrett   |   | demo    | Utility of Simulated Time
+|    |       | Erik Wedin          |   | exprpt  | BridgePoint, MC-3020 and Modern Cartography
+|    |       | Erik Wedin          |   | expo    | Vricon
+|    |       | Keith Brown         |   | demo    | Syntax Highlighting Editors
 |    |       | Paul Francis        |   | tech    | modeling, training, model compilation
 |    |       | Alistair Blair      |   | exprpt  | Thales Communication Modeling
-|    |       | John Wolfe          |   | demo    | Utility of Simulated Time
 |    |       | Michael Butler      |   | tech    | Shlaer-Mellor Solving
 |    |       | Robert Mulvey       |   | tech    | Models and Databases
-|    |       | Erik Wedin          |   | exprpt  | BridgePoint, MC-3020 and Modern Cartography
-|    |       | Clive Boughton      |   | exprpt  | Australian Voting Systems
-|    |       | Keith Brown         |   | demo    | Syntax Highlighting Editors
-|    |       | Erik Wedin          |   | expo    | Vricon
 |    |       | Amanda, Julie, Bob  |   | vtour   | MatchBOX Coworking Studio 1F HQ
+|  2 |       | Anders Eriksson     |   | intro   | World's Greatest Model Compiler Builder
+|  3 |       | David Pilfold       |   | iview   | Modeling in the Security Industry
 |    |       |                     |   |         |
 |    |       |                     |   |         | **ADDITIONAL TOPICS**
 |    |       |                     |   |         |
