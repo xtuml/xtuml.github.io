@@ -1,6 +1,6 @@
-= xtUML Days 2020 UK Session Planning
-
 ////
+
+= xtUML Days 2020 UK Session Planning
 
 == Session Types
 
@@ -63,18 +63,19 @@ to respond to questions and comments.
                                                     those participating online.
 |===
 
-////
 
 == Agenda (Draft)
+
+////
 
 The columns in the table below are as follows:
 
 * The first column labeled *T* is the minute count for the session.
 * The second column labeled *Clock* is the target time of day for the session.
 * Column three names to *Presenter*.
-* The fourth column labeld *C* indicates the presented has committed.
+* The fourth column labeld *C* indicates the presente4 has committed.
 * The fifth column contains an abbreviation for the *Type* of session as
-  defined above.
+  defined in Session Types.
 * Column six gives a hypothetical *Title* to the session if applicable.
 
 Some may need an example line-up to envision the flow of xtUML Days 2020 UK.
@@ -91,34 +92,35 @@ Note that this line-up is _draft_.
 |  5 | 09:00 | Cortland Starrett   | * | live    | Welcome and Opening
 |  5 | 09:05 | Emily Carter        | * | vtour   | xtUML Day at the Queens
 |  5 | 09:10 | Cortland Starrett   | * | live    | Introducing the Father of the Method
-| 40 | 09:15 | **Stephen Mellor**  | * | keynote | Shlaer-Mellor in an IoT World
-| 10 | 10:00 | Dave S              | * | iview   | Not Eating the Whole Elephant
-| 30 | 10:05 | **Colin Carter**    | * | tech    | Rules of Inter-Domain Communication
-| 20 | 10:35 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
-| 30 | 10:55 | **Levi Starrett**   | * | tech    | Model-Based Model Compilers
-| 30 | 11:30 | **Leon Starr**      | * | tech    | Tightly Constrained Class Modeling
-|  5 | 12:00 | Marc Balcer         | * | demo    | TAME
-|  5 | 12:05 | Marc Balcer         | * | intro   | Shlaer-Mellor xtUML and Test Automation
+| 40 | 09:15 | Stephen Mellor      | * | keynote | Shlaer-Mellor in an IoT World
+|  5 | 09:55 | Michael Lee         | * | intro   | Early Project Technology Projects
+| 30 | 10:00 | Leon Starr          | * | tech    | Tightly Constrained Class Modeling
+| 10 | 10:30 | Marc Balcer         | * | tech/demo | Shlaer-Mellor xtUML and Test Automation and TAME
+| 20 | 10:40 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
+| 30 | 11:00 | Colin Carter        | * | tech    | Rules of Inter-Domain Communication
+| 30 | 11:30 | Ian Wilkie          | * | tech    | Time Rules
+| 10 | 12:00 | David Skinner       | * | exprpt  | BAE Caledonia:  iUML/ASL in BridgePoint
+| 20 |       | slack               |   |         | 
 | 45 | 12:30 |                     | * | *lunch* | virtually connected lunch
 |  5 | 13:15 | David Skinner       | * | vtour   | Welcome to Portsmouth!
-| 15 | 13:20 | **Jordi Cabot**     | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
-|  2 |       | M------ L--         |   | intro   | xtUML, Architecture and Test Beds
-|  2 |       | C---- R--------     |   | intro   | Early Authorship and Later Consultation
-| 30 | 13:50 | **Ian Wilkie**      | * | tech    | Time Rules
-| 30 | 14:20 | **Yuki Tsuchitoi**  | * | tech    | xtUML ETRobocon, emPit / APRIS
-| 20 | 14:50 | Emily Carter        | * | *network/break* | coffee and chat rooms
-| 30 | 15:10 | **Tower Team**      | * | tech    | Code Generation for AsyncAPI
-| 10 |       | **David Skinner**   |   | exprpt  | BAE Caledonia:  iUML/ASL in BridgePoint
-|  2 |       | D----- T----        |   | expo    | Beyond Air
-| 20 | 15:30 | **Allan Kennedy**   | * | tech    | Python as Action Language
-| 20 | 12:10 | **John Tornblom**   | * | demo    | Swedish Horse Racing, xtUML and Python
-| 25 | 15:50 | Emily Carter        |   | debate  | 4 groups, 4 questions
-| 20 | 16:15 | **Colin Snook**     | * | tech    | Shlaer-Mellor Solving
-| 20 |       | **Clive Boughton**  |   | exprpt  | Learning BridgePoint and Ciera
+| 20 | 13:20 | Jordi Cabot         | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
+| 30 | 13:40 | Yuki Tsuchitoi      | * | exprpt  | xtUML ETRobocon, emPit / APRIS
+| 10 | 14:10 | Dave S              | * | iview   | Not Eating the Whole Elephant
+| 30 | 14:20 | Tower Team          | * | tech    | Code Generation for AsyncAPI
+| 30 | 14:50 | Levi Starrett       | * | tech    | Model-Based Model Compilers
+| 20 | 15:20 | Emily Carter        | * | *network/break* | coffee and chat rooms
+| 20 | 15:40 | Allan Kennedy       | * | tech    | Python as Action Language
+| 20 | 16:00 | John Tornblom       | * | tech    | Swedish Horse Racing, xtUML and Python
+| 20 | 16:20 | Emily Carter        | * | debate  | 4 groups, 4 questions
+| 20 | 16:40 | Colin Snook         | * | tech    | Shlaer-Mellor Solving
+| 20 | 17:00 | Clive Boughton      | * | exprpt  | Learning BridgePoint and Ciera
 |  5 | 17:20 | Lee Riemenschneider | * | iview   | OOA Book Report
 |  5 | 17:25 | Cortland Starrett   | * | live    | closing remarks
 | 60 | 17:30 | Happy Hour          |   | hpyhour | Local beer or gin tasting.
-|    |       |                     |   |         |
+|===
+
+////
+
 |    |       | **ALTERNATES**      |   |         |
 |    |       |                     |   |         |
 |  5 |       | Cortland Starrett   |   | demo    | Utility of Simulated Time
@@ -132,10 +134,14 @@ Note that this line-up is _draft_.
 |    |       | Amanda, Julie, Bob  |   | vtour   | MatchBOX Coworking Studio 1F HQ
 |  2 |       | Anders Eriksson     |   | intro   | World's Greatest Model Compiler Builder
 |  3 |       | David Pilfold       |   | iview   | Modeling in the Security Industry
+|  2 |       | Chris Raistrick     |   | intro   | Early Authorship and Later Consultation
+|  2 |       | Dennis Tubbs        |   | expo    | Beyond Air
 |    |       |                     |   |         |
 |    |       |                     |   |         | **ADDITIONAL TOPICS**
 |    |       |                     |   |         |
 |    |       | ?                   |   | exprpt  | Not Eating the Whole Elephant
 |    |       | ?                   |   | tech    | Model-Based Model Compilers and Self-Hosting
-|===
+
+////
+
 

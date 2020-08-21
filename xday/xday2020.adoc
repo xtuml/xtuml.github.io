@@ -7,7 +7,6 @@ image::xday2020banner.png[xtUML Days UK 2020]
 
 <<What is this?>> | <<Keynote Speaker>> | <<Registration>> | <<Important Dates>> | https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[Pay for xtUML Days]
 
-
 == What is this?
 
 *xtUML Days 2020 UK* is a modeling conference and represents the 7th
@@ -141,16 +140,13 @@ Registration payment can be made with a **credit card**
 of payment can be arranged through the conference organizers.  Discounts
 may be available to companies sending more than 3 participants; contact the chair.
 
-==== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
 
-=== Agenda of Presentations
+=== Agenda of Presentations (**DRAFT - Subject to Change!**)
 
 Thursday 5 November (Conference Day)
 
-TBD
-
-* https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June targeted at presenters but useful for attendees (rather longish).]
-* https://www.youtube.com/watch?v=2_OAuDWMyHc[Speaker Preparation Instructions Video]
+include::xday2020agenda.adoc[Agenda - _Draft_]
 
 === Travel and Reception Dinner
 
@@ -169,7 +165,7 @@ will arrange for a block of hotel rooms with a group rate at the conference
 venue (https://queenshotelportsmouth.com/[The Queens Hotel Portsmouth]).
 Please check back for details!
 
-== Call for Papers
+== Call for Papers (Closed)
 
 A program committee will review and select from submitted papers, posters
 and presentations.  Selection is based upon perceived value to the xtUML
@@ -211,11 +207,13 @@ present the material and participate in the conference.
 
 * Title, session type and duration submission:  31 July 2020
 * Abstract submission deadline:  15 August 2020
-* Author notification:  30 September 2020 (but likely shortly after abstract is submitted)
-* Submission deadline for presentation-ready version:  22 October 2020
-* xtUML Days conference:  5 November 2020
+* Author notification:  30 August
+* Submission deadline for video recording of presentation:  30 September 2020
+* Completion of Production Editing (jointly by presenter and committee) of presentation-ready version:  22 October 2020
+* xtUML Days conference day:  5 November 2020
 
 === Conference Format
+
 Day 1 of xtUML Days is an information dense and interactive conference
 lasting one full day.  The host will welcome attendees at the starting
 hour.  The host will make significant introductions.  Key xtUML Community
@@ -300,6 +298,9 @@ to respond to questions and comments.
 * http://eepurl.com/g0c3Tf[April - A Quick xtUML Communmity Update]
 * http://eepurl.com/gXUhMX[March - Announcing xtUML Days 2020]
 
+* https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June targeted at presenters but useful for attendees (rather longish).]
+* https://www.youtube.com/watch?v=2_OAuDWMyHc[Speaker Preparation Instructions Video (late August)]
+
 == Conference Organization  
 
 * Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net
@@ -322,5 +323,6 @@ Coordinator via email at:  emily.carter [at] onefact.net.
 * https://xtuml.org/xtumldayemd/[xtUML Days 2016, 14 May 2016, Linköping, Sweden]
 * https://xtuml.org/announcing-xtuml-2015/[xtUML Days 2015, 14 December 2015, Lafayette, Indiana, USA]
 
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
 
 image::einstein_classes.png[xtUML Class Diagram]
