@@ -12,7 +12,7 @@ image::xday2020banner.png[xtUML Days UK 2020]
 
 *xtUML Days 2020 UK* is a modeling conference and represents the 7th
 edition of xtUML Days.  (See <<Previous xtUML Days>>.)
-xtUML Days is the most dense gathering of Shlaer-Mellor modelers of the year.
+xtUML Days is the most dense gathering of the year of Shlaer-Mellor modelers.
 The xtUML Community meets to collaborate on Modeling, Method and Tooling.
 
 The central topic of the conference is end-to-end modeling, execution,
@@ -46,13 +46,13 @@ Northrop Grumman, Aurora Consulting, Software Improvements, L3, Thales,
 Toyo Corporation, ICS, FrogOOA, Kyushu University, University of Southampton
 and Jönköping University.
 
-=== COVID-19 (Novel Coronavirus) Considerations
+=== COVID-19 Considerations
 
 __The conference will look much different from previous years.  Your
 conference committee efforts will be marked by flexibility and
 creativity.  We all hope that the world will be normal enough in
 November to meet face-to-face.  Anticipating this, measures are being
-taken to apply *safe* meeting practices.__
+taken to apply safe meeting practices.__
 
 __However, all must plan in case travel and gathering are restricted.
 A virtual option is being offered in addition to the hope for physical
@@ -63,7 +63,7 @@ Days yet due to our growth during lockdown.__
 
 __The xtUML Days planning committee is creative and has access to people
 who know how to make virtual reality a reality.
-An professional event coordinator and audio/visual team have been hired this year.
+A professional event coordinator and audio/visual team have been hired this year.
 There are plans for
 virtual tours, virtual panel discussions and a virtual happy hour.
 See <<Session Types>> below for insight into the variety of presentations.
@@ -149,7 +149,8 @@ Thursday 5 November (Conference Day)
 
 TBD
 
-https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June targeted at presenters but useful for attendees (rather longish).]
+* https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June targeted at presenters but useful for attendees (rather longish).]
+* https://www.youtube.com/watch?v=2_OAuDWMyHc[Speaker Preparation Instructions Video]
 
 === Travel and Reception Dinner
 
@@ -291,6 +292,14 @@ to respond to questions and comments.
                                                     those participating online.
 |===
 
+== Newletter Updates Regarding xtUML Days 2020
+
+* http://eepurl.com/hbeA5z[August - New updates about xtUML Days]
+* http://eepurl.com/g-DGLP[July - Exciting News about xtUML Days]
+* http://eepurl.com/g5DIWf[June - xtUML Days and Community Update]
+* http://eepurl.com/g0c3Tf[April - A Quick xtUML Communmity Update]
+* http://eepurl.com/gXUhMX[March - Announcing xtUML Days 2020]
+
 == Conference Organization  
 
 * Cortland Starrett, Conference Chair, One Fact, USA, cortland.starrett [at] onefact.net
@@ -299,6 +308,7 @@ to respond to questions and comments.
 * Emily Carter, Conference Coordinator, Change Agent Studio LLC, USA
 
 === Conference Contact
+
 If you have questions about xtUML Days 2020 UK, contact the Chair
 via email at:  cortland.starrett [at] onefact.net or the Conference
 Coordinator via email at:  emily.carter [at] onefact.net.
