@@ -94,7 +94,7 @@ Note that this line-up is _draft_.
 |  5 | 09:10 | Cortland Starrett   | * | live    | Introducing the Father of the Method
 | 40 | 09:15 | Stephen Mellor      | * | keynote | Shlaer-Mellor in an IoT World
 |  5 | 09:55 | Michael Lee         | * | intro   | Early Project Technology Projects
-| 30 | 10:00 | Leon Starr          | * | tech    | Tightly Constrained Class Modeling
+| 30 | 10:00 | Leon Starr          | * | tech    | Autonomous Vehicles: Safe Models behind the Wheel
 | 10 | 10:30 | Marc Balcer         | * | tech/demo | Shlaer-Mellor xtUML and Test Automation and TAME
 | 20 | 10:40 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
 | 30 | 11:00 | Colin Carter        | * | tech    | Rules of Inter-Domain Communication
@@ -103,7 +103,7 @@ Note that this line-up is _draft_.
 | 20 |       | slack               |   |         | 
 | 45 | 12:30 |                     | * | *lunch* | virtually connected lunch
 |  5 | 13:15 | David Skinner       | * | vtour   | Welcome to Portsmouth!
-| 20 | 13:20 | Jordi Cabot         | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
+| 20 | 13:20 | TBD                 | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
 | 30 | 13:40 | Yuki Tsuchitoi      | * | exprpt  | xtUML ETRobocon, emPit / APRIS
 | 10 | 14:10 | Dave S              | * | iview   | Not Eating the Whole Elephant
 | 30 | 14:20 | Tower Team          | * | tech    | Code Generation for AsyncAPI
