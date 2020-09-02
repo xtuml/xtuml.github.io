@@ -98,7 +98,7 @@ Note that this line-up is _draft_.
 | 10 | 10:30 | Marc Balcer         | * | tech/demo | Shlaer-Mellor xtUML and Test Automation and TAME
 | 20 | 10:40 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
 | 30 | 11:00 | Colin Carter        | * | tech    | Rules of Inter-Domain Communication
-| 30 | 11:30 | Ian Wilkie          | * | tech    | Time Rules
+| 30 | 11:30 | Ian Wilkie          | * | tech    | xtUML for Model Driven Standardisation
 | 10 | 12:00 | David Skinner       | * | exprpt  | BAE Caledonia:  iUML/ASL in BridgePoint
 | 20 |       | slack               |   |         | 
 | 45 | 12:30 |                     | * | *lunch* | virtually connected lunch

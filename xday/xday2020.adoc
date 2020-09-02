@@ -140,7 +140,7 @@ Registration payment can be made with a **credit card**
 of payment can be arranged through the conference organizers.  Discounts
 may be available to companies sending more than 3 participants; contact the chair.
 
-=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2RDY[**Pay for xtUML Days 2020 UK here.**]
 
 === Agenda of Presentations (**DRAFT - Subject to Change!**)
 
@@ -323,6 +323,7 @@ Coordinator via email at:  emily.carter [at] onefact.net.
 * https://xtuml.org/xtumldayemd/[xtUML Days 2016, 14 May 2016, Linköping, Sweden]
 * https://xtuml.org/announcing-xtuml-2015/[xtUML Days 2015, 14 December 2015, Lafayette, Indiana, USA]
 
-=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PESRQA2Q83ZVY[**Pay for xtUML Days 2020 UK here.**]
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2RDY[**Pay for xtUML Days 2020 UK here.**]
 
 image::einstein_classes.png[xtUML Class Diagram]
+
