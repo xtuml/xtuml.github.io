@@ -105,15 +105,19 @@ image::portsmouth.jpg[Portsmouth, UK]
 
 === Venue
 
-xtUML Days 2020 UK will be physically hosted at https://queenshotelportsmouth.com/[
-The Queens Hotel Portsmouth] in Southsea, Portsmouth, UK.  The hotel combines
-luxury and history with an ideal location situated with walking access to the
-shoreline, parks, restaurants and to Old Portsmouth.
+xtUML Days 2020 UK will be physically hosted at https://www.hiportsmouthhotel.co.uk/[
+The Holiday Inn Portsmouth] Pembroke Road, Portsmouth, UK.  The hotel combines
+convenience and a certified COVID secure facility with an ideal location situated
+with walking access to the shoreline, parks, restaurants and to Old Portsmouth.
+The number of participants joining the physical venue is limited to 25.  (Please
+indicate your intentions to the conference committee.)
 
-xtUML Days 2020 will be virtually hosted on a platform called
-https://hopin.to/[Hopin].  Hopin is better than Zoom alone and better than
-YouTube alone.  It emulates physical conference logistics and facilitates
-larger scale participation, intimate sessions and 1-on-1 meetings.
+xtUML Days 2020 will be hosted virtually on Zoom.  This platform is familiar
+to most and supports interaction with people as well as access to presentations.
+
+We expect the physical and virtual experiences to be similar.  Those participating
+from home will have access to people on site; and those on site will be immersed
+in a large-screen Zoom call.
 
 === Registration
 
@@ -150,7 +154,7 @@ include::xday2020agenda.adoc[Agenda - _Draft_]
 
 === Travel and Reception Dinner
 
-Plan to arrive Wednesday evening before the conference to attend a reception
+(Tentatively) Plan to arrive Wednesday evening before the conference to attend a reception
 dinner (included in the conference registration while space permits).
 Dinner will be hosted at https://www.stillandwest.co.uk/[The Still and West].
 A private upstairs space is reserved for xtUML Days guests.  Drinks and
@@ -158,12 +162,13 @@ meeting and mixing will precede (and succeed) dinner.  This is a lovely
 pub with a view of the Harbour.  (The photo at the top of the page was
 taken from inside __The Still and West__.)
 
+(Due to COVID restrictions, this may be a subdued meeting with 6 or fewer
+per table.  TBD)
+
 === Hotel
 
-Portsmouth has many hotels and Airbnb options. The xtUML Days organizers
-will arrange for a block of hotel rooms with a group rate at the conference
-venue (https://queenshotelportsmouth.com/[The Queens Hotel Portsmouth]).
-Please check back for details!
+Portsmouth has many hotels and Airbnb options.  The conference venue hotel
+is https://www.hiportsmouthhotel.co.uk/[The Holiday Inn Portsmouth] Pembroke Road, Portsmouth, UK.
 
 == Call for Papers (Closed)
 
@@ -188,10 +193,6 @@ Topics of interest to xtUML Days include but are not limited to the following:
 * techniques for educating modelers from young children to experienced professionals  
 * tooling migration experience reports  
 
-Submit your paper, poster or presentation electronically as PDF via
-https://easychair.org/conferences/?conf=xtumldays2020uk[EasyChair].
-(If you are unable to submit through EasyChair, please contact the
-<<Conference Contact>>.)
 Presentations are expected to be 35-45 minutes in duration including
 time for questions and discussion.
 
@@ -281,7 +282,7 @@ to respond to questions and comments.
                                                     in a pre-recorded format
 | video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
                                                     of interest to the xtUML community
-                                                    (Queens venue, Portsmouth, HMS Victory,
+                                                    (conference venue, Portsmouth, HMS Victory,
                                                     MatchBOX)
 | happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
                                                     sharing of a beverage together.  It is

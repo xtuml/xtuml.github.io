@@ -73,7 +73,7 @@ The columns in the table below are as follows:
 * The first column labeled *T* is the minute count for the session.
 * The second column labeled *Clock* is the target time of day for the session.
 * Column three names to *Presenter*.
-* The fourth column labeld *C* indicates the presente4 has committed.
+* The fourth column labeled *C* indicates the presenter has committed.
 * The fifth column contains an abbreviation for the *Type* of session as
   defined in Session Types.
 * Column six gives a hypothetical *Title* to the session if applicable.
@@ -90,30 +90,30 @@ Note that this line-up is _draft_.
 |===
 |  T | Clock | Presenter           | C | Type    | Title
 |  5 | 09:00 | Cortland Starrett   | * | live    | Welcome and Opening
-|  5 | 09:05 | Emily Carter        | * | vtour   | xtUML Day at the Queens
+|  5 | 09:05 | Emily Carter        | * | live    | xtUML Day via Physical / Virtual
 |  5 | 09:10 | Cortland Starrett   | * | live    | Introducing the Father of the Method
-| 40 | 09:15 | Stephen Mellor      | * | keynote | Shlaer-Mellor in an IoT World
-|  5 | 09:55 | Michael Lee         | * | intro   | Early Project Technology Projects
-| 30 | 10:00 | Leon Starr          | * | tech    | Autonomous Vehicles: Safe Models behind the Wheel
-| 10 | 10:30 | Marc Balcer         | * | tech/demo | Shlaer-Mellor xtUML and Test Automation and TAME
+| 40 | 09:15 | Stephen Mellor      | * | keynote | Elegant Architectures
+| 10 | 09:55 | Michael Lee         | * | intro   | Early Project Technology Projects
+| 30 | 10:00 | Levi Starrett       | * | tech    | Model-Based Model Compilers
+| 10 | 10:30 | Dave S              | * | iview   | Not Eating the Whole Elephant
 | 20 | 10:40 | Emily Carter        | * | *network/break* | HOWTO mix physically and virtually
-| 30 | 11:00 | Colin Carter        | * | tech    | Rules of Inter-Domain Communication
-| 30 | 11:30 | Ian Wilkie          | * | tech    | xtUML for Model Driven Standardisation
-| 10 | 12:00 | David Skinner       | * | exprpt  | BAE Caledonia:  iUML/ASL in BridgePoint
-| 20 |       | slack               |   |         | 
+| 40 | 11:00 | Colin Carter        | * | tech    | Rules of Inter-Domain Communication
+| 30 | 11:40 | Tristan P           | * | tech    | Bridges in a Distributed World
+| 10 | 12:10 | David Skinner       | * | live    | BAE Caledonia:  iUML/ASL in BridgePoint
+| 10 |       | slack               |   |         | 
 | 45 | 12:30 |                     | * | *lunch* | virtually connected lunch
 |  5 | 13:15 | David Skinner       | * | vtour   | Welcome to Portsmouth!
 | 20 | 13:20 | TBD                 | * | panel   | Trends:  Stephen, Ian, Colin, Greg, Levi
-| 30 | 13:40 | Yuki Tsuchitoi      | * | exprpt  | xtUML ETRobocon, emPit / APRIS
-| 10 | 14:10 | Dave S              | * | iview   | Not Eating the Whole Elephant
-| 30 | 14:20 | Tower Team          | * | tech    | Code Generation for AsyncAPI
-| 30 | 14:50 | Levi Starrett       | * | tech    | Model-Based Model Compilers
+| 30 | 13:40 | Ian Wilkie          | * | tech    | xtUML for Model Driven Standardisation
+| 10 | 14:10 | Marc Balcer         | * | tech/demo | Shlaer-Mellor xtUML and Test Automation and TAME
+| 30 | 14:20 | Team Japan          | * | exprpt  | xtUML ETRobocon / APRIS (Futagami, Tsuchitoi, Hisazumi)
+| 30 | 14:50 | Leon Starr          | * | tech    | Autonomous Vehicles: Safe Models Behind the Wheel
 | 20 | 15:20 | Emily Carter        | * | *network/break* | coffee and chat rooms
-| 20 | 15:40 | Allan Kennedy       | * | tech    | Python as Action Language
-| 20 | 16:00 | John Tornblom       | * | tech    | Swedish Horse Racing, xtUML and Python
+| 35 | 15:40 | Allan Kennedy       | * | tech    | Python as Action Language
+|  5 |       | slack               |   |         | 
 | 20 | 16:20 | Emily Carter        | * | debate  | 4 groups, 4 questions
 | 20 | 16:40 | Colin Snook         | * | tech    | Shlaer-Mellor Solving
-| 20 | 17:00 | Clive Boughton      | * | exprpt  | Learning BridgePoint and Ciera
+| 20 |       | slack               | * |         | 
 |  5 | 17:20 | Lee Riemenschneider | * | iview   | OOA Book Report
 |  5 | 17:25 | Cortland Starrett   | * | live    | closing remarks
 | 60 | 17:30 | Happy Hour          |   | hpyhour | Local beer or gin tasting.
