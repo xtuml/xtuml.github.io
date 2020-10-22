@@ -115,9 +115,16 @@ indicate your intentions to the conference committee.)
 xtUML Days 2020 will be hosted virtually on Zoom.  This platform is familiar
 to most and supports interaction with people as well as access to presentations.
 
+The xtUML Days conference committee has retained https://www.wavefx.co.uk/[WaveFX
+Video Production and Virtual Event Streaming Company] to knit together our physical
+and virtual worlds.  This is a first class A/V production company capable of
+optimizing our communication.
 We expect the physical and virtual experiences to be similar.  Those participating
 from home will have access to people on site; and those on site will be immersed
-in a large-screen Zoom call.
+in a large-screen Zoom call.  Below is a schematic of our Zoom-in-the-Room technical
+configuration.
+
+image:zoom_in_the_room.png[Zoom in the Room]
 
 === Registration
 
@@ -126,7 +133,7 @@ name and company information.  Do this even if you pay through the electronic
 portal below.
 
 The registration cost is identical for both the physical and virtual event.
-Our virtual event platform (_Hopin_) will be making the virtual experience
+Our virtual event platform (_Zoom_) will be making the virtual experience
 as close to a physical experience as is feasible.  Interestingly, the virtual
 experience brings significant additional cost:  camera crew, audio/visual
 equipment, streaming, etc.
