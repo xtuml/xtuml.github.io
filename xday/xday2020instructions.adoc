@@ -1,0 +1,56 @@
+== Last Minute Instructions for Participants
+
+=== Last Last Minute Instructions
+
+This is your source of information.  Watch this spot for updates even during the conference!
+
+==== Zoom Link to xtUML Days
+
+A link to the Zoom meeting will be here and live on conference day.
+// https://zoom.us/j/97473869435?pwd=RE5ldGRnTXNBZXFvbkpiREtlbXJSQT09[Zoom Link to xtUML Days 2020 UK]
+
+If you are having trouble accessing Zoom, contact the event staff using the
+https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community Google Hangout].
+
+==== Agenda with Links to YouTube
+
+In the <<Agenda of Presentations>>, each presentation is linked to a YouTube
+video (most links are live only on conference day).
+If for some reason the Zoom rendering of the presentation is faulty, you
+can watch the presentation on YouTube.  However, pay attention and
+rejoin the live conference for Q&A!  You can come back to these videos after
+the conference is over.
+
+=== Participant Instructional Emails
+
+Participants were sent emails ahead of the conference.  Those emails are 
+repeated here for convenience ordered from most to least recent.
+
+==== Participant Instructions (1)
+
+Hello from the UK and Zoom-land...
+
+If you have never used Zoom, please install and practice on Zoom before
+the conference!  (Install the application rather than rely on the web
+browser version.)
+
+Most of the presenters are presenting from remote places.
+
+All but a few of the presentations are pre-recorded, will be played and
+then followed with live Question and Answer.  Plan to type your questions
+into the Zoom chat even while the presentation is playing.  Presenters may
+actually answer some question in real time!  If not, we will have
+assistants watching this feed to help choose the best questions and call
+on you at the end.
+
+Be thinking about comfort, quiet, fast internet, microphone purchase, time
+zones, meals, questions for panel members, enthusiastic debate of xtUML
+topics, a special drink for happy hour, ...
+
+== Last Minute Instructions for Presenters
+
+* Please be present and attentive during your presentation.
+* Monitor the Zoom chat stream and attempt to answer questions in real time.
+* Upon completion of the presentation, you will go live to answer audience questions.
+
+

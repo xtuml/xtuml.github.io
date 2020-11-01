@@ -5,7 +5,9 @@ include::../include.adoc[]
 
 image::xday2020banner.png[xtUML Days UK 2020]
 
-<<What is this?>> | <<Keynote Speaker>> | <<Registration>> | <<Important Dates>> | https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=LEME8GHPK2RDY[Pay for xtUML Days]
+<<What is this?>> | <<Agenda of Presentations>> | <<Keynote Speaker>> | <<Registration>> | <<Important Dates>> | https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=LEME8GHPK2RDY[Pay for xtUML Days]
+
+include::xday2020instructions.adoc[Last Minute Instructions]
 
 == What is this?
 
@@ -26,7 +28,6 @@ In 2020, a special focus will be continued to extend and
 clarify the __Shlaer-Mellor Method__ in light of undocumented developments
 over the last several years.
 
-
 Also in focus:
 
 * Method advances (specifically convergence of PT and K-C dialects)  
@@ -44,30 +45,6 @@ This year attendees represent One Fact, UK Crown, BAE Systems, ROGO,
 Northrop Grumman, Aurora Consulting, Software Improvements, L3, Thales,
 Toyo Corporation, ICS, FrogOOA, Kyushu University, University of Southampton
 and Jönköping University.
-
-=== COVID-19 Considerations
-
-__The conference will look much different from previous years.  Your
-conference committee efforts will be marked by flexibility and
-creativity.  We all hope that the world will be normal enough in
-November to meet face-to-face.  Anticipating this, measures are being
-taken to apply safe meeting practices.__
-
-__However, all must plan in case travel and gathering are restricted.
-A virtual option is being offered in addition to the hope for physical
-gathering.  Months of quarantine have taught us a variety of communication
-techniques.  These will be employed in ways that allow bridging of the
-virtual and physical worlds.  xtUML Days 2020 UK will be the best xtUML
-Days yet due to our growth during lockdown.__
-
-__The xtUML Days planning committee is creative and has access to people
-who know how to make virtual reality a reality.
-A professional event coordinator and audio/visual team have been hired this year.
-There are plans for
-virtual tours, virtual panel discussions and a virtual happy hour.
-See <<Session Types>> below for insight into the variety of presentations.
-Such approaches do take some amount of preparation which we are proceeding
-to develop!__
 
 === Keynote Speaker
 
@@ -105,26 +82,8 @@ image::portsmouth.jpg[Portsmouth, UK]
 
 === Venue
 
-xtUML Days 2020 UK will be physically hosted at https://www.hiportsmouthhotel.co.uk/[
-The Holiday Inn Portsmouth] Pembroke Road, Portsmouth, UK.  The hotel combines
-convenience and a certified COVID secure facility with an ideal location situated
-with walking access to the shoreline, parks, restaurants and to Old Portsmouth.
-The number of participants joining the physical venue is limited to 25.  (Please
-indicate your intentions to the conference committee.)
-
 xtUML Days 2020 will be hosted virtually on Zoom.  This platform is familiar
 to most and supports interaction with people as well as access to presentations.
-
-The xtUML Days conference committee has retained https://www.wavefx.co.uk/[WaveFX
-Video Production and Virtual Event Streaming Company] to knit together our physical
-and virtual worlds.  This is a first class A/V production company capable of
-optimizing our communication.
-We expect the physical and virtual experiences to be similar.  Those participating
-from home will have access to people on site; and those on site will be immersed
-in a large-screen Zoom call.  Below is a schematic of our Zoom-in-the-Room technical
-configuration.
-
-image:zoom_in_the_room.png[Zoom in the Room]
 
 === Registration
 
@@ -153,24 +112,22 @@ may be available to companies sending more than 3 participants; contact the chai
 
 === https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEME8GHPK2RDY[**Pay for xtUML Days 2020 UK here.**]
 
-=== Agenda of Presentations (**DRAFT - Subject to Change!**)
+=== Agenda of Presentations
 
 Thursday 5 November (Conference Day)
 
-include::xday2020agenda.adoc[Agenda - _Draft_]
+include::xday2020agenda.adoc[Agenda]
 
 === Travel and Reception Dinner
 
-(Tentatively) Plan to arrive Wednesday evening before the conference to attend a reception
+Plan to arrive Wednesday evening before the conference to attend a reception
 dinner (included in the conference registration while space permits).
 Dinner will be hosted at https://www.stillandwest.co.uk/[The Still and West].
-A private upstairs space is reserved for xtUML Days guests.  Drinks and
-meeting and mixing will precede (and succeed) dinner.  This is a lovely
-pub with a view of the Harbour.  (The photo at the top of the page was
-taken from inside __The Still and West__.)
+This is a lovely pub with a view of the Harbour.  (The photo of the lamp post
+was taken from inside https://www.stillandwest.co.uk/[The Still and West].)
 
-(Due to COVID restrictions, this may be a subdued meeting with 6 or fewer
-per table.  TBD)
+Due to COVID-19 restrictions, this will be a subdued meeting with 6 or fewer
+per table.
 
 === Hotel
 
@@ -300,6 +257,10 @@ to respond to questions and comments.
 
 == Newletter Updates Regarding xtUML Days 2020
 
+* http://eepurl.com/hhiKVL[October - Last Minute Registration]
+* http://eepurl.com/hgwiBD[October - Speakers]
+* http://eepurl.com/hf_HL1[October - We have SWAG!]
+* http://eepurl.com/hf1WQP[October - Venue]
 * http://eepurl.com/hbeA5z[August - New updates about xtUML Days]
 * http://eepurl.com/g-DGLP[July - Exciting News about xtUML Days]
 * http://eepurl.com/g5DIWf[June - xtUML Days and Community Update]
