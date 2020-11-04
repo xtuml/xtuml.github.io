@@ -7,7 +7,7 @@ This is your source of information.  Watch this spot for updates even during the
 ==== Zoom Link to xtUML Days
 
 A link to the Zoom meeting will be here and live on conference day.
-// https://zoom.us/j/97473869435?pwd=RE5ldGRnTXNBZXFvbkpiREtlbXJSQT09[Zoom Link to xtUML Days 2020 UK]
+https://zoom.us/j/92723926434?pwd=b0pDU216UHpjRXVDRjc1RngrbUN1Zz09[Zoom Link to xtUML Days 2020 UK]
 
 If you are having trouble accessing Zoom, contact the event staff using the
 https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community Google Hangout].
