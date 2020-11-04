@@ -86,37 +86,30 @@ The columns in the table below are as follows:
 |  T | Clock | Presenter           | L | Type    | Title
 |  5 | 09:00 | Cortland Starrett   | L | live    | Welcome and Opening
 |  5 | 09:05 | Emily Carter        | L | live    | xtUML Day via Zoom
-| 45 | 09:10 | Colin Carter        | R | tech    | Rules of Interdomain Communication
-// https://www.youtube.com/watch?v=VGpJ4sv3tFg[Rules of Interdomain Communication]
-| 35 | 09:55 | Tristan             | R | tech    | Bridges in a Distributed World
-// https://www.youtube.com/watch?v=Fbh2eQXgFBY[Bridges in a Distributed World]
+| 45 | 09:10 | Colin Carter        | R | tech    | https://www.youtube.com/watch?v=VGpJ4sv3tFg[Rules of Interdomain Communication]
+| 35 | 09:55 | Tristan             | R | tech    | https://www.youtube.com/watch?v=Fbh2eQXgFBY[Bridges in a Distributed World]
 | 20 | 10:30 | Emily Carter        | L | *network/break* | Mixing virtually - introductions
 | 25 | 10:50 | Levi Starrett       | R | tech    | https://www.youtube.com/watch?v=aiDPkJyhG7k[Model-Based Model Compilers]
 | 10 | 11:15 | Dave                | L | iview   | Not Eating the Whole Elephant
-| 35 | 11:25 | Team Japan          | R | exprpt  | xtUML ETRobocon / APRIS (Futagami, Tsuchitoi, Hisazumi)
-// https://www.youtube.com/watch?v=X2sBNDPGjaY[xtUML Education:  ET-Robocon and Apris]
+| 35 | 11:25 | Team Japan          | R | exprpt  | https://www.youtube.com/watch?v=X2sBNDPGjaY[xtUML Education:  ET-Robocon and Apris]
 | 10 | 12:00 | David Skinner       | L | live    | Caledonia:  iUML/ASL in BridgePoint
-| 30 | 12:10 | Ian Wilkie          | R | tech    | xtUML for Model Driven Standardisation
-// https://www.youtube.com/watch?v=zM-H2z80wSs[xtUML for Model-Driven Standardisation]
+| 30 | 12:10 | Ian Wilkie          | R | tech    | https://www.youtube.com/watch?v=zM-H2z80wSs[xtUML for Model-Driven Standardisation]
 | 20 | 12:40 |                     | L | *lunch* | virtually connected lunch - introductions
 |  5 | 13:00 | David Skinner       | R | vtour   | https://www.youtube.com/watch?v=wgOcUyh6voU[Welcome to Portsmouth!]
 |  5 | 13:05 | Cortland Starrett   | L | live    | Introducing the Father of the Method
-| 40 | 13:10 | Stephen Mellor      | R | keynote | Elegant Architectures
-// https://www.youtube.com/watch?v=EbGQAP24Mv4[Elegant Architectures]
+| 40 | 13:10 | Stephen Mellor      | R | keynote | https://www.youtube.com/watch?v=EbGQAP24Mv4[Elegant Architectures]
 | 20 | 13:50 | Marc Balcer         | L | panel   | Trends:  Stephen, Colin, Levi
-| 30 | 14:10 | Leon Starr          | R | tech    | Autonomous Vehicles: Safe Models Behind the Wheel
-// https://www.youtube.com/watch?v=fac8vV5Lu3w[Autonomous Vehicles:  Safe Models Behind the Wheel]
+| 30 | 14:10 | Leon Starr          | R | tech    | https://www.youtube.com/watch?v=fac8vV5Lu3w[Autonomous Vehicles:  Safe Models Behind the Wheel]
 | 20 | 14:40 | Allan, Rob, Levi    | L | debate  | 3 groups, 3 questions, 3 answers
-| 35 | 15:00 | Allan Kennedy       | R | tech    | Python as Action Language
-// https://www.youtube.com/watch?v=GCAInB7HjnU[Python as Action Language]
+|    |       |                     | L | debate  | Allan:  No modelling tools; no code generators; limited budget; how would you implement a Shlaer-Mellor approach?
+|    |       |                     | L | debate  | Rob:  As Agilistas, we favour “Working Software” over “Comprehensive Documentation” – do Shlaer-Mellor/xtUML projects deliver?
+|    |       |                     | L | debate  | Levi:  When is modeling not worth it? Bonus: Where does using the method “partially” fit in (as opposed to strictly following all the rules).
+| 35 | 15:00 | Allan Kennedy       | R | tech    | https://www.youtube.com/watch?v=GCAInB7HjnU[Python as Action Language]
 | 20 | 15:35 | Emily Carter        | L | *network/break* | coffee and chat rooms
-| 15 | 15:55 | Marc Balcer         | R | tech/demo | Model-Driven Test Automation and TAME
-// https://www.youtube.com/watch?v=ixewRSuCQfQ[Model-Driven Test Automation and TAME]
-| 20 | 16:10 | Colin Snook         | R | tech    | Shlaer-Mellor Solving
-// https://www.youtube.com/watch?v=odbVYBc4fy8[Validating Requirements with Formal Modeling]
+| 15 | 15:55 | Marc Balcer         | R | tech/demo | https://www.youtube.com/watch?v=ixewRSuCQfQ[Model-Driven Test Automation and TAME]
+| 20 | 16:10 | Colin Snook         | R | tech    | https://www.youtube.com/watch?v=odbVYBc4fy8[Validating Requirements with Formal Modeling]
 |  5 | 16:30 | Lee Riemenschneider | L | iview   | OOA Book Report
-| 15 | 16:35 | Michael Lee         | R | intro   | Early Project Technology Projects
-// https://www.youtube.com/watch?v=j5RxqnEIPdY[Early Shlaer-Mellor Architectures]
+| 15 | 16:35 | Michael Lee         | R | intro   | https://www.youtube.com/watch?v=j5RxqnEIPdY[Early Shlaer-Mellor Architectures]
 |  5 | 16:50 | Cortland Starrett   | L | live    | closing remarks
 | 60 | 17:00 | Happy Hour          | L | hpyhour | gin tasting
 |===
