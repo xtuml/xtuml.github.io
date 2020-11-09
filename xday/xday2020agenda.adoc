@@ -93,7 +93,7 @@ The columns in the table below are as follows:
 | 10 | 11:15 | Dave                | L | iview   | Not Eating the Whole Elephant
 | 35 | 11:25 | Team Japan          | R | exprpt  | https://www.youtube.com/watch?v=X2sBNDPGjaY[xtUML Education:  ET-Robocon and Apris]
 | 10 | 12:00 | David Skinner       | L | live    | Caledonia:  iUML/ASL in BridgePoint
-| 30 | 12:10 | Ian Wilkie          | R | tech    | https://www.youtube.com/watch?v=zM-H2z80wSs[xtUML for Model-Driven Standardisation]
+| 30 | 12:10 | Ian Wilkie          | R | tech    | xtUML for Model-Driven Standardisation
 | 20 | 12:40 |                     | L | *lunch* | virtually connected lunch - introductions
 |  5 | 13:00 | David Skinner       | R | vtour   | https://www.youtube.com/watch?v=wgOcUyh6voU[Welcome to Portsmouth!]
 |  5 | 13:05 | Cortland Starrett   | L | live    | Introducing the Father of the Method
