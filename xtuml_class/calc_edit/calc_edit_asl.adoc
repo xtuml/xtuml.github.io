@@ -1,0 +1,216 @@
+= Calculator Domain Step-by-Step
+
+== Overview
+
+Shlaer-Mellor models are composed of _domains_ which encapsulate _classes_
+arranged in __class diagrams__.  A class may have a __state machine__
+which sequences the dynamic lifecycle of the class.  Domain _functions_
+provide synchronous services to be invoked by other communicating domains.
+__Action language__ defines the processing which occurs in domain
+functions, state action and class operations.
+
+The following tutorial walks a new user through the steps of realizing a
+Shlaer-Mellor model in BridgePoint.  BridgePoint uses UML notation to
+represent Shlaer-Mellor elements.  A UML _Component_ represents a domain.
+Inter-domain communication is modeled through UML _Interfaces_.
+Terminators are modeled as _Ports_ containing _Operations_ which serve to
+represent terminator services.
+
+The tutorial will follow a logical sequence.  Note that it is fine to
+define the functions and interfaces before the class diagram and state
+machines.
+
+. xtUML Project
+. Domain Component
+. Class Diagram
+. State Machines
+. Domain Functions
+. Interfaces
+
+== (Eclipse) xtUML Project
+. Create an Eclipse **xtUML Project** with the name of the new domain
+  ('ALU' in this case) by right-clicking in the **Model Explorer** view and
+  selecting *New* > **xtUML Project**.
+. Set the model compiler to **WASL Exporter**.
+
+== Domain Component
+. Create a top-level package (with the same name as the domain) by
+  right-clicking on the project in the **Model Explorer** view and
+  selecting *New* > *Package*.
+. Inside the top-level domain package, create a component with the same name.
+  This can be done by right-clicking on the ALU package and selecting *New* >
+  *Components* > *Component*.  Or, by clicking on *Component* in the *Components*
+  drawer of the *Palette* and drawing the component on the editor canvas
+  (by clicking and dragging the mouse cursor).
+
+== Class Diagram
+. Inside the domain component, create a package called 'classes'.  Do this
+  by right-clicking on the ALU component and *New* > *Package* and give the
+  package the name 'classes'.
+. Double-click on the classes package to open the diagram canvas.
+. Inside the classes package, create classes 'Calculator', 'Memory',
+  'Display' and 'Operation' by clicking on *Class* in the *Classes* drawer
+  of the *Palette* and then drawing each class on the canvas.
+
+Move a class around by clicking and dragging it.  Arrange the class
+diagram sensibly in anticipation of the associations to be added between
+related classes.
+
+Resize the classes by clicking on the class to select it and then clicking
+and dragging a corner or a side.
+
+=== Attributes
+. In the **Model Explorer** right click on the Calculator class and *New*
+  > *Attribute*.  Name the attribute 'calc_id'.
+. Right click on the calc_id attribute and **Add to Identifier...** and add
+  this attribute to the primary identifier (*1).
+. Add another attribute called 'current_op'.
+. Right click on the Memory class and add an attribute called 'value'.
+. Right click on the value attribute and **Set Type...**.  In the **Type
+  Selection** window choose *real* as the data type for this attribute.
+
+Add other attributes and practice adding and removing attributes from
+identifiers.  Create an attribute and set up secondary identifier.
+
+=== Associations
+. Establish a one-to-one association between the Calculator and Display classes
+  by clicking on the *Classes* drawer in the *Palette* and then clicking on the
+  *Association* widget.
+  .. Notice the cursor turn into a little "plug".
+  .. Click inside the Calculator class and drag to inside the Display
+     class and the "let go".
+  .. Fill out the link:a.png[**Edit association**] edit form.
+     ... Make the **Association Number** '1'.
+     ... Edit Calculator *Unconditionally* __prints_answer_on__ *One* Display.
+     ... Edit Display *Unconditionally* __displays_value_for__ *One* Calculator.
+     ... Leave the *Association* check box empty.
+     ... Edit **Use identifier from** *Calculator*.
+     ... *Finish*.
+  .. In the **Model Explorer** view under the Display class, right click on
+     the newly added calc_id referential attribute and **Add to
+     Identifier...** and make this attribute the primary identifier (*1).
+. Establish a 1:1 unconditional association between the Calculator and Memory
+  classes such that:
+  .. Calculator *Unconditionally* __stores_value_for_calculation_in__ *One* Memory.
+  .. Memory *Unconditionally* __stores_value_for__ *One* Calculator.
+  .. **Use identifier from** Calculator.
+  .. In the **Model Explorer** view under the Memory class, add
+     the newly formed calc_id referential attribute to the primary
+     identifier.
+. Establish an associative relationship between the Memory and Display
+  classes using the Operation class as the associative class.
+  .. Select the *Association* widget from within the *Classes* drawer of
+     the *Palette*.
+  .. Draw the association from the Memory class to the Display class.
+  .. Supply (symmetric) role phrase 'combines_with' to both role phrase
+     boxes.
+  .. Check the *Associative* box and select Operation as the **Associative
+     class**.
+  .. Check the *Formalized* box and select both primary identifiers.
+  .. *Finish*.
+
+Association lines can be moved and bent using the mouse and clicking on
+end-points or bend-points.
+
+Role phrases can be repositioned by dragging them with the mouse.
+
+=== Operations
+. Add an operation called 'init' to the Calculator class by right
+  clicking on the Calculator class in the **Model Explorer** view or by
+  right-clicking ont he Calculator class on the canvas and *New* >
+  *Operation*.
+. Add an operation called 'store' to the Memory class.
+  .. Add a parameter to the store operation by right-clicking on the store
+     operation in the **Model Explorer** view and *New* > *Parameter* and
+     giving it the name 'value'.
+     ... Set the type of the value parameter by right-clicking on it and
+     **Set Type...** and choosing *real*.
+. Add an operation called 'evaluate' to the Operation class.
+. Add an operation called 'clearDisplay' to the Display class.
+. Add action language to the operations by double-clicking on the
+  operations in the **Model Explorer** view.  An action language editor
+  will be opened.
+
+== State Machines
+. Add *New* **Instance State Machine** to the Display class by
+  right-clicking on the class and *New* > *Instance State Machine*.
+. Double-click on the Display class to edit the newly created state
+  machine.
+. Inside the Display state machine, create a state by clicking on
+  *State* in the *Palette* and drawing a state on the canvas.  Give it the
+  name 'displaying_memory_value'.
+. Add another state called 'toggling_sign' in the same way.
+. Add an event to the Display state machine by right clicking on the state
+  machine canvas or by right-clicking on **Instance State Machine** under
+  the Display class in the **Model Explorer** view.  Then *New* > *Event*.
+  Name the event 'keypress'.
+. Add a transition from the displaying_memory_value state to the
+  toggling_sign state.
+  .. Select *Transition* from the *Palette*.
+  .. Drag the mouse cursor from inside the displaying_memory_value state
+     to the inside of the toggling_sign state.
+  .. Right-click on the newly added transition and **Assign Event...**.
+     Choose the keypress event from the selection box.
+  .. Arrange and bend the transition and adjust the position of the event
+     as desired.
+. Add action language to the states by double-clicking on the states on
+  the canvas or in the **Model Explorer** view.  An action language editor
+  will be opened.
+
+== Domain Functions
+. Inside the domain component, create a package called 'functions'.  Do
+  this by right-clicking on the ALU component and *New* > *Package* and give
+  the package the name 'functions'.
+. Inside the 'functions' package, *New* > *Function* to add domain functions
+  'clear' and 'key'.
+. Right click on the function 'key' and *New* > *Parameter* to add
+  parameter 'code'.
+
+=== Scenarios
+. Inside the domain component, create a package called 'scenarios' the
+  same way that you created the 'functions' package.
+. Inside the scenarios package, *New* > *Function* to add initialization
+  function 'init'.
+
+== Interfaces
+Interfaces define the signatures for all inbound messages (domain
+services) and outbound messages (terminator services).  Data types of
+parameters on messages must be shared between domains.  Thus, these shared
+data types are defined outside the component together with the interfaces.
+
+. Inside the top-level domain package (ALU), create a package 'Shared'.
+  This package will be a peer to the domain component 'ALU'.
+
+=== Shared Data Types
+. Inside the Shared package, *New* > *Types* >  **User DataType**.  Name
+  the new type 'keyscan'.
+  .. Be sure that keyscan is based on type *integer*.  This can be
+     confirmed in the *Properties* view when the keyscan type is selected.
+
+=== Terminator Interfaces
+. Add an interface called 'disp' by right-clicking on the Shared package
+  and *New* > *Components* > *Interface*.
+  .. Add an operation to the disp interface by right-clicking on disp and
+     *New* > *Operation*.  Give the operation a name of 'result'.
+     ... Ensure the result **Message Direction** is *ToProvider*.  This
+         can be confirmed in the *Properties* view when the keyscan type
+         is selected.
+     ... Add *New* > *Parameter* 'value' to the result operation.
+     ... **Set Type...** of parameter 'value' to *real*.
+  .. Add *Operation* 'error'.
+     ... Ensure _error_ **Message Direction** is *ToProvider*.
+     ... Add parameter 'message'.
+     ... **Set Type...** of _message_ to *string*.
+
+=== Terminator Interfaces
+. Add an interface called 'ALU' in the same way that you added other
+  interfaces to the Shared package.
+. Publish domain functions into the ALU interface.
+  .. In the **Model Explorer** view, navigate to the functions package
+     containing the domain functions defined for this component.
+  .. Multi-select the key and clear functions by clicking on one and the
+     holding the shift key while clicking on the other.
+  .. Right-click and **Publish To Interface...**.
+  .. Choose the 'ALU' interface in the **Publish To Interface Selection**
+     window.
+
