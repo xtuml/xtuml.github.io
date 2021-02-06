@@ -7,9 +7,9 @@ arranged in __class diagrams__.  A class may have a __state machine__
 which sequences the dynamic lifecycle of the class.  Domain _functions_
 provide synchronous services to be invoked by other communicating domains.
 __Action language__ defines the processing which occurs in domain
-functions, state action and class operations.
+functions, state actions and class operations.
 
-The following tutorial walks a new user through the steps of realizing a
+The following tutorial walks a new user through the steps of creating a
 Shlaer-Mellor model in BridgePoint.  BridgePoint uses UML notation to
 represent Shlaer-Mellor elements.  A UML _Component_ represents a domain.
 Inter-domain communication is modeled through UML _Interfaces_.
@@ -27,30 +27,41 @@ machines.
 . Domain Functions
 . Interfaces
 
-== (Eclipse) xtUML Project
+image::01_ALU_all.png[ALU in BridgePoint]
+
+== xtUML Project
 . Create an Eclipse **xtUML Project** with the name of the new domain
-  ('ALU' in this case) by right-clicking in the **Model Explorer** view and
-  selecting *New* > **xtUML Project**.
-. Set the model compiler to **WASL Exporter**.
+  ('ALU' in this case) by right-clicking in the link:02_Model_Explorer.png[**Model Explorer**]
+  view (in empty space) and selecting link:03_New_xtUML_Project.png[*New* > **xtUML Project**].
+. Set the model compiler to link:04_WASL_Exporter.png[**WASL Exporter**].
 
 == Domain Component
 . Create a top-level package (with the same name as the domain) by
   right-clicking on the project in the **Model Explorer** view and
-  selecting *New* > *Package*.
+  selecting link:05_New_Package.png[*New* > *Package*].
 . Inside the top-level domain package, create a component with the same name.
-  This can be done by right-clicking on the ALU package and selecting *New* >
-  *Components* > *Component*.  Or, by clicking on *Component* in the *Components*
-  drawer of the *Palette* and drawing the component on the editor canvas
-  (by clicking and dragging the mouse cursor).
+  This can be done by right-clicking on the ALU package and selecting
+  link:06_New_Component.png[*New* > *Components* > *Component*].  Or, after
+  opening the canvas of the ALU package by double-clicking on it and then by
+  clicking on link:07_Palette_Component.png[*Component*] in the *Components*
+  drawer of the link:08_Palette.png[*Palette*] and drawing the component on the editor canvas (by
+  clicking and dragging the mouse cursor) of the package.
 
 == Class Diagram
 . Inside the domain component, create a package called 'classes'.  Do this
-  by right-clicking on the ALU component and *New* > *Package* and give the
-  package the name 'classes'.
-. Double-click on the classes package to open the diagram canvas.
-. Inside the classes package, create classes 'Calculator', 'Memory',
-  'Display' and 'Operation' by clicking on *Class* in the *Classes* drawer
-  of the *Palette* and then drawing each class on the canvas.
+  by right-clicking on the ALU component and link:09_New_Package_classes.png[*New* > *Package*]
+  and give the package the name 'classes'.
+. Double-click on the classes package to open the
+  link:10_class_diagram_canvas.png[class diagram canvas].
+. Inside the classes package, create classes 'Calculator', 'Display',
+  'Memory', and 'Operation' by clicking on
+  link:10_class_diagram_canvas.png[*Class*] in the *Classes* drawer of the
+  *Palette* and then link:11_drawing_class.png[drawing each class] on the canvas.
+. As you create the classes, set the class
+  link:12_key-letters_Properties.png[key-letters in the *Properties* view]
+  to 'CALC', 'DISP', 'MEM' and 'OP' respectively.
+
+NOTE:  The class key letters default to be the same as the class name.
 
 Move a class around by clicking and dragging it.  Arrange the class
 diagram sensibly in anticipation of the associations to be added between
@@ -60,14 +71,15 @@ Resize the classes by clicking on the class to select it and then clicking
 and dragging a corner or a side.
 
 === Attributes
-. In the **Model Explorer** right click on the Calculator class and *New*
-  > *Attribute*.  Name the attribute 'calc_id'.
-. Right click on the calc_id attribute and **Add to Identifier...** and add
-  this attribute to the primary identifier (*1).
+. In the **Model Explorer** right click on the Calculator class and
+  link:13_New_Attribute.png[*New* > *Attribute*].  Name the attribute 'calc_id'.
+. Right click on the calc_id attribute and link:14_Add_to_Identifier.png[**Add to Identifier...**] and
+  add this attribute to the primary identifier (*1).
 . Add another attribute called 'current_op'.
 . Right click on the Memory class and add an attribute called 'value'.
-. Right click on the value attribute and **Set Type...**.  In the **Type
-  Selection** window choose *real* as the data type for this attribute.
+. Right click on the value attribute and link:15_Set_Type.png[**Set Type...**].
+  In the link:16_Type_Selection.png[**Type Selection**] window choose *real*
+  as the data type for this attribute.
 
 Add other attributes and practice adding and removing attributes from
 identifiers.  Create an attribute and set up secondary identifier.
@@ -79,7 +91,7 @@ identifiers.  Create an attribute and set up secondary identifier.
   .. Notice the cursor turn into a little "plug".
   .. Click inside the Calculator class and drag to inside the Display
      class and the "let go".
-  .. Fill out the link:a.png[**Edit association**] edit form.
+  .. Fill out the **Edit association** edit form.
      ... Make the **Association Number** '1'.
      ... Edit Calculator *Unconditionally* __prints_answer_on__ *One* Display.
      ... Edit Display *Unconditionally* __displays_value_for__ *One* Calculator.
@@ -108,6 +120,9 @@ identifiers.  Create an attribute and set up secondary identifier.
      class**.
   .. Check the *Formalized* box and select both primary identifiers.
   .. *Finish*.
+  .. Combine the duplicate referential attributes by right-clicking on the
+     first calc_id and **Combine With...** and then select the other calc_id
+     attribute in the **Combine With** chooser.
 
 Association lines can be moved and bent using the mouse and clicking on
 end-points or bend-points.
@@ -202,7 +217,7 @@ data types are defined outside the component together with the interfaces.
      ... Add parameter 'message'.
      ... **Set Type...** of _message_ to *string*.
 
-=== Terminator Interfaces
+=== Domain Service Interface
 . Add an interface called 'ALU' in the same way that you added other
   interfaces to the Shared package.
 . Publish domain functions into the ALU interface.
@@ -213,4 +228,25 @@ data types are defined outside the component together with the interfaces.
   .. Right-click and **Publish To Interface...**.
   .. Choose the 'ALU' interface in the **Publish To Interface Selection**
      window.
+
+=== Terminator and Domain Ports
+. Create ports for the terminator and domain interfaces by opening the
+  top-level domain package and adding them.
+  .. Double-click on the top-level ALU package so that you can
+     see the ALU component on the canvas editor view.  Resize and
+     rearrange as needed.
+  .. Provide the domain services port.
+     ... In the *Palette* select **Provided Interface** from within the
+         *Components* drawer.
+     ... Click and drag from inside the ALU Component to just outside the
+         component bounary.
+     ... Right-click on the newly added port (interface reference) and
+         *Formalize*.  Select the ALU interface from the *Interface* chooser.
+  .. To provide the terminator services port.
+     ... In the *Palette* select **Required Interface** from within the
+         *Components* drawer.
+     ... Click and drag from inside the ALU Component to just outside the
+         component bounary.
+     ... Right-click on the newly added port and *Formalize*.  Select the
+         disp interface from the *Interface* chooser.
 
