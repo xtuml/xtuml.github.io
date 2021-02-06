@@ -82,16 +82,16 @@ and dragging a corner or a side.
   as the data type for this attribute.
 
 Add other attributes and practice adding and removing attributes from
-identifiers.  Create an attribute and set up secondary identifier.
+identifiers.  Create an attribute and set up a secondary identifier.
 
 === Associations
 . Establish a one-to-one association between the Calculator and Display classes
   by clicking on the *Classes* drawer in the *Palette* and then clicking on the
   *Association* widget.
-  .. Notice the cursor turn into a little "plug".
-  .. Click inside the Calculator class and drag to inside the Display
-     class and the "let go".
-  .. Fill out the **Edit association** edit form.
+  .. Notice the cursor turn into a little link:17_Association_plug.png["plug"].
+  .. link:18_Drag_Association.png[Click inside the Calculator class and drag to
+     inside the Display class] and then "let go".
+  .. Fill out the link:19_Edit_association.png[**Edit association**] edit form.
      ... Make the **Association Number** '1'.
      ... Edit Calculator *Unconditionally* __prints_answer_on__ *One* Display.
      ... Edit Display *Unconditionally* __displays_value_for__ *One* Calculator.
@@ -118,11 +118,11 @@ identifiers.  Create an attribute and set up secondary identifier.
      boxes.
   .. Check the *Associative* box and select Operation as the **Associative
      class**.
-  .. Check the *Formalized* box and select both primary identifiers.
-  .. *Finish*.
+  .. Check the link:20_Associative.png[*Formalized*] box and select both primary identifiers.
+  .. link:21_Class_Diagram.png[*Finish*].
   .. Combine the duplicate referential attributes by right-clicking on the
-     first calc_id and **Combine With...** and then select the other calc_id
-     attribute in the **Combine With** chooser.
+     first calc_id and link:22_Combine_With.png[**Combine With...**] and then select the other calc_id
+     attribute in the link:23_Combine_With_chooser.png[**Combine With** chooser].
 
 Association lines can be moved and bent using the mouse and clicking on
 end-points or bend-points.
