@@ -256,4 +256,18 @@ data types are defined outside the component together with the interfaces.
          component bounary.
      ... Right-click on the newly added port and *Formalize*.  Select the
          disp interface from the *Interface* chooser.
+  .. link:46_Rename_Port.png[Rename the ports] from their default names
+     to match the domain names (key letters) ('ALU' and 'disp').
 
+== Generate WASL
+. There are two ways to generate WASL from the graphical user interface.
+  (There are other ways using a command line interface (CLI).)
+  .. Right-click on the Eclipse xtUML Project and
+     link:47_Build_Project.png[**Build Project**].  See the export log
+     scroll in the *Console* view.
+  .. Click on the Eclipse xtUML Project to be sure it is selected.  Then
+     click the link:48_Build_Project_Hammer.png[*Hammer*] icon in the
+     **Tool Bar**.  See the export log scroll in the *Console* view.
+  .. Open the link:49_Resource_Perspective.png[*Resource* *Perspective*]
+     and link:50_wasl_folder.png[navigate to the `/wasl` folder] of the
+     project to browse the generated WASL.
