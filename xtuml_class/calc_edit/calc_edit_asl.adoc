@@ -132,12 +132,12 @@ Role phrases can be repositioned by dragging them with the mouse.
 === Operations
 . Add an operation called 'init' to the Calculator class by right
   clicking on the Calculator class in the **Model Explorer** view or by
-  right-clicking ont he Calculator class on the canvas and *New* >
-  *Operation*.
+  right-clicking on the Calculator class on the canvas and 
+  link:24_New_Operation.png[*New* > *Operation*].
 . Add an operation called 'store' to the Memory class.
   .. Add a parameter to the store operation by right-clicking on the store
-     operation in the **Model Explorer** view and *New* > *Parameter* and
-     giving it the name 'value'.
+     operation in the **Model Explorer** view and link:25_New_Parameter.png[*New* > *Parameter*]
+     and giving it the name 'value'.
      ... Set the type of the value parameter by right-clicking on it and
      **Set Type...** and choosing *real*.
 . Add an operation called 'evaluate' to the Operation class.
@@ -147,25 +147,26 @@ Role phrases can be repositioned by dragging them with the mouse.
   will be opened.
 
 == State Machines
-. Add *New* **Instance State Machine** to the Display class by
-  right-clicking on the class and *New* > *Instance State Machine*.
+. Add a state machine to the Display class by right-clicking on the class and
+  link:26_State_Machine.png[*New* > **Instance State Machine**].
 . Double-click on the Display class to edit the newly created state
   machine.
 . Inside the Display state machine, create a state by clicking on
-  *State* in the *Palette* and drawing a state on the canvas.  Give it the
-  name 'displaying_memory_value'.
+  *State* in the *Palette* and link:27_Draw_State.png[drawing a state] on the
+  canvas.  link:28_State_Name.png[Give it the name] 'displaying_memory_value'.
 . Add another state called 'toggling_sign' in the same way.
 . Add an event to the Display state machine by right clicking on the state
   machine canvas or by right-clicking on **Instance State Machine** under
-  the Display class in the **Model Explorer** view.  Then *New* > *Event*.
-  Name the event 'keypress'.
+  the Display class in the **Model Explorer** view.  Then
+  link:29_New_Event.png[*New* > *Event*].  Name the event 'keypress'.
 . Add a transition from the displaying_memory_value state to the
   toggling_sign state.
   .. Select *Transition* from the *Palette*.
-  .. Drag the mouse cursor from inside the displaying_memory_value state
-     to the inside of the toggling_sign state.
-  .. Right-click on the newly added transition and **Assign Event...**.
-     Choose the keypress event from the selection box.
+  .. link:30_Drag_Transition.png[Drag the mouse] cursor from inside the
+     displaying_memory_value state to the inside of the toggling_sign state.
+  .. Right-click on the newly added transition and
+     link:31_Assign_Event.png[**Assign Event...**].  Choose the keypress event
+     from the selection box.
   .. Arrange and bend the transition and adjust the position of the event
      as desired.
 . Add action language to the states by double-clicking on the states on
@@ -174,8 +175,9 @@ Role phrases can be repositioned by dragging them with the mouse.
 
 == Domain Functions
 . Inside the domain component, create a package called 'functions'.  Do
-  this by right-clicking on the ALU component and *New* > *Package* and give
-  the package the name 'functions'.
+  this by right-clicking on the ALU component and
+  link:32_New_Package.png[*New* > *Package*] and give the package the name
+  'functions'.
 . Inside the 'functions' package, *New* > *Function* to add domain functions
   'clear' and 'key'.
 . Right click on the function 'key' and *New* > *Parameter* to add
@@ -185,7 +187,7 @@ Role phrases can be repositioned by dragging them with the mouse.
 . Inside the domain component, create a package called 'scenarios' the
   same way that you created the 'functions' package.
 . Inside the scenarios package, *New* > *Function* to add initialization
-  function 'init'.
+  function link:33_Scenario.png['init'].
 
 == Interfaces
 Interfaces define the signatures for all inbound messages (domain
@@ -193,22 +195,25 @@ services) and outbound messages (terminator services).  Data types of
 parameters on messages must be shared between domains.  Thus, these shared
 data types are defined outside the component together with the interfaces.
 
-. Inside the top-level domain package (ALU), create a package 'Shared'.
-  This package will be a peer to the domain component 'ALU'.
+. Inside the top-level domain package (ALU),
+  link:34_Shared.png[create a package 'Shared'].  This package will be a peer
+  to the domain component 'ALU'.
 
 === Shared Data Types
-. Inside the Shared package, *New* > *Types* >  **User DataType**.  Name
-  the new type 'keyscan'.
-  .. Be sure that keyscan is based on type *integer*.  This can be
-     confirmed in the *Properties* view when the keyscan type is selected.
+. Inside the Shared package, link:35_User_DataType.png[*New* > *Types* > **User DataType**].
+  Name the new type 'keyscan'.
+  .. Be sure that keyscan is based on type link:36_Properties.png[*integer*].
+     This can be confirmed in the link:36_Properties.png[*Properties*] view
+     when the keyscan type is selected.
 
 === Terminator Interfaces
 . Add an interface called 'disp' by right-clicking on the Shared package
-  and *New* > *Components* > *Interface*.
+  and link:37_New_Interface.png[*New* > *Components* > *Interface*].
   .. Add an operation to the disp interface by right-clicking on disp and
-     *New* > *Operation*.  Give the operation a name of 'result'.
-     ... Ensure the result **Message Direction** is *ToProvider*.  This
-         can be confirmed in the *Properties* view when the keyscan type
+     link:38_New_Interface_Operation.png[*New* > *Operation*].  Give the
+     operation a name of 'result'.
+     ... Ensure the result link:38_ToProvider.png[**Message Direction** is *ToProvider*].
+         This can be confirmed in the *Properties* view when the keyscan type
          is selected.
      ... Add *New* > *Parameter* 'value' to the result operation.
      ... **Set Type...** of parameter 'value' to *real*.
@@ -225,23 +230,25 @@ data types are defined outside the component together with the interfaces.
      containing the domain functions defined for this component.
   .. Multi-select the key and clear functions by clicking on one and the
      holding the shift key while clicking on the other.
-  .. Right-click and **Publish To Interface...**.
-  .. Choose the 'ALU' interface in the **Publish To Interface Selection**
+  .. Right-click and link:39_Publish_To_Interface.png[**Publish To Interface...**].
+  .. Choose the 'ALU' interface in the
+     link:40_Publish_To_Interface_Selection.png[**Publish To Interface Selection**]
      window.
 
 === Terminator and Domain Ports
 . Create ports for the terminator and domain interfaces by opening the
   top-level domain package and adding them.
   .. Double-click on the top-level ALU package so that you can
-     see the ALU component on the canvas editor view.  Resize and
-     rearrange as needed.
+     see the ALU component on the canvas editor view.
+     link:41_Component_Resize.png[Resize and rearrange as needed].
   .. Provide the domain services port.
-     ... In the *Palette* select **Provided Interface** from within the
-         *Components* drawer.
-     ... Click and drag from inside the ALU Component to just outside the
-         component bounary.
+     ... In the *Palette* select link:42_Provided_Interface.png[**Provided Interface**]
+         from within the *Components* drawer.
+     ... link:43_Provided_Interface_Drag.png[Click and drag] from inside
+         the ALU Component to just outside the component bounary.
      ... Right-click on the newly added port (interface reference) and
-         *Formalize*.  Select the ALU interface from the *Interface* chooser.
+         link:44_Formalize_Interface.png[*Formalize*].  Select the ALU
+         interface from the link:45_Interface_Chooser.png[*Interface* chooser].
   .. To provide the terminator services port.
      ... In the *Palette* select **Required Interface** from within the
          *Components* drawer.
