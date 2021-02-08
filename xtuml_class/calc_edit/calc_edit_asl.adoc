@@ -1,4 +1,5 @@
 = Calculator Domain Step-by-Step
+include::../../include.adoc[]
 
 == Overview
 
@@ -27,6 +28,7 @@ machines.
 . Domain Functions
 . Interfaces
 
+[link=01_ALU_all.png]
 image::01_ALU_all.png[ALU in BridgePoint]
 
 == xtUML Project
