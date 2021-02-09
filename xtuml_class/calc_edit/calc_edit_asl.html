@@ -771,6 +771,10 @@ Terminators are modeled as <em>Ports</em> containing <em>Operations</em> which s
 represent terminator services.</p>
 </div>
 <div class="paragraph">
+<p>The domain being modeled is an abstract arithmetic logic unit (ALU) of a
+simple hand-held calculator.</p>
+</div>
+<div class="paragraph">
 <p>The tutorial will follow a logical sequence.  Note that it is fine to
 define the functions and interfaces before the class diagram and state
 machines.</p>
@@ -815,7 +819,7 @@ machines.</p>
 view (in empty space) and selecting <a href="03_New_xtUML_Project.png"><strong>New</strong> &gt; <strong>xtUML Project</strong></a>.</p>
 </li>
 <li>
-<p>Set the model compiler to <a href="04_WASL_Exporter.png"><strong>WASL Exporter</strong></a>.</p>
+<p>Click <strong>Next</strong> to set the model compiler to <a href="04_WASL_Exporter.png"><strong>WASL Exporter</strong></a>.</p>
 </li>
 </ol>
 </div>
@@ -835,7 +839,7 @@ selecting <a href="05_New_Package.png"><strong>New</strong> &gt; <strong>Package
 <p>Inside the top-level domain package, create a component with the same name.
 This can be done by right-clicking on the ALU package and selecting
 <a href="06_New_Component.png"><strong>New</strong> &gt; <strong>Components</strong> &gt; <strong>Component</strong></a>.  Or, after
-opening the canvas of the ALU package by double-clicking on it and then by
+opening the <strong>Graphical Editor</strong> (canvas) of the ALU package by double-clicking on it and then by
 clicking on <a href="07_Palette_Component.png"><strong>Component</strong></a> in the <strong>Components</strong>
 drawer of the <a href="08_Palette.png"><strong>Palette</strong></a> and drawing the component on the editor canvas (by
 clicking and dragging the mouse cursor) of the package.</p>
@@ -865,7 +869,7 @@ and give the package the name 'classes'.</p>
 <strong>Palette</strong> and then <a href="11_drawing_class.png">drawing each class</a> on the canvas.</p>
 </li>
 <li>
-<p>As you create the classes, set the class
+<p>After you create each class, select the class (by clicking on it) to set the class
 <a href="12_key-letters_Properties.png">key-letters in the <strong>Properties</strong> view</a>
 to 'CALC', 'DISP', 'MEM' and 'OP' respectively.</p>
 </li>
@@ -933,7 +937,8 @@ by clicking on the <strong>Classes</strong> drawer in the <strong>Palette</stron
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Notice the cursor turn into a little <a href="17_Association_plug.png">"plug"</a>.</p>
+<p>Notice the cursor turn into a little <a href="17_Association_plug.png">"plug"</a>
+when you move it onto the canvas.</p>
 </li>
 <li>
 <p><a href="18_Drag_Association.png">Click inside the Calculator class and drag to
@@ -956,13 +961,18 @@ inside the Display class</a> and then "let go".</p>
 <p>Leave the <strong>Association</strong> check box empty.</p>
 </li>
 <li>
-<p>Edit <strong>Use identifier from</strong> <strong>Calculator</strong>.</p>
+<p>Change <strong>Use identifier from</strong> to select class <strong>Calculator</strong>.</p>
 </li>
 <li>
 <p><strong>Finish</strong>.</p>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>If the association is drawn as a diagonal straight line ("oblique routing"),
+this can be changed by right-clicking on the association and selecting
+<strong>Routing</strong> &gt; <strong>Rectilinear Routing</strong>.</p>
 </li>
 <li>
 <p>In the <strong>Model Explorer</strong> view under the Display class, right click on
@@ -1021,7 +1031,7 @@ class</strong>.</p>
 <p><a href="21_Class_Diagram.png"><strong>Finish</strong></a>.</p>
 </li>
 <li>
-<p>Combine the duplicate referential attributes by right-clicking on the
+<p>Combine the duplicate referential attributes in the Operation class by right-clicking on the
 first calc_id and <a href="22_Combine_With.png"><strong>Combine With&#8230;&#8203;</strong></a> and then select the other calc_id
 attribute in the <a href="23_Combine_With_chooser.png"><strong>Combine With</strong> chooser</a>.</p>
 </li>
@@ -1137,7 +1147,7 @@ as desired.</p>
 </li>
 <li>
 <p>Add action language to the states by double-clicking on the states on
-the canvas or in the <strong>Model Explorer</strong> view.  An action language editor
+the canvas or in the <strong>Model Explorer</strong> view.  An <a href="31a_Action_Language.png">action language editor</a>
 will be opened.</p>
 </li>
 </ol>
@@ -1236,7 +1246,8 @@ operation a name of 'result'.</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>Ensure the result <a href="38_ToProvider.png"><strong>Message Direction</strong> is <strong>ToProvider</strong></a>.
+<p>Ensure the result <a href="38_ToProvider.png"><strong>Message Direction</strong> is <strong>ToProvider</strong></a>
+when the result parameter is selected.
 This can be confirmed in the <strong>Properties</strong> view when the keyscan type
 is selected.</p>
 </li>
@@ -1292,7 +1303,8 @@ containing the domain functions defined for this component.</p>
 holding the shift key while clicking on the other.</p>
 </li>
 <li>
-<p>Right-click and <a href="39_Publish_To_Interface.png"><strong>Publish To Interface&#8230;&#8203;</strong></a>.</p>
+<p>Right-click and <a href="39_Publish_To_Interface.png"><strong>Publish To Interface&#8230;&#8203;</strong></a>
+and click <strong>OK</strong>.</p>
 </li>
 <li>
 <p>Choose the 'ALU' interface in the
@@ -1329,7 +1341,7 @@ from within the <strong>Components</strong> drawer.</p>
 </li>
 <li>
 <p><a href="43_Provided_Interface_Drag.png">Click and drag</a> from inside
-the ALU Component to just outside the component bounary.</p>
+the ALU Component to just outside the component boundary.</p>
 </li>
 <li>
 <p>Right-click on the newly added port (interface reference) and
@@ -1359,8 +1371,8 @@ disp interface from the <strong>Interface</strong> chooser.</p>
 </div>
 </li>
 <li>
-<p><a href="46_Rename_Port.png">Rename the ports</a> from their default names
-to match the domain names (key letters) ('ALU' and 'disp').</p>
+<p><a href="46_Rename_Port.png">Rename the ports</a> from their default names,
+'Port1' and 'Port2', to match the domain names (key letters) ('ALU' and 'disp').</p>
 </li>
 </ol>
 </div>
@@ -1391,7 +1403,8 @@ click the <a href="48_Build_Project_Hammer.png"><strong>Hammer</strong></a> icon
 <strong>Tool Bar</strong>.  See the export log scroll in the <strong>Console</strong> view.</p>
 </li>
 <li>
-<p>Open the <a href="49_Resource_Perspective.png"><strong>Resource</strong> <strong>Perspective</strong></a>
+<p>Open the <a href="49_Resource_Perspective.png"><strong>Resource</strong> <strong>Perspective</strong> (via the widget indicated)</a>
+or via <strong>Window</strong> &gt; <strong>Perspective</strong> &gt; <strong>Open Perspective</strong> &gt; <strong>Other&#8230;&#8203;</strong> &gt; <strong>Resource</strong>,
 and <a href="50_wasl_folder.png">navigate to the <code>/wasl</code> folder</a> of the
 project to browse the generated WASL.</p>
 </li>
