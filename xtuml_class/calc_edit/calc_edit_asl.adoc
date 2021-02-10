@@ -4,8 +4,9 @@ include::../../include.adoc[]
 == Overview
 
 Shlaer-Mellor models are composed of _domains_ which encapsulate _classes_
-arranged in __class diagrams__.  A class may have a __state machine__
+arranged in a __class diagram__.  A class may have a __state machine__
 which sequences the dynamic lifecycle of the class.  Domain _functions_
+// Only synchronous services?
 provide synchronous services to be invoked by other communicating domains.
 __Action language__ defines the processing which occurs in domain
 functions, state actions and class operations.
@@ -14,6 +15,7 @@ The following tutorial walks a new user through the steps of creating a
 Shlaer-Mellor model in BridgePoint.  BridgePoint uses UML notation to
 represent Shlaer-Mellor elements.  A UML _Component_ represents a domain.
 Inter-domain communication is modeled through UML _Interfaces_.
+// Does the term, terminator, need more explanation?
 Terminators are modeled as _Ports_ containing _Operations_ which serve to
 represent terminator services.
 
@@ -45,12 +47,15 @@ image::01_ALU_all.png[ALU in BridgePoint]
   right-clicking on the project in the **Model Explorer** view and
   selecting link:05_New_Package.png[*New* > *Package*].
 . Inside the top-level domain package, create a component with the same name.
+// Should keep this simple by only suggesting one method.
+// If you want to keep both methods, then the presentation needs to be made easier to read.
+// A list might work better.
   This can be done by right-clicking on the ALU package and selecting
-  link:06_New_Component.png[*New* > *Components* > *Component*].  Or, after
-  opening the **Graphical Editor** (canvas) of the ALU package by double-clicking on it and then by
+  link:06_New_Component.png[*New* > *Components* > *Component*],  or by 
+  opening the **Graphical Editor** (canvas) of the ALU package by double-clicking on it, and then by
   clicking on link:07_Palette_Component.png[*Component*] in the *Components*
-  drawer of the link:08_Palette.png[*Palette*] and drawing the component on the editor canvas (by
-  clicking and dragging the mouse cursor) of the package.
+  drawer of the link:08_Palette.png[*Palette*] and drawing the component by clicking the mouse cursor 
+  on the editor canvas of the package.
 
 == Class Diagram
 . Inside the domain component, create a package called 'classes'.  Do this
@@ -95,8 +100,8 @@ identifiers.  Create an attribute and set up a secondary identifier.
   *Association* widget.
   .. Notice the cursor turn into a little link:17_Association_plug.png["plug"]
      when you move it onto the canvas.
-  .. link:18_Drag_Association.png[Click inside the Calculator class and drag to
-     inside the Display class] and then "let go".
+  .. link:18_Drag_Association.png[Click inside the Calculator class, drag to
+     inside the Display class] and drop.
   .. Fill out the link:19_Edit_association.png[**Edit association**] edit form.
      ... Make the **Association Number** '1'.
      ... Edit Calculator *Unconditionally* __prints_answer_on__ *One* Display.
@@ -268,7 +273,7 @@ data types are defined outside the component together with the interfaces.
      ... Right-click on the newly added port and *Formalize*.  Select the
          disp interface from the *Interface* chooser.
   .. link:46_Rename_Port.png[Rename the ports] from their default names,
-     'Port1' and 'Port2', to match the domain names (key letters) ('ALU' and 'disp').
+     'Port1' and 'Port2', to match the domain key letters, 'ALU' and 'disp'.
 
 == Generate WASL
 . There are two ways to generate WASL from the graphical user interface.
@@ -279,7 +284,7 @@ data types are defined outside the component together with the interfaces.
   .. Click on the Eclipse xtUML Project to be sure it is selected.  Then
      click the link:48_Build_Project_Hammer.png[*Hammer*] icon in the
      **Tool Bar**.  See the export log scroll in the *Console* view.
-  .. Open the link:49_Resource_Perspective.png[*Resource* *Perspective* (via the widget indicated)]
+. Open the link:49_Resource_Perspective.png[*Resource* *Perspective* (via the widget indicated)]
      or via *Window* > *Perspective* > **Open Perspective** > *Other...* > *Resource*,
      and link:50_wasl_folder.png[navigate to the `/wasl` folder] of the
      project to browse the generated WASL.
