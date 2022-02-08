@@ -1,0 +1,3 @@
+:nofooter:
+
+:gitcdnURL:  https://gitcdn.link/xtuml/bridgepoint/master/src/org.xtuml.bp.doc/Reference/MASL/ASLtutorial/

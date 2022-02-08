@@ -1,5 +1,5 @@
 = Calculator Domain Step-by-Step
-include::../../include.adoc[]
+::include:include.adoc[]
 
 == Overview
 
@@ -31,12 +31,12 @@ machines.
 . Domain Functions
 . Interfaces
 
-[link=01_ALU_all.png]
-image::01_ALU_all.png[ALU in BridgePoint]
+[link={gitcdnURL}01_ALU_all.png]
+image::{gitcdnURL}01_ALU_all.png[ALU in BridgePoint]
 
 == xtUML Project
 . Create an Eclipse **xtUML Project** with the name of the new domain
-  ('ALU' in this case) by right-clicking in the link:02_Model_Explorer.png[**Model Explorer**]
+  ('ALU' in this case) by right-clicking in the link:{gitcdnURL}02_Model_Explorer.png[**Model Explorer**]
   view (in empty space) and selecting link:03_New_xtUML_Project.png[*New* > **xtUML Project**].
 . Click *Next* to set the model compiler to link:04_WASL_Exporter.png[**WASL Exporter**].
 
