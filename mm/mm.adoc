@@ -1,0 +1,52 @@
+= Some Meta-Models
+
+NOTE:  Click on the images to access equivalent PDFs.
+
+== Simplified Model of MASL
+
+This is a simple yet useful S-M MM.
+
+[link=masl.pdf]
+image::masl.png[MASL]
+
+== BridgePoint xtUML Meta-Model
+
+The BridgePoint MM is core to the editor, Verifier (simulator) and the model compilers.
+
+=== Subsystem
+
+[link=subsystem.pdf]
+image::subsystem.png[Subsystem]
+
+=== Domain
+
+[link=domain.pdf]
+image::domain.png[Domain]
+
+=== Association
+
+[link=association.pdf]
+image::association.png[Association]
+
+=== State Machine
+
+[link=state_machine.pdf]
+image::state_machine.png[State Machine]
+
+=== Component
+
+[link=component.pdf]
+image::component.png[Component]
+
+=== Action Language
+
+==== Statement
+
+[link=statement.pdf]
+image::statement.png[Statement]
+
+==== Expression
+
+[link=expression.pdf]
+image::expression.png[Expression]
+
