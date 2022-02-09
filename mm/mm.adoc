@@ -1,5 +1,7 @@
 = Some Meta-Models
 
+NOTE:  Click on the images to access equivalent PDFs.
+
 == Simplified Model of MASL
 
 This is a simple yet useful S-M MM.
