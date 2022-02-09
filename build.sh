@@ -53,3 +53,4 @@ asciidoctor -a stylesheet=$pwd/github.css ./translation/translation.adoc -o ./tr
 asciidoctor -a stylesheet=$pwd/github.css ./sitepage.adoc -o ./sitepage.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/DiffieHellman/DH.adoc -o ./xtuml_class/DiffieHellman/DH.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/calc_edit/calc_edit_asl.adoc -o ./xtuml_class/calc_edit/calc_edit_asl.html
+asciidoctor -a stylesheet=$pwd/github.css ./mm/mm.adoc -o ./mm/mm.html
