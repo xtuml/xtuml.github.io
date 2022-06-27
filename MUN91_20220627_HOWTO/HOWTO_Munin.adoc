@@ -1,0 +1,734 @@
+= HOWTO build and run the Munin project
+
+Enough talk! <<Export MASL,Skip to the steps>>
+
+== Prerequisites
+
+Before you get started, take a few moments to be sure you have the following
+pieces in place.
+
+=== Docker
+
+If you plan to build and run the models, Docker is required for these processes.
+Docker is a containerisation tool which can be used to produce an application
+image that can be executed consistently on any platform which supports the
+docker engine.
+
+Two Docker terms you should be familiar with before you get started are "image"
+and "container". An image is the blueprint for a container. It represents the
+initial state of the filesystem when a container is created and carries metadata
+about the image and the execution of the containerised application. You can
+think of a container as an instance of an image. A container is created from an
+image when the user requests it to run. Many containers can be created from the
+same image simultaneously and are isolated from one another. Even after the
+process inside the container exits, the container still exists and its state can
+be interrogated until it is deleted by the user.
+
+Follow the instructions here to install
+link:https://docs.docker.com/get-docker/[Docker Desktop].
+
+=== BridgePoint
+
+Install the latest BridgePoint release. If you already have BridgePoint
+installed, confirm that your version is more recent than 7.1.0
+(2022-06-23 14:15 EDT) by checking the build ID.
+
+Refer to
+link:https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-install-bridgepoint.adoc[this guide]
+for help installing BridgePoint and checking the build ID.
+
+=== Git
+
+BridgePoint comes packaged with everything you need to interact with the source
+git repositories. That being said, some prefer to use a different GUI client
+application or use the command line version of the tool.
+
+Refer to
+link:https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-use-git.adoc[this guide]
+for a quick start on using git to clone repositories and import projects.
+
+=== Source Projects
+
+It is necessary to have the source code/models downloaded onto your machine. The
+source code can be link:https://github.com/xtuml/tower[browsed on GitHub].
+Follow the steps from the guide linked in the previous section to clone this
+repository from GitHub. Follow the steps from the guide linked in the
+<<BridgePoint>> section to import the following projects into a fresh
+workspace:
+
+* AEOrdering
+* AER_AEO_SVDC
+* AEReception
+* AESimulator
+* SequenceVerificationDataCentric
+* utils
+
+=== Terminology
+
+==== Project
+
+The term "project" typically refers to the model source and supporting
+build/configuration files for a single unit of functionality. In our context,
+this also maps one-to-one with an Eclipse/BridgePoint project.
+
+==== Domain
+
+A "domain" represents an encapsulated set of data objects and behaviours. The
+term comes from the original Shlaer-Mellor method, and in MASL a domain is the
+basic unit of compilation. Each domain exists in its own project.
+
+==== Deployment
+
+A "deployment" represents a configuration of one or more domains including the
+modelled connections between them. Deployments map to "project" in textual MASL
+form, but the term "deployment" is preferred to avoid confusion with the more
+general term "project".
+
+==== Integration project
+
+"Integration project" is an informal term and in our contexts it refers to the
+BridgePoint project where all of the domains are integrated together using a
+deployment. In our context this is synonymous with the "AER_AEO_SVDC" project.
+
+== Overview
+
+=== Toolchain
+
+The Munin project team has been using the Shlaer-Mellor Method to model the
+problem and our solution. The following sections describe the set of tools we
+are using to actualise our designs.
+
+==== xtUML/BridgePoint
+
+The source models are represented graphically in xtUML using the BridgePoint
+editor. Action semantics are encoded using MASL. The MASL specification also
+defines all necessary "structural" constructs (e.g. classes, relationships,
+state machines), but does not provide a
+specification for capturing graphical layout. In addition, there is no existing
+graphical tool which supports direct edit of MASL models. BridgePoint provides
+the graphical editing experience required for structural Shlaer-Mellor modelling.
+
+==== MASL
+
+At build time, BridgePoint is used to export the xtUML models to textual MASL
+format. As mentioned in the previous section, MASL is capable of representing
+the complete semantics of the S-M method including structural elements. In
+addition, MASL is required to be compatible with our selected backend code
+generator (see next section).
+
+==== MASL C++ code generator and software architecture (via Docker)
+
+The code generator and target architecture chosen for Munin Phase 1 is the MASL
+C++ software architecture published as Open Source Software in 2016. The code
+generator consists of a Java-based MASL parser/generator which produces C++
+source code for an application model. The code generator is designed to be
+modular with a core translator and a set of peripheral translators that provide
+additional capabilities such as Sqlite persistence, build file generation,
+runtime model debugging, etc. The companion software architecture is a set of
+runtime libraries written in C++ which provide mechanisms to implement the rules
+of Shlaer-Mellor in a single threaded process. The code generator is designed
+to produce generated code compatible with the runtime architecture.
+
+.Click for more details
+[%collapsible]
+====
+
+Since it was published in 2016, the MASL C++ project has been hosted
+link:https://github.com/xtuml/masl[on GitHub] and managed by the xtUML
+community. However, in the period since being published, the project has seen
+little maintenance activity and has fallen behind the upstream version. As a
+result, build tool and third party library dependencies have locked this
+architecture in time. We have created a set of container images using Docker to
+encapsulate the code generator and runtime libraries. This allows us to build
+and execute models in two primary modes:
+
+1. In the first mode, the project source MASL is passed into a container via a
+shared folder where the code generator and C++ compiler are free to execute in
+the context of all required dependencies. The generated C++ source code,
+compiled libraries, executables, and supporting files are passed back out to the
+development host machine using the same shared folder mechanism. Once compiled,
+the binary file can be executed using another container image which provides all
+necessary runtime shared libraries (MASL architecture and third party). This
+mode of execution can be thought of as analogous to executing Java byte code in
+an instance of the JVM.
+
+2. In the second mode, an alternative Docker image is created by extending a base
+image that already contains all of the MASL dependencies. The code is generated
+and compiled during the image build phase and the resultant executable is set up
+as the entrypoint for the image. Once the image is produced, it can be executed
+on any platform that supports the docker engine.
+
+The first mode is more flexible, better for iterative development, and results
+in much smaller generated artefacts. The second mode is less error prone and is
+more suited for deployment. We used the first mode primarily during the PoC and
+have since switched to the second mode in anticipation of deployment and
+scaling.
+
+====
+
+==== Testing and GitHub Actions (Continuous Integration)
+
+We are using features of the MASL code generator along with custom domains to
+define and run tests for each domain and the whole system. A domain service is
+created for each test. Test services are specially marked to be excluded from
+the production application and are added to a test schedule. When the project is
+built in the testing configuration, the tests are generated and executed and
+results are logged to the console and output as a set of JSON files.
+
+We are using GitHub Actions to automatically build and run tests for each domain
+and the system deployment any time new code is merged into the main development
+branch of the repository. The output from each test schedule is consolidated and
+formatted into an HTML report. The most recent report from the main branch can
+be viewed link:https://s3.amazonaws.com/1f-outgoing/munin/main/index.html[here].
+New failures or build issues are flagged before code is merged into the
+mainline.
+
+=== Domain overview
+
+==== Reception
+
+The role of the Audit Event Reception domain is to convert audit events received
+from the monitored system, in whatever form they arrive, into audit event
+objects that can be used by the other domains in the model. Any changes to the
+format of received audit events will be addressed by the Audit Event Reception
+domain. The format of delivery to the other domains will remain consistent. This
+isolates the impact of changes in received audit event format to a single
+domain. Unexpected input formats are rejected and errors are notified.
+
+==== Ordering
+
+The role of the Audit Event Ordering domain is two-fold. It validates the source
+of the received audit event in terms of Node and Application, and it constructs
+the audit event sequence into the correct order as determined by the previous
+event ID in each Audit Event. Once the audit events have been correctly ordered
+they are delivered to the Sequence Verification domain. Events from unexpected
+sources are rejected and errors are notified. Audit Event Ordering waits for out
+of sequence events to arrive for a defined period of time. Gaps in event
+sequences not resolved within the defined time period are denoted as a failure
+of the Job and the error condition is notified.
+
+Another role of Audit Event Ordering is to read a configuration file at
+initialisation, to use that data to set up its own definition classes, and to
+forward that configuration information to Sequence Verification to set up its
+definition classes. This approach ensures that the definition classes of Audit
+Event Ordering and Sequence Verification are aligned.
+
+==== Sequence Verification
+
+The role of the Sequence Verification domain is to verify that the audit events
+received are in a correct, expected order taking account of support for repeated
+audit event types and forks, parallel branches and merges in the event
+sequences. A Job is only deemed complete when all sequences within the Job have
+completed. The Sequence Verification domain is built to detect and report a
+number of error conditions in the received Audit Event data. These error
+conditions include unexpected audit event types, unexpected sequences of audit
+event types, sequences starting with the wrong audit event types and repetition
+of audit event types in unexpected places.
+
+== Building and Running the Project
+
+=== Build Overview
+
+For a visual overview of the build process, refer to these
+link:images/build_process.pdf[slides].
+
+As mentioned in the section discussing the toolchain, there are three major
+steps to building and running the projects:
+
+. Export MASL
+. Build with Docker
+. Launch with Docker
+
+Before getting into the actual build, it is often an instructive process to
+go through the project structure file by file and explore the purpose of each
+file in the context of the build. We will use the `AEReception` domain for this.
+Each of the other domains follows a similar pattern. Not every file/directory
+seen here will exist in each domain project.
+
+NOTE: Some files are marked by git as "ignored" these tend to be generated
+byproducts of the build that should not be committed to the repository (e.g.
+build logs, test results). Not every one of these files will be covered in the
+section below, but it is good to be aware of them.
+
+  ▾ AEReception/
+    ▸ config/
+    ▾ gen/
+      ▸ AEJSON_OOA/
+        application.mark
+        features.mark
+        README.adoc
+    ▸ masl/
+    ▸ models/
+    ▸ schedule/
+    ▸ test_results/
+    ▸ testing/
+      CMakeLists.txt
+      docker-compose.test.yml
+      docker-compose.yml
+      Dockerfile
+
+==== `config`
+
+The `config` directory contains plaintext files used by the application itself
+to configure the domain. The application is passed a config file as a command
+line argument, which it parses and uses to set up the initial instance
+population.
+
+==== `gen/`
+
+The `gen` directory contains files used during the process of code generation
+and build. The `AEJSON_OOA/` subdirectory contains a handwritten C++ utility
+domain used by the main `AEReception` domain to parse the JSON input files.
+`features.mark` and `application.mark` contain model compiler "marks". These
+metadata are associated with particular application model elements and act as directives
+to the compiler. For example, domain services used exclusively for testing are
+marked as `test_only`, and the architecture will exclude them from generation
+during a production build.
+
+==== `masl/`
+
+The `masl` directory is the output location for exported MASL text. When the
+project is clean, this directory is empty. The files in this directory are
+generated and should not be hand edited.
+
+==== `models/`
+
+The `models` directory is where BridgePoint stores xtUML source model files. The
+files in this directory are managed by BridgePoint and should not be hand
+edited.
+
+==== `schedule/`
+
+The `schedule` directory contains plaintext files used by the architecture for
+startup and testing. The MASL C++ platform provides a mechanism to run domain
+services externally using a schedule file. This mechanism is particularly useful
+for setting up execution of a particular set of tests, however it can also be
+leveraged to determine which services will run at different stages of
+initialisation.
+
+==== `test_results/`
+
+The `test_results` directory is created during a test execution and contains
+JSON files containing the results and details of executed tests. This directory
+is created by the execution of the unit tests. The files should not be hand
+edited and this directory may not exist before a run.
+
+==== `testing/`
+
+The `testing` directory contains test files used in the unit tests.
+
+==== `CMakeLists.txt`
+
+The `CMakeLists.txt` file is the top-level build file for the C++ build after
+code generation is complete. It sets up link paths, include directories and
+other global properties for the build. The behaviour of the build is different
+depending on whether or not the build is launched in `Debug` (test) mode.
+
+==== `docker-compose.yml` and `docker-compose.test.yml`
+
+The two `docker-compose*.yml` files are used to configure the build and
+execution using Docker. The build target and parameters are configured, internet
+ports and shared volumes are set up between host and container, and the command
+line arguments are defined for the process. Any `docker compose ...` commands
+will reference `docker-compose.yml` by default, however the config file can be
+altered by passing the name of the new file with `-f`. You will notice in the
+rest of this document that any time the test build is being run, the command
+will start with `docker compose -f docker-compose.test.yml ...`.
+
+==== `Dockerfile`
+
+The `Dockerfile` file defines the actual build. The file uses Docker's
+multi-stage build capability which allows the file to define two separate builds
+-- one for testing and one for release. The testing version of the image
+executes the code generator in test mode which will cause it to generate code
+for the `test_only` services as well as additional scaffolding for testing
+interfaces.
+
+TIP: I encourage you to take a moment before moving on to open each of these
+files in a text editor (you can double click them from the "Project Explorer"
+within BridgePoint) and briefly explore their contents.
+
+=== Export MASL
+
+. Open up BridgePoint. Assure that you have all six of the source projects
+imported into your workspace.
+
++
+See the <<Source Projects,list of projects>>.
+
+. To export MASL, select each project and click the
+link:images/01_hammer.png[hammer icon] found in the tool ribbon at the top of
+the screen.
+. Alternatively you can right click each project and select
+link:images/02_build_project.png["Build Project"] from the context menu.
+. If you wish to export MASL for all projects at once, you can click
+link:images/03_build_all.png["Build All"] from the "Project" menu in the
+application bar at the top of the application or use the `Ctrl-B`/`Cmd-B`
+keyboard shortcut.
+
+NOTE: The `utils` project simply contains common MASL interfaces and need not be
+built. In fact, it will not even show up in the xtUML Modelling perspective.
+
+=== Build each domain
+
+This should be repeated for each of the three application domains and the
+simulator domain. For the sake of demonstration, the following instructions will
+reference the `AEReception` domain. Additionally, the instructions will assume
+that the code has been cloned in a standard location (`~/git/tower` on Linux/Mac
+and `C:\git\tower` on Windows).
+
+. Open a shell and navigate to the `AEReception` project directory:
+
+  cd ~/git/tower/models/AEReception   # linux/mac
+  cd C:\git\tower\models\AEReception  # windows
+
+. Build the project with Docker by running the following command:
+
+  docker compose build --no-cache
+
++
+NOTE: The `--no-cache` flag tells Docker to rebuild the image even if it has
+been built before and exists in cache. This is not strictly necessary, but it
+provides confidence that the latest code is being used for the build.
+
++
+NOTE: The first invocation of `docker compose build ...` will cause Docker to
+download the base MASL image from Docker Hub. This image is > 600 MB and
+therefore will take some time to download. Subsequent builds will not require
+this download.
+
+. Repeat this step for the other three domains:
+  .. AEOrdering
+  .. AESimulator
+  .. SequenceVerificationDataCentric
+
+=== Build integration project
+
+IMPORTANT: Before this step, all three of the application domains and the
+simulator domain must be built as demonstrated in the previous step.
+
+. In your shell, navigate to the integration project directory:
+
+  cd ~/git/tower/models/AER_AEO_SVDC   # linux/mac
+  cd C:\git\tower\models\AER_AEO_SVDC  # windows
+
+. Build the project with Docker by running the following command:
+
+  docker compose build --no-cache
+
+=== Running the integration project
+
+. Open a shell in the integration project directory, run the following command
+to launch the process:
+
+  docker compose up
+
++
+You should see some logs begin to appear, in particular a periodic log from the
+`AEReception` domain that it is waiting on input files.
+
+. Open a file explorer and navigate to the `models/test-files/processed/`
+directory within the repository. This can be done through your OS GUI or quickly
+through a simple command:
+
+  open -a Finder ~/git/tower/models/test-files/processed/  # mac
+  xdg-open ~/git/tower/models/test-files/processed/        # linux
+  explorer C:\git\tower\models\test-files\processed\       # windows
+
+. Open another file explorer window and navigate to the
+`models/test-files/incoming/` directory within the repository:
+
+  open -a Finder ~/git/tower/models/test-files/incoming/  # mac
+  xdg-open ~/git/tower/models/test-files/incoming/        # linux
+  explorer C:\git\tower\models\test-files\incoming\       # windows
+
+. link:images/04_drag_and_drop.gif[Drag and drop] `PoC_CBC_Test1.json` from the
+`processed/` directory to the `incoming/` directory. You will see a flurry of
+output from the application and the file will reappear in the `processed/`
+directory. Inspect the logs and you will see that the audit events have been
+received, ordered, and verified by the application.
+
+. Kill the process by pressing `Ctrl-C`. Clean up the process by running the
+following command:
+
+  docker compose down
+
+==== Troubleshooting Docker
+
+Docker is a great tool for standardising builds and deployments, however it
+presents some pitfalls when being used as a local build/development tool.
+
+Docker Compose requires the "down" command to be issued even after all the
+processes launched by the "up" command have terminated. This is because though
+the process inside each container has exited, the container itself still exists
+and can be restarted. As long as the container exists (whether running or
+stopped), it will hold onto resources such as shared volumes and internet ports.
+The "down" command tells Docker Compose to remove all the containers associated
+with the launch.
+
+If you see the message "port is already allocated", it is likely that you forgot
+to run the `docker compose down` command somewhere along the way. When you run
+this command, make sure it matches the "up" command (e.g. if you run `docker
+compose -f docker-compose.test.yml up` to start the application, you should run
+`docker compose -f docker-compose.test.yml down` in the same directory to tear
+it down.)
+
+If there is only one command to remember from this section, it is this:
+
+  docker system prune
+
+This command causes Docker to remove all stopped containers, networks, dangling
+images and build cache. This usually works to give a "fresh" start if you get
+stuck.
+
+If you are making changes but not observing different behavior check the
+following:
+
+. Assure you have re-exported MASL (build projects from within BridgePoint)
+. Run the build again with caching disabled: `docker compose build --no-cache`
+. Run the "up" command with the `--force-recreate` flag: `docker compose up
+--force-recreate` (this flag forces existing containers to be replaced with new
+ones created from the latest image).
+
+=== Running the integration project with the audit event simulator
+
+In the last section, we built and ran the integration project interactively with
+test files. The audit event simulator can also be used to generate test audit
+event files to be consumed by the main process. This section will also walk
+through using the process inspector to attach to the running process and browse
+the instance population.
+
+. Open a shell in the integration project directory, run the following command
+to launch the process with the simulator:
+
+  docker compose -f docker-compose.test.yml up
+
++
+You will see a lot of output at once. If you look closely, you can see several
+logs showing the simulator emitting audit events, followed by the main application
+handling those audit events.
+
+. In a new shell tab/window, run the following command to launch Inspector:
+
+  java -jar ~/git/tower/bin/inspector-1.0.0-jar-with-dependencies.jar   # linux/mac
+  java -jar C:\git\tower\bin\inspector-1.0.0-jar-with-dependencies.jar  # windows
+
+. Select "AESequenceDC" from the link:images/05_domain_select.png["Domain" drop-down menu]
+
+. Double-click the link:images/06_job_population.png["Job" item] in the object
+list. Note that each line represents an instance of "Job" and each column
+represents an attribute of the object.
+
+. Take some time to explore the rest of the instance population in Inspector
+
+. Exit inspector. Kill the application process by pressing `Ctrl-C` in the shell
+window where it was launched. Clean up the process by running the following
+command:
+
+  docker compose -f docker-compose.test.yml down
+
+==== Configuring the integration project
+
+There are two configuration files that are loaded at start up and checked on a
+regular basis for updates:
+
+  aereception_spec.txt
+  aeordering_spec.txt
+
+.Click to see more details on the config file format
+[%collapsible]
+====
+
+These configuration files contain some items that may be adjusted to manage the
+digital twin. The following is a list of the configuration items that can be
+adjusted and there description are as follows:
+
+`aereception_spec.txt`:
+
+*EventThrottleRate* - The rate that events should be processed from one
+reception file specified as a duration. Once an event has been processed a timer
+shall be set to the throttle rate and the timer shall have to expire before
+another event is selected for processing.
+
+*ReceptionDeletionTime* - When a file has been through reception the details of
+the reception processing shall be stored until this time expires.
+
+*ConcurrentReceptionLimit* - A number that indicates the limit of concurrent
+reception jobs that can be executing, e.g. 1 = one active reception job
+
+`aeordering_spec.txt`:
+
+*MaxOutOfSequenceEvents* - This is the consecutive maximum out of sequence
+events that can be received for a job before an error is declared.
+
+*MaximumJobTime* - This is the maximum time it should take for a job to be
+finished. When this time has been reached after the job was started it shall be
+archived if there are no blocked events or failed if there are blocked events.
+
+*JobCompletePeriod* - When a Job has completed it shall be either archived or
+failed and once the job complete period has expired it shall be deleted from the
+domain with all associated events.
+
+====
+
+==== Configuring the simulator
+
+It is possible to configure the simulator to generate jobs that are to be
+delivered to the digital twin. The configuration file it loads is defined in the
+command specified in the `docker-compose-test.yml` and passed on the
+`-test-config` argument as shown here:
+
+  command: "-test-config config/test1config.txt -postinit schedule/startup.sch -util MetaData"
+
+.Click to see more details on the config file format
+[%collapsible]
+====
+
+The configuration file allows the user to define the test to be executed. Below
+is a sample of a test from the configuration file:
+
+  TestId=1
+  TotalTests=2
+  TestFrequency=PT0S
+  GenerateEventFiles=true
+  TestFileLocation=test-files/generated
+  TestFileDestination=test-files/incoming
+  Job
+  JobSpecName=EndToEndOrderedJob
+  EventDefinition
+  EventName=1,HighInput,export assure aka input,export_assurer-8f309f67-2949-4071-b8c2-fd599b42cb0d,PT0S,true,
+  EventName=2,SignerReadTokenRequest,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,1
+  EventName=3,SignerParsedEvidence,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,2
+  EventName=4,SenderReceiveTokens,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,3
+  EventName=5,SenderPartRead,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,4
+  EventName=6,SenderProcessedRequest,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,5
+  EventName=7,SenderWritePayload,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,6
+  EventName=8,GatewayReadPayload,gateway dispatch,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,7
+  EventName=9,GatewayWritePayload,gateway dispatch,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,8
+  EventName=10,DiodeProcessPayload,diode,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,9
+  EventName=11,DiodeWritePayload,diode,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,10
+  EventName=12,LowInput,low,import_assurer-bcc34e5f-8b4b-4665-ad1d-d853948a2b9e,PT0S,false,
+
+The following provides an explanation to each of the lines in the configuration
+file:
+
+*Test* - This marks the start of the test definition.
+
+*TestId* - This provides a unique id for the test specification.
+
+*TotalTests* - This defines the total number of times this test is to be
+executed.
+
+*TestFrequency* - A duration that specifies the frequency that the test should
+be run e.g. PT1S is every second.
+
+*GenerateEventFiles* - This indicated that the events should be placed in a file
+and is currently always set to true. In future there may be a different delivery
+mechanism which would allow for delayed events.
+
+*TestFileLocation*- This is the directory where the files should be created.
+
+*TestFileDestination* - This directory the files should be moved to once
+created.
+
+*Job* - This defines the start of the job definition for the test.
+
+*JobSpecName* - This the name of the job that is being executed.
+
+*EventDefinition* - This defines the start of the event definitions.
+
+The `EventDefinition` marks the start of the block of events that are to be
+reported by the simulator for the job. Each event in the event definition is
+marked by `EventName` which is a comma separated list of the data to be reported
+for the event. Using the following example
+
+ EventName=2,SignerReadTokenRequest,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,1
+
+the definition of the comma separated list is as follows:
+
+*2* - The id for the event definition.
+
+*SignerReadTokenRequest* - The type of event that is to be generated.
+
+*signer* - The node that the event was generated from.
+
+*signer-bc740078-0dbe-453f-96de-4a3bb9951d97* - The application that generated
+the event.
+
+*PT0S* - This will define in a delay in generating an event. This is currently
+not applicable as it requires GenerateEventFiles to be set to false.
+
+*false* - Indicates if this is the first event in a sequence of events. If so
+there will not be a previous event definition id.
+
+*1* - This is the previous event definition id e.g. in this event definition
+with an id of 2 the previous event definition is 1.
+
+====
+
+=== Building a domain with test
+
+Each domain contains a set of unit tests. We will use the `AEReception` domain
+to demonstrate building a domain in test mode.
+
+. Open a shell and navigate to the `AEReception` project directory:
+
+  cd ~/git/tower/models/AEReception   # linux/mac
+  cd C:\git\tower\models\AEReception  # windows
+
+. Build the project in test mode with Docker by running the following command:
+
+  docker compose -f docker-compose.test.yml build --no-cache
+
+. Run the test schedule with Docker using the following command:
+
+  docker compose -f docker-compose.test.yml up
+
++
+You will see a lot of output including some logs from the test runner. All of
+the tests will be marked as "SUCCEEDED".
+
+. In BridgePoint, navigate to and open the `basicTest01` function at
+link:images/07_basic_test.png[`AEReception::AERDomain::AEReception::test_cases`].
+
++
+NOTE: There will be red error markers in this activity. This is due to the fact
+that the BridgePoint editor does not expect the test scaffolding that the C++
+code generator will produce. These error markers are expected.
+
+. On line 28, change "HighOutput" to "LowOutput".
+
+. Export MASL by pressing the link:images/01_hammer.png[hammer icon] or
+link:images/02_build_project.png[right-click > "Build Project"].
+
+. In the shell window, rebuild and run the tests. The following command will
+cause docker to build and run all at once:
+
+  docker compose -f docker-compose.test.yml up --build --force-recreate
+
++
+NOTE: The `--build` flag tells docker to build the image before creating the
+container. The `--force-recreate` flag tells docker to provision a new container
+from the latest image rather than simply restarting the container that was
+already there from the previous run. Without both of these two flags, the
+changes will not take effect.
+
++
+Scroll up near the beginning of the output and you will see some output that
+looks like the following:
+
+  2022-06-13T15:15:47Z Debug : AEReception : basicTest01: FAILED
+  2022-06-13T15:15:47Z Debug : AEReception : Expected: 'LowInput' but got: 'HighInput'
+    Stack:
+    #4	Assertions::assertTrue:4
+    #3	Assertions::assertEquals:3
+    #2	AEReception::basicTest01:28
+    #1	Test::run_test:65
+
++
+This tells us that the `basicTest01` test case failed and lets us know that an
+assertion failed.
+
+. Clean up the docker run with the following command:
+
+  docker compose -f docker-compose.test.yml down

@@ -1,0 +1,7 @@
+= Munin HOWTO
+
+== Build
+
+```
+asciidoctor -a stylesheet=github.css HOWTO_Munin.adoc -o HOWTO_Munin.html
+```
