@@ -756,6 +756,10 @@ h2 { color: #325D72; border-bottom: 1px solid #dddddd; }
 <div class="paragraph">
 <p>Enough talk! <a href="#_export_masl">Skip to the steps</a></p>
 </div>
+<div class="paragraph">
+<p>If you want to run the latest version of the project without building,
+<a href="#_running_the_latest_published_version_of_the_integration_project">see here</a></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1498,6 +1502,53 @@ ones created from the latest image).</p>
 </ol>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_running_the_latest_published_version_of_the_integration_project">Running the latest published version of the integration project</h4>
+<div class="paragraph">
+<p>As mentioned above, the application is built and published automatically each
+time new code is merged into the main repository branch. It is possible to use
+docker to run the latest version of the application without any build at all.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Authenticate with the GitHub Container Registry by executing the command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>docker login ghcr.io</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use your GitHub.com account name and password to log in. If you have two-factor
+authentication enabled on your account, you will have to create a new personal
+access token to use in place of your password. Follow the guide
+<a href="https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-use-git.adoc#generating-authentication-credentials">here</a>
+to generate a new token with the
+<a href="images/08_read_packages.png">"read:packages"</a> scope.</p>
+</div>
+</li>
+<li>
+<p>Execute the application by running the following command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>docker run -it -v $PWD/test-files/:/root/test-files ghcr.io/xtuml/aer_aeo_svdc:latest -config aeoconfig/aeordering_spec.txt -receptionConfig aerconfig/aereception_spec.txt -preinit schedule/startup.sch</pre>
+</div>
+</div>
+</li>
+<li>
+<p><a href="images/04_drag_and_drop.gif">Drag and drop</a> a test file e.g.
+<a href="https://github.com/xtuml/tower/blob/main/models/test-files/processed/PoC_CBC_Test1.json"><code>PoC_CBC_Test1.json</code></a>
+to the <code>test-files/incoming/</code> directory in your current directory. You will see
+a flurry of output from the application and the file will reappear in the
+<code>processed/</code> directory. Inspect the logs and you will see that the audit events
+have been received, ordered, and verified by the application.</p>
+</li>
+<li>
+<p>Kill the process by pressing <code>Ctrl-C</code>.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_running_the_integration_project_with_the_audit_event_simulator">Running the integration project with the audit event simulator</h3>
@@ -1862,7 +1913,7 @@ assertion failed.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-27 09:41:41 -0400
+Last updated 2022-07-07 20:34:38 -0400
 </div>
 </div>
 </body>

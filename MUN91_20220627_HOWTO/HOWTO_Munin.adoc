@@ -2,6 +2,9 @@
 
 Enough talk! <<Export MASL,Skip to the steps>>
 
+If you want to run the latest version of the project without building,
+<<Running the latest published version of the integration project, see here>>
+
 == Prerequisites
 
 Before you get started, take a few moments to be sure you have the following
@@ -489,6 +492,37 @@ following:
 . Run the "up" command with the `--force-recreate` flag: `docker compose up
 --force-recreate` (this flag forces existing containers to be replaced with new
 ones created from the latest image).
+
+==== Running the latest published version of the integration project
+
+As mentioned above, the application is built and published automatically each
+time new code is merged into the main repository branch. It is possible to use
+docker to run the latest version of the application without any build at all.
+
+. Authenticate with the GitHub Container Registry by executing the command:
+
+  docker login ghcr.io
+
++
+Use your GitHub.com account name and password to log in. If you have two-factor
+authentication enabled on your account, you will have to create a new personal
+access token to use in place of your password. Follow the guide
+link:https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-use-git.adoc#generating-authentication-credentials[here]
+to generate a new token with the
+link:images/08_read_packages.png["read:packages"] scope.
+
+. Execute the application by running the following command:
+
+  docker run -it -v $PWD/test-files/:/root/test-files ghcr.io/xtuml/aer_aeo_svdc:latest -config aeoconfig/aeordering_spec.txt -receptionConfig aerconfig/aereception_spec.txt -preinit schedule/startup.sch
+
+. link:images/04_drag_and_drop.gif[Drag and drop] a test file e.g.
+link:https://github.com/xtuml/tower/blob/main/models/test-files/processed/PoC_CBC_Test1.json[`PoC_CBC_Test1.json`]
+to the `test-files/incoming/` directory in your current directory. You will see
+a flurry of output from the application and the file will reappear in the
+`processed/` directory. Inspect the logs and you will see that the audit events
+have been received, ordered, and verified by the application.
+
+. Kill the process by pressing `Ctrl-C`.
 
 === Running the integration project with the audit event simulator
 
