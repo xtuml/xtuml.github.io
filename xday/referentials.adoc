@@ -1,0 +1,109 @@
+= Referentials
+
+== Dialogues
+
+* Roxanne
+* James
+* Amanda and Juliana
+* Keith
+* Ian
+* Wesley
+
+.Monologues and Dialogues
+[%autowidth,options="header"]
+|===
+| Title                    | Characters      | Description
+| Wifetime                 | Roxanne         | cooking, complaining about referentials
+| Bridge of Death          | James           | James asks these questions three.
+| Morning Coffee/Champagne | Amanda, Juliana | Amanda loves referentials, Juliana is "not a fan".
+| Boo Referentials         | Ian             | Ian says referentials are bad.
+| Yay Referentials         | Wesley          | Wesley loves referentials.
+| Progagated Referentials  | Keith           | Sarcastically describes changing a propagated ref.
+| That's Stupid            | John            | "That is dumb, idiotic and stupid."
+| Better Abstractions      | Greg            | "Formalising associations leads to better abstractions."
+| It's The Math            | Leon            | "It's the Math!  It's the Math!"
+| Unwashed Heathens        | Ian Wilkie      | "You are an anti-scientific, unwashed heathen."
+| Side Comments            | Bob             | "I formalize every association... _and_ I put a comment on every line of action language!"
+|===
+
+== Quotes
+
+* "Referentials are pretty much useless, duplicated, clutter which violate the tenet of __one fact in one place__."
+* "What I really love about referential attribute is changing a multi-attribute identifier on a class at the root of a massively referential propagation."
+* "It's __The Math__!"
+* "They lead to better abstractions." (spoken seriously)
+
+
+== Outline
+
+. Introduction of the Tone
+. Introduction of the Topic
+. Some technical background
+  .. Tool support is only narrowly available.
+. relational database and set theory background
+. network database and graph theory background
+. Shlaer-Mellor and the OOA of OOA support both
+. roles of referentials in:
+  .. model (artifact)
+  .. modeling (process)
+  .. architecture (implementation)
+. scope of an identifier
+. examples:
+  .. example of domain -> class -> operation -> parameter
+  .. example of GPS Watch TrackPoint
+  .. example of procreation/geneology
+  .. good example of combined referential (Colin, Tristan)
+  .. good example of combinatorial set theory
+. bad stuff
+  .. clutter
+  .. over-propagation
+  .. reflexives
+  .. arbitrary identifiers
+. good stuff
+  .. combined referentials
+. future
+  .. adding relationship participation into the identifier (thus scoping)
+
+
+
+
+
+=== Wifetime
+
+Cort :: Honey I'm home.  What's for dinner, Sweetheart?
+Rox :: Well, nothing for you, _sweetheart_.  I understand you have been
+       questioning the sacred merit of formalized associations, referential
+       attributes and identifiers!
+
+=== Morning Coffee/Champagne
+
+Cort :: Good morning, ladies.  What are you discussing today?
+Amanda :: We were debating Shlaer-Mellor relationship formalization and
+          referential attributes.
+Cort :: Really?  So, what do you think?
+Amanda :: [provocatively] I am wild about them, especially when disambiguating with
+          with a combined referential.
+Juliana :: [wrinkled nose] I am not a fan.  Referentials are pretty much
+           useless, duplicated, clutter which violate the tenet of
+           __one fact in one place__."
+
+=== Bridge of Death
+
+James :: Stop!  He who appracheth the Bridge of Death must answer me these
+         questions three, 'ere the other side ye see!
+Cort :: Go on Bridgekeeper.  Ask me the questions.  I am not afraid.
+James :: What is your name?
+Cort :: Sir Cortland of Shlaer-Mellor Land
+James :: What is your quest?
+Cort :: I seek deep truths of methodology... and the holy grail.
+James :: What is your opinion of referential attributes?
+Cort :: I hate them...  I love them...  Ahhhhhhhhhhh!
+
+=== Propagated Referentials
+
+Cort :: Good morning, Keith.  I hear you are a big fan of formalized
+        associations.  Is this true?
+Keith :: Oh, yes.  I especially love changing a multi-attribute class
+         identifier when it serves as the root of a long referential
+         propagation tree extending to every class in my diagram!
+
