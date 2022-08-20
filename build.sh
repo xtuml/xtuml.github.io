@@ -5,9 +5,9 @@ asciidoctor -a stylesheet=$pwd/github.css ./xday/xday2019.adoc -o ./xday/xday201
 asciidoctor -a stylesheet=$pwd/github.css ./xday/xday2020.adoc -o ./xday/xday2020.html
 asciidoctor -a stylesheet=$pwd/github.css ./xday/xday2020agenda.adoc -o ./xday/xday2020agenda.html
 asciidoctor -a stylesheet=$pwd/github.css ./xday/xday2020instructions.adoc -o ./xday/xday2020instructions.html
-asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022.adoc -o ./xday/xday2020.html
-asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022agenda.adoc -o ./xday/xday2020agenda.html
-asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022instructions.adoc -o ./xday/xday2020instructions.html
+asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022.adoc -o ./xday/smdays2022.html
+asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022agenda.adoc -o ./xday/smdays2022agenda.html
+asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2022instructions.adoc -o ./xday/smdays2022instructions.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/class_prep/connect_shared_folders.adoc -o ./xtuml_class/class_prep/connect_shared_folders.html
 asciidoctor -a stylesheet=$pwd/github.css -a jp=1 ./xtuml_class/class_prep/class_prep.adoc -o ./xtuml_class/class_prep/class_prep.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/class_prep/class_prep.jp.adoc -o ./xtuml_class/class_prep/class_prep.jp.html
