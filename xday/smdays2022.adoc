@@ -169,7 +169,7 @@ hosted in Cheltenham.
 If you have questions about Shlaer-Mellor Days 2022, contact either of the
 Co-Chairs via email at:  cortland.starrett [at] onefact.net or mike [at] modelint.com.
 
-=== Previous Shlaer-Mellor xtUML Days
+=== Previous xtUML Days
 
 * https://chrysalis-triangle-s9cb.squarespace.com/xtuml2021[xtUML Days 2021, (Zoom), 27 October 2021]
 * https://xtuml.github.io/xday/xday2020.html[xtUML Days 2020 UK (and Zoom), 5 November 2020, Portsmouth, UK]
