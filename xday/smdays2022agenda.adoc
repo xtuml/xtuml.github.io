@@ -1,7 +1,7 @@
 
 // = Shlaer-Mellor Days 2022 Session Planning
 
-== Session Types
+==== Session Types
 
 All session types are eligible to be pre-recorded.  For pre-recorded
 sessions, the presenter will be available live to respond to questions
@@ -58,10 +58,12 @@ and comments.
                                                     those participating online.
 |===
 
+
+==== Agenda
+
+(coming soon)
+
 ////
-
-== Agenda
-
 
 The columns in the table below are as follows:
 
