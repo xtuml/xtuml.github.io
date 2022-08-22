@@ -81,6 +81,8 @@ may be available to companies sending more than 3 participants; contact the chai
 
 === https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[**Pay for Shlaer-Mellor Days 2022 here.**]
 
+=== Agenda of Presentations
+
 Tuesday 18 October (Conference Day)
 
 include::smdays2022agenda.adoc[Agenda]
