@@ -90,8 +90,11 @@ include::smdays2022agenda.adoc[Agenda]
 === In-Person Gatherings
 
 A dinner gathering is planned in the UK in Cheltenham on the evening of 20 October 2022.
-The venue and timing are TBD.  Dinner is included in the conference registration (including
+The venue __Bill's__ at 19:30.  Dinner is included in the conference registration (including
 a significant other).
+
+A dinner gathering is planned in Sweden in Linköping on the evening of 25 October 2022.
+The venue and time are TBD.
 
 == Call for Papers (closed)
 
