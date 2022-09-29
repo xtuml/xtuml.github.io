@@ -1,0 +1,24 @@
+= Shlaer-Mellor Days Announcement 1
+
+Subject:  Save the Date:  18 October 2022
+
+Dear Shlaer-Mellor xtUML Community,
+
+The conference date is set!  Shlaer-Mellor Days 2022 will be hosted on
+*Zoom* on **18 October 2022**.  The precise timing and duration are
+to-be-determined based upon accepted papers.  The web link below contains
+the call for papers/presentations.  If you have something compelling to
+share, please do share!
+
+https://xtuml.github.io/xday/smdays2022.html[Here] is all the information
+you will need.
+
+Please forward this invitation to interested colleagues.
+
+Kind regards,
+
+Michael Lee and Cortland Starrett
+
+Conference Co-Chairs
+
+Shlaer-Mellor Days 2022

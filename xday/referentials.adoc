@@ -29,40 +29,129 @@
 == Quotes
 
 * "Referentials are pretty much useless, duplicated, clutter which violate the tenet of __one fact in one place__."
-* "What I really love about referential attribute is changing a multi-attribute identifier on a class at the root of a massively referential propagation."
+* "What I really love about referential attributes is changing a multi-attribute identifier on a class at the root of a lengthy referential propagation."
 * "It's __The Math__!"
 * "They lead to better abstractions." (spoken seriously)
 
 
 == Outline
 
+. (Boo Referentials)
+. (Yay Referentials)
+. (Propagation)
+
 . Introduction of the Tone
+. (Bridge of Death)
 . Introduction of the Topic
 . Some technical background
-  .. Tool support is only narrowly available.
+. (Wifetime)
 . relational database and set theory background
 . network database and graph theory background
-. Shlaer-Mellor and the OOA of OOA support both
+. (Morning Coffee)
+. Shlaer-Mellor and the OOA of OOA support both.
+. action language tiltings
+. (Side Comments)
+. roles of referentials in:  model, modeling, architecture
+. examples:
+  .. good network/graph models
+  .. good sets models
+  .. bad examples of referential propagation
+. (Stupid)
+. bad stuff
+. good stuff
+. future
+
+== Full Paper
+
+. Title Slide
+  .. (slide)
++
+__Shlaer-Mellor Relationship Formalization and Referential Attributes__, by
+Cortland Starrett at Shlaer-Mellor Days 2022.
+. Introduction of the Tone
+  .. (full face) provocative, irreverent, balanced, fun-poking, entertaining
++
+Hello.  I intend to cover the pros and cons of __relationship formalization__.
+In the crowds I walk in, there are strong opinions both for and against.
+I will provide a little background, take a position and present my
+findings in a  provocative, irreverent, balanced, fun-poking manner while
+attempting to provide some measure of entertainment!
+  .. (slide)
+  .. 1st Thesis:  Relationship Formalization is useful in some situations but should not be overdone.
+  .. 2nd Thesis:  The nature of your application data guides choices around relationship formalization.
+. (Bridge of Death)
+. Introduction of the Topic
+  .. (agenda slide)
+  .. background and HOWTO of relationship formalization
+  .. relational and network databases and the OOA of OOA
+  .. examples
+  .. ideas for the future
++
+Here is the outline of our journey to support the thesis statements just
+established.  A little bit of background and a HOWTO will provide context.
+Only the shallowest reference to underlying theory will be explored to
+illustrate that we must adhere to our mathematical underpinnings.  A few
+example models will add clarity.
+
+. Some technical background
+  .. How to formalize an association (from older training materials, Balcer or Carter).
++
+(Look in the older training materials and scan the slides.)
+  .. MtWiD p52
+  .. (Slides from 2017 on Referentials?)
+  .. (BP demo of dog and dog owner dynamically formalize and see identifier copied over.
+  .. (Tool support is only narrowly available.)
+. (Wifetime)
+. relational database and set theory background
+  .. Find reference pages.
+  .. Primary benefit is 'join' (or set intersection).
+. network database and graph theory background
+  .. Find reference pages.
+  .. Traversal rather than set combinatorics.
+. Shlaer-Mellor and the OOA of OOA support both.
+  .. Show association subsystem.
+  .. Highlight link class for R_REL.
+  .. Highlight identifier attributes set and referential attributes.
+  .. example of creating a relationship
+     ... Drawing the line populates the graph portion of the OOA of OOA.
+     ... Formalizing the association populates the relational (foreign key aspects).
+. action language tiltings
+  .. RSL foreign key setting (relational model)
+  .. In RSL, 'relate' statement was introduced and was a synonym for setting for the foreign keys.
+  .. OAL 'relate' statement.
+  .. ASL and MASL 'link' statement (inadvertently) implies network model
+  .. 'join' versus 'navigate' ("Association Navigation") 'traversal' in MtWiD
 . roles of referentials in:
   .. model (artifact)
+     ... primarily as constraints
   .. modeling (process)
   .. architecture (implementation)
-. scope of an identifier
 . examples:
-  .. example of domain -> class -> operation -> parameter
-  .. example of GPS Watch TrackPoint
-  .. example of procreation/geneology
-  .. good example of combined referential (Colin, Tristan)
-  .. good example of combinatorial set theory
+  .. good network/graph models
+     ... procreation/geneology
+     ... protocol topology
+     ... metamodel of Type (builtin with focus on Numeric) This is an Abstract Syntax Tree (AST).
+  .. good sets models
+     ... good example of combined referential (Colin, Tristan)
+         .... actor, film, appearance (preventing debut of another actor)
+         .... See Mellor-Balcer p144 for Child, District, School.
+     ... COVID infection tracking system (natural keys, combinatorial queries for patterns)
+     ... entrance kiosk (visitor, license, license plate, credential)
+     ... cellular telephone system (handset, IMEA, tower, customer)
+  .. bad examples of referential propagation
+     ... example of domain -> class -> operation -> parameter
+     ... example of GPS Watch TrackPoint
+     ... reflexive ordering
 . bad stuff
   .. clutter
   .. over-propagation
   .. reflexives
   .. arbitrary identifiers
 . good stuff
-  .. combined referentials
+  .. combined referentials (amazing!)
 . future
   .. adding relationship participation into the identifier (thus scoping)
+  .. scope of an identifier
 
 
 
@@ -107,3 +196,13 @@ Keith :: Oh, yes.  I especially love changing a multi-attribute class
          identifier when it serves as the root of a long referential
          propagation tree extending to every class in my diagram!
 
+=== Notes
+
+Abstract Syntax Tree
+
+Draw model of class diagram with 2 classes having only names and a relationship.
+"This contains all we need to navigate to the correct instances."
+
+=== ToDo
+
+. Look up relationship formalization in books, slides, binder.
