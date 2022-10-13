@@ -13,49 +13,46 @@
 [%autowidth,options="header"]
 |===
 | Title                    | Characters      | Description
-| Wifetime                 | Roxanne         | cooking, complaining about referentials
 | Bridge of Death          | James           | James asks these questions three.
+| Wifetime                 | Roxanne         | refusing dinner to heretic husband
 | Morning Coffee/Champagne | Amanda, Juliana | Amanda loves referentials, Juliana is "not a fan".
-| Boo Referentials         | Ian             | Ian says referentials are bad.
-| Yay Referentials         | Wesley          | Wesley loves referentials.
+| Yay Referentials         | Ian             | "yay!"
+| Boo Referentials         | Wesley          | "boo!"
 | Progagated Referentials  | Keith           | Sarcastically describes changing a propagated ref.
 | That's Stupid            | John            | "That is dumb, idiotic and stupid."
 | Better Abstractions      | Greg            | "Formalising associations leads to better abstractions."
 | It's The Math            | Leon            | "It's the Math!  It's the Math!"
-| Unwashed Heathens        | Ian Wilkie      | "You are an anti-scientific, unwashed heathen."
 | Side Comments            | Bob             | "I formalize every association... _and_ I put a comment on every line of action language!"
 |===
 
 == Quotes
 
-* "Referentials are pretty much useless, duplicated, clutter which violate the tenet of __one fact in one place__."
+* "Referentials are pretty much useless, duplicated, clutter which violate the tenet of _one fact in one place_."
 * "What I really love about referential attributes is changing a multi-attribute identifier on a class at the root of a lengthy referential propagation."
-* "It's __The Math__!"
+* "It's _The Math_!"
 * "They lead to better abstractions." (spoken seriously)
-
 
 == Outline
 
 . (Boo Referentials)
 . (Yay Referentials)
-. (Propagation)
 
 . Introduction of the Tone
 . (Bridge of Death)
 . Introduction of the Topic
 . Some technical background
-. (Wifetime)
 . relational database and set theory background
 . network database and graph theory background
-. (Morning Coffee)
 . Shlaer-Mellor and the OOA of OOA support both.
+. literature
 . action language tiltings
-. (Side Comments)
 . roles of referentials in:  model, modeling, architecture
+. (Wifetime)
 . examples:
   .. good network/graph models
   .. good sets models
   .. bad examples of referential propagation
+. (Morning Coffee)
 . (Stupid)
 . bad stuff
 . good stuff
@@ -64,94 +61,267 @@
 == Full Paper
 
 . Title Slide
-  .. (slide)
+  .. [blue]#(slide)#
 +
 __Shlaer-Mellor Relationship Formalization and Referential Attributes__, by
 Cortland Starrett at Shlaer-Mellor Days 2022.
 . Introduction of the Tone
-  .. (full face) provocative, irreverent, balanced, fun-poking, entertaining
+  .. [red]#(**full face**)# provocative, irreverent, balanced, fun-poking, entertaining but technically compelling
 +
 Hello.  I intend to cover the pros and cons of __relationship formalization__.
 In the crowds I walk in, there are strong opinions both for and against.
-I will provide a little background, take a position and present my
-findings in a  provocative, irreverent, balanced, fun-poking manner while
-attempting to provide some measure of entertainment!
-  .. (slide)
-  .. 1st Thesis:  Relationship Formalization is useful in some situations but should not be overdone.
-  .. 2nd Thesis:  The nature of your application data guides choices around relationship formalization.
-. (Bridge of Death)
+I will provide a little background, take a position and present a
+technically compelling case... in manner which is provocative, irreverent,
+balanced, fun-poking and entertaining.
+
+  .. [blue]#(thesis slide)#
+  .. Thesis Statement #1:  Relationship Formalization is to be applied judiciously.
+  .. Thesis Statement #2:  The nature of the application model data guides choices around relationship formalization.
+  .. Thesis Statement #3:  Consider including 'relationship participation' within the concept of 'identifier'.
++
+1) I believe that relationship formalization is useful but not everywhere,
+always, every relationship.  It needs to be optional.
++
+2) The "shape" of our model data "tells us" when to formalize.
++
+3) I have an idea to update our notational formalism and covet your
+feedback.
+
+. [red]#(**Bridge of Death**)#
 . Introduction of the Topic
-  .. (agenda slide)
+  .. [blue]#(agenda slide)#
   .. background and HOWTO of relationship formalization
-  .. relational and network databases and the OOA of OOA
-  .. examples
-  .. ideas for the future
+  .. relational and network database theory and the OOA of OOA
+  .. example models
+  .. ideas for the future (participation-as-identifier)
 +
 Here is the outline of our journey to support the thesis statements just
 established.  A little bit of background and a HOWTO will provide context.
 Only the shallowest reference to underlying theory will be explored to
 illustrate that we must adhere to our mathematical underpinnings.  A few
-example models will add clarity.
+example models will add clarity.  And lastly I will propose an idea for
+incorporating relationship participation into the concept of 'identifier'.
 
-. Some technical background
-  .. How to formalize an association (from older training materials, Balcer or Carter).
+. technical background
+  .. How to formalize an association.
+  .. [blue]#(BP demo of dog and dog owner dynamically formalize and see identifier copied over.)#
 +
-(Look in the older training materials and scan the slides.)
-  .. MtWiD p52
-  .. (Slides from 2017 on Referentials?)
-  .. (BP demo of dog and dog owner dynamically formalize and see identifier copied over.
-  .. (Tool support is only narrowly available.)
-. (Wifetime)
+We formalize an association by copying identifier attributes from the
+_participant_ class into the _formalizing_ class.  The copied attributes
+are called _referential attributes_.
++
+Rather than take you through the literature explaining this, it is easier
+to see it demonstrated in a model editor.  First, the relationship is
+established.  Then, the relationship is formalized.  You can see the
+identifier from the Dog Owner being copied into the Dog class (with a
+prefix added).
+
 . relational database and set theory background
-  .. Find reference pages.
-  .. Primary benefit is 'join' (or set intersection).
+  .. [blue]#(relational db slide)#
++
+This is the root of Shlaer-Mellor Object-Oriented Analysis.  It is data
+modeling... and based on relational databases and set arithmetic.
+Application model data can be _queried_ just like a relational database.
+_Union_, _Intersection_ and _differences_ can be applied to sets of
+instances of related objects.
+  .. [blue]#(union, intersection slide)#
+  .. [red]#(**"It's the math!"**)#
+
 . network database and graph theory background
-  .. Find reference pages.
-  .. Traversal rather than set combinatorics.
+  .. [blue]#(network db slide)#
++
+However, the Shlaer-Mellor Method and its underlying data model did not
+stop there.  It is not _exclusively_ a relational database.  Network
+database science and graph theory influenced the method **from the beginning**.
++
+Network databases are founded on graph theory.  Classes are 'vertices'
+or 'nodes', and relationships are 'edges' in a directed graph.  Data access
+is oriented toward relationship 'traversal' more than instance set
+arithmetic, however both are supported.
+  .. [red]#(**shaking head**)#
+
 . Shlaer-Mellor and the OOA of OOA support both.
-  .. Show association subsystem.
-  .. Highlight link class for R_REL.
-  .. Highlight identifier attributes set and referential attributes.
-  .. example of creating a relationship
-     ... Drawing the line populates the graph portion of the OOA of OOA.
-     ... Formalizing the association populates the relational (foreign key aspects).
-. action language tiltings
+  .. [blue]#(OOA of OOA slide)#
++
+The OOA of OOA supports both foreign keying as well as graph linkage.  In
+the OOA of OOA (as used in BridgePoint Land) there are elements that _link_
+classes, and there are elements that _key_ classes.
+
+  .. [blue]#(slide of OOA of OOA Line classes)#
++
+Elements that represent the "association line" between classes include:
+Relationship, Simple Relationship, Associative, Sub/Supertype.  There are
+attributes to carry 'multiplicity', 'conditionality', 'role phrases' and
+the relationship label (a number).
++
+Drawing the relationship line on my class diagram populates this graph portion of the OOA of OOA.
+
+  .. [blue]#(slide of OOA of OOA relational classes)#
++
+Elements that represent the relational nature of the data include:
+Identifier, Identifier Attribute, Reference, Referential Attribute and
+Referred to Identifier Attribute.  There are attributes to carry
+referential attribute prefixes.
++
+Formalizing the association populates the relational (foreign key aspects).
++
+In the model editor, when I draw the line, I populate the graph-centric
+portion of the OOA of OOA.  When I formalize the association, I populate
+the relational (key / foreign key) elements within the OOA of OOA.  The
+editor has a mode where it populates both at the same time, too.
+
+. action language
+  .. [blue]#(slide with relational and graph implications)#
   .. RSL foreign key setting (relational model)
   .. In RSL, 'relate' statement was introduced and was a synonym for setting for the foreign keys.
-  .. OAL 'relate' statement.
-  .. ASL and MASL 'link' statement (inadvertently) implies network model
-  .. 'join' versus 'navigate' ("Association Navigation") 'traversal' in MtWiD
+  .. OAL and Scrall use a 'relate' statement.
+  .. ASL and MASL use a 'link' statement (inadvertently) implies network model
+  .. All use language such as "traverse relationship", "navigate relationship" even as far back as MtWiD.
++
+It is instructive to discuss action language.
++
+All of the modern action languages support set operations.  All of the
+modern action languages also support relationship linking and navigation.
+Action language keywords communicate the network nature of many
+associations.
++
+For establishing a relationship, some action languages use the keywork
+'relate', but others use 'link'.
++
+All action languages speak of "traversing" or "navigating" links between
+instances of classes.
++
+Clearly we have a _healthy_ and _powerful_ mix of relational and network
+association nature.
+
+. literature
+  .. [blue]#(In the S-M Literature)#
++
+Let us quickly storm through the extant literature.
+
+  .. [blue]#(MtWiD cover photo, MtWiD page 52)#
++
+Relationship formalization and referential attributes were introduced in
+Modeling the World in Data.  The book demonstrated a fully relational
+approach and yet revealed a graph nature in discussion of relationship
+'traversal' and 'navigation'.
+
+  .. [blue]#(Raistrick cover photo, Raistrick page)#
++
+Raistrick et al presumed formalization but did not dwell on it and
+discusses it only in the context of constraints.  However, all class
+diagram examples were shown fully formalized.
+
+  .. [blue]#(Mellor-Balcer cover photo, Mellor-Balcer page)#
++
+In Mellor-Balcer formalized relationships were discussed only when
+applying constraints.  Other examples show associations without formalization.
+
+. [red]#(**Wifetime**)#
 . roles of referentials in:
-  .. model (artifact)
-     ... primarily as constraints
+  [blue]#(slide showing these bullets)#
   .. modeling (process)
+     ... "Relationship formalization leads to better abstractions."
+     ... Carefully consider identifiers.
   .. architecture (implementation)
+     ... Modeling tools may depend upon the referential attributes (most still do).
+     ... MASL and ASL idiom model compilers will not run without all associations being formalized.
+     ... Run-time persistence (loading instances) may depend upon the foreign keys.
+  .. model (artifact)
+     ... Apply formalization primarily to enable constraints.
++
+I know of a short paper on this topic.  It encourages modelers to consider
+context when discussing and thinking about referential attributes.  Are
+you in the _process_ of modeling, in the _tooling_ (editor, interpreter or
+compiler) or are you focused on the ultimate artifact, the _model_ itself.
++
+I say, while modeling, use every rigor to guide your thinking.  In
+tooling, dependence upon relationship formalization is a weakness.  In the
+model, associations should (remain) formalized only where useful and
+uncluttered otherwise.
+
 . examples:
-  .. good network/graph models
-     ... procreation/geneology
-     ... protocol topology
-     ... metamodel of Type (builtin with focus on Numeric) This is an Abstract Syntax Tree (AST).
-  .. good sets models
-     ... good example of combined referential (Colin, Tristan)
-         .... actor, film, appearance (preventing debut of another actor)
-         .... See Mellor-Balcer p144 for Child, District, School.
-     ... COVID infection tracking system (natural keys, combinatorial queries for patterns)
-     ... entrance kiosk (visitor, license, license plate, credential)
-     ... cellular telephone system (handset, IMEA, tower, customer)
-  .. bad examples of referential propagation
-     ... example of domain -> class -> operation -> parameter
-     ... example of GPS Watch TrackPoint
-     ... reflexive ordering
-. bad stuff
-  .. clutter
-  .. over-propagation
-  .. reflexives
-  .. arbitrary identifiers
-. good stuff
-  .. combined referentials (amazing!)
+  .. Dog Owner - Dog
+     ... [blue]#(unformalized)#
+     ... [blue]#(formalized)#
++
+Formalization provides no benefit here, and in fact, simply clutters the model.
+
+  .. GPS Watch
+     ... [blue]#(formalized)#
+     ... [blue]#(unformalized)#
++
+The GPS Watch TrackLog has a first and last TrackPoint.  The TrackPoint is
+ordered by a reflexive.  When we formalize these, we get clutter.  I note
+that formalizing a reflexive ordering relation is pretty much always senseless.
+     ... [red]#(**That's stupid!**)#
+
+  .. Conception
+     ... [blue]#(procreation/geneology/horse)#
++
+This is clearly a graph-oriented data model.  In fact, it is a family
+tree.  I would not want to try to make this foreign key oriented.
+
+  .. Actor
+     ... [blue]#actor, film, appearance#
++
+Here is a good use of referential attributes.  We are using a combined
+referential to prevent a debut being a different actor.  Cool.
+
+  .. [blue]#entrance kiosk# (visitor, license, license plate, credential)
++
+In this model we have a balance of formalized and unformalized
+associations.  Relationships are formalized when associating a class that
+will be linked based upon a true foreign key.  The visitor shows a borne
+credential which exactly matches a stored credential persisted as a
+different class collection (table).
+
+  .. [red]#(**Morning Coffee**)#
+     ... Protocol Processor
+         .... (show sequence of screen shots zooming in on SVDC classes)
++
+This is the 'punch line' illustration of this presentation.  Here we have
+one of the most clever domains I have ever seen.  It was built by a very
+clever modeler with assistance from other clever modelers with arguably more
+talent and experience than anyone in the industry.  This is the heart of
+the Protocol Processor discussed previously.  It is a work of art.
++
+However, I shudder at the _road of bones_ the modeler had to walk while
+building it!  Association formalization is required in the tooling context
+of this model.  And it matters not whether this requirement springs from
+religious adherence to methodological orthodoxy or whether it is imposed
+by limitations in the tool chain, the results are the same.
++
+The poor bloke had to formalize these associations, propagate the
+identifiers and the referentials-as-identifiers including referentials with
+referred-to-prefixes.  Note that to alleviate some pain, the modeler added
+an arbitrary identifier here and there to stem the tide of referential
+accumulation.
++
+The benefits gained are dubious indeed.  In this case, the relationship
+formalization requirement is not worth any gains made.
+
 . future
   .. adding relationship participation into the identifier (thus scoping)
-  .. scope of an identifier
+     ... Show example of domain - class - op - parameter.
+     ... Show before and after:  formalized with propagation vs rel-in-identifier idea.
+     ... Explain that, most of the time, what we mean by referential-as-identifier is that "Identity is scoped by participation in this relationship."
+     ... "identifier scope"
+     ... id(attribute(s), rel(s))
+     ... (pic of hand-drawn domain - class - op - parameter with relationship added to identifier)
+. summary
+  .. 1st Thesis:  Relationship Formalization is useful but should be applied judiciously.
+     ... Allow them to be optional.
+     ... bad stuff
+         .... clutter
+         .... over-propagation
+         .... reflexives
+         .... the use of arbitrary (unique id) identifiers
+    . good stuff
+      .. combined referentials (amazing!)
+  .. 2nd Thesis:  The nature of the application model data guides choices around relationship formalization.
+     ... relational and sets or network and graph theory -oriented
+  .. 3nd Thesis:  Let us explore including 'relationship participation' within the concept of 'identifier'.
 
 
 
@@ -203,6 +373,12 @@ Abstract Syntax Tree
 Draw model of class diagram with 2 classes having only names and a relationship.
 "This contains all we need to navigate to the correct instances."
 
+. extra items
+  .. metamodel of Type (builtin with focus on Numeric) This is an Abstract Syntax Tree (AST).
+  .. good sets models
+         .... See Mellor-Balcer p144 for Child, District, School.
+     ... COVID infection tracking system (natural keys, combinatorial queries for patterns)
+     ... cellular telephone system (handset, IMEA, tower, customer)
+
 === ToDo
 
-. Look up relationship formalization in books, slides, binder.
