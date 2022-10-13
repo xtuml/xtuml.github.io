@@ -77,25 +77,25 @@ The columns in the table below are as follows:
 .Agenda (*DRAFT* timings not confirmed)
 [%autowidth,options="header"]
 |===
-|  T | Clock | Presenter           | L | Type    | Title
-|  5 | 10:00 | Cortland Starrett   | L | live    | Welcome and Opening
-|  5 | 00:00 | Michael Lee         | L | live    | Shlaer-Mellor Day greeting and instructions
-| 20 | 00:00 | Paul and Colin      | R | tech    | State- and Data- centric Protocol Modelling
-| 10 | 00:00 |                     | L | network | Mixing virtually - introductions
-| 15 | 00:00 | Michael Lee         | R | tech    | Update on Shlaer-Mellor Commons
-| 20 | 00:00 | John and Alasdar    | R | exprpt  | Populating Roadway Models using Model-to-Model Transformations
-|  5 | 00:00 |                     | L | live    | 5-minute *break*
-| 20 | 00:00 | Levi Starrett       | R | tech    | Textual xtUML
-| 15 | 00:00 | Allan Kennedy       | R | tech    | JSON Domain
-| 10 | 00:00 | Annie Allen         | R | live    | MC-Ada and ASL-to-MASL
-| 20 | 00:00 |                     | L | network | virtually connected *LUNCH* - introductions
-| 20 | 00:00 | Cortland Starrett   | R | tech    | Relationship Formalization and Referential Attributes
-| 20 | 00:00 | Nils Paulsson       | R | tech    | Distributed Bridging
-|  5 | 00:00 |                     | L | live    | 5-minute *break*
-| 10 | 00:00 | Clive Boughton      | R | tech    | Shlaer-Mellor in MBSE
-| 15 | 00:00 | all                 | L | exprpt  | Around-the-Table Status Updates
-|  5 | 00:00 | Cort and Mike       | L | live    | closing remarks
-| 30 | 00:00 | Happy Hour          | L | hpyhour | favorite beverage
+|  T | Clock | Presenter           | L | Intro   | Title
+|  5 | 10:00 | Cortland Starrett   | L |         | Welcome and Opening
+|  5 | 10:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
+| 25 | 10:10 | Paul and Colin      | R | Colin   | State- and Data- centric Protocol Modelling
+| 10 | 10:35 |                     | L |         | Mixing virtually - introductions
+| 15 | 10:45 | Michael Lee         | R | (none)  | Update on Shlaer-Mellor Commons
+|  5 | 11:00 |                     | L |         | 5-minute *break*
+| 20 | 11:05 | John and Alasdar    | R | Levi    | Populating Roadway Models using Model-to-Model Transformations
+| 25 | 11:25 | Levi Starrett       | R | Paul    | Textual xtUML
+|  5 | 11:50 |                     | L |         | 5-minute *break*
+| 20 | 11:55 | Allan Kennedy       | R | Cort    | JSON Domain
+| 20 | 12:15 |                     | L |         | virtually connected *LUNCH* - introductions
+| 20 | 12:35 | Cortland Starrett   | R | (none)  | Relationship Formalization and Referential Attributes
+| 20 | 12:55 | Nils Paulsson       | L | Leon    | Distributed Bridging
+|  5 | 13:15 |                     | L |         | 5-minute *break*
+| 15 | 13:20 | Clive Boughton      | R | Mike    | Shlaer-Mellor in MBSE
+| 20 | 13:35 | Dave, Leon, Filip   | L |         | Around-the-Table Status Updates
+|  5 | 13:55 | Cort and Mike       | L |         | closing remarks
+| 30 | 14:00 | Happy Hour          | L |         | favorite beverage
 |===
 
 
