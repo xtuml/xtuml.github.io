@@ -80,7 +80,7 @@ The columns in the table below are as follows:
 |  T | Clock | Presenter           | L | Intro   | Title
 |  5 | 10:00 | Cortland Starrett   | L |         | Welcome and Opening
 |  5 | 10:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
-| 25 | 10:10 | Paul and Colin      | R | Colin   | State- and Data- centric Protocol Modelling
+| 25 | 10:10 | Paul Francis        | R | Colin   | State- and Data- centric Protocol Modelling
 | 10 | 10:35 |                     | L |         | Mixing virtually - introductions
 | 15 | 10:45 | Michael Lee         | R | (none)  | Update on Shlaer-Mellor Commons
 |  5 | 11:00 |                     | L |         | 5-minute *break*
@@ -93,7 +93,7 @@ The columns in the table below are as follows:
 | 20 | 12:55 | Nils Paulsson       | L | Leon    | Distributed Bridging
 |  5 | 13:15 |                     | L |         | 5-minute *break*
 | 15 | 13:20 | Clive Boughton      | R | Mike    | Shlaer-Mellor in MBSE
-| 20 | 13:35 | Dave, Leon, Filip   | L |         | Around-the-Table Status Updates
+| 20 | 13:35 | Dave, Leon, all     | L |         | Around-the-Table Status Updates
 |  5 | 13:55 | Cort and Mike       | L |         | closing remarks
 | 30 | 14:00 | Happy Hour          | L |         | favorite beverage
 |===
