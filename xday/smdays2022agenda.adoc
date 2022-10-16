@@ -80,20 +80,20 @@ The columns in the table below are as follows:
 |  T | Clock | Presenter           | L | Intro   | Title
 |  5 | 10:00 | Cortland Starrett   | L |         | Welcome and Opening
 |  5 | 10:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
-| 25 | 10:10 | Paul Francis        | R | Colin   | State- and Data- centric Protocol Modelling
+| 25 | 10:10 | Paul Francis        | R | Colin   | https://www.youtube.com/watch?v=eqSi8ojaO44[State- and Data- centric Protocol Modelling]
 | 10 | 10:35 |                     | L |         | Mixing virtually - introductions
-| 15 | 10:45 | Michael Lee         | R | (none)  | Update on Shlaer-Mellor Commons
+| 15 | 10:45 | Michael Lee         | R | (none)  | https://www.youtube.com/watch?v=QAv3HHaLUfY[Update on Shlaer-Mellor Commons]
 |  5 | 11:00 |                     | L |         | 5-minute *break*
 | 20 | 11:05 | John and Alasdar    | R | Levi    | Populating Roadway Models using Model-to-Model Transformations
-| 25 | 11:25 | Levi Starrett       | R | Paul    | Textual xtUML
+| 25 | 11:25 | Levi Starrett       | R | Paul    | https://www.youtube.com/watch?v=59g9PRo0QNE[Textual xtUML]
 |  5 | 11:50 |                     | L |         | 5-minute *break*
-| 20 | 11:55 | Allan Kennedy       | R | Cort    | JSON Domain
+| 20 | 11:55 | Allan Kennedy       | R | Cort    | https://www.youtube.com/watch?v=OPMfkgeh2o0[JSON Domain]
 | 20 | 12:15 |                     | L |         | virtually connected *LUNCH* - introductions
-| 20 | 12:35 | Cortland Starrett   | R | (none)  | Relationship Formalization and Referential Attributes
+| 20 | 12:35 | Cortland Starrett   | R | (none)  | https://www.youtube.com/watch?v=VsVmk5nyUog[Relationship Formalization and Referential Attributes]
 | 20 | 12:55 | Nils Paulsson       | L | Leon    | Distributed Bridging
 |  5 | 13:15 |                     | L |         | 5-minute *break*
-| 15 | 13:20 | Clive Boughton      | R | Mike    | Shlaer-Mellor in MBSE
-| 20 | 13:35 | Dave, Leon, all     | L |         | Around-the-Table Status Updates
+| 15 | 13:20 | Clive Boughton      | R | Mike    | https://www.youtube.com/watch?v=mVxNE99s9rY[Shlaer-Mellor in MBSE]
+| 20 | 13:35 | Dave, Leon, all     | L |         | Around-the-Table Status Updates https://www.youtube.com/watch?v=XRfyEMxEJg0[[BAE - Dave Skinner]]
 |  5 | 13:55 | Cort and Mike       | L |         | closing remarks
 | 30 | 14:00 | Happy Hour          | L |         | favorite beverage
 |===
