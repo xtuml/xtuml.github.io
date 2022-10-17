@@ -302,8 +302,62 @@ The benefits gained are dubious indeed.  In this case, the relationship
 formalization requirement is not worth any gains made.
 
 . future
-  .. adding relationship participation into the identifier (thus scoping)
-     ... Show example of domain - class - op - parameter.
+  .. [blue]#Relationship-as-component-of-Identifier#
++
+My stance on relationship formalization has been stated.  However, I have
+an idea that could make it easier to constrain our model data tightly in a
+cleaner, clearer and easier-to-use way.
++
+The following idea / proposal is in _addition_ to my presentation so far
++
+My idea is to extend the semantics (and the notation) to allow for
+inclusion of relatioship participation in the class identifier.  So the
+combination of identifying attributes _and_ relationship participation
+provides identity to class instances.
++
+Let's take this step by step with an example fragment of a Shlaer-Mellor
+metamodel.
+
+     ... [blue]#domain - class - op - parameter (unformalized)#
++
+Here we have domain, class, operation and parameter fully unformalized.
+A domain has abstract zero-to-many classes.  A class provides zero to many
+operations.  And each operation carries zero to many parameters.  Each
+element has a name.
+
+     ... [blue]#Show formalized in the traditional way.#
++
+Now, the name of a class needs to be unique, but only with a domain.  To
+enforce this in the traditional means, we add the referential
+attribute of the formalized assocation to the identifier.  You can see
+that 'I' is next to both the name and the domain_name referential.
++
+Likewise, we continue to propagate domain_name, class_name and ultimately
+operation_name down into the parameter.  The constraint is useful, but the
+means of supplying it is pushing us into the realm of clutter.
+
+     ... [blue]#Show formalized in the new way.#
++
+Here is my proposed means of maintaining true identifiers without propagating
+foreign keys all over the place.
++
+Here, a class is identified by its name _together with its participation_
+in relationship R1.
++
+The operation is identified by R2 + 'name'.
++
+A parameter is identified by its name and its participation in R3.
++
+This approach pretty much means the same thing as the referential-as-identifer
+approach but is cleaner, clearer, easier-to-read, easier-to-edit and much
+less complicated.
++
+The notation is only a first idea.  It is the semantics I want to focus
+on.  The OOA of OOA may need only a single new association between
+Identifier and Relationship.  And MASL already has syntax for specifying
+the identifier in a list (of attributes).  We would simply need to allow
+relationship references to be included in that list.
+
      ... Show before and after:  formalized with propagation vs rel-in-identifier idea.
      ... Explain that, most of the time, what we mean by referential-as-identifier is that "Identity is scoped by participation in this relationship."
      ... "identifier scope"
