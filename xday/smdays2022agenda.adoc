@@ -67,7 +67,7 @@ and comments.
 The columns in the table below are as follows:
 
 * The first column labeled *T* is the minute count for the session.
-* The second column labeled *Clock* is the target time of day (GMT) for the session.
+* The second column labeled *Clock* is the target time of day (BST) for the session.
 * Column three names to *Presenter*.
 * The fourth column is a status flag.
 * The fifth column contains an abbreviation for the *Type* of session as
