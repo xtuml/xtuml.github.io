@@ -612,43 +612,70 @@ delivered to the digital twin. The configuration file it loads is defined in the
 command specified in the `docker-compose-test.yml` and passed on the
 `-test-config` argument as shown here:
 
-  command: "-test-config config/test1config.txt -postinit schedule/startup.sch -util MetaData"
+  command: "-test-config config/test-specification/sample-test-specification.json -postinit schedule/startup.sch -util Inspector -inspector-port 10 -util MetaData"
 
 .Click to see more details on the config file format
 [%collapsible]
 ====
 
-The configuration file allows the user to define the test to be executed. Below
-is a sample of a test from the configuration file:
+The json test specification configuration file allows the user to define the test to be executed.
+Below is a sample of a test from the configuration file:
 
-  TestId=1
-  TotalTests=2
-  TestFrequency=PT0S
-  GenerateEventFiles=true
-  TestFileLocation=test-files/generated
-  TestFileDestination=test-files/incoming
-  Job
-  JobSpecName=EndToEndOrderedJob
-  EventDefinition
-  EventName=1,HighInput,export assure aka input,export_assurer-8f309f67-2949-4071-b8c2-fd599b42cb0d,PT0S,true,
-  EventName=2,SignerReadTokenRequest,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,1
-  EventName=3,SignerParsedEvidence,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,2
-  EventName=4,SenderReceiveTokens,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,3
-  EventName=5,SenderPartRead,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,4
-  EventName=6,SenderProcessedRequest,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,5
-  EventName=7,SenderWritePayload,sender,sender-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,6
-  EventName=8,GatewayReadPayload,gateway dispatch,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,7
-  EventName=9,GatewayWritePayload,gateway dispatch,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,8
-  EventName=10,DiodeProcessPayload,diode,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,9
-  EventName=11,DiodeWritePayload,diode,gateway-0a030a72-1c3b-4923-a32e-c553c08381c4,PT0S,false,10
-  EventName=12,LowInput,low,import_assurer-bcc34e5f-8b4b-4665-ad1d-d853948a2b9e,PT0S,false,
+  {
+  "OneFilePerJob" : "true", 
+  "MaxEventsPerFile" : 100,
+  "FileTimoutPeriod" : "PT10S",
+  "JobSpecificationLocation" : "config/test-job-specification",
+  "TestFileLocation" : "test-files/generated",
+  "TestFileDestination" : "test-files/incoming",
+  "Tests" : [{
+      "TestId" : 1,
+      "TestName" : "EndToEndHappyPathJob",
+      "TotalTests" : 10,
+      "TestFrequency" : "PT1S",
+      "TestJobSpec" : [{
+          "TestJobSpecName" : "EndToEndHappyPathJob",
+          "EventDispatchOrder" : "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+        },
+        {
+            "TestJobSpecName" : "EndToEndAlternatePathJob",
+            "EventDispatchOrder" : "1,2,3,4,5,6,7,8,9,10,11,12,13"
+          }]
+      },
+      {
+        "TestId" : 2,
+        "TestName" : "MissingEventJob",
+        "TotalTests" : 10,
+        "TestFrequency" : "PT10S",
+        "TestJobSpec" : [{
+            "TestJobSpecName" : "EndToEndHappyPathJob",
+            "EventDispatchOrder" : "1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17"
+          }]
+      }]
+}
 
-The following provides an explanation to each of the lines in the configuration
+
+The following provides an explanation to each of the json elements in the configuration
 file:
 
-*Test* - This marks the start of the test definition.
+*OneFilePerJob* - If set true then all events for a job are put into one event file for an execution of a job. Once all events have been added the event file is made available. If set to false events from any in progress Job will be put in the event file and the simulator will use the MaxEventsPerFile and FileTimeoutPeriod to determine when the event file should be made available.
+
+*MaxEventsPerFile* - When the OneFilePerJob is set to false this is the maximum number of events that shall be added to an event file.
+
+*FileTimoutPeriod* - When the OneFilePerJob is set to false this is the maximum amount of time that shall pass before the event flies made available.
+
+*JobSpecificationLocation* - The details of the events that are to be generated for a job are captured in a Job Specification. This value identifies the location of these files.
+
+*TestFileLocation*- This is the directory where the files should be created.
+
+*TestFileDestination* - This directory the files should be moved to once
+created.
+
+*Tests* - This is an array of tests that are to be executed by the simulator. The following provides and explanation of the json elements in a test.
 
 *TestId* - This provides a unique id for the test specification.
+
+*TestName* - The name that has been assigned to the test.
 
 *TotalTests* - This defines the total number of times this test is to be
 executed.
@@ -656,47 +683,105 @@ executed.
 *TestFrequency* - A duration that specifies the frequency that the test should
 be run e.g. PT1S is every second.
 
-*GenerateEventFiles* - This indicated that the events should be placed in a file
-and is currently always set to true. In future there may be a different delivery
-mechanism which would allow for delayed events.
+*TestJobSpec* - This is an array of the test job specifications that should be executed for this test. The following provides an explanation of the json elements in a test job specification.
 
-*TestFileLocation*- This is the directory where the files should be created.
+*TestJobSpecName* - This the name of the json file for the test job specification e.g., EndToEndHappyPathJob.json that should be found in *JobSpecificationLocation*. A test job specification indicates the events that are to be produced when the job is executed for the test. Note that this is may not be a valid set of events for a given job that is to be validated by the Protocol Processor but is simulating a set of events in a scenario that needs to be tested
 
-*TestFileDestination* - This directory the files should be moved to once
-created.
+*EventDispatchOrder* - Each event specified in the job specification has a unique identifier. This element allows the tester to specify the order that the events are to be dispatched for this test.
 
-*Job* - This defines the start of the job definition for the test.
+The json job specification configuration file allows the user to define the events that are in a job run that is to be executed by the simulator.
+Below is a sample of a test from the configuration file:
 
-*JobSpecName* - This the name of the job that is being executed.
 
-*EventDefinition* - This defines the start of the event definitions.
+  {
+  "JobSpecName" : "EndToEndHappyPathJob",
+  "EventDefinition": [{
+    "EventId": "1",
+    "EventName": "NearInput",
+    "NodeName": "Input",
+    "ApplicationName": "InputControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "true"
+  },
+  {
+    "EventId": "2",
+    "EventName": "NearPartWrite",
+    "EventData" : [{
+        "DataName" : "PersistentInvariant",
+        "DataValue" : "someDataValue"
+    },
+    {
+      "DataName" : "SomeOtherDataName",
+      "DataValue" : "someOtherDataValue"
+    }],
+    "NodeName": "Input",
+    "ApplicationName": "InputControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "false",
+    "PreviousEventId" : "1"
+  },
+  {
+    "EventId": "3",
+    "EventName": "NearJustificationWrite",
+    "NodeName": "Input",
+    "ApplicationName": "InputControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "false",
+    "PreviousEventId" : "2"
+  },
+  {
+    "EventId": "4",
+    "EventName": "AgentRequestWidgets",
+    "NodeName": "Agent",
+    "ApplicationName": "AgentControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "false",
+    "PreviousEventId" : "3"
+  },
+  {
+    "EventId": "5",
+    "EventName": "FarInput",
+    "NodeName": "Far",
+    "ApplicationName": "FarControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "true"
+  },
+  {
+    "EventId": "6",
+    "EventName": "FarOutput",
+    "NodeName": "Far",
+    "ApplicationName": "FarControl",
+    "DispatchDelay": "PT0S",
+    "SequenceStart": "false",
+    "PreviousEventId" : "5"
+  }]
+}
 
-The `EventDefinition` marks the start of the block of events that are to be
-reported by the simulator for the job. Each event in the event definition is
-marked by `EventName` which is a comma separated list of the data to be reported
-for the event. Using the following example
+The following provides an explanation to each of the json elements in the test job specification configuration file. It identifies som of the data that shall by the simulator for each event e.g., EventName, PreviousEventId, etc:
 
- EventName=2,SignerReadTokenRequest,signer,signer-bc740078-0dbe-453f-96de-4a3bb9951d97,PT0S,false,1
+*JobSpecName* - The name of the test job specification that shall be executed in the test.
 
-the definition of the comma separated list is as follows:
+*EventDefinition* - An array of events that will be generated for this job. The following provides an explanation of the json elements in an event.
 
-*2* - The id for the event definition.
+*EventId* - A unique identifier for this event specification in the test job specification.
 
-*SignerReadTokenRequest* - The type of event that is to be generated.
+*EventName* - The name of the event that is to be generated and presented to the protocol processor.
 
-*signer* - The node that the event was generated from.
+*NodeName* - The name of the node that is responsible for generating the event.
 
-*signer-bc740078-0dbe-453f-96de-4a3bb9951d97* - The application that generated
-the event.
+*ApplicationName* the name of the application that generated the event.
 
-*PT0S* - This will define in a delay in generating an event. This is currently
-not applicable as it requires GenerateEventFiles to be set to false.
+*DispatchDelay* - The amount of time that the simulator should wait before dispatching the event on a test run for this job specification.
 
-*false* - Indicates if this is the first event in a sequence of events. If so
-there will not be a previous event definition id.
+*SequenceStart* - Indicates if this is the first event in a sequence of events. If so there will not be a previous event definition id.
 
-*1* - This is the previous event definition id e.g. in this event definition
-with an id of 2 the previous event definition is 1.
+*PreviousEventId* - This is the previous event definition id e.g. in this event definition with an id of 2 the previous event definition is 1.
+
+*EventData* - An array of event data that should be generated by the simulator for the event. The following provides an explanation of the json elements in an event data.
+
+*DataName* - The name of the event data e.g., PersistentInvariant.
+
+*DataValue* - The value of the data that is to be supplied for the event data e.g. "PersistentInvariant" : "someDataValue".
 
 ====
 
