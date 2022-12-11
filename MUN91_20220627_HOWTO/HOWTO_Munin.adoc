@@ -33,8 +33,8 @@ link:https://docs.docker.com/get-docker/[Docker Desktop].
 === BridgePoint
 
 Install the latest BridgePoint release. If you already have BridgePoint
-installed, confirm that your version is more recent than 7.1.0
-(2022-06-23 14:15 EDT) by checking the build ID.
+installed, confirm that your version is more recent than 7.3.0
+(2022-11-30) by checking the build ID.
 
 Refer to
 link:https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-install-bridgepoint.adoc[this guide]
