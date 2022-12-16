@@ -3,7 +3,7 @@
 Enough talk! <<Export MASL,Skip to the steps>>
 
 If you want to run the latest version of the project without building,
-<<Running the latest published version of the integration project, see here>>
+<<Running the latest published version of the protocol verifier, see here>>
 
 == Prerequisites
 
@@ -50,10 +50,17 @@ Refer to
 link:https://github.com/xtuml/bridgepoint/blob/master/doc-bridgepoint/process/HOWTO-use-git.adoc[this guide]
 for a quick start on using git to clone repositories and import projects.
 
+=== PlantUML
+
+PlantUML is a tool for visualizing UML diagrams written in a textual format. The
+PLUS domain specific language is based on PlantUML sequence diagrams. PlantUML
+can be downloaded https://plantuml.com/starting[here] or installed through your
+package manager (recommended).
+
 === Source Projects
 
 It is necessary to have the source code/models downloaded onto your machine. The
-source code can be link:https://github.com/xtuml/tower[browsed on GitHub].
+source code can be link:https://github.com/xtuml/munin[browsed on GitHub].
 Follow the steps from the guide linked in the previous section to clone this
 repository from GitHub. Follow the steps from the guide linked in the
 <<BridgePoint>> section to import the following projects into a fresh
@@ -63,7 +70,10 @@ workspace:
 * AER_AEO_SVDC
 * AEReception
 * AESimulator
+* PlusProcessor
+* SequenceProcessor
 * SequenceVerificationDataCentric
+* StatementParser
 * utils
 
 === Terminology
@@ -87,11 +97,24 @@ modelled connections between them. Deployments map to "project" in textual MASL
 form, but the term "deployment" is preferred to avoid confusion with the more
 general term "project".
 
-==== Integration project
+==== Protocol Verifier
 
-"Integration project" is an informal term and in our contexts it refers to the
-BridgePoint project where all of the domains are integrated together using a
-deployment. In our context this is synonymous with the "AER_AEO_SVDC" project.
+"Protocol Verifier" refers to the overall application as well as the BridgePoint
+project where all of the domains are integrated together using a deployment. In
+our context this is synonymous with the "AER_AEO_SVDC" project.
+
+==== PLUS
+
+"PLUS" is the name of the domain specific language for specifying valid job
+sequences for the protocol verifier. PLUS is defined as a subset of constructs
+from the PlantUML sequence diagram syntax. A full description and guide for PLUS
+can be found https://github.com/xtuml/munin/blob/main/doc/howto/PLUS_guide.adoc[here].
+
+==== PLUS Processor
+
+"PLUS Processor" refers to the application which processes PLUS files (textual
+sequence diagrams) and produces JSON configuration files consumable by the
+protocol verifier.
 
 == Overview
 
@@ -188,7 +211,9 @@ mainline.
 
 === Domain overview
 
-==== Reception
+==== Protocol Verifier domains
+
+===== Reception
 
 The role of the Audit Event Reception domain is to convert audit events received
 from the monitored system, in whatever form they arrive, into audit event
@@ -198,7 +223,7 @@ domain. The format of delivery to the other domains will remain consistent. This
 isolates the impact of changes in received audit event format to a single
 domain. Unexpected input formats are rejected and errors are notified.
 
-==== Ordering
+===== Ordering
 
 The role of the Audit Event Ordering domain is two-fold. It validates the source
 of the received audit event in terms of Node and Application, and it constructs
@@ -216,7 +241,7 @@ forward that configuration information to Sequence Verification to set up its
 definition classes. This approach ensures that the definition classes of Audit
 Event Ordering and Sequence Verification are aligned.
 
-==== Sequence Verification
+===== Sequence Verification
 
 The role of the Sequence Verification domain is to verify that the audit events
 received are in a correct, expected order taking account of support for repeated
@@ -227,6 +252,21 @@ number of error conditions in the received Audit Event data. These error
 conditions include unexpected audit event types, unexpected sequences of audit
 event types, sequences starting with the wrong audit event types and repetition
 of audit event types in unexpected places.
+
+==== PLUS Processor domains
+
+===== Statement Parser
+
+The Statement Parser domain is responsible for parsing the PLUS files, verifying
+that all syntax is correct and organizing them into a sequence of statements.
+These statements are fed to the Sequence Processor one at a time to build up the
+job definition.
+
+===== Sequence Processor
+
+The Sequence Processor domain reads statements from the Statement Parser one at
+a time and interprets them into a structured job definition. It then serializes
+this job definition to JSON.
 
 == Building and Running the Project
 
@@ -377,13 +417,13 @@ built. In fact, it will not even show up in the xtUML Modelling perspective.
 This should be repeated for each of the three application domains and the
 simulator domain. For the sake of demonstration, the following instructions will
 reference the `AEReception` domain. Additionally, the instructions will assume
-that the code has been cloned in a standard location (`~/git/tower` on Linux/Mac
-and `C:\git\tower` on Windows).
+that the code has been cloned in a standard location (`~/git/munin` on Linux/Mac
+and `C:\git\munin` on Windows).
 
 . Open a shell and navigate to the `AEReception` project directory:
 
-  cd ~/git/tower/models/AEReception   # linux/mac
-  cd C:\git\tower\models\AEReception  # windows
+  cd ~/git/munin/models/AEReception   # linux/mac
+  cd C:\git\munin\models\AEReception  # windows
 
 . Build the project with Docker by running the following command:
 
@@ -400,28 +440,44 @@ download the base MASL image from Docker Hub. This image is > 600 MB and
 therefore will take some time to download. Subsequent builds will not require
 this download.
 
-. Repeat this step for the other three domains:
+. Repeat this step for the other domains:
   .. AEOrdering
   .. AESimulator
+  .. SequenceProcessor
   .. SequenceVerificationDataCentric
+  .. StatmentParser
 
-=== Build integration project
+=== Build PLUS processor
 
-IMPORTANT: Before this step, all three of the application domains and the
-simulator domain must be built as demonstrated in the previous step.
+IMPORTANT: Before this step, both of the application domains must be built as
+demonstrated in the previous step.
 
-. In your shell, navigate to the integration project directory:
+. In your shell, navigate to the protocol verifier directory:
 
-  cd ~/git/tower/models/AER_AEO_SVDC   # linux/mac
-  cd C:\git\tower\models\AER_AEO_SVDC  # windows
+  cd ~/git/munin/models/PlusProcessor   # linux/mac
+  cd C:\git\munin\models\PlusProcessor  # windows
 
 . Build the project with Docker by running the following command:
 
   docker compose build --no-cache
 
-=== Running the integration project
+=== Build protocol verifier
 
-. Open a shell in the integration project directory, run the following command
+IMPORTANT: Before this step, all three of the application domains must be built
+as demonstrated in the previous step.
+
+. In your shell, navigate to the protocol verifier directory:
+
+  cd ~/git/munin/models/AER_AEO_SVDC   # linux/mac
+  cd C:\git\munin\models\AER_AEO_SVDC  # windows
+
+. Build the project with Docker by running the following command:
+
+  docker compose build --no-cache
+
+=== Running the protocol verifier
+
+. Open a shell in the protocol verifier directory, run the following command
 to launch the process:
 
   docker compose up
@@ -434,16 +490,16 @@ You should see some logs begin to appear, in particular a periodic log from the
 directory within the repository. This can be done through your OS GUI or quickly
 through a simple command:
 
-  open -a Finder ~/git/tower/models/test-files/processed/  # mac
-  xdg-open ~/git/tower/models/test-files/processed/        # linux
-  explorer C:\git\tower\models\test-files\processed\       # windows
+  open -a Finder ~/git/munin/models/test-files/processed/  # mac
+  xdg-open ~/git/munin/models/test-files/processed/        # linux
+  explorer C:\git\munin\models\test-files\processed\       # windows
 
 . Open another file explorer window and navigate to the
 `models/test-files/incoming/` directory within the repository:
 
-  open -a Finder ~/git/tower/models/test-files/incoming/  # mac
-  xdg-open ~/git/tower/models/test-files/incoming/        # linux
-  explorer C:\git\tower\models\test-files\incoming\       # windows
+  open -a Finder ~/git/munin/models/test-files/incoming/  # mac
+  xdg-open ~/git/munin/models/test-files/incoming/        # linux
+  explorer C:\git\munin\models\test-files\incoming\       # windows
 
 . link:images/04_drag_and_drop.gif[Drag and drop] `PoC_CBC_Test1.json` from the
 `processed/` directory to the `incoming/` directory. You will see a flurry of
@@ -493,7 +549,7 @@ following:
 --force-recreate` (this flag forces existing containers to be replaced with new
 ones created from the latest image).
 
-==== Running the latest published version of the integration project
+==== Running the latest published version of the protocol verifier
 
 As mentioned above, the application is built and published automatically each
 time new code is merged into the main repository branch. It is possible to use
@@ -524,15 +580,15 @@ have been received, ordered, and verified by the application.
 
 . Kill the process by pressing `Ctrl-C`.
 
-=== Running the integration project with the audit event simulator
+=== Running the protocol verifier with the audit event simulator
 
-In the last section, we built and ran the integration project interactively with
+In the last section, we built and ran the protocol verifier interactively with
 test files. The audit event simulator can also be used to generate test audit
 event files to be consumed by the main process. This section will also walk
 through using the process inspector to attach to the running process and browse
 the instance population.
 
-. Open a shell in the integration project directory, run the following command
+. Open a shell in the protocol verifier directory, run the following command
 to launch the process with the simulator:
 
   docker compose -f docker-compose.test.yml up
@@ -544,8 +600,8 @@ handling those audit events.
 
 . In a new shell tab/window, run the following command to launch Inspector:
 
-  java -jar ~/git/tower/bin/inspector-1.0.0-jar-with-dependencies.jar   # linux/mac
-  java -jar C:\git\tower\bin\inspector-1.0.0-jar-with-dependencies.jar  # windows
+  java -jar ~/git/munin/bin/inspector-1.0.0-jar-with-dependencies.jar   # linux/mac
+  java -jar C:\git\munin\bin\inspector-1.0.0-jar-with-dependencies.jar  # windows
 
 . Select "AESequenceDC" from the link:images/05_domain_select.png["Domain" drop-down menu]
 
@@ -561,13 +617,10 @@ command:
 
   docker compose -f docker-compose.test.yml down
 
-==== Configuring the integration project
+==== Configuring the protocol verifier
 
-There are two configuration files that are loaded at start up and checked on a
-regular basis for updates:
-
-  aereception_spec.txt
-  aeordering_spec.txt
+The configuration for the protocol verifier is found in the `config.json` file.
+This is loaded at start up and checked on a regular basis for updates:
 
 .Click to see more details on the config file format
 [%collapsible]
@@ -577,7 +630,17 @@ These configuration files contain some items that may be adjusted to manage the
 digital twin. The following is a list of the configuration items that can be
 adjusted and there description are as follows:
 
-`aereception_spec.txt`:
+*SpecUpdateRate* - A time period that determines how often the application
+reloads the configuration files.
+
+*IncomingDirectory* - The directory where the application expects to find JSON
+files containing events.
+
+*ProcessingDirectory* - The directory where the application moves JSON files
+while the events are being processed.
+
+*ProcessedDirectory* - The directory where the application moves JSON files
+after all the contained events are processed.
 
 *EventThrottleRate* - The rate that events should be processed from one
 reception file specified as a duration. Once an event has been processed a timer
@@ -590,8 +653,6 @@ the reception processing shall be stored until this time expires.
 *ConcurrentReceptionLimit* - A number that indicates the limit of concurrent
 reception jobs that can be executing, e.g. 1 = one active reception job
 
-`aeordering_spec.txt`:
-
 *MaxOutOfSequenceEvents* - This is the consecutive maximum out of sequence
 events that can be received for a job before an error is declared.
 
@@ -602,6 +663,32 @@ archived if there are no blocked events or failed if there are blocked events.
 *JobCompletePeriod* - When a Job has completed it shall be either archived or
 failed and once the job complete period has expired it shall be deleted from the
 domain with all associated events.
+
+Example:
+
+----
+{
+  "SpecUpdateRate": "PT2M",
+  "IncomingDirectory": "./incoming",
+  "ProcessingDirectory": "./processing",
+  "ProcessedDirectory": "./processed",
+  "EventThrottleRate": "PT0S",
+  "ReceptionDeletionTime": "PT10M",
+  "ConcurrentReceptionLimit": 1,
+  "MaxOutOfSequenceEvents": 10,
+  "MaximumJobTime": "PT10M",
+  "JobCompletePeriod": "PT24H",
+  "Jobs": [
+    {
+      "JobDefinitionName": "FileRequest",
+      "JobDeprecated": false,
+      "JobTypeExpiryDate": "2022-04-11T18:08:00Z",
+      "StaleAuditEventDuration": "P99W",
+      "BlockedAuditEventDuration": "PT5M"
+    }
+  ]
+}
+----
 
 ====
 
@@ -618,7 +705,7 @@ command specified in the `docker-compose-test.yml` and passed on the
 [%collapsible]
 ====
 
-The json test specification configuration file allows the user to define the test to be executed.
+The JSON test specification configuration file allows the user to define the test to be executed.
 Below is a sample of a test from the configuration file:
 
   {
@@ -655,7 +742,7 @@ Below is a sample of a test from the configuration file:
 }
 
 
-The following provides an explanation to each of the json elements in the configuration
+The following provides an explanation to each of the JSON elements in the configuration
 file:
 
 *OneFilePerJob* - If set true then all events for a job are put into one event file for an execution of a job. Once all events have been added the event file is made available. If set to false events from any in progress Job will be put in the event file and the simulator will use the MaxEventsPerFile and FileTimeoutPeriod to determine when the event file should be made available.
@@ -671,7 +758,7 @@ file:
 *TestFileDestination* - This directory the files should be moved to once
 created.
 
-*Tests* - This is an array of tests that are to be executed by the simulator. The following provides and explanation of the json elements in a test.
+*Tests* - This is an array of tests that are to be executed by the simulator. The following provides and explanation of the JSON elements in a test.
 
 *TestId* - This provides a unique id for the test specification.
 
@@ -683,13 +770,13 @@ executed.
 *TestFrequency* - A duration that specifies the frequency that the test should
 be run e.g. PT1S is every second.
 
-*TestJobSpec* - This is an array of the test job specifications that should be executed for this test. The following provides an explanation of the json elements in a test job specification.
+*TestJobSpec* - This is an array of the test job specifications that should be executed for this test. The following provides an explanation of the JSON elements in a test job specification.
 
-*TestJobSpecName* - This the name of the json file for the test job specification e.g., EndToEndHappyPathJob.json that should be found in *JobSpecificationLocation*. A test job specification indicates the events that are to be produced when the job is executed for the test. Note that this is may not be a valid set of events for a given job that is to be validated by the Protocol Processor but is simulating a set of events in a scenario that needs to be tested
+*TestJobSpecName* - This the name of the JSON file for the test job specification e.g., EndToEndHappyPathJob.json that should be found in *JobSpecificationLocation*. A test job specification indicates the events that are to be produced when the job is executed for the test. Note that this is may not be a valid set of events for a given job that is to be validated by the Protocol Processor but is simulating a set of events in a scenario that needs to be tested
 
 *EventDispatchOrder* - Each event specified in the job specification has a unique identifier. This element allows the tester to specify the order that the events are to be dispatched for this test.
 
-The json job specification configuration file allows the user to define the events that are in a job run that is to be executed by the simulator.
+The JSON job specification configuration file allows the user to define the events that are in a job run that is to be executed by the simulator.
 Below is a sample of a test from the configuration file:
 
 
@@ -757,11 +844,11 @@ Below is a sample of a test from the configuration file:
   }]
 }
 
-The following provides an explanation to each of the json elements in the test job specification configuration file. It identifies som of the data that shall by the simulator for each event e.g., EventName, PreviousEventId, etc:
+The following provides an explanation to each of the JSON elements in the test job specification configuration file. It identifies som of the data that shall by the simulator for each event e.g., EventName, PreviousEventId, etc:
 
 *JobSpecName* - The name of the test job specification that shall be executed in the test.
 
-*EventDefinition* - An array of events that will be generated for this job. The following provides an explanation of the json elements in an event.
+*EventDefinition* - An array of events that will be generated for this job. The following provides an explanation of the JSON elements in an event.
 
 *EventId* - A unique identifier for this event specification in the test job specification.
 
@@ -777,7 +864,7 @@ The following provides an explanation to each of the json elements in the test j
 
 *PreviousEventId* - This is the previous event definition id e.g. in this event definition with an id of 2 the previous event definition is 1.
 
-*EventData* - An array of event data that should be generated by the simulator for the event. The following provides an explanation of the json elements in an event data.
+*EventData* - An array of event data that should be generated by the simulator for the event. The following provides an explanation of the JSON elements in an event data.
 
 *DataName* - The name of the event data e.g., PersistentInvariant.
 
@@ -792,8 +879,8 @@ to demonstrate building a domain in test mode.
 
 . Open a shell and navigate to the `AEReception` project directory:
 
-  cd ~/git/tower/models/AEReception   # linux/mac
-  cd C:\git\tower\models\AEReception  # windows
+  cd ~/git/munin/models/AEReception   # linux/mac
+  cd C:\git\munin\models\AEReception  # windows
 
 . Build the project in test mode with Docker by running the following command:
 
