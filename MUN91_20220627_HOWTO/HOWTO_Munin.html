@@ -758,7 +758,7 @@ h2 { color: #325D72; border-bottom: 1px solid #dddddd; }
 </div>
 <div class="paragraph">
 <p>If you want to run the latest version of the project without building,
-<a href="#_running_the_latest_published_version_of_the_integration_project">see here</a></p>
+<a href="#_running_the_latest_published_version_of_the_protocol_verifier">see here</a></p>
 </div>
 </div>
 </div>
@@ -820,10 +820,19 @@ for a quick start on using git to clone repositories and import projects.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_plantuml">PlantUML</h3>
+<div class="paragraph">
+<p>PlantUML is a tool for visualizing UML diagrams written in a textual format. The
+PLUS domain specific language is based on PlantUML sequence diagrams. PlantUML
+can be downloaded <a href="https://plantuml.com/starting">here</a> or installed through your
+package manager (recommended).</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_source_projects">Source Projects</h3>
 <div class="paragraph">
 <p>It is necessary to have the source code/models downloaded onto your machine. The
-source code can be <a href="https://github.com/xtuml/tower">browsed on GitHub</a>.
+source code can be <a href="https://github.com/xtuml/munin">browsed on GitHub</a>.
 Follow the steps from the guide linked in the previous section to clone this
 repository from GitHub. Follow the steps from the guide linked in the
 <a href="#_bridgepoint">BridgePoint</a> section to import the following projects into a fresh
@@ -844,7 +853,16 @@ workspace:</p>
 <p>AESimulator</p>
 </li>
 <li>
+<p>PlusProcessor</p>
+</li>
+<li>
+<p>SequenceProcessor</p>
+</li>
+<li>
 <p>SequenceVerificationDataCentric</p>
+</li>
+<li>
+<p>StatementParser</p>
 </li>
 <li>
 <p>utils</p>
@@ -880,11 +898,28 @@ general term "project".</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_integration_project">Integration project</h4>
+<h4 id="_protocol_verifier">Protocol Verifier</h4>
 <div class="paragraph">
-<p>"Integration project" is an informal term and in our contexts it refers to the
-BridgePoint project where all of the domains are integrated together using a
-deployment. In our context this is synonymous with the "AER_AEO_SVDC" project.</p>
+<p>"Protocol Verifier" refers to the overall application as well as the BridgePoint
+project where all of the domains are integrated together using a deployment. In
+our context this is synonymous with the "AER_AEO_SVDC" project.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plus">PLUS</h4>
+<div class="paragraph">
+<p>"PLUS" is the name of the domain specific language for specifying valid job
+sequences for the protocol verifier. PLUS is defined as a subset of constructs
+from the PlantUML sequence diagram syntax. A full description and guide for PLUS
+can be found <a href="https://github.com/xtuml/munin/blob/main/doc/howto/PLUS_guide.adoc">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plus_processor">PLUS Processor</h4>
+<div class="paragraph">
+<p>"PLUS Processor" refers to the application which processes PLUS files (textual
+sequence diagrams) and produces JSON configuration files consumable by the
+protocol verifier.</p>
 </div>
 </div>
 </div>
@@ -1005,7 +1040,9 @@ mainline.</p>
 <div class="sect2">
 <h3 id="_domain_overview">Domain overview</h3>
 <div class="sect3">
-<h4 id="_reception">Reception</h4>
+<h4 id="_protocol_verifier_domains">Protocol Verifier domains</h4>
+<div class="sect4">
+<h5 id="_reception">Reception</h5>
 <div class="paragraph">
 <p>The role of the Audit Event Reception domain is to convert audit events received
 from the monitored system, in whatever form they arrive, into audit event
@@ -1016,8 +1053,8 @@ isolates the impact of changes in received audit event format to a single
 domain. Unexpected input formats are rejected and errors are notified.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_ordering">Ordering</h4>
+<div class="sect4">
+<h5 id="_ordering">Ordering</h5>
 <div class="paragraph">
 <p>The role of the Audit Event Ordering domain is two-fold. It validates the source
 of the received audit event in terms of Node and Application, and it constructs
@@ -1037,8 +1074,8 @@ definition classes. This approach ensures that the definition classes of Audit
 Event Ordering and Sequence Verification are aligned.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_sequence_verification">Sequence Verification</h4>
+<div class="sect4">
+<h5 id="_sequence_verification">Sequence Verification</h5>
 <div class="paragraph">
 <p>The role of the Sequence Verification domain is to verify that the audit events
 received are in a correct, expected order taking account of support for repeated
@@ -1049,6 +1086,27 @@ number of error conditions in the received Audit Event data. These error
 conditions include unexpected audit event types, unexpected sequences of audit
 event types, sequences starting with the wrong audit event types and repetition
 of audit event types in unexpected places.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plus_processor_domains">PLUS Processor domains</h4>
+<div class="sect4">
+<h5 id="_statement_parser">Statement Parser</h5>
+<div class="paragraph">
+<p>The Statement Parser domain is responsible for parsing the PLUS files, verifying
+that all syntax is correct and organizing them into a sequence of statements.
+These statements are fed to the Sequence Processor one at a time to build up the
+job definition.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sequence_processor">Sequence Processor</h5>
+<div class="paragraph">
+<p>The Sequence Processor domain reads statements from the Statement Parser one at
+a time and interprets them into a structured job definition. It then serializes
+this job definition to JSON.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1281,8 +1339,8 @@ built. In fact, it will not even show up in the xtUML Modelling perspective.
 <p>This should be repeated for each of the three application domains and the
 simulator domain. For the sake of demonstration, the following instructions will
 reference the <code>AEReception</code> domain. Additionally, the instructions will assume
-that the code has been cloned in a standard location (<code>~/git/tower</code> on Linux/Mac
-and <code>C:\git\tower</code> on Windows).</p>
+that the code has been cloned in a standard location (<code>~/git/munin</code> on Linux/Mac
+and <code>C:\git\munin</code> on Windows).</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1290,8 +1348,8 @@ and <code>C:\git\tower</code> on Windows).</p>
 <p>Open a shell and navigate to the <code>AEReception</code> project directory:</p>
 <div class="literalblock">
 <div class="content">
-<pre>cd ~/git/tower/models/AEReception   # linux/mac
-cd C:\git\tower\models\AEReception  # windows</pre>
+<pre>cd ~/git/munin/models/AEReception   # linux/mac
+cd C:\git\munin\models\AEReception  # windows</pre>
 </div>
 </div>
 </li>
@@ -1333,7 +1391,7 @@ this download.
 </div>
 </li>
 <li>
-<p>Repeat this step for the other three domains:</p>
+<p>Repeat this step for the other domains:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1343,7 +1401,13 @@ this download.
 <p>AESimulator</p>
 </li>
 <li>
+<p>SequenceProcessor</p>
+</li>
+<li>
 <p>SequenceVerificationDataCentric</p>
+</li>
+<li>
+<p>StatmentParser</p>
 </li>
 </ol>
 </div>
@@ -1352,7 +1416,7 @@ this download.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_integration_project">Build integration project</h3>
+<h3 id="_build_plus_processor">Build PLUS processor</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1360,8 +1424,8 @@ this download.
 <div class="title">Important</div>
 </td>
 <td class="content">
-Before this step, all three of the application domains and the
-simulator domain must be built as demonstrated in the previous step.
+Before this step, both of the application domains must be built as
+demonstrated in the previous step.
 </td>
 </tr>
 </table>
@@ -1369,11 +1433,11 @@ simulator domain must be built as demonstrated in the previous step.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In your shell, navigate to the integration project directory:</p>
+<p>In your shell, navigate to the protocol verifier directory:</p>
 <div class="literalblock">
 <div class="content">
-<pre>cd ~/git/tower/models/AER_AEO_SVDC   # linux/mac
-cd C:\git\tower\models\AER_AEO_SVDC  # windows</pre>
+<pre>cd ~/git/munin/models/PlusProcessor   # linux/mac
+cd C:\git\munin\models\PlusProcessor  # windows</pre>
 </div>
 </div>
 </li>
@@ -1389,11 +1453,48 @@ cd C:\git\tower\models\AER_AEO_SVDC  # windows</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_running_the_integration_project">Running the integration project</h3>
+<h3 id="_build_protocol_verifier">Build protocol verifier</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Before this step, all three of the application domains must be built
+as demonstrated in the previous step.
+</td>
+</tr>
+</table>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a shell in the integration project directory, run the following command
+<p>In your shell, navigate to the protocol verifier directory:</p>
+<div class="literalblock">
+<div class="content">
+<pre>cd ~/git/munin/models/AER_AEO_SVDC   # linux/mac
+cd C:\git\munin\models\AER_AEO_SVDC  # windows</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Build the project with Docker by running the following command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>docker compose build --no-cache</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_the_protocol_verifier">Running the protocol verifier</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a shell in the protocol verifier directory, run the following command
 to launch the process:</p>
 <div class="literalblock">
 <div class="content">
@@ -1411,9 +1512,9 @@ directory within the repository. This can be done through your OS GUI or quickly
 through a simple command:</p>
 <div class="literalblock">
 <div class="content">
-<pre>open -a Finder ~/git/tower/models/test-files/processed/  # mac
-xdg-open ~/git/tower/models/test-files/processed/        # linux
-explorer C:\git\tower\models\test-files\processed\       # windows</pre>
+<pre>open -a Finder ~/git/munin/models/test-files/processed/  # mac
+xdg-open ~/git/munin/models/test-files/processed/        # linux
+explorer C:\git\munin\models\test-files\processed\       # windows</pre>
 </div>
 </div>
 </li>
@@ -1422,9 +1523,9 @@ explorer C:\git\tower\models\test-files\processed\       # windows</pre>
 <code>models/test-files/incoming/</code> directory within the repository:</p>
 <div class="literalblock">
 <div class="content">
-<pre>open -a Finder ~/git/tower/models/test-files/incoming/  # mac
-xdg-open ~/git/tower/models/test-files/incoming/        # linux
-explorer C:\git\tower\models\test-files\incoming\       # windows</pre>
+<pre>open -a Finder ~/git/munin/models/test-files/incoming/  # mac
+xdg-open ~/git/munin/models/test-files/incoming/        # linux
+explorer C:\git\munin\models\test-files\incoming\       # windows</pre>
 </div>
 </div>
 </li>
@@ -1503,7 +1604,7 @@ ones created from the latest image).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_running_the_latest_published_version_of_the_integration_project">Running the latest published version of the integration project</h4>
+<h4 id="_running_the_latest_published_version_of_the_protocol_verifier">Running the latest published version of the protocol verifier</h4>
 <div class="paragraph">
 <p>As mentioned above, the application is built and published automatically each
 time new code is merged into the main repository branch. It is possible to use
@@ -1551,9 +1652,9 @@ have been received, ordered, and verified by the application.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_running_the_integration_project_with_the_audit_event_simulator">Running the integration project with the audit event simulator</h3>
+<h3 id="_running_the_protocol_verifier_with_the_audit_event_simulator">Running the protocol verifier with the audit event simulator</h3>
 <div class="paragraph">
-<p>In the last section, we built and ran the integration project interactively with
+<p>In the last section, we built and ran the protocol verifier interactively with
 test files. The audit event simulator can also be used to generate test audit
 event files to be consumed by the main process. This section will also walk
 through using the process inspector to attach to the running process and browse
@@ -1562,7 +1663,7 @@ the instance population.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a shell in the integration project directory, run the following command
+<p>Open a shell in the protocol verifier directory, run the following command
 to launch the process with the simulator:</p>
 <div class="literalblock">
 <div class="content">
@@ -1579,8 +1680,8 @@ handling those audit events.</p>
 <p>In a new shell tab/window, run the following command to launch Inspector:</p>
 <div class="literalblock">
 <div class="content">
-<pre>java -jar ~/git/tower/bin/inspector-1.0.0-jar-with-dependencies.jar   # linux/mac
-java -jar C:\git\tower\bin\inspector-1.0.0-jar-with-dependencies.jar  # windows</pre>
+<pre>java -jar ~/git/munin/bin/inspector-1.0.0-jar-with-dependencies.jar   # linux/mac
+java -jar C:\git\munin\bin\inspector-1.0.0-jar-with-dependencies.jar  # windows</pre>
 </div>
 </div>
 </li>
@@ -1608,16 +1709,10 @@ command:</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_configuring_the_integration_project">Configuring the integration project</h4>
+<h4 id="_configuring_the_protocol_verifier">Configuring the protocol verifier</h4>
 <div class="paragraph">
-<p>There are two configuration files that are loaded at start up and checked on a
-regular basis for updates:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>aereception_spec.txt
-aeordering_spec.txt</pre>
-</div>
+<p>The configuration for the protocol verifier is found in the <code>config.json</code> file.
+This is loaded at start up and checked on a regular basis for updates:</p>
 </div>
 <details>
 <summary class="title">Click to see more details on the config file format</summary>
@@ -1628,7 +1723,20 @@ digital twin. The following is a list of the configuration items that can be
 adjusted and there description are as follows:</p>
 </div>
 <div class="paragraph">
-<p><code>aereception_spec.txt</code>:</p>
+<p><strong>SpecUpdateRate</strong> - A time period that determines how often the application
+reloads the configuration files.</p>
+</div>
+<div class="paragraph">
+<p><strong>IncomingDirectory</strong> - The directory where the application expects to find JSON
+files containing events.</p>
+</div>
+<div class="paragraph">
+<p><strong>ProcessingDirectory</strong> - The directory where the application moves JSON files
+while the events are being processed.</p>
+</div>
+<div class="paragraph">
+<p><strong>ProcessedDirectory</strong> - The directory where the application moves JSON files
+after all the contained events are processed.</p>
 </div>
 <div class="paragraph">
 <p><strong>EventThrottleRate</strong> - The rate that events should be processed from one
@@ -1645,9 +1753,6 @@ the reception processing shall be stored until this time expires.</p>
 reception jobs that can be executing, e.g. 1 = one active reception job</p>
 </div>
 <div class="paragraph">
-<p><code>aeordering_spec.txt</code>:</p>
-</div>
-<div class="paragraph">
 <p><strong>MaxOutOfSequenceEvents</strong> - This is the consecutive maximum out of sequence
 events that can be received for a job before an error is declared.</p>
 </div>
@@ -1660,6 +1765,34 @@ archived if there are no blocked events or failed if there are blocked events.</
 <p><strong>JobCompletePeriod</strong> - When a Job has completed it shall be either archived or
 failed and once the job complete period has expired it shall be deleted from the
 domain with all associated events.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "SpecUpdateRate": "PT2M",
+  "IncomingDirectory": "./incoming",
+  "ProcessingDirectory": "./processing",
+  "ProcessedDirectory": "./processed",
+  "EventThrottleRate": "PT0S",
+  "ReceptionDeletionTime": "PT10M",
+  "ConcurrentReceptionLimit": 1,
+  "MaxOutOfSequenceEvents": 10,
+  "MaximumJobTime": "PT10M",
+  "JobCompletePeriod": "PT24H",
+  "Jobs": [
+    {
+      "JobDefinitionName": "FileRequest",
+      "JobDeprecated": false,
+      "JobTypeExpiryDate": "2022-04-11T18:08:00Z",
+      "StaleAuditEventDuration": "P99W",
+      "BlockedAuditEventDuration": "PT5M"
+    }
+  ]
+}</pre>
+</div>
 </div>
 </div>
 </details>
@@ -1681,7 +1814,7 @@ command specified in the <code>docker-compose-test.yml</code> and passed on the
 <summary class="title">Click to see more details on the config file format</summary>
 <div class="content">
 <div class="paragraph">
-<p>The json test specification configuration file allows the user to define the test to be executed.
+<p>The JSON test specification configuration file allows the user to define the test to be executed.
 Below is a sample of a test from the configuration file:</p>
 </div>
 <div class="literalblock">
@@ -1721,7 +1854,7 @@ Below is a sample of a test from the configuration file:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The following provides an explanation to each of the json elements in the configuration
+<p>The following provides an explanation to each of the JSON elements in the configuration
 file:</p>
 </div>
 <div class="paragraph">
@@ -1744,7 +1877,7 @@ file:</p>
 created.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tests</strong> - This is an array of tests that are to be executed by the simulator. The following provides and explanation of the json elements in a test.</p>
+<p><strong>Tests</strong> - This is an array of tests that are to be executed by the simulator. The following provides and explanation of the JSON elements in a test.</p>
 </div>
 <div class="paragraph">
 <p><strong>TestId</strong> - This provides a unique id for the test specification.</p>
@@ -1761,16 +1894,16 @@ executed.</p>
 be run e.g. PT1S is every second.</p>
 </div>
 <div class="paragraph">
-<p><strong>TestJobSpec</strong> - This is an array of the test job specifications that should be executed for this test. The following provides an explanation of the json elements in a test job specification.</p>
+<p><strong>TestJobSpec</strong> - This is an array of the test job specifications that should be executed for this test. The following provides an explanation of the JSON elements in a test job specification.</p>
 </div>
 <div class="paragraph">
-<p><strong>TestJobSpecName</strong> - This the name of the json file for the test job specification e.g., EndToEndHappyPathJob.json that should be found in <strong>JobSpecificationLocation</strong>. A test job specification indicates the events that are to be produced when the job is executed for the test. Note that this is may not be a valid set of events for a given job that is to be validated by the Protocol Processor but is simulating a set of events in a scenario that needs to be tested</p>
+<p><strong>TestJobSpecName</strong> - This the name of the JSON file for the test job specification e.g., EndToEndHappyPathJob.json that should be found in <strong>JobSpecificationLocation</strong>. A test job specification indicates the events that are to be produced when the job is executed for the test. Note that this is may not be a valid set of events for a given job that is to be validated by the Protocol Processor but is simulating a set of events in a scenario that needs to be tested</p>
 </div>
 <div class="paragraph">
 <p><strong>EventDispatchOrder</strong> - Each event specified in the job specification has a unique identifier. This element allows the tester to specify the order that the events are to be dispatched for this test.</p>
 </div>
 <div class="paragraph">
-<p>The json job specification configuration file allows the user to define the events that are in a job run that is to be executed by the simulator.
+<p>The JSON job specification configuration file allows the user to define the events that are in a job run that is to be executed by the simulator.
 Below is a sample of a test from the configuration file:</p>
 </div>
 <div class="literalblock">
@@ -1841,13 +1974,13 @@ Below is a sample of a test from the configuration file:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The following provides an explanation to each of the json elements in the test job specification configuration file. It identifies som of the data that shall by the simulator for each event e.g., EventName, PreviousEventId, etc:</p>
+<p>The following provides an explanation to each of the JSON elements in the test job specification configuration file. It identifies som of the data that shall by the simulator for each event e.g., EventName, PreviousEventId, etc:</p>
 </div>
 <div class="paragraph">
 <p><strong>JobSpecName</strong> - The name of the test job specification that shall be executed in the test.</p>
 </div>
 <div class="paragraph">
-<p><strong>EventDefinition</strong> - An array of events that will be generated for this job. The following provides an explanation of the json elements in an event.</p>
+<p><strong>EventDefinition</strong> - An array of events that will be generated for this job. The following provides an explanation of the JSON elements in an event.</p>
 </div>
 <div class="paragraph">
 <p><strong>EventId</strong> - A unique identifier for this event specification in the test job specification.</p>
@@ -1871,7 +2004,7 @@ Below is a sample of a test from the configuration file:</p>
 <p><strong>PreviousEventId</strong> - This is the previous event definition id e.g. in this event definition with an id of 2 the previous event definition is 1.</p>
 </div>
 <div class="paragraph">
-<p><strong>EventData</strong> - An array of event data that should be generated by the simulator for the event. The following provides an explanation of the json elements in an event data.</p>
+<p><strong>EventData</strong> - An array of event data that should be generated by the simulator for the event. The following provides an explanation of the JSON elements in an event data.</p>
 </div>
 <div class="paragraph">
 <p><strong>DataName</strong> - The name of the event data e.g., PersistentInvariant.</p>
@@ -1895,8 +2028,8 @@ to demonstrate building a domain in test mode.</p>
 <p>Open a shell and navigate to the <code>AEReception</code> project directory:</p>
 <div class="literalblock">
 <div class="content">
-<pre>cd ~/git/tower/models/AEReception   # linux/mac
-cd C:\git\tower\models\AEReception  # windows</pre>
+<pre>cd ~/git/munin/models/AEReception   # linux/mac
+cd C:\git\munin\models\AEReception  # windows</pre>
 </div>
 </div>
 </li>
@@ -2005,7 +2138,7 @@ assertion failed.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-11 15:27:56 -0500
+Last updated 2022-12-16 14:46:59 -0500
 </div>
 </div>
 </body>
