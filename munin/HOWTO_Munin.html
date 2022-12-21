@@ -1507,30 +1507,30 @@ to launch the process:</p>
 </div>
 </li>
 <li>
-<p>Open a file explorer and navigate to the <code>models/test-files/processed/</code>
+<p>Open a file explorer and navigate to the <code>deploy/processed/</code>
 directory within the repository. This can be done through your OS GUI or quickly
 through a simple command:</p>
 <div class="literalblock">
 <div class="content">
-<pre>open -a Finder ~/git/munin/models/test-files/processed/  # mac
-xdg-open ~/git/munin/models/test-files/processed/        # linux
-explorer C:\git\munin\models\test-files\processed\       # windows</pre>
+<pre>open -a Finder ~/git/munin/deploy/processed/  # mac
+xdg-open ~/git/munin/deploy/processed/        # linux
+explorer C:\git\munin\deploy\processed\       # windows</pre>
 </div>
 </div>
 </li>
 <li>
 <p>Open another file explorer window and navigate to the
-<code>models/test-files/incoming/</code> directory within the repository:</p>
+<code>deploy/incoming/</code> directory within the repository:</p>
 <div class="literalblock">
 <div class="content">
-<pre>open -a Finder ~/git/munin/models/test-files/incoming/  # mac
-xdg-open ~/git/munin/models/test-files/incoming/        # linux
-explorer C:\git\munin\models\test-files\incoming\       # windows</pre>
+<pre>open -a Finder ~/git/munin/deploy/incoming/  # mac
+xdg-open ~/git/munin/deploy/incoming/        # linux
+explorer C:\git\munin\deploy\incoming\       # windows</pre>
 </div>
 </div>
 </li>
 <li>
-<p><a href="images/04_drag_and_drop.gif">Drag and drop</a> <code>PoC_CBC_Test1.json</code> from the
+<p><a href="images/04_drag_and_drop.gif">Drag and drop</a> <code>FileRequest_HappyPath.json</code> from the
 <code>processed/</code> directory to the <code>incoming/</code> directory. You will see a flurry of
 output from the application and the file will reappear in the <code>processed/</code>
 directory. Inspect the logs and you will see that the audit events have been
@@ -1638,8 +1638,8 @@ to generate a new token with the
 </li>
 <li>
 <p><a href="images/04_drag_and_drop.gif">Drag and drop</a> a test file e.g.
-<a href="https://github.com/xtuml/tower/blob/main/models/test-files/processed/PoC_CBC_Test1.json"><code>PoC_CBC_Test1.json</code></a>
-to the <code>test-files/incoming/</code> directory in your current directory. You will see
+<a href="https://github.com/xtuml/tower/blob/main/deploy/processed/FileRequest_HappyPath.json"><code>FileRequest_HappyPath.json</code></a>
+to the <code>/incoming/</code> directory in your current directory. You will see
 a flurry of output from the application and the file will reappear in the
 <code>processed/</code> directory. Inspect the logs and you will see that the audit events
 have been received, ordered, and verified by the application.</p>
@@ -2138,7 +2138,7 @@ assertion failed.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-16 14:46:59 -0500
+Last updated 2022-12-21 15:03:22 -0500
 </div>
 </div>
 </body>
