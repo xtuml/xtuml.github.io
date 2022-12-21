@@ -1,5 +1,9 @@
 = Munin HOWTO
 
+== Source
+
+The source asciidoc file is found here:  xtuml/munin/doc/howto/HOWTO_Munin.adoc.
+
 == Build
 
 ```
