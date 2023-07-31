@@ -1,0 +1,187 @@
+= Shlaer-Mellor Days 2023
+include::../include.adoc[]
+
+**14 November 2023 (Tuesday)**
+
+__Previously known as:__  **xtUML Days**
+
+image::xtumlorg2.png[Shlaer-Mellor Days 2023]
+
+<<Agenda of Presentations>> | <<Registration>> | <<Important Dates>> | https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[**Pay for Shlaer-Mellor Days**]
+
+== What is this?
+
+*Shlaer-Mellor Days 2023* is a modeling conference and represents the 10th
+edition of Shlaer-Mellor Days (formerly known as xtUML Days).  (See <<Previous xtUML Days>>.)
+Shlaer-Mellor Days is the most dense gathering of the year of Shlaer-Mellor modelers.
+The Shlaer-Mellor xtUML Community meets to collaborate on Modeling, Method and Tooling.
+
+The central topic of the conference is end-to-end modeling, execution,
+translation and deployment of models-as-code in mission critical settings
+employing rigorous methodology.  The unifying theme is practical, actual,
+industrial application modeling within production installations.
+Attendees will network with engineers, scientists and educators who
+understand executable and translatable modeling as applied in active
+systems.
+
+In 2023, a special focus will be continued to extend and
+clarify the __Shlaer-Mellor Method__ in light of undocumented developments
+over the last several years.
+
+Also in focus:
+
+* Method advances (specifically convergence and rationalization of PT and K-C dialects)  
+* Tooling Refinements  
+* Incremental Adoption
+* Model Compilation
+
+The Shlaer-Mellor Community is keen to exchange expertise and learn from one
+another.  Shlaer-Mellor Days provides a forum for developers to share best
+practices and influence the direction of the technology.  The conference committee
+hereby solicits compelling papers and presentations that exhibit method
+advances, tooling improvements and application experience in Shlaer-Mellor
+modeling and related Executable/Translatable modeling.
+
+=== Presenters
+
+Key Shlaer-Mellor community members planning to participate include Mike Lee,
+Paul Francis, Colin Carter, Leon Starr, Keith Brown, Levi Starrett and others.
+
+image::bristol.jpeg[Bristol, UK]
+
+=== Venue
+
+Shlaer-Mellor Days 2023 will be hosted on *Zoom*.  This platform is familiar
+to most and supports interaction with people as well as access to presentations.
+
+=== Registration
+
+You can register to attend the conference by clicking TODO COMING-SOON
+// https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[here].
+The link will take you to PayPal to purchase your ticket.  Pricing is set at $100.  (You 
+do not need a PayPay account to register; a credit or debit card is acceptable.)
+
+Scholarships may be available to university students.  Contact the conference chair.
+
+Register by emailing the chair (cortland.starrett at onefact.net).  Provide
+name and company/school information.  Do this even if you pay through the electronic
+portal below.
+
+Participants under contract with the One Fact Community Engagement support option attend at no cost.
+
+Registration payment can be made with a **credit card**
+(through the PayPal portal below).  Payment can be made by check.  Other methods
+of payment can be arranged through the conference organizers.  Discounts
+may be available to companies sending more than 3 participants; contact the chair.
+
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[**Pay for Shlaer-Mellor Days 2023 here.**]
+
+=== Agenda of Presentations
+
+Tuesday 14 November (Conference Day)
+
+include::smdays2023agenda.adoc[Agenda]
+
+=== In-Person Gatherings
+
+A dinner gathering is planned in the UK in Bristol on the evening of TODO November 2023.
+The venue is TODO at 19:30.  Dinner is included in the conference registration (including
+a significant other).
+
+A dinner gathering is planned in Sweden in Linköping on the evening of TODO November 2023.
+The venue and time are TODO.
+
+== Call for Papers (open)
+
+A program committee will review and select from submitted papers, posters
+and presentations.  Selection is based upon perceived value to the Shlaer-Mellor
+Community.
+
+Topics of interest to Shlaer-Mellor Days include but are not limited to the following:  
+
+* real-world application modeling examples of installed systems  
+* techniques of editing, verifying, translating, debugging and deploying models  
+* methodology (Shlaer-Mellor) advances, extensions and refinements  
+* static analysis of models and generated code  
+* model-based model compilers  
+* model integrity  
+* action language dialects  
+* target software architectures and translation onto those architectures  
+* process integration of modeling and modeling tools  
+* tooling supporting the Shlaer-Mellor Method  
+* current state of the art editing, verification, translation, debugging  
+* recent experience with tooling and BridgePoint in particular  
+* techniques for educating modelers from young children to experienced professionals  
+* tooling migration experience reports  
+
+Presentations are expected to be 10-30 minutes in duration with additional
+time for questions and discussion.
+
+All submissions will be evaluated by the program committee.  
+Selection is based upon significance, clarity and alignment with the call
+and value to the attendees of Shlaer-Mellor Days.  Submissions
+that promote discussion, advance the Method and generate interaction among
+Shlaer-Mellor Community members are most desired.  For a presentation to be
+accepted, at least one of the authors must register for Shlaer-Mellor Days,
+present the material and participate in the conference.
+
+== Important Dates  
+
+* Title, session type and duration submission:  9 September 2023
+* Abstract submission deadline:  16 September 2023
+* Author notification:  30 September
+* Submission deadline for video recording of presentation:  3 November 2023
+* Completion of Production Editing (jointly by presenter and committee) of presentation-ready version:  10 November 2023
+* Shlaer-Mellor Days conference day:  14 November 2023
+
+=== Conference Format
+
+Day 1 of Shlaer-Mellor Days is an information dense and interactive conference
+lasting one day.  The host will welcome attendees at the starting
+hour.  The host will make significant introductions.  Key Shlaer-Mellor Community
+members will give short updates on their applications and experiences.
+Presentations with Q&A and discussions will fill the morning and afternoon
+sessions.  An open moderated discussion time will end the day.
+
+A detailed agenda will be available in October upon solidification of the
+speaking agenda.
+
+A day 2 of Shlaer-Mellor Days is a planning day for active stakeholders of the Shlaer-Mellor
+Community.  Planning Day is focused on short and long term requirements of
+the Method and road map for tooling.  Day 2 attendance is by invitation only and physically
+hosted in Cheltenham.
+
+
+== Newletter Updates Regarding Shlaer-Mellor Days
+
+* https://www.youtube.com/watch?v=TdxJ647T1eU&t=4s[Informative video published in June 2020 targeted at presenters but useful for attendees (rather longish).]
+* https://www.youtube.com/watch?v=2_OAuDWMyHc[Speaker Preparation Instructions Video (late August)]
+
+== Conference Organization  
+
+* Michael Lee, Conference Co-Chair, Model Integration, USA, mike [at] modelint.com
+* Cortland Starrett, Conference Co-Chair, One Fact, USA, cortland.starrett [at] onefact.net
+
+=== Conference Contact
+
+If you have questions about Shlaer-Mellor Days, contact either of the
+Co-Chairs via email at:  cortland.starrett [at] onefact.net or mike [at] modelint.com.
+
+=== Previous xtUML Days
+
+* https://xtuml.github.io/xday/smdays2022.html[xtUML Days 2022 (Zoom), 18 October 2022]
+* https://chrysalis-triangle-s9cb.squarespace.com/xtuml2021[xtUML Days 2021, (Zoom), 27 October 2021]
+* https://xtuml.github.io/xday/xday2020.html[xtUML Days 2020 UK (and Zoom), 5 November 2020, Portsmouth, UK]
+* https://xtuml.github.io/xday/xday2019.html[xtUML Days 2019 Cheltenham, 12, 13 September 2019, Cheltenham, UK]
+* https://xtuml.org/xtuml-days-2018-copenhagen/[xtUML Days 2018 Copenhagen, 15, 16 October 2018, Copenhagen, Denmark]
+* https://xtuml.org/xtuml-day-2017-linkoping/[xtUML Days 2017 Linköping, 2 October 2017, Linköping, Sweden]
+* https://xtuml.org/presos-from-xtuml-day-cheltenham/[xtUML Days 2017 Cheltenham, 14 March 2017, Cheltenham, UK]
+* https://xtuml.org/xtumldayemd/[xtUML Days 2016, 14 May 2016, Linköping, Sweden]
+* https://xtuml.org/announcing-xtuml-2015/[xtUML Days 2015, 14 December 2015, Lafayette, Indiana, USA]
+
+//=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[**Pay for Shlaer-Mellor Days 2023 here.**]
+
+image::einstein_classes.png[xtUML Class Diagram]
+
+include::smdays2023instructions.adoc[Last Minute Instructions]
+
