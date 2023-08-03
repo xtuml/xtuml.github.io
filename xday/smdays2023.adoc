@@ -25,7 +25,7 @@ Attendees will network with engineers, scientists and educators who
 understand executable and translatable modeling as applied in active
 systems.
 
-In 2023, continued attention is paid to extending and clarifying the
+In 2023 continued attention is paid to extending and clarifying the
 __Shlaer-Mellor Method__ in light of undocumented developments over the
 last several years.
 
