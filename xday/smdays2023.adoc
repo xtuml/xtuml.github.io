@@ -13,7 +13,7 @@ image::xtumlorg2.png[Shlaer-Mellor Day 2023]
 == What is this?
 
 *Shlaer-Mellor Day 2023* is a modeling conference and represents the 10th
-edition of Shlaer-Mellor Day (formerly known as xtUML Day).  (See <<Previous xtUML Days>>.)
+edition of Shlaer-Mellor Day (also xtUML Day).  (See <<Previous Shlaer-Mellor Days>>.)
 Shlaer-Mellor Day is the most dense gathering of the year of Shlaer-Mellor modelers.
 The Shlaer-Mellor xtUML Community meets to collaborate on Modeling, Method and Tooling.
 
@@ -25,7 +25,7 @@ Attendees will network with engineers, scientists and educators who
 understand executable and translatable modeling as applied in active
 systems.
 
-In 2023, continued attention is paid to extending and clarifying the
+In 2023 continued attention is paid to extending and clarifying the
 __Shlaer-Mellor Method__ in light of undocumented developments over the
 last several years.
 
@@ -43,19 +43,24 @@ hereby solicits compelling papers and presentations that exhibit method
 advances, tooling improvements and application experience in Shlaer-Mellor
 modeling and related Executable/Translatable modeling.
 
-=== Presenters
+=== Conference Format and Venue
 
-Key Shlaer-Mellor community members planning to participate include Mike Lee,
-John Wolfe, Paul Francis, Colin Carter, Keith Brown, Levi Starrett and others.
+Shlaer-Mellor Day is an information dense and interactive conference
+lasting (roughly) 4 hours.  Presentations with Q&A and discussions will
+fill the session.  Shlaer-Mellor Community members will give updates on
+their applications and experiences.  An open moderated discussion time
+ends the day.
 
-.Bristol, UK
-image::bristol.jpeg[Bristol, UK]
-
-=== Venue
+A detailed agenda will be available in October upon solidification of the
+presentation line-up.
 
 Shlaer-Mellor Day 2023 will be hosted on https://zoom.us/[*Zoom*].  This
 platform is familiar to most and supports interaction with people as well
 as access to presentations.
+
+Technical sessions are pre-recorded videos, ensuring high-density,
+fast-paced information transfer while allowing the speakers to interact
+with the audience as the video plays.
 
 === Registration
 
@@ -63,7 +68,7 @@ Register by emailing the chair (cortland.starrett at onefact.net).
 Provide name and company/school information.  Do this even if you pay
 through the electronic portal.
 
-You can pay the conference registration fee by clicking 
+You can pay the registration fee by clicking 
 https://xtuml.github.io/xday/smdays2023.html[**here TODO COMING SOON**]
 // https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[here].
 The link will take you to PayPal to purchase your ticket.  Price is $100.
@@ -82,26 +87,12 @@ option attend at no cost.
 
 //=== https://xtuml.github.io/xday/smdays2023.html[**Pay for Shlaer-Mellor Day 2023 here TODO COMING SOON.**]
 
-=== Agenda of Presentations
-
-TODO Coming Soon
-
-//include::smdays2023agenda.adoc[Agenda]
-
-=== In-Person Gatherings
-
-A dinner gathering is planned in the UK in Bristol on the evening of TODO
-November 2023.  The venue is TODO at 19:30.  Dinner is included in the
-conference registration (including a significant other).
-
-A dinner gathering is planned in Linköping, Sweden on the evening of TODO
-November 2023.  The venue and time are TODO.
-
 == Call for Papers (open)
 
-A program committee will review and select from submitted papers, posters
-and presentations.  Selection is based upon perceived value to the Shlaer-Mellor
-Community.
+If you wish to be a presenter, please submit topic, title and an abstract
+to the conference committee who will review and make selections.
+Selection is based upon perceived value to the Shlaer-Mellor Community.
+Presentations will need to be pre-recorded ahead of conference day.
 
 Topics of interest to Shlaer-Mellor Day include but are not limited to the following:  
 
@@ -137,24 +128,8 @@ present the material and participate in the conference.
 * Abstract submission deadline:  16 September 2023
 * Author notification:  30 September
 * Submission deadline for video recording of presentation:  3 November 2023
-* Completion of Production Editing (jointly by presenter and committee) of presentation-ready version:  10 November 2023
+* Completion of production editing (jointly by presenter and committee) of presentation-ready version:  10 November 2023
 * Shlaer-Mellor Day conference day:  14 November 2023 1:00-5:00pm UK time
-
-=== Conference Format
-
-Shlaer-Mellor Day is an information dense and interactive conference
-lasting (roughly) 4 hours.  The host will welcome attendees at the start.
-The host will make significant introductions.  Shlaer-Mellor Community
-members will give short updates on their applications and experiences.
-Presentations with Q&A and discussions will fill the session.
-An open moderated discussion time will end the day.
-
-A detailed agenda will be available in October upon solidification of the
-presentation line-up.
-
-== Newletter Updates Regarding Shlaer-Mellor Day
-
-* https://www.youtube.com/watch?v=2_OAuDWMyHc[Speaker Preparation Instructions Video (August 2020)]
 
 == Conference Organization and Contacts
 
@@ -164,7 +139,35 @@ presentation line-up.
 
 If you have questions about Shlaer-Mellor Day, contact any of the above.
 
-=== Previous xtUML Days
+//=== Agenda of Presentations
+
+//TODO Coming Soon
+
+//include::smdays2023agenda.adoc[Agenda]
+
+=== Example Presentation Videos
+
+The following example videos are provided to encourage creativity in production.
+
+* https://youtu.be/fac8vV5Lu3w[Models Behind the Wheel - Leon Starr]
+* https://youtu.be/9F_F49MyMSo[xtUML Days 2021 - Levi Starrett: Persistent Shlaer-Mellor Models]
+//* https://youtu.be/4ouYCYWzpwI[Populating Roadway Models -John Wolfe and Alasdar Mullarney - Shlaer-Mellor Day 2022]
+* https://youtu.be/VsVmk5nyUog[Relationship Formalization and Referential Attributes - 2022]
+
+=== In-Person Gatherings
+
+A dinner gathering is planned in the UK in Bristol on the evening of TODO
+November 2023.  The venue is TODO.  Dinner is included in the
+conference registration (including a significant other).
+
+A dinner gathering is planned in Linköping, Sweden on the evening of TODO
+November 2023.  The venue and time are TODO.
+
+.Bristol, UK
+image::bristol.jpeg[Bristol, UK]
+
+
+=== Previous Shlaer-Mellor Days
 
 * https://xtuml.github.io/xday/smdays2022.html[xtUML Day 2022 (Zoom), 18 October 2022]
 * https://chrysalis-triangle-s9cb.squarespace.com/xtuml2021[xtUML Day 2021, (Zoom), 27 October 2021]
