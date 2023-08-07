@@ -14,7 +14,7 @@ image::xtumlorg2.png[Shlaer-Mellor Day 2023]
 
 *Shlaer-Mellor Day 2023* is a modeling conference and represents the 10th
 edition of Shlaer-Mellor Day (also xtUML Day).  (See <<Previous Shlaer-Mellor Days>>.)
-Shlaer-Mellor Day is the most dense gathering of the year of Shlaer-Mellor modelers.
+Shlaer-Mellor Day is the premier gathering of the year of Shlaer-Mellor modelers.
 The Shlaer-Mellor xtUML Community meets to collaborate on Modeling, Method and Tooling.
 
 The central topic of the conference is end-to-end modeling, execution,
@@ -46,7 +46,7 @@ modeling and related Executable/Translatable modeling.
 === Conference Format and Venue
 
 Shlaer-Mellor Day is an information dense and interactive conference
-lasting (roughly) 4 hours.  Presentations with Q&A and discussions will
+lasting 4 hours.  Presentations with Q&A and discussions will
 fill the session.  Shlaer-Mellor Community members will give updates on
 their applications and experiences.  An open moderated discussion time
 ends the day.
@@ -64,7 +64,7 @@ with the audience as the video plays.
 
 === Registration
 
-Register by emailing the chair (cortland.starrett at onefact.net).
+Register by emailing the co-chair (cortland.starrett at onefact.net).
 Provide name and company/school information.  Do this even if you pay
 through the electronic portal.
 
@@ -80,7 +80,7 @@ through the conference organizers.  Discounts may be available to
 companies sending more than 3 participants; contact the chair.
 
 Scholarships may be available to university students.  Contact the
-conference committee.
+conference committee via email.
 
 Participants under contract with the One Fact Community Engagement support
 option attend at no cost.
@@ -131,7 +131,7 @@ present the material and participate in the conference.
 * Completion of production editing (jointly by presenter and committee) of presentation-ready version:  10 November 2023
 * Shlaer-Mellor Day conference day:  14 November 2023 1:00-5:00pm UK time
 
-== Conference Organization and Contacts
+== Conference Committee Contacts
 
 * Michael Lee, Conference Co-Chair, Model Integration, mike [at] modelint.com
 * Cortland Starrett, Conference Co-Chair, One Fact, cortland.starrett [at] onefact.net
