@@ -151,7 +151,7 @@ The following example videos are provided to encourage creativity in production.
 
 * https://youtu.be/fac8vV5Lu3w[Models Behind the Wheel - Leon Starr]
 * https://youtu.be/9F_F49MyMSo[xtUML Days 2021 - Levi Starrett: Persistent Shlaer-Mellor Models]
-//* https://youtu.be/4ouYCYWzpwI[Populating Roadway Models -John Wolfe and Alasdar Mullarney - Shlaer-Mellor Day 2022]
+* https://www.youtube.com/watch?v=ygrcs4ATuMc[Populating Roadway Models -John Wolfe and Alasdar Mullarney - Shlaer-Mellor Day 2022]
 * https://youtu.be/VsVmk5nyUog[Relationship Formalization and Referential Attributes - 2022]
 
 === In-Person Gatherings
