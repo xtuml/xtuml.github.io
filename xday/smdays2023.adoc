@@ -7,8 +7,8 @@ __Previously known as:__  **xtUML Day**
 
 image::xtumlorg2.png[Shlaer-Mellor Day 2023]
 
-<<Agenda of Presentations>> | <<Registration>> | <<Important Dates>>
-// | https://xtuml.github.io/xday/smdays2023.html[**Pay for Shlaer-Mellor Day**]
+<<Agenda of Presentations>> | <<Registration>> | <<Important Dates>> | 
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2P3UUJP9KHUD2[**Pay for Shlaer-Mellor Day**]
 
 == What is this?
 
@@ -69,8 +69,7 @@ Provide name and company/school information.  Do this even if you pay
 through the electronic portal.
 
 You can pay the registration fee by clicking 
-https://xtuml.github.io/xday/smdays2023.html[**here TODO COMING SOON**]
-// https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[here].
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2P3UUJP9KHUD2[*here*].
 The link will take you to PayPal to purchase your ticket.  Price is $100.
 You do not need a PayPay account to register; a credit card or debit card
 is acceptable.
@@ -139,9 +138,9 @@ present the material and participate in the conference.
 
 If you have questions about Shlaer-Mellor Day, contact any of the above.
 
-//=== Agenda of Presentations
+=== Agenda of Presentations
 
-//TODO Coming Soon
+TODO Coming Soon
 
 //include::smdays2023agenda.adoc[Agenda]
 
@@ -179,7 +178,7 @@ image::bristol.jpeg[Bristol, UK]
 * https://xtuml.org/xtumldayemd/[xtUML Day 2016, 14 May 2016, Linköping, Sweden]
 * https://xtuml.org/announcing-xtuml-2015/[xtUML Day 2015, 14 December 2015, Lafayette, Indiana, USA]
 
-//=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SACZZNV45K8MU[**Pay for Shlaer-Mellor Day 2023 here.**]
+=== https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2P3UUJP9KHUD2[**Pay for Shlaer-Mellor Day 2023 here.**]
 
 image::einstein_classes.png[xtUML Class Diagram]
 
