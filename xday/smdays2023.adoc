@@ -51,9 +51,6 @@ fill the session.  Shlaer-Mellor Community members will give updates on
 their applications and experiences.  An open moderated discussion time
 ends the day.
 
-A detailed agenda will be available in October upon solidification of the
-presentation line-up.
-
 Shlaer-Mellor Day 2023 will be hosted on https://zoom.us/[*Zoom*].  This
 platform is familiar to most and supports interaction with people as well
 as access to presentations.
@@ -140,9 +137,7 @@ If you have questions about Shlaer-Mellor Day, contact any of the above.
 
 === Agenda of Presentations
 
-TODO Coming Soon
-
-//include::smdays2023agenda.adoc[Agenda]
+include::smdays2023agenda.adoc[Agenda]
 
 === Example Presentation Videos
 
@@ -155,12 +150,12 @@ The following example videos are provided to encourage creativity in production.
 
 === In-Person Gatherings
 
-A dinner gathering is planned in the UK in Bristol on the evening of TODO
-November 2023.  The venue is TODO.  Dinner is included in the
+A dinner gathering is planned in the UK in Cheltenham on the evening of
+13 November 2023.  The venue is The Ivy.  Dinner is included in the
 conference registration (including a significant other).
 
-A dinner gathering is planned in Linköping, Sweden on the evening of TODO
-November 2023.  The venue and time are TODO.
+A dinner gathering is planned in Linköping, Sweden on the evening of
+15 November 2023.  The venue and time are TODO.
 
 .Bristol, UK
 image::bristol.jpeg[Bristol, UK]

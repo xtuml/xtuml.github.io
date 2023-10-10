@@ -1,7 +1,6 @@
-
-// = Shlaer-Mellor Days 2022 Session Planning
-
 ////
+
+= Shlaer-Mellor Days 2023 Session Planning
 
 ==== Session Types
 
@@ -60,7 +59,6 @@ and comments.
                                                     those participating online.
 |===
 
-////
 
 ==== Agenda (*DRAFT*)
 
@@ -74,28 +72,31 @@ The columns in the table below are as follows:
   defined in Session Types.
 * Column six gives a *Title* to the session if applicable.
 
+////
+
 .Agenda (*DRAFT* timings not confirmed)
 [%autowidth,options="header"]
 |===
 |  T | Clock | Presenter           | L | Intro   | Title
 |  5 | 13:00 | Cortland Starrett   | L |         | Welcome and Opening
-|  5 | 13:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
-| 25 | 13:10 | Project Team        | R | Colin   | [Model-based Protocol Verification]
-| 10 | 13:35 |                     | L |         | Mixing virtually - introductions
-| 15 | 13:45 | Michael Lee         | R | (none)  | 
+|  5 | 13:05 | Michael Lee         | L | Cort    | Shlaer-Mellor Day greeting and instructions
+| 15 | 13:10 | H. Ota, Team Japan  | R | Takao   | Conceptual Modeling
+| 25 | 13:25 | Munin Project Team  | R | Dave    | Model-based Protocol Verification
+| 10 | 13:50 |                     | L |         | Mixing virtually - introductions
 |  5 | 14:00 |                     | L |         | 5-minute *break*
-| 20 | 14:05 | John and Alasdar    | R | Levi    | [Model-based Test, Unit Test]
-| 25 | 14:25 | Levi Starrett       | R | Paul    | [Textual xtUML Roadmap]
-|  5 | 14:50 |                     | L |         | 5-minute *break*
-| 20 | 14:55 | Levi and Tristan    | R | Cort    | [Model-based IPC with Kafka, Websocket]
-| 20 | 15:15 |                     | L |         | 
-| 20 | 15:35 | Cortland Starrett   | R | (none)  | 
-| 20 | 15:55 | Filip Fur           | L | Leon    | [Modeling at Saab]
-|  5 | 16:15 |                     | L |         | 5-minute *break*
-| 15 | 16:20 | Keith Brown         | R | Bob     | [Gateway Kiosk State Machine]
-| 20 | 16:35 |                     | L |         | Around-the-Table Status Updates
-|  5 | 16:55 | Cort and Mike       | L |         | closing remarks
-| 30 | 17:00 | Happy Hour          | L |         | favorite beverage
+| 10 | 14:05 | Michael Lee         | R |         | S-M Commons Update
+| 20 | 14:15 | John and Alasdar    | R | Levi    | Model-based Test, Unit Test
+|  5 | 14:35 |                     | L |         | 5-minute *break*
+| 20 | 14:40 | Levi and Tristan    | R | Greg    | Model-based IPC with Kafka, Websocket
+| 10 | 15:00 | Filip Fur           | L | Pontus  | Modeling at Saab (interview)
+|  5 | 15:10 |                     | L |         | 5-minute *break*
+| 40 | 15:15 | Leon Starr          | R | Nils    | Action Semantics (10 mins Q&A)
+| 15 | 15:55 | Levi Starrett       | R | John    | Textual xtUML Roadmap
+|  5 | 16:10 |                     | L |         | 5-minute *break*
+| 15 | 16:15 | Keith Brown         | R | Bob     | Gateway Kiosk State Machine
+| 20 | 16:30 |                     | L |         | Around-the-Table Status Updates
+|  5 | 16:50 | Cort and Mike       | L |         | closing remarks
+| 30 | 16:55 | Happy Hour          | L |         | favorite beverage
 |===
 
 
