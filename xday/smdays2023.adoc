@@ -83,7 +83,20 @@ option attend at no cost.
 
 //=== https://xtuml.github.io/xday/smdays2023.html[**Pay for Shlaer-Mellor Day 2023 here TODO COMING SOON.**]
 
-== Call for Papers (open)
+=== Agenda of Presentations
+
+include::smdays2023agenda.adoc[Agenda]
+
+=== In-Person Gatherings
+
+A dinner gathering is planned in the UK in Cheltenham on the evening of
+13 November 2023.  The venue is The Ivy.  Dinner is included in the
+conference registration (including a significant other).
+
+A dinner gathering is planned in Linköping, Sweden on the evening of
+15 November 2023.  The venue and time are TODO.
+
+== Call for Papers (closed)
 
 If you wish to be a presenter, please submit topic, title and an abstract
 to the conference committee who will review and make selections.
@@ -135,10 +148,6 @@ present the material and participate in the conference.
 
 If you have questions about Shlaer-Mellor Day, contact any of the above.
 
-=== Agenda of Presentations
-
-include::smdays2023agenda.adoc[Agenda]
-
 === Example Presentation Videos
 
 The following example videos are provided to encourage creativity in production.
@@ -148,18 +157,8 @@ The following example videos are provided to encourage creativity in production.
 * https://www.youtube.com/watch?v=ygrcs4ATuMc[Populating Roadway Models -John Wolfe and Alasdar Mullarney - Shlaer-Mellor Day 2022]
 * https://youtu.be/VsVmk5nyUog[Relationship Formalization and Referential Attributes - 2022]
 
-=== In-Person Gatherings
-
-A dinner gathering is planned in the UK in Cheltenham on the evening of
-13 November 2023.  The venue is The Ivy.  Dinner is included in the
-conference registration (including a significant other).
-
-A dinner gathering is planned in Linköping, Sweden on the evening of
-15 November 2023.  The venue and time are TODO.
-
 .Bristol, UK
 image::bristol.jpeg[Bristol, UK]
-
 
 === Previous Shlaer-Mellor Days
 
