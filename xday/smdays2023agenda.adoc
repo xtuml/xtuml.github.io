@@ -87,7 +87,7 @@ The columns in the table below are as follows:
 | 10 | 14:05 | Michael Lee         | R |         | S-M Commons Update
 | 20 | 14:15 | John and Alasdar    | R | Levi    | Model-based Test, Unit Test
 |  5 | 14:35 |                     | L |         | 5-minute *break*
-| 20 | 14:40 | Levi and Tristan    | R | Greg    | Model-based IPC with Kafka, Websocket
+| 20 | 14:40 | Levi and Tristan    | R | Greg    | Model IPC with Kafka, Websocket
 | 10 | 15:00 | Filip Fur           | L | Pontus  | Modeling at Saab (interview)
 |  5 | 15:10 |                     | L |         | 5-minute *break*
 | 40 | 15:15 | Leon Starr          | R | Nils    | Action Semantics (10 mins Q&A)
