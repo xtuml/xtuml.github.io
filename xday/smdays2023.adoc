@@ -178,3 +178,58 @@ image::einstein_classes.png[xtUML Class Diagram]
 
 //include::smdays2023instructions.adoc[Last Minute Instructions]
 
+
+////
+
+registered attendees:
+
+Colin Carter
+Paul Francis
+Greg Arnot
+Levi Starrett
+Cortland Starrett
+Keith Brown
+Robert Mulvey
+John Wolfe
+Alasdar Mullarney
+Mike Lee
+Leon Starr
+Takao Futagami
+Kenji Hisazumi
+Hiroshi Ota
+Dave S
+Tristan P
+David Skinner <david.n.skinner@baesystems.com>
+Annie Allan <annie.allan@baesystems.com>
+Paul Watkins <paul.watkins4@baesystems.com>
+Ollie Green <ollie.green3@baesystems.com>
+Harry Carruthers <harry.carruthers@baesystems.com>
+Andy Dennis <andrew.dennis@baesystems.com>
+Alexis Lamas <alamas@enverasystems.com>
+Jim Vaught <jvaught@enverasystems.com>
+Lee Riemenschneider
+
+Cheltenham dinner
+
+Levi Starrett (Courtney)
+Cortland Starrett (Roxanna)
+Colin Carter
+Paul Francis
+Greg A (Jeanette)
+Tristan Pye
+David Skinner
+Dave S
+John T
+
+Linkoping dinner
+
+Bengt Kvarnstrom
+Nils Paulsson
+Per Linden
+Cortland Starrett (Roxanna)
+Pontus?
+Filip?
+Per?
+Anders?
+
+////
