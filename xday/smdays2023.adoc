@@ -197,6 +197,7 @@ Leon Starr
 Takao Futagami
 Kenji Hisazumi
 Hiroshi Ota
+Filip Fur
 Dave S
 Tristan P
 David Skinner <david.n.skinner@baesystems.com>
@@ -208,6 +209,7 @@ Andy Dennis <andrew.dennis@baesystems.com>
 Alexis Lamas <alamas@enverasystems.com>
 Jim Vaught <jvaught@enverasystems.com>
 Lee Riemenschneider
+Rob Day
 
 Cheltenham dinner
 
@@ -219,17 +221,20 @@ Greg A (Jeanette)
 Tristan Pye
 David Skinner
 Dave S
-John T
+John T (maybe late)
 
 Linkoping dinner
 
 Bengt Kvarnstrom
 Nils Paulsson
 Per Linden
+Erik Wedin
 Cortland Starrett (Roxanna)
+Filip Fur
+Rob Day
 Pontus?
-Filip?
 Per?
 Anders?
+JohnT?
 
 ////
