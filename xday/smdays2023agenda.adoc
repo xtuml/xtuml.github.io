@@ -80,20 +80,20 @@ The columns in the table below are as follows:
 |  T | Clock | Presenter           | L | Intro   | Title
 |  5 | 13:00 | Cortland Starrett   | L |         | Welcome and Opening
 |  5 | 13:05 | Michael Lee         | L | Cort    | Shlaer-Mellor Day greeting and instructions
-| 15 | 13:10 | H. Ota, Team Japan  | R | Takao   | Conceptual Modeling
-| 30 | 13:25 | Munin Project Team  | R | Dave    | Observability and Protocol Verification
+| 15 | 13:10 | H. Ota, Team Japan  | R | Takao   | https://youtu.be/vzBGBnPcu6M[Conceptual Modeling]
+| 30 | 13:25 | Munin Project Team  | R | Dave    | https://youtu.be/UjR9AR8M2Ew[Observability and Protocol Verification]
 | 10 | 13:55 |                     | L |         | Mixing virtually - introductions
 |  5 | 14:05 |                     | L |         | 5-minute *break*
-| 10 | 14:10 | Michael Lee         | R |         | S-M Commons Update
-| 20 | 14:20 | John and Alasdar    | R | Levi    | Model-based Test
+| 10 | 14:10 | Michael Lee         | R |         | https://youtu.be/cGkWV2BpXGQ[S-M Commons Update]
+| 20 | 14:20 | John and Alasdar    | R | Levi    | https://youtu.be/nQZUpHoI5mE[Model-based Test]
 |  5 | 14:40 |                     | L |         | 5-minute *break*
-| 20 | 14:45 | Levi and Tristan    | R | Greg    | MASL Architecture and IPC with Kafka
-| 10 | 15:05 | Filip Fur           | L | Pontus  | Modeling at Saab (interview)
+| 20 | 14:45 | Levi and Tristan    | R | Greg    | https://youtu.be/_R7rKqCQQvs[MASL Architecture and IPC with Kafka]
+| 10 | 15:05 | Filip Fur           | L | Cort    | Modeling at Saab (interview)
 |  5 | 15:15 |                     | L |         | 5-minute *break*
-| 40 | 15:20 | Leon Starr          | R | Nils    | Action Semantics (10 mins Q&A)
-| 15 | 16:00 | Levi Starrett       | R | John    | Textual xtUML Roadmap
+| 40 | 15:20 | Leon Starr          | R | Mike    | https://youtu.be/xyEuPGgOjO8[Action Semantics]
+| 15 | 16:00 | Levi Starrett       | R | John    | https://youtu.be/DySs0RGmD4U[Textual xtUML Roadmap]
 |  5 | 16:15 |                     | L |         | 5-minute *break*
-| 10 | 16:20 | Keith Brown         | R | Bob     | Gateway Kiosk State Machine
+| 10 | 16:20 | Keith Brown         | R | Bob     | https://youtu.be/P-Rk1ZSEk-I[Gateway Kiosk State Machine]
 | 20 | 16:30 |                     | L |         | Around-the-Table Status Updates
 |  5 | 16:50 | Cort and Mike       | L |         | closing remarks
 | 30 | 16:55 | Happy Hour          | L |         | favorite beverage
@@ -102,13 +102,13 @@ The columns in the table below are as follows:
 
 ////
 
-mike:https://youtu.be/25aRAxbcAHo
-keith:https://youtu.be/P-Rk1ZSEk-I
-munin:https://youtu.be/UjR9AR8M2Ew
-leon:https://youtu.be/xyEuPGgOjO8
-levi:
-tristan:
-john:
-ota:
+10:04 10ota720p.mp4
+27:08 20munin720p.mp4
+5:10  30mike720p5m10s.mp4
+18:53 40john720p.mp4
+16:23 50kafka720p.mp4
+35:36 60leon720p.mp4
+6:45  70textual_xtuml720p.mp4
+5:00  80keith720p.mp4
 
 ////
