@@ -60,7 +60,7 @@ and comments.
 |===
 
 
-==== Agenda (*DRAFT*)
+==== Agenda
 
 The columns in the table below are as follows:
 
@@ -99,6 +99,11 @@ The columns in the table below are as follows:
 | 30 | 16:55 | Happy Hour          | L |         | favorite beverage
 |===
 
+**Tooling Updates**
+
+link:MIMRtooling.pdf[MI/MR Tooling Updates]
+
+link:BPtooling.pdf[BridgePoint Tooling Updates]
 
 ////
 
