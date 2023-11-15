@@ -210,6 +210,8 @@ Alexis Lamas <alamas@enverasystems.com>
 Jim Vaught <jvaught@enverasystems.com>
 Lee Riemenschneider
 Rob Day
+James Bain
+Per Johnsson
 
 Cheltenham dinner
 
@@ -222,6 +224,7 @@ Tristan Pye
 David Skinner
 Dave S
 John T (maybe late)
+James Bain
 
 Linkoping dinner
 
@@ -231,10 +234,10 @@ Per Linden
 Erik Wedin
 Cortland Starrett (Roxanna)
 Filip Fur
-Rob Day
+Rob Day (Anika)
+John Tornblom
+Anders Eriksson
+Per Jonsson
 Pontus?
-Per?
-Anders?
-JohnT?
 
 ////
