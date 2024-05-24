@@ -1,0 +1,115 @@
+////
+
+= Shlaer-Mellor Days 2024 Session Planning
+
+==== Session Types
+
+All session types are eligible to be pre-recorded.  For pre-recorded
+sessions, the presenter will be available live to respond to questions
+and comments.
+
+.Session Types
+[%autowidth,options="header"]
+|===
+| Session Type           | Abbrev   |  #  |  time | Description
+| keynote presentation   | keynote  |  1  | 30-60 | classic featured presentation from featured
+                                                    expert
+| technical presentation | tech     | 3-6 | 20-45 | These are traditional full length
+                                                    presentations from recognized experts
+                                                    in the field.  Together with the experience
+                                                    reports, these represent the primary
+                                                    content of the conference.
+| experience report      | exprpt   | 0-4 | 10-30 | Experience reports are medium length
+                                                    presentations focused on the application
+                                                    of modeling in industry or education.
+| panel discusion        | panel    | 0-2 | 10-30 | The panel discussion typically involves a
+                                                    moderator and a panel of experts.  Questions
+                                                    have been prepared and shared with panel
+                                                    members.  Audience participation is included.
+| debate                 | debate   | 0-1 | 10-30 | A debate doubles as a networking activity.
+                                                    Participants are assigned to groups.  Each
+                                                    group is given a position statement to debate.
+                                                    After the debate time, summary statements
+                                                    are presented by a moderator.
+| networking activity    | network  | 2-4 |  5-30 | These activities are pre-arranged, potentially
+                                                    moderated, topical and focused on connecting
+                                                    participants.  Techniques to bridge local
+                                                    and remote are to be prepared.
+| interview              | iview    | 2-4 |  1-5  | interactive interview of person of interest
+                                                    focusing on the role that makes the person
+                                                    special to the xtUML community
+| tool/app demonstration | demo     | 0-4 |  1-5  | demonstration of a new feature or procedure
+                                                    in the tooling (ASL editor, Ciera,
+                                                    OOA of MASL, canvas features, Carpark)
+| company expo           | expo     | 0-4 |  1-5  | To showcase participant companies and
+                                                    organizations, these will work best as
+                                                    pre-recorded production videos.
+| introduction           | intro    | <20 |  1-2  | personal introduction answering
+                                                    a few key questions (name, profession,
+                                                    organization, key connection with xtUML)
+                                                    in a pre-recorded format
+| video tour             | vtour    | 1-4 |  1-5  | 1-5 minute video tour of venue or point
+                                                    of interest to the xtUML community
+                                                    (Queens venue, Portsmouth, HMS Victory,
+                                                    MatchBOX)
+| happy hour             | hpyhour  | 0-1 | 20-40 | Happy hour is an organized tasting and
+                                                    sharing of a beverage together.  It is
+                                                    fun to have a brewmeister or distiller
+                                                    present to explain and teach and connect
+                                                    those participating online.
+|===
+
+////
+
+==== Agenda
+
+Coming soon!
+
+////
+
+The columns in the table below are as follows:
+
+* The first column labeled *T* is the minute count for the session.
+* The second column labeled *Clock* is the target time of day (BST) for the session.
+* Column three names to *Presenter*.
+* The fourth column is a status flag.
+* The fifth column contains an abbreviation for the *Type* of session as
+  defined in Session Types.
+* Column six gives a *Title* to the session if applicable.
+
+
+.Agenda (*DRAFT* timings not confirmed)
+[%autowidth,options="header"]
+|===
+|  T | Clock | Presenter           | L | Intro   | Title
+|  5 | 13:00 | Cortland Starrett   | L |         | Welcome and Opening
+|  5 | 13:05 | Michael Lee         | L | Cort    | Shlaer-Mellor Day greeting and instructions
+| 15 | 13:10 | Chess Challenge     | R |         | https://youtu.be/[]
+| 30 | 13:25 | Tooling Update      | R |         | https://youtu.be/[]
+| 10 | 13:55 |                     | L |         | Mixing virtually - introductions
+|  5 | 14:05 |                     | L |         | 5-minute *break*
+| 10 | 14:10 | John Chess Model    | R |         | https://youtu.be/[]
+| 20 | 14:20 | Cort Chess Model    | R |         | https://youtu.be/[]
+|  5 | 14:40 |                     | L |         | 5-minute *break*
+| 20 | 14:45 |                     | R |         | https://youtu.be/[]
+| 10 | 15:05 |                     | L |         | (interview)
+|  5 | 15:15 |                     | L |         | 5-minute *break*
+| 40 | 15:20 |                     | R |         | https://youtu.be/[]
+| 15 | 16:00 |                     | R |         | https://youtu.be/[]
+|  5 | 16:15 |                     | L |         | 5-minute *break*
+| 10 | 16:20 |                     | R |         | https://youtu.be/[]
+| 20 | 16:30 |                     | L |         | Around-the-Table Status Updates
+|  5 | 16:50 | Cort and Mike       | L |         | closing remarks
+| 30 | 16:55 | Happy Hour          | L |         | favorite beverage
+|===
+
+10:04 .mp4
+27:08 .mp4
+5:10  .mp4
+18:53 .mp4
+16:23 .mp4
+35:36 .mp4
+6:45  .mp4
+5:00  .mp4
+
+////

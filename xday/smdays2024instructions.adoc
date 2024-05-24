@@ -1,0 +1,102 @@
+== Last Minute Instructions for Participants
+
+=== Last Last Minute Instructions
+
+This is your source of information.  Watch this spot for updates even during the conference!
+
+==== Zoom Link to Shlaer-Mellor Days
+
+A link to the Zoom meeting will be here and live on conference day.
+https://us06web.zoom.us/j/85683206679?pwd=R1VGcmQ2ZW1CYVVJNEVZeVhnbUFQdz09[Zoom Link to xtUML Days 2024]
+
+If you are having trouble accessing Zoom, contact the event staff using the
+https://hangouts.google.com/group/vMohZ9oW08xR7wSd2[xtUML Community Google Hangout].
+
+==== Agenda with Links to YouTube
+
+In the <<Agenda of Presentations>>, each presentation is linked to a YouTube
+video (most links are live only on conference day).
+If for some reason the Zoom rendering of the presentation is faulty, you
+can watch the presentation on YouTube.  However, pay attention and
+rejoin the live conference for Q&A!  You can come back to these videos after
+the conference is over.
+
+=== Participant Instructional Emails
+
+Participants were sent emails ahead of the conference.  Those emails are 
+repeated here for convenience ordered from most to least recent.
+
+////
+==== Participant Instructions (3)
+
+Our presenters this year are the best!  As presentations are in progress, type
+questions in the Zoom chat.  You may use 1-on-1 channels to chat with other
+participants.
+
+The conference has several interactive elements.  You will join Zoom breakout
+rooms throughout the day to hear people introducing themselves and answering
+the "question of the day".  We also have debates scheduled in the afternoon
+with the expectation of arriving at consensus on three constructive topics.
+Join enthusiastically; these always end up being the best part of a Zoom
+conference.
+
+For each of these breakout sessions, you will choose room 1, 2 or 3 from your
+Zoom control panel.
+
+To make these interactive sessions as pleasant as possible, pay attention to
+the sound quality from your machine.  First, be in a quiet place.  A PC
+microphone is probably fine, but head sets, podcast mics or AirPods are better.
+Have light on your face, minimal light behind you and your camera at eye
+level.
+
+You will be asked to introduce yourself, your organization and your connection
+to the Shlaer-Mellor xtUML Community.  Think about this ahead of time and be
+colorful!
+
+Plan for your favorite drink at virtual happy hour after the conference proper.
+Be prepared to share about what you are drinking.
+////
+
+==== Participant Instructions (2)
+
+Very importantly, the conference web site is your primary source of
+information.  Even on conference day it will get updated to help deal with
+whatever might happen.
+
+The agenda has been re-sequenced to make it easier for presenters in
+widely spread out time zones (+/- 8 hours!).  View the agenda on the web
+site.
+
+This conference will be a Zoom marathon.  Prepare to have a comfortable,
+quiet, soft-surface room.  Plan for your food and drink.  Have good
+internet, preferably wired.  Flaky WiFi makes for a miserable day.  If
+your internet at home is lousy, find an alternate location.
+
+==== Participant Instructions (1)
+
+Hello from the UK and Zoom-land...
+
+If you have never used Zoom, please install and practice on Zoom before
+the conference!  (Install the application rather than rely on the web
+browser version.)
+
+Most of the presenters are presenting from remote places.
+
+All but a few of the presentations are pre-recorded, will be played and
+then followed with live Question and Answer.  Plan to type your questions
+into the Zoom chat even while the presentation is playing.  Presenters may
+actually answer some question in real time!  If not, we will have
+assistants watching this feed to help choose the best questions and call
+on you at the end.
+
+Be thinking about comfort, quiet, fast internet, microphone purchase, time
+zones, meals, questions for panel members, enthusiastic debate of xtUML
+topics, a special drink for happy hour, ...
+
+== Last Minute Instructions for Presenters
+
+* Please be present and attentive during your presentation.
+* Monitor the Zoom chat stream and attempt to answer questions in real time.
+* Upon completion of the presentation, you will go live to answer audience questions.
+
+
