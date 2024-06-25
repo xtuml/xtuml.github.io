@@ -36,7 +36,7 @@ chess strategy ("chess 'bots").  These chess bot models will compete against
 each other and human participants.  Results will be presented and explained on
 conference day.#
 
-[.big]#Read the https://github.com/xtuml/chess/blob/main/doc/announcement.md[2024 Chess Modeling Challenge].#
+[.big]#Read the https://github.com/xtuml/chess/blob/main/doc/announcement.md[2024 Chess Modeling Challenge Announcement].#
 
 [.big]#Learn how to participate https://github.com/xtuml/chess/[here].#
 |===
