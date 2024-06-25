@@ -30,11 +30,15 @@ systems.
 [frame=none,grid=none,cols="1,1"]
 |===
 a| image::chess.png[game of chess]
-a| The 2024 conference is featuring a modeling challenge.  The subject
+a| [.big]#The 2024 conference is featuring a modeling challenge.  The subject
 matter is the game of chess.  Participants are building robotic xtUML models of
 chess strategy ("chess 'bots").  These chess bot models will compete against
 each other and human participants.  Results will be presented and explained on
-conference day.  Learn how to participate here:  TODO
+conference day.#
+
+[.big]#Read the https://github.com/xtuml/chess/blob/main/doc/announcement.md[2024 Chess Modeling Challenge].#
+
+[.big]#Learn how to participate https://github.com/xtuml/chess/[here].#
 |===
 
 Also in focus:
