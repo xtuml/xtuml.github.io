@@ -99,15 +99,12 @@ include::smdays2024agenda.adoc[Agenda]
 
 === In-Person Gatherings
 
-A dinner gathering is planned in the UK in TODO on the evening of
-TODO.  The venue is TODO.  Dinner is included in the
-conference registration (including a significant other).
+A dinner gathering is planned in the UK in Cheltenham at 19:15 on the evening of
+28 October 2024.  The venue is https://ivycollection.com/restaurants/the-ivy-montpellier-brasserie/[The Ivy Montpellier Brasserie].
+Dinner is included in the conference registration (including a significant other).
 
 A dinner gathering is planned in Linköping, Sweden on the evening of
-TODO.  The venue and time are TODO.
-
-A gathering is planned in Tokyo, Japan on the evening of
-TODO.  The venue and time are TODO.
+30 October 2024 at 18:00 at https://www.bishopsarms.com/vara-pubar/linkoping[The Bishop's Arms].
 
 == Call for Papers
 
@@ -180,16 +177,19 @@ image::einstein_classes.png[xtUML Class Diagram]
 
 registered attendees:
 
-Colin Carter
-Paul Francis
-Greg Arnot
-Levi Starrett
-Cortland Starrett
-Keith Brown
-Robert Mulvey
+David Skinner <david.n.skinner@baesystems.com>
+Paul Watkins <paul.watkins4@baesystems.com>
+Joey Kutler <joseph.kutler3@baesystems.com>
+Luke Compton-Burnett <Luke.Compton-Burnett@baesystems.com>
+Levi Starrett <levi.starrett@onefact.net>
+Cortland Starrett <cortland.starrett@onefact.net>
 John Wolfe
 Alasdar Mullarney
 Mike Lee
+
+Colin Carter
+Paul Francis
+Greg Arnot
 Leon Starr
 Takao Futagami
 Kenji Hisazumi
@@ -197,14 +197,6 @@ Hiroshi Ota
 Filip Fur
 Dave S
 Tristan P
-David Skinner <david.n.skinner@baesystems.com>
-Annie Allan <annie.allan@baesystems.com>
-Paul Watkins <paul.watkins4@baesystems.com>
-Ollie Green <ollie.green3@baesystems.com>
-Harry Carruthers <harry.carruthers@baesystems.com>
-Andy Dennis <andrew.dennis@baesystems.com>
-Alexis Lamas <alamas@enverasystems.com>
-Jim Vaught <jvaught@enverasystems.com>
 Lee Riemenschneider
 Rob Day
 James Bain
@@ -221,7 +213,6 @@ Tristan Pye
 David Skinner
 Dave S
 John T (maybe late)
-James Bain
 
 Linkoping dinner
 
@@ -230,6 +221,7 @@ Nils Paulsson
 Per Linden
 Erik Wedin
 Cortland Starrett (Roxanna)
+Levi Starrett
 Filip Fur
 Rob Day (Anika)
 John Tornblom
