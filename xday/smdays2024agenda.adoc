@@ -83,25 +83,25 @@ The columns in the table below are as follows:
 |===
 |  T | Clock | Presenter           | L | Intro   | Title
 |  5 | 13:00 | Cortland Starrett   | L |         | Welcome and Opening
-|  5 | 13:05 | Michael Lee         | L | Cort    | Shlaer-Mellor Day greeting and instructions
-| 15 | 13:10 | Chess Challenge     | R |         | https://youtu.be/[]
-| 30 | 13:25 | Tooling Update      | R |         | https://youtu.be/[]
-| 10 | 13:55 |                     | L |         | Mixing virtually - introductions
-|  5 | 14:05 |                     | L |         | 5-minute *break*
-| 10 | 14:10 | John Chess Model    | R |         | https://youtu.be/[]
-| 20 | 14:20 | Cort Chess Model    | R |         | https://youtu.be/[]
-|  5 | 14:40 |                     | L |         | 5-minute *break*
-| 20 | 14:45 |                     | R |         | https://youtu.be/[]
-| 10 | 15:05 |                     | L |         | (interview)
+|  5 | 13:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
+| 15 | 13:10 | Levi Starrett       | R |         | https://youtu.be/[2024 Chess Challenge]
+| 15 | 13:25 | Colin Carter        | R |         | https://youtu.be/[Chess Play Abstracted]
+| 10 | 13:40 | mixing              | L |         | Mixing virtually - introductions
+|  5 | 13:50 |                     | L |         | 5-minute *break*
+| 10 | 13:55 | John and Alasdar    | R |         | https://youtu.be/[Pretty Smart Chess Model]
+| 10 | 14:05 | Levi Starrett       | R |         | https://youtu.be/[Exploring the Future]
+|  5 | 14:15 |                     | L |         | 5-minute *break*
+| 10 | 14:20 | Cortland Starrett   | R |         | https://youtu.be/[Model and Architecture]
+|  5 | 14:30 |                     | L |         | 5-minute *break*
+| 30 | 14:35 | Various             | R |         | https://youtu.be/[Tooling Update]
+| 10 | 15:05 | Cortland Starrett   | R |         | https://youtu.be/[Zero Timer Idiom]
 |  5 | 15:15 |                     | L |         | 5-minute *break*
-| 40 | 15:20 |                     | R |         | https://youtu.be/[]
-| 15 | 16:00 |                     | R |         | https://youtu.be/[]
-|  5 | 16:15 |                     | L |         | 5-minute *break*
-| 10 | 16:20 |                     | R |         | https://youtu.be/[]
-| 20 | 16:30 |                     | L |         | Around-the-Table Status Updates
-|  5 | 16:50 | Cort and Mike       | L |         | closing remarks
-| 30 | 16:55 | Happy Hour          | L |         | favorite beverage
+| 20 | 15:20 | All                 | L |         | Around-the-Table Status Updates
+|  5 | 15:40 | Cort and Mike       | L |         | closing remarks
+| 30 | 15:45 | Happy Hour          | L |         | favorite beverage
 |===
+
+Tooling Update:  log4cpp, textual persistence, asl2masl, self idiom
 
 10:04 .mp4
 27:08 .mp4
