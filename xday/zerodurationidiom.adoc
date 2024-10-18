@@ -1,0 +1,298 @@
+= Zero Duration Timer Idiom
+
+== TODO
+
+* Provide OAL example both of event to self and timer to self.
+* [line-through]#Redo Q&A to be only 3 questions.#
+* [line-through]#Take video footage of Cindy at the gym.#
+* [line-through]#Identify and draw or build an example of a self-stimulating state
+  machine that needs to be interruptible.#
+* [line-through]#Find an animated GIF of burpees.#
+  ** https://cdnl.iconscout.com/lottie/premium/thumb/woman-doing-burpees-8161443-6561566.gif[animated burpee]
+  ** https://i.pinimg.com/originals/74/f4/1d/74f41d92450b68fa58fda6f3b8dd9eb4.gif[another]
+
+== Considerations
+
+* Incorporate Rox, Juliana and Amanda?
+  ** "Hey Cort, do you want our opinions on the Zero Duration Timer Idiom?"
+  ** "Honey, do you want my opinion on the Zero Duration Timer Idiom?"
+* [line-through]#Video of Ezra (and Levi (and Cort))?#
+* [line-through]#Add supertype/subtype (polymorphic) work-around/hack.#
+
+== Recording Presentation
+
+. Calibrate USB microphone?
+. Record full face segments using a meeting room with the windows in the background.
+  .. introduction
+  .. CrossFit (with headband?) (check truck)
+  .. "Where is the gap?"
+  .. Recommended change to the Method.
+  .. thank you
+. Record BridgePoint demo of class diagram.
+. Record BridgePoint demo of state machine diagram.
+. Record remaining segments
+  .. Use green screen and get pretty close to face.
+
+== Outline
+
+* (voice only) title slide
+  ** Zero Duration Timer Idiom and CrossFit Cindy
+  ** Shlaer-Mellor Days 2024
+* (full face)
+  ** Hello, I am Cortland Starrett of One Fact.
+  ** In this presentation I want us together to explore an intriguing
+     __work pattern__ found in life and computational systems.  We will
+     first understand the work pattern.  Then, we will model an example
+     application that demonstrates it.  Then, we will explore the
+     challenges that it poses to Shlaer-Mellor modeling.  Lastly, I will
+     propose a small change to the Shlaer-Mellor Method to make life
+     simpler for this particular work pattern.
+* (small face) Ask the provocative questions.
+  ** But first, let me ask 3 provocative questions.  I will give my own
+     answers at the end of this presentation.  But I want you to answer
+     them for yourself now.  Go ahead and write them down, commit them to
+     the chat or simply keep them in your mind.  Answers are 'yes' or 'no'.
+  ** Should a modeler control when an event to self is expedited?
+  ** Does a timer with a duration of zero mean something special?
+  ** Is a delayed event to self be expedited?
+  ** (Pause after each question.)
+* (small face) "Work as hard as you can until..."
+  ** animated GIF of burpees
+  ** Back to the __work pattern__.  There is a "work pattern" that I
+     sometimes encounter.  It probably has a name and has been written
+     about somewhere, and I don't know it.  But it poses a minor challenge
+     to Shlaer-Mellor modeling.  Allow me to describe it and explore the
+     challenge.  It has to do with "working as hard as you can until...".
+     There are three forms:
+     *** "Work as hard as you can for a prescribed amount of time."
+     *** "Work as hard as you can until I tell you to stop."
+     *** "Work as hard as you can until someone else tells you to stop."
+* (full face, headband) CrossFit:  The Sport of Fitness!
+  ** A nice example of the work pattern is visible in the fitness world.
+     I like to exercise and am a member of a CrossFit gym.  Yes, I am one
+     of _those_!  You may be a CrossFitter or know one, because
+     CrossFitters talk about it __all the time__!  Some claim that
+     CrossFit is a cult!
+  ** In fact, I entered a pub and sat at the bar next to a vegan, a
+     political activist and a CrossFitter.  How did I know?  They all
+     told me in the first five minutes that I was sitting there!
+  ** O.K.  Let me tell you about one workout in particular.  It is called
+     "Cindy".
+* (no face) Exercise Intensity
+  ** fixed volume and fixed time slide
+  ** CrossFit likes intensity.  So, most workouts are timed.  These
+     timed workouts come in two flavors, "fixed volume" and "fixed time".
+     *** fixed volume
+         **** In a "fixed volume" workout, the volume of movement is
+              fixed.  But the athlete is expected to complete the workout
+              in the shortest amount of time.
+     *** fixed time
+         **** In a "fixed time" workout, the duration of time is fixed, and
+              the athlete completes as much work as possible in that fixed time.
+     *** fixed volume
+         **** Show slide of Murph workout with picture of Murphy.
+         **** A popular fixed volume workout is called "Murph", named after a fallen
+              soldier, U.S. Navy SEAL Lt. Michael Murphy who died in battle
+              in Afganistan in 2005.  It is a tough one and involves, "Run 1 mile.
+              Do 100 pullups, 200 pushups and 300 squats, then run 1 mile.
+              The volume of work is fixed, and the time to complete it varies.
+              This could be described as, "Work as hard as you can until
+              you have completed all of the reps (repetitions)".
+     *** fixed time
+         **** However, it is the fixed time mode that I want to explore and model.
+         **** In CrossFit speak, this is called an "AMRAP", "As Many Reps
+              As Possible" in the prescribed time duration.
+* (no face) Cindy
+  ** slide of Cindy AMRAP workout definition with graphic
+     *** "Do 5 pullups then 10 pushups then 15 squats and repeat
+         for 20 minutes."
+     *** Your score is the number of repetitions (reps) that you complete
+         within the prescribed time of 20 minutes.
+     *** Here is a visual example of me and Ezra doing a couple of rounds
+         of Cindy.
+  ** (Ezra Cindy workout demo video) (of Levi and Cort) (1:25)
+  ** (small face) Establish "AMRAP pattern" in information systems.
+     *** Chess Bot
+         **** Later, I will list other examples of this pattern in
+              information systems.  But for now, there is one related to
+              chess.  In Levi's chess bot, he has a limited amount of time
+              to explore future moves and select the best next move he
+              can.  The deeper the bot can look into the future, the
+              better move candidate he will find.  But he is limited by
+              time.  So his bot "works as hard as it can to find a
+              candidate move until it gets interrupted."  In this respect,
+              it is kinda like the Cindy workout.
+* (no face) model of Cindy
+  ** Class diagram of Cindy workout.
+     *** We have a gym, gym_class, coach, athlete, workout and 2 subtypes
+         of workout for fixed time and fixed volume workouts.
+     *** A coach coaches many athletes.
+     *** An athlete performs one workout.
+     *** Lots of refinements can be made here, but I need only the
+         'athlete' class to demonstrate our "work as hard as you can"
+         AMRAP work pattern.
+  ** State machine of athlete.
+     *** We have ready, pullup, pushup, squat and resting states.
+     *** When the coach yells, "3, 2, 1, Go!", the athlete transitions
+         to the pullup state and does a pullup and adds 1 to his rep count
+         attribute.  He then transitions back to the same state and does
+         another pullup and another pullup until he has done 5 incrementing
+         his rep count each time.  At the end of the state, the athlete
+         generates either 'A2:repeat' or 'A3:next_movement' to self.
+     *** The athlete then transitions to pushup, repeating the pushup
+         state until he has done 10 pushups.
+     *** The athlete then transitions to squat, repeating the squat
+         state until he has done 15 squats.
+     *** The athlete then transitions back to pullup.
+     *** This loop of states repeats "as fast as it can" until the
+         20 minute time duration is over.
+     *** The time event comes from the coach yelling "time", generating
+         the 'A4:time' event to each athlete in the gym_class.
+     *** At this point the athlete should transition to resting from
+         whichever movement state he is in.
+     *** Note that time can run out in the middle of a movement.  For
+         example, the athlete may have performed only 3 of 10 pushups when
+         time runs out.  That is good, because every rep counts.
+     *** Some athletes will go fast, some will go more slowly depending upon
+         fitness level.  But they all go "as fast as they can".
+   ** (big circle face) superimposed on state machine model
+     *** Does this seem reasonable?
+     *** Does anyone detect a problem?
+     *** There is indeed a problem.  This state machine does not work.  It
+         does not work due to a special Shlaer-Mellor event rule governing
+         the delivery of events direct to 'self'.
+   ** (no face) state machine model
+     *** Specifically, the 'time' event will not be received.  This will
+         result in the athlete continuing to do pullups, pushups and
+         situps forever!  It is an endless loop.
+* (no face) Explore Expedite Rule
+  ** Show the rule.
+     *** In the OOA 96 Report, the Shlaer-Mellor Method was revised to
+         treat events generated to self differently from events coming
+         from other instances.
+     *** Events generated to self are received by the object state
+         machine ahead of events from other instances.
+  ** Why was this added?
+     *** The rule is intended to help maintain "data access set consistency".
+         The rule allows an object to sequence through multiple states
+         before arriving in a state in which the instance population is in
+         a stable and cohesive condition.
+     *** It also can simplify a state machine such that it does not need
+         to respond to every type of event from every state, namely the
+         transitory states.
+     *** Some modelers refer to these "intermediate states" as "transitory
+         states".  I know of one modeler who shades these states with
+         a different color to highlight the difference between transitory
+         states and stable states.
+     *** Expedited event to self allows complex state models to be
+         substantially simplified.  The rule is a good rule but would
+         be better with a small tweak.
+  ** (full face) Where is the gap?
+     *** _Every_ event to self is expedited even when not on a transition
+         to a transitory state.  This effectively makes it impossible to
+         generate an event to self without it being expedited even, if the
+         modeler does not want it expedited.
+     *** This is the case with our 'athlete' object in the model of Cindy.
+         None of the states are transitory.  None of the events need to be
+         expedited.
+     *** We need a way to expedite only when we have transitory states.
+     *** Or we need a way to indicate that we do not want an event expedited.
+  ** (no face) Describe other examples.
+     *** In the Protocol Verifier, we process audit events "as fast as we can"
+         until something tells us to stop.
+     *** performance benchmarking application
+         **** A benchmarking application tests the speed of an operation.
+         **** The operation may be very short, so the benchmarking application
+              repeats it many times for a fixed period of time and then
+              divides by the rep count to get the operation time.
+     *** packet reception with timeout
+         **** In telecommunications we are often receiving packets or bytes
+              but need to honor a guard timer.
+* (full face) recommended change to the method
+  ** I recommend that we revise the __Expedited Event to Self__ rule and
+     allow a keyword to activate or deactivate it.
+  ** I would be happy with a keyword that could be used on the 'generate'
+     statement and would only be valid when generating to 'self'/'this'.
+  ** Since we have history of defaulting to expedite self events, the
+     keyword might be 'unexpedite'.
+  ** But I might prefer to see the default behavior be to not expedite.
+     Thus, I prefer a keyword 'expedited' to only expedite events when
+     when explicitly requested.
+  ** Let us go through due process and our OOA modeling subcommittee to
+     explore these options.
+* (small face) Introduce the work-arounds.
+  ** Meanwhile... modelers have been working around the expedited event
+     to self rule for many years.  I suspect the gap in the rule was not
+     discovered until model compilers implemented it, and modelers began
+     running their models with it.
+  ** Split the class into 2 classes and split the state machine across the
+     two classes.
+     *** If we break the single state machine into 2 state machines, we
+         can work around the expedite rule.  Consider splitting our
+         athlete into 'head' and 'body'.  After each rep, the body could
+         ask the head if "we" are done, yet.
+     *** This works, but would make our quite natural model awkward.
+  ** Add a supertype.
+     *** In a similar fashion, we can work around the expedited event to
+         self rule by introducing a subtype/supertype hierarchy and
+         leveraging polymorphic events.
+     *** If we add a supertype to our class, we could generate to self
+         when we desire the event to be expedited.  Generate to the
+         supertype when we don't.
+     *** Again, this works but is awkward.
+  ** Architecturally keying on the 'self' keyword.
+     *** The MC-3020 architecture expedites events generated to self
+         when it detects the 'self' keyword in the 'generate' statement.
+         Here is an example of assigning 'self' to a transient before 
+         the 'generate' statement.
+     *** This does not work in BridgePoint Verifier, Ciera or MASL {cpp},
+         since these architectures check the id of the sender and receiver
+         and expedites when they match.
+     *** So, this cute hack works only when running the MC-3020 model
+         compiler.
+  ** Zero duration timer idiom.
+     *** The final work-around is my recommendation to being the preferred
+         idiom going forward until we update our action languages.
+     *** Show MASL example.
+     *** "Why in the world would someone have a zero duration timer?!"
+     *** Since all known architectures deliver timer events normally (as not
+         expedited), this approach works in all the cases I know of.
+     *** The statement is so ugly looking, that it draws our attention.
+         This is kinda good, since we are using it as a temporary work-around.
+     *** Architectures can (and do) recognize and optimize this statement
+         and simply deliver the event (normally, unexpedited) without
+         actually starting a timer.
+     *** For now, my recommendation is to use the Zero Duration Timer Idiom.
+* Ask the provocative questions (giving the answers).
++
+Can/should the modeler control when an event to self is expedited?::
+Yes.  It should be the exception, but for certain patterns (one described
+above), it is difficult and clumsy to build a model without the ability to
+circumvent this rule.
++
+Does a timer with a zero duration mean something special?::
+Yes.  It means that the modeler is circumventing the expedited event to
+self rule.  Such timers may be optimized to simply deliver the event
+immediately but without expediting.
++
+Is a delayed event to self expedited?::
+No.  Since modelers use zero-duration delayed events to circumvent the
+expedited event to self rule, timer events must never be expedited.
+
+  ** How did your answers match up?
+  ** Have you changed your position?
+
+* Summary
+  ** The OOA '96 Rule to expedite events directed to self, introduced the
+     potential to lock out events from other instances and timers.
+  ** The Shlaer-Mellor community should consider a small change to the rule to
+     be used judiciously.
+  ** Work-arounds exist.  Let us agree on a single workaround until the Method
+     and action languages support the revised rule.
+* (full face) thank you
+
+* (video of Amanda and Juliana)
+* (video of Rox)
+
+
+
