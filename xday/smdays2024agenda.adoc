@@ -85,20 +85,20 @@ The columns in the table below are as follows:
 |  5 | 13:00 | Cortland Starrett   | L |         | Welcome and Opening
 |  5 | 13:05 | Michael Lee         | L |         | Shlaer-Mellor Day greeting and instructions
 | 15 | 13:10 | Levi Starrett       | R |         | https://youtu.be/[2024 Chess Challenge]
-| 15 | 13:25 | Colin Carter        | R |         | https://youtu.be/[Chess Play Abstracted]
+| 15 | 13:25 | Colin Carter        | R |         | https://youtu.be/Lb8fStgOzPk[Chess Play Abstracted] 10
 | 10 | 13:40 | mixing              | L |         | Mixing virtually - introductions
 |  5 | 13:50 |                     | L |         | 5-minute *break*
-| 10 | 13:55 | John and Alasdar    | R |         | https://youtu.be/[Pretty Smart Chess Model]
-| 10 | 14:05 | Levi Starrett       | R |         | https://youtu.be/[Exploring the Future]
-|  5 | 14:15 |                     | L |         | 5-minute *break*
-| 10 | 14:20 | Cortland Starrett   | R |         | https://youtu.be/[Model and Architecture]
-|  5 | 14:30 |                     | L |         | 5-minute *break*
-| 30 | 14:35 | Various             | R |         | https://youtu.be/[Tooling Update]
-| 10 | 15:05 | Cortland Starrett   | R |         | https://youtu.be/[Zero Timer Idiom]
-|  5 | 15:15 |                     | L |         | 5-minute *break*
-| 20 | 15:20 | All                 | L |         | Around-the-Table Status Updates
-|  5 | 15:40 | Cort and Mike       | L |         | closing remarks
-| 30 | 15:45 | Happy Hour          | L |         | favorite beverage
+| 15 | 14:05 | John and Alasdar    | R |         | https://youtu.be/[Pretty Smart Chess Model] 10
+| 10 | 14:15 | Levi Starrett       | R |         | https://youtu.be/[Exploring the Future]
+|  5 | 14:25 |                     | L |         | 5-minute *break*
+| 15 | 14:30 | Cortland Starrett   | R |         | https://youtu.be/AbRPBWrI7fY[Simple Max Advance] 10
+|  5 | 14:45 |                     | L |         | 5-minute *break*
+| 10 | 14:50 | Various             | R |         | https://youtu.be/[Tooling Update]
+| 25 | 15:00 | Cortland Starrett   | R |         | https://youtu.be/d4GSvtefbaM[Zero Duration Timer Idiom] 18
+|  5 | 15:25 |                     | L |         | 5-minute *break*
+| 20 | 15:30 | All                 | L |         | Around-the-Table Status Updates
+|  5 | 15:50 | Cort and Mike       | L |         | closing remarks
+| 30 | 15:55 | Happy Hour          | L |         | favorite beverage
 |===
 
 Tooling Update:  log4cpp, textual persistence, asl2masl, self idiom

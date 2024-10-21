@@ -177,19 +177,19 @@ image::einstein_classes.png[xtUML Class Diagram]
 
 registered attendees:
 
-David Skinner <david.n.skinner@baesystems.com>
-Paul Watkins <paul.watkins4@baesystems.com>
-Joey Kutler <joseph.kutler3@baesystems.com>
-Luke Compton-Burnett <Luke.Compton-Burnett@baesystems.com>
-Levi Starrett <levi.starrett@onefact.net>
-Cortland Starrett <cortland.starrett@onefact.net>
-John Wolfe
-Alasdar Mullarney
-Mike Lee
-Lee Riemenschneider <lwriemen@frogooa.com>
-Colin Carter
+*David Skinner <david.n.skinner@baesystems.com>
+*Paul Watkins <paul.watkins4@baesystems.com>
+*Joey Kutler <joseph.kutler3@baesystems.com>
+*Luke Compton-Burnett <Luke.Compton-Burnett@baesystems.com>
+*Levi Starrett <levi.starrett@onefact.net>
+*Cortland Starrett <cortland.starrett@onefact.net>
+*John Wolfe
+*Alasdar Mullarney
+*Mike Lee
+*Lee Riemenschneider <lwriemen@frogooa.com>
+*Colin Carter
+*Greg Arnot
 Paul Francis
-Greg Arnot
 
 Leon Starr
 Takao Futagami
@@ -205,19 +205,20 @@ Per Johnsson
 Cheltenham happy hour
 
 Levi Starrett (Courtney)
-Cortland Starrett (Roxanna)
-Colin Carter
-Paul Francis
-Bryn Evans
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Bryn Evans
 
 Cheltenham dinner
 
 Levi Starrett (Courtney, Lexi)
-Cortland Starrett (Roxanna)
-Colin Carter
-Paul Francis
-Greg A (Jeanette)
-Tristan P
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Tristan P
 Dave S
 John T
 Freddie?
