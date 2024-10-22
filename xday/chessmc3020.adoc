@@ -1,0 +1,185 @@
+= Chess in C
+
+== AIMs
+
+* Highlight simple algorithm which can beat the random move selector.
+* Describe adding a 3rd architecture.
+
+== TODO
+
+* [line-through]#Finish writing script.#
+* [line-through]#Finish creating slides.#
+* [line-through]#Record tour of BridgePoint model.#
+* [line-through]#Record simple max advance replay.#
+
+. [line-through]#Record and narrate BridgePoint tour.#
+. [line-through]#Record and narrate game replay.#
+. [line-through]#Record full face clips.
+  .. introduction
+  .. thank-you
+  .. 2 architectures, how about a 3rd?#
+. Record other clips.
+
+== Script
+
+* (voice only) title slide
+  ** Simple Max Advance and Chess Bots in C
+  ** Shlaer-Mellor Days 2024
+* (full face)
+  ** Hello, I am Cortland Starrett of One Fact.
+  ** This presentation is a mix of modeling and architecture.  The early
+     focus is on the application of robotically playing chess using an
+     xtUML model.  It then shifts to translating the model into C and the
+     steps entailed.
+  ** The modeling was motivated by the 2024 Chess Modeling Challenge.
+* (outline slide)
+  ** (no face)
+  ** I will outline a few of the ideas I had for simple model extensions.
+  ** I also wanted to supply a minimal show-n-tell to the xtUML chess-modeling
+     community for making a change hoping to give people a head start.
+     The small delta change was delivered as a pull request to the public git
+     repository, so people could see exactly what a minor change entails.
+  ** Then you will see the implementation of the strategy that I chose as a
+     model and witness the execution.
+  ** We have 2 architectures which run the models.  The first is the
+     interpretive BridgePoint Verifier.  The second is Ciera Java.  What
+     does it take to support a third architecture in C?
+  ** I will share what it took to translate the chess bot into C with MC-3020.
+* Simple Strategies
+  ** (small face)
+  ** What is the simplest change that might win?
+  ** Starting from the "teacher robot" which simply plays a random but
+     legal move, what can we do very simply to make it smarter?  What
+     is the simplest change that might be able to win?
+  ** An opening is a preset sequence of moves at the start of game to
+     place a player in a stategic or strong position.  A good chess player
+     has memorized several openings.  It seems that it would pretty easy
+     to encode a handful of openings as preexisting instance data of
+     specification classes.  This would make the bot smarter... but might
+     be kinda boring to implement.  A good point with this idea is that it
+     can easily be combined with other ideas.
+  ** The very simplest strategy I came up with was to choose moves from
+     the list of legal next moves that always go forward.  I actually
+     implemented this, and it did beat the random move bot.
+  ** Better than moving forward is to move forward as far as you can.  I
+     named this strategy Simple Max Advance.  It is what I submitted to
+     the tournament.
+  ** Alasdar implemented "capture when you can" and then improved upon it.
+* BridgePoint model
+  ** (no face)
+  ** Tour the model (1:30).
+     *** showing it in BridgePoint
+         **** Here is the modified Chess Bot model.
+         **** A new function package called 'move_selection' was added
+              to house a domain function to select the move that advances
+              rank by the largest amount.
+         **** The class diagram did not change.
+         **** The structure of the state model did not change.
+         **** The activity in the 'our turn' state was changed to call the
+              new domain function.
+         **** Here is the 'our turn' state activity in OAL dialect.
+              Notice that we still get the random move; I didn't change
+              those lines.  I only added the call to 'simple_max_advance'
+              to change the selection.
+         **** Note zero duration timer to self here.  That is a subject
+              for a separate discussion.
+         **** Here is the 'simple_max_advance' function.  It loops through
+              the list of legal moves measuring the increase (or decrease if
+              black) of rank.  It finds a move that has the greatest
+              advance of rank.
+         **** If we cannot advance at (stuck at the opponent end), then
+              revert to selecting a random move.
+* showing differences in git PR
+  ** Here is the pull request on GitHub that I created so the community
+     could look at the differences needed to make a small functional
+     change to the chess bot.
+  ** Something of a README is found in a comment on the PR.  It even has a
+     link to a replay of the bot versus bot game I am about to show you.
+  ** Here are the file differences in the pull request on github.
+     You can see that the change to the 'our turn' state action is simply
+     the addition of the call to 'simple_max_advance'.
+  ** Here are the new package and new domain function 'simple_max_advance'.
+     Some of you may recognize that the persistence format of this model
+     is Textual xtUML.
+* execution of "simple_max_advance"
+  ** (no face, 0:50) Show it playing (using replay mechanism).  Narrate.
+  ** This is a replay of Simple Max Advance xtUML model running against the
+     Teacher (random legal move) model.  Simple Max Advance is black; the
+     teacher model is white.
+  ** [start click animation]
+  ** This is the resulting xtUML model of Simple Max Advance who is playing black.
+  ** See how immediately it advances pawns 2 steps forward.
+  ** Then, as soon as a bishop is free to go more than 2 it takes off!
+  ** And then, the queen gets free to rumble forward.
+  ** The next pieces that can advance more than one space at a time are
+     the knights.  Watch the knights jump all the way across the board.
+  ** When no advance is possible, the algorithm reverts to a random move
+     selection.
+  ** The algorithm does push the game to the opponents side of the board.
+  ** [pause]
+  ** White is first to put the king in check.
+  ** [pause]
+  ** The black queen attacks!
+  ** Again the bishop is open to stride forward.
+  ** [speed along until we see 3 queens]
+  ** Nice how we end up with 3 queens.
+  ** This certainly demonstrates that a simple strategy can beat no
+     strategy at all.
+* (full face) 2 architectures, how about a 3rd?
+  ** The Shlaer-Mellor Method encourages "separation of concerns" with the
+     largest and most common 2 concerns being 'application' and
+     'architecture'.  An xtUML model is a "platform independent
+     specification of the application".  A model compiler is an
+     "application independent specification of a runtime platform".  So we
+     should be able to translate and run our model of Chess onto multiple
+     various architectures, which indeed we do, Verifier and Ciera Java.
+     How about a third?  What does it take?
+  ** I decided to attempt to translate the Chess model into C using MC-3020.
+* (small face) some history of MC-3020
+  ** I don't know how MC-3020 usage stacks up to K-C model
+     compilers, but in the PT world, MC-3020 was and is
+     the most used model compiler by far at least until MASL {cpp}.
+     MC-3020 was released in 1999, became Open Source Software in 2014
+     and is still being used today.
+  ** 3020 has been used by dozens of companies, universities and high schools.
+     *** scientific instruments
+     *** automotive
+     *** office equipment
+     *** military/aerospace
+     *** consumer electronics
+  ** MC-3020 generates vanilla C and runs on anything with a C compiler (everything)
+* Compiling the game into C.
+  ** ChessLib interface (realized EE / utility domain)
+     *** The chess model depends upon a realized domain to obtain the list
+         of legal moves.  The Verifer and Ciera architectures bridge to Java
+         version of 'ChessLib'.  A C version of 'ChessLib' was located and
+         slid right in pretty easily.
+     *** This was the bulk of the work.
+  ** The communication with the Lichess server was the next largest bit of
+     work.  For this, Levi and I updated the Lichess API he built for Java
+     and added a file-based API to the C version of the generated model.
+  ** This required some JSON parsing using a realized JSON parser called
+     Jasmine.
+* MC-3020 incompleteness
+  ** There were some MC-3020 shortfalls.
+     *** 3020 does not support the 'length' operator on variable length arrays
+         **** So we needed a model change to maintain move_count rather
+              using this 'length' operator.
+     *** 3020 has no support for assigning an array to another array.
+         **** e.g. `legal_moves = ChessLib::legal_moves(fen:fen)`
+         **** becomes `ChessLib::legal_moves(fen:fen, legal_moves:legal_moves)`
+         **** So we changed the return array assignment into a
+              pass-by-reference parameter.
+  ** Got it running on main.
+  ** To run Levi's more complex model, I had to fix a timer bug to support
+     the zero duration timer idiom (more on that in another presentation)!
+* (full face)
+* The 2024 Chess Modeling Challenge has been really fun and resulted in
+  some refinement of the tooling.  BridgePoint, MC-3020 and Ciera were all
+  made a bit more robust.
+* Thank you.
+* slide of Ezra.
+
+== Document References
+
+. [[dr-1]] https://lichess.org/iHC7cRqI[Simple Max Advance Replay]

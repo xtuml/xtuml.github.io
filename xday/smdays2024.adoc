@@ -177,19 +177,20 @@ image::einstein_classes.png[xtUML Class Diagram]
 
 registered attendees:
 
-David Skinner <david.n.skinner@baesystems.com>
-Paul Watkins <paul.watkins4@baesystems.com>
-Joey Kutler <joseph.kutler3@baesystems.com>
-Luke Compton-Burnett <Luke.Compton-Burnett@baesystems.com>
-Levi Starrett <levi.starrett@onefact.net>
-Cortland Starrett <cortland.starrett@onefact.net>
-John Wolfe
-Alasdar Mullarney
-Mike Lee
-
-Colin Carter
+*David Skinner <david.n.skinner@baesystems.com>
+*Paul Watkins <paul.watkins4@baesystems.com>
+*Joey Kutler <joseph.kutler3@baesystems.com>
+*Luke Compton-Burnett <Luke.Compton-Burnett@baesystems.com>
+*Levi Starrett <levi.starrett@onefact.net>
+*Cortland Starrett <cortland.starrett@onefact.net>
+*John Wolfe
+*Alasdar Mullarney
+*Mike Lee
+*Lee Riemenschneider <lwriemen@frogooa.com>
+*Colin Carter
+*Greg Arnot
 Paul Francis
-Greg Arnot
+
 Leon Starr
 Takao Futagami
 Kenji Hisazumi
@@ -197,31 +198,38 @@ Hiroshi Ota
 Filip Fur
 Dave S
 Tristan P
-Lee Riemenschneider
 Rob Day
 James Bain
 Per Johnsson
 
-Cheltenham dinner
+Cheltenham happy hour
 
 Levi Starrett (Courtney)
-Cortland Starrett (Roxanna)
-Colin Carter
-Paul Francis
-Greg A (Jeanette)
-Tristan Pye
-David Skinner
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Bryn Evans
+
+Cheltenham dinner
+
+Levi Starrett (Courtney, Lexi)
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Tristan P
 Dave S
-John T (maybe late)
+Freddie?
 
 Linkoping dinner
 
+*Cortland Starrett (Roxanna)
+*Levi Starrett
 Bengt Kvarnstrom
 Nils Paulsson
 Per Linden
 Erik Wedin
-Cortland Starrett (Roxanna)
-Levi Starrett
 Filip Fur
 Rob Day (Anika)
 John Tornblom
@@ -230,3 +238,5 @@ Per Jonsson
 Pontus?
 
 ////
+
+
