@@ -82,16 +82,16 @@ The columns in the table below are as follows:
 |  5 | 13:00 | Cortland Starrett   | L | Welcome and Opening
 |  5 | 13:05 | Michael Lee         | L | Shlaer-Mellor Day greeting and instructions
 |  5 | 13:10 | John and Alasdar    | L | Background on Chess Challenge
-| 15 | 13:25 | Colin Carter        | R | https://Zyoutu.be/Lb8fStgOzPk[Chess Play Abstracted] 10
+| 15 | 13:25 | Colin Carter        | R | https://youtu.be/Lb8fStgOzPk[Chess Play Abstracted] 10
 | 10 | 13:40 | mixing              | L | Mixing virtually - introductions
-| 15 | 13:50 | Cortland Starrett   | R | https://Zyoutu.be/AbRPBWrI7fY[Simple Max Advance] 10
+| 15 | 13:50 | Cortland Starrett   | R | https://youtu.be/AbRPBWrI7fY[Simple Max Advance] 10
 |  5 | 14:05 |                     | L | 5-minute *break*
-| 15 | 14:10 | John and Alasdar    | R | https://Zyoutu.be/[Pretty Smart Chess Model] 10
-| 30 | 14:25 | Levi Starrett       | R | https://Zwww.youtube.com/watch?v=24CFUk3dY1U/[Exploring the Future] 25
+| 15 | 14:10 | John and Alasdar    | R | https://youtu.be/yybpt3GbOO8/[Pretty Smart Chess Model] 10
+| 30 | 14:25 | Levi Starrett       | R | https://www.youtube.com/watch?v=24CFUk3dY1U/[Exploring the Future] 25
 |  5 | 14:55 |                     | L | 5-minute *break*
-| 25 | 15:00 | Cortland Starrett   | R | https://Zyoutu.be/d4GSvtefbaM[Zero Duration Timer Idiom and CrossFit Cindy] 18
+| 25 | 15:00 | Cortland Starrett   | R | https://youtu.be/d4GSvtefbaM[Zero Duration Timer Idiom and CrossFit Cindy] 18
 |  5 | 15:25 |                     | L | 5-minute *break*
-| 20 | 15:30 | Levi Starrett       | R | https://Zwww.youtube.com/watch?v=IuGVajg8vPI[2024 Chess Challenge Tournament Results] 12
+| 20 | 15:30 | Levi Starrett       | R | https://www.youtube.com/watch?v=IuGVajg8vPI[2024 Chess Challenge Tournament Results] 12
 | 20 | 15:50 | All                 | L | Tooling Update and Project Status
 |  5 | 16:10 | Cort and Mike       | L | closing remarks
 | 30 | 16:15 | Happy Hour          | L | favorite beverage
