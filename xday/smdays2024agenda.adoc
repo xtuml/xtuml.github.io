@@ -75,6 +75,8 @@ The columns in the table below are as follows:
 * Column six gives a *Title* to the session if applicable.
 ////
 
+**Please enjoy the video presentations on youtube by following the links in the agenda below.**
+
 .Agenda
 [%autowidth,options="header"]
 |===
