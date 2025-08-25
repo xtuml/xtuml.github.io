@@ -14,6 +14,7 @@ asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2023instructions.adoc -o 
 asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2024.adoc -o ./xday/smdays2024.html
 asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2024agenda.adoc -o ./xday/smdays2024agenda.html
 asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2024instructions.adoc -o ./xday/smdays2024instructions.html
+asciidoctor -a stylesheet=$pwd/github.css ./xday/smdays2025.adoc -o ./xday/smdays2025.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/class_prep/connect_shared_folders.adoc -o ./xtuml_class/class_prep/connect_shared_folders.html
 asciidoctor -a stylesheet=$pwd/github.css -a jp=1 ./xtuml_class/class_prep/class_prep.adoc -o ./xtuml_class/class_prep/class_prep.html
 asciidoctor -a stylesheet=$pwd/github.css ./xtuml_class/class_prep/class_prep.jp.adoc -o ./xtuml_class/class_prep/class_prep.jp.html
