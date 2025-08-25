@@ -1,0 +1,110 @@
+= Shlaer-Mellor Days 2025
+include::../include.adoc[]
+
+image::xtumlorg2.png[Shlaer-Mellor Days 2025]
+
+== What is this?
+
+*Shlaer-Mellor Days 2025* will not include a technical conference.
+This year Shlaer-Mellor Days will consist of three separate dinner gatherings
+in Cheltenham, Portsmouth (UK) and Linköping (Sweden).
+(See <<Previous Shlaer-Mellor Days>>.)
+
+The Shlaer-Mellor xtUML Community meets to collaborate on Modeling, Method and Tooling.
+Discussion topics include end-to-end modeling, execution,
+translation and deployment of models-as-code in mission critical settings
+employing rigorous methodology.
+
+=== In-Person Gatherings
+
+Dinner gatherings are by invitation only and hosted by One Fact Inc and include a significant other.
+
+Dinner is planned in Cheltenham at 19:15 on the evening of
+Tuesday 4 November 2025.  The venue is https://ivycollection.com/restaurants/the-ivy-montpellier-brasserie/[The Ivy Montpellier Brasserie].
+Happy Hour will precede dinner at 17:30 at Sandford Park Alehouse.
+Come enjoy a casual brew!
+
+Dinner is planned in Portsmouth at 19:15 on the evening of
+Wednesday 5 November 2025.  The venue is TBD.
+Happy Hour will precede dinner at 17:30 at The Florence Arms in Southsea.
+
+A dinner gathering is planned in Linköping, Sweden on the evening of
+7 November 2025 at 18:30 at https://www.bishopsarms.com/vara-pubar/linkoping[The Bishop's Arms].
+
+== Contacts
+
+* Cortland Starrett, One Fact, cortland.starrett [at] onefact.net
+* Levi Starrett, One Fact, levi.starrett [at] onefact.net
+
+If you have questions about Shlaer-Mellor Days, contact any of the above.
+
+.Portsmouth, UK
+image::portsmouth.jpeg[Portsmouth, UK]
+
+=== Previous Shlaer-Mellor Days
+
+* https://xtuml.github.io/xday/smdays2024.html[Shlaer-Mellor Day 2024 (Zoom), 29 October 2024]
+* https://xtuml.github.io/xday/smdays2023.html[Shlaer-Mellor Day 2023 (Zoom), 14 November 2023]
+* https://xtuml.github.io/xday/smdays2022.html[Shlaer-Mellor Day 2022 (Zoom), 18 October 2022]
+* https://chrysalis-triangle-s9cb.squarespace.com/xtuml2021[xtUML Day 2021, (Zoom), 27 October 2021]
+* https://xtuml.github.io/xday/xday2020.html[xtUML Day 2020 UK (and Zoom), 5 November 2020, Portsmouth, UK]
+* https://xtuml.github.io/xday/xday2019.html[xtUML Days 2019 Cheltenham, 12, 13 September 2019, Cheltenham, UK]
+* https://xtuml.org/xtuml-days-2018-copenhagen/[xtUML Days 2018 Copenhagen, 15, 16 October 2018, Copenhagen, Denmark]
+* https://xtuml.org/xtuml-day-2017-linkoping/[xtUML Day 2017 Linköping, 2 October 2017, Linköping, Sweden]
+* https://xtuml.org/presos-from-xtuml-day-cheltenham/[xtUML Day 2017 Cheltenham, 14 March 2017, Cheltenham, UK]
+* https://xtuml.org/xtumldayemd/[xtUML Day 2016, 14 May 2016, Linköping, Sweden]
+* https://xtuml.org/announcing-xtuml-2015/[xtUML Day 2015, 14 December 2015, Lafayette, Indiana, USA]
+
+image::einstein_classes.png[xtUML Class Diagram]
+
+
+////
+
+Cheltenham happy hour
+
+*Levi Starrett (Courtney)
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Bryn Evans
+*Dave S
+
+Cheltenham dinner
+
+*Levi Starrett (Courtney, Lexi)
+*Cortland Starrett (Roxanna)
+*Colin Carter
+*Paul Francis
+*Greg A
+*Tristan P
+*Dave S
+Freddie?
+
+Portsmouth dinner
+
+Levi Starrett (Courtney)
+Cortland Starrett (Roxanna)
+David Skinner
+Paul Watkins (+1)
+Luke Compton-Burnett
+Annie Allen
+
+Linkoping dinner
+
+*Cortland Starrett (Roxanna)
+*Levi Starrett
+*Bengt Kvarnstrom
+*Rob Day (Anika?)
+*John Tornblom
+Nils Paulsson
+Per Linden
+Erik Wedin
+Filip Fur
+Anders Eriksson
+Per Jonsson
+Pontus
+
+////
+
+
