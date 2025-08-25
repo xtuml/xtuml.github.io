@@ -31,7 +31,7 @@ Happy Hour will precede dinner at 17:30 at The Florence Arms in Southsea.
 A dinner gathering is planned in Linköping, Sweden on the evening of
 7 November 2025 at 18:30 at https://www.bishopsarms.com/vara-pubar/linkoping[The Bishop's Arms].
 
-== Contacts
+=== Contacts
 
 * Cortland Starrett, One Fact, cortland.starrett [at] onefact.net
 * Levi Starrett, One Fact, levi.starrett [at] onefact.net
@@ -39,9 +39,9 @@ A dinner gathering is planned in Linköping, Sweden on the evening of
 If you have questions about Shlaer-Mellor Days, contact any of the above.
 
 .Portsmouth, UK
-image::portsmouth.jpeg[Portsmouth, UK]
+image::portsmouth.jpg[Portsmouth, UK]
 
-=== Previous Shlaer-Mellor Days
+== Previous Shlaer-Mellor Days
 
 * https://xtuml.github.io/xday/smdays2024.html[Shlaer-Mellor Day 2024 (Zoom), 29 October 2024]
 * https://xtuml.github.io/xday/smdays2023.html[Shlaer-Mellor Day 2023 (Zoom), 14 November 2023]
