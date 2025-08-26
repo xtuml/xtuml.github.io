@@ -11,17 +11,18 @@ in Cheltenham, Portsmouth (UK) and Linköping (Sweden).
 In the week following the dinner gatherings, One Fact will host a Zoom meeting
 of the Shlaer-Mellor Commons and share updates on activities in the S-M community.
 The target date for the Zoom meeting is Tuesday 11 November at 3:00 p.m. GMT.
-Look for a link as the time gets closer.
+Look for a link as the day approaches.
 
 The Shlaer-Mellor xtUML Community meets to collaborate on Modeling, Method and Tooling.
 Discussion topics include end-to-end modeling, execution,
 translation and deployment of models-as-code in mission critical settings
 employing rigorous methodology.
+
 (See <<Previous Shlaer-Mellor Days>>.)
 
 === In-Person Gatherings
 
-Dinner gatherings are by invitation only and hosted by One Fact Inc and include a significant other.
+Dinner gatherings are by invitation and hosted by One Fact Inc and include a significant other.
 
 Dinner is planned in Cheltenham at 19:15 on the evening of
 Tuesday 4 November 2025.  The venue is https://ivycollection.com/restaurants/the-ivy-montpellier-brasserie/[The Ivy Montpellier Brasserie].
